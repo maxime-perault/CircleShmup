@@ -16,38 +16,50 @@ public class PlayerInputController : MonoBehaviour
     [SerializeField] private string increaseRadiusInput = "IncreaseRadius";
     [SerializeField] private string invertRotationInput = "InvertRotation";
     
-    private PlayerController playerControllerInstance;
-	
     /**
-     * Initializes the input controller by finding
-     * the player controller
+     * Returns the horizontal and vertical axis
+     * @return A vector2 containing the axis
      */
-	void Start ()
+    public Vector2 GetAxis()
     {
-        playerControllerInstance = GetComponent<PlayerController>();
-
-        if(!playerControllerInstance)
-        {
-            Debug.LogError("Unable to find the PlayerController component");
-        }
+        return new Vector2(
+            Input.GetAxis(horizontalInput), 
+            Input.GetAxis(verticalInput));
     }
-	
+    
     /**
-     * Called on each update, listens inputs
+     * Tells if the player is pressing the button "AddSphere"
+     * @return True or false
      */
-	void Update ()
+    public bool IsAddingSphere()
     {
-        Vector2 axis = new Vector2();
-        axis.x = Input.GetAxis(horizontalInput);
-        axis.y = Input.GetAxis(verticalInput);
+        return Input.GetButton(addSphereInput);
+    }
 
-        bool addSpherePressed      = Input.GetButton(addSphereInput);
-        bool removeSpherePressed   = Input.GetButton(removeSphereInput);
-        bool increaseRadiusPressed = Input.GetButton(increaseRadiusInput);
-        bool revertRotationPressed = Input.GetButton(invertRotationInput);
+    /**
+     * Tells if the player is pressing the button "RemoveSphere"
+     * @return True or false
+     */
+    public bool IsRemovingSphere()
+    {
+        return Input.GetButton(removeSphereInput);
+    }
 
-        playerControllerInstance.Move(axis, 
-            addSpherePressed,      removeSpherePressed, 
-            increaseRadiusPressed, revertRotationPressed);
+    /**
+     * Tells if the player is pressing the button "IncreaseRadius"
+     * @return True or false
+     */
+    public bool IsIncreasingRadius()
+    {
+        return Input.GetButton(increaseRadiusInput);
+    }
+
+    /**
+     * Tells if the player is pressing the button "InvertRotation"
+     * @return True or false
+     */
+    public bool IsInvertingRotation()
+    {
+        return Input.GetButton(invertRotationInput);
     }
 }
