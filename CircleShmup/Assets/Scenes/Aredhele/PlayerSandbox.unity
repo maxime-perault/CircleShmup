@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 69142293}
   - component: {fileID: 69142294}
   m_Layer: 0
-  m_Name: PlayerSprite
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,6 +193,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 344621297}
+  - component: {fileID: 344621301}
+  - component: {fileID: 344621300}
   - component: {fileID: 344621299}
   - component: {fileID: 344621298}
   m_Layer: 0
@@ -213,6 +215,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 69142293}
+  - {fileID: 1451666770}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -227,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5598d5b21632c774e9d0c7bd51808077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: {x: 20, y: 20}
 --- !u!114 &344621299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,12 +242,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84e32b6bfea05146ac3e28a4c62b02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalInputName: Vertical
-  horizontalInputName: Horizontal
-  addSphereInputName: AddSphere
-  removeSphereInputName: RemoveSphere
-  increaseRadiusInputName: IncreaseRadius
-  invertRotationInputName: InvertRotation
+  verticalInput: Vertical
+  horizontalInput: Horizontal
+  addSphereInput: AddSphere
+  removeSphereInput: RemoveSphere
+  increaseRadiusInput: IncreaseRadius
+  invertRotationInput: InvertRotation
+--- !u!60 &344621300
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344621296}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -0.95105654, y: 0.30901697}
+      - {x: -0.5877852, y: -0.80901706}
+      - {x: 0.58778536, y: -0.80901694}
+      - {x: 0.9510565, y: 0.30901712}
+--- !u!50 &344621301
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344621296}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 6
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!1 &1451666769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1451666770}
+  - component: {fileID: 1451666771}
+  m_Layer: 0
+  m_Name: Spheres
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1451666770
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1451666769}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 344621297}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1451666771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1451666769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772fad4633201fe4aacbe766e597d9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spherePrefab: {fileID: 1530049120004036, guid: 206cbee015b958c43ad106bbbd1dc399,
+    type: 2}
+  spheres: []
+  invertDelay: 0.5
+  invertTimer: 0
+  sphereDelay: 0.5
+  sphereTimer: 0
+  radius: 5
+  minRadius: 5
+  maxRadius: 25
+  radiusGrowSpeed: 5
+  radiusCrunchSpeed: 10
+  rotationSpeed: 10
+  startSphereCount: 3
 --- !u!1 &2114979631
 GameObject:
   m_ObjectHideFlags: 0

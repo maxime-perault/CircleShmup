@@ -12,11 +12,13 @@ using System.Collections.Generic;
    typeof(PlayerInputController))]
 public class PlayerController : MonoBehaviour
 {
-    public  Vector2               speed;
+    public  Vector2                speed;
+    public  PlayerSphereController sphereController;
 
-    private Rigidbody2D           body2D;
-    private PolygonCollider2D     polygonCollider2D;
-    private PlayerInputController inputController;
+    private Rigidbody2D            body2D;
+    private PolygonCollider2D      polygonCollider2D;
+    private PlayerInputController  inputController;
+    
 
     /**
      * Initializes the player controller by buffering 
@@ -36,5 +38,28 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 axis = inputController.GetAxis();
         body2D.AddForce(new Vector2(speed.x * axis.x, speed.y * axis.y));
+
+        if (inputController.IsAddingSphere())
+        {
+            sphereController.AddSphere();
+        }
+        else if (inputController.IsRemovingSphere())
+        {
+            sphereController.RemoveSphere();
+        }
+
+        if (inputController.IsIncreasingRadius())
+        {
+            sphereController.IncreaseRadius();
+        }
+        else
+        {
+            sphereController.DecreaseRadius();
+        }
+
+        if (inputController.IsInvertingRotation())
+        {
+            sphereController.InvertRotation();
+        }
     }
 }
