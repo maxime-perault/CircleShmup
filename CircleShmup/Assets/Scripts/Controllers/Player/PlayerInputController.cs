@@ -8,13 +8,13 @@ using System.Collections.Generic;
  */
 public class PlayerInputController : MonoBehaviour
 {
-    [SerializeField] private string verticalInput       = "Vertical";
-    [SerializeField] private string horizontalInput     = "Horizontal";
+    [SerializeField] private string verticalInput        = "Vertical";
+    [SerializeField] private string horizontalInput      = "Horizontal";
    
-    [SerializeField] private string addSphereInput      = "AddSphere";
-    [SerializeField] private string removeSphereInput   = "RemoveSphere";
-    [SerializeField] private string increaseRadiusInput = "IncreaseRadius";
-    [SerializeField] private string invertRotationInput = "InvertRotation";
+    [SerializeField] private string addSphereInput       = "AddSphere";
+    [SerializeField] private string removeSphereInput    = "RemoveSphere";
+    [SerializeField] private string increaseRadiusInput  = "IncreaseRadius";
+    [SerializeField] private string reverseRotationInput = "ReverseRotation";
     
     /**
      * Returns the horizontal and vertical axis
@@ -55,11 +55,11 @@ public class PlayerInputController : MonoBehaviour
     }
 
     /**
-     * Tells if the player is pressing the button "InvertRotation"
+     * Tells if the player is pressing the button "ReverseRotation"
      * @return True or false
      */
-    public bool IsInvertingRotation()
+    public bool IsReversingRotation()
     {
-        return Input.GetButton(invertRotationInput);
+        return Input.GetButton(reverseRotationInput);
     }
 }

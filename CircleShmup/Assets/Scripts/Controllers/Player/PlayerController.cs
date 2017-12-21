@@ -57,9 +57,9 @@ public class PlayerController : MonoBehaviour
             sphereController.DecreaseRadius();
         }
 
-        if (inputController.IsInvertingRotation())
+        if (inputController.IsReversingRotation())
         {
-            sphereController.InvertRotation();
+            sphereController.ReverseRotation();
         }
     }
 }
