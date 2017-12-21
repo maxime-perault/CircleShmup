@@ -12,6 +12,7 @@ using System.Collections.Generic;
    typeof(PlayerInputController))]
 public class PlayerController : MonoBehaviour
 {
+    public  bool                   slide;
     public  Vector2                speed;
     public  PlayerSphereController sphereController;
 
@@ -38,6 +39,11 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 axis = inputController.GetAxis();
         body2D.AddForce(new Vector2(speed.x * axis.x, speed.y * axis.y));
+
+        if (axis.x == 0.0f && axis.y == 0.0f && !slide)
+        {
+            body2D.velocity = new Vector2(0.0f, 0.0f);
+        }
 
         if (inputController.IsAddingSphere())
         {

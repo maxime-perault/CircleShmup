@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114560485000152674}
   m_Layer: 0
   m_Name: Spheres
-  m_TagString: Untagged
+  m_TagString: Spheres
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,8 +56,8 @@ GameObject:
   - component: {fileID: 114803391825515716}
   - component: {fileID: 114733961502871980}
   m_Layer: 0
-  m_Name: Player 1
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,20 +163,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772fad4633201fe4aacbe766e597d9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spheres: []
   spherePrefab: {fileID: 1530049120004036, guid: 206cbee015b958c43ad106bbbd1dc399,
     type: 2}
-  spheres: []
+  startSphereCount: 3
   reverseDelay: 0.5
-  invertTimer: 0
   sphereDelay: 0.5
-  sphereTimer: 0
   radius: 5
   minRadius: 5
   maxRadius: 25
   radiusGrowSpeed: 5
   radiusCrunchSpeed: 10
   rotationSpeed: 10
-  startSphereCount: 3
   canReverse: 1
   canAddSphere: 1
 --- !u!114 &114733961502871980
@@ -190,8 +188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5598d5b21632c774e9d0c7bd51808077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slide: 0
   speed: {x: 20, y: 20}
-  sphereController: {fileID: 0}
+  sphereController: {fileID: 114560485000152674}
 --- !u!114 &114803391825515716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,7 +207,7 @@ MonoBehaviour:
   addSphereInput: AddSphere
   removeSphereInput: RemoveSphere
   increaseRadiusInput: IncreaseRadius
-  invertRotationInput: InvertRotation
+  reverseRotationInput: ReverseRotation
 --- !u!212 &212845434835859922
 SpriteRenderer:
   m_ObjectHideFlags: 1
