@@ -42,3 +42,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackgroundStatic
+    uniqueID: 377097
+    locked: 0
+  - name: BackgroundDynamic
+    uniqueID: 403043801
+    locked: 0
+  - name: Ennemies
+    uniqueID: 1341671203
+    locked: 0
+  - name: Player
+    uniqueID: 2317381321
+    locked: 0
+  - name: PowerUp
+    uniqueID: 2507180723
+    locked: 0
+  - name: PlayerBullet
+    uniqueID: 4084097541
+    locked: 0
+  - name: EnnemyBullet
+    uniqueID: 2268629045
+    locked: 0
