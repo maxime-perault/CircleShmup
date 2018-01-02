@@ -188,6 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5598d5b21632c774e9d0c7bd51808077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
+  hitPoint: 5
   slide: 0
   speed: {x: 20, y: 20}
   sphereController: {fileID: 114560485000152674}
@@ -202,6 +204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84e32b6bfea05146ac3e28a4c62b02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canAddSphere: 1
+  canRemoveSphere: 1
+  canIncreaseRadius: 1
+  canReverseRotation: 1
   verticalInput: Vertical
   horizontalInput: Horizontal
   addSphereInput: AddSphere

@@ -8,14 +8,6 @@ using UnityEditor;
 [CustomEditor(typeof(PlayerController))]
 public class PlayerInspector : Editor
 {
-    private const int GUI_SPACE           = 1;
-    private const int LAYOUT_BOOL_WIDTH   = 100;
-    private const int LAYOUT_INT_WIDTH    = 200;
-    private const int LAYOUT_STR_WIDTH    = 250;
-    private const int LAYOUT_OBJ_WIDTH    = 300;
-    private const int LAYOUT_VC3_WIDTH    = 350;
-    private const int GUI_SPACE_SEPARATOR = 10;
-
     private Rigidbody2D playerBody;
 
     /**
