@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4776552108359524}
   - component: {fileID: 68141452170893930}
+  - component: {fileID: 114213986249927430}
   m_Layer: 8
   m_Name: Arena
   m_TagString: Arena
@@ -55,12 +56,33 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.011756077, y: 4.012086}
-  - {x: -2.948769, y: 2.6908975}
-  - {x: -4.0081167, y: -0.00036279857}
-  - {x: -3.099964, y: -2.6231067}
-  - {x: 0.022250295, y: -4.0168357}
-  - {x: 3.1048727, y: -2.7656963}
-  - {x: 4.0353518, y: -0.012552977}
-  - {x: 2.8012319, y: 2.8452559}
-  - {x: 0.096668765, y: 4.012086}
+  - {x: 4.5, y: 0}
+  - {x: 4.1109543, y: 1.8303149}
+  - {x: 3.0110874, y: 3.344152}
+  - {x: 1.3905764, y: 4.2797546}
+  - {x: -0.47037828, y: 4.4753485}
+  - {x: -2.2500002, y: 3.8971143}
+  - {x: -3.6405768, y: 2.6450334}
+  - {x: -4.4016643, y: 0.93560225}
+  - {x: -4.4016643, y: -0.935603}
+  - {x: -3.6405764, y: -2.645034}
+  - {x: -2.2499995, y: -3.8971145}
+  - {x: -0.4703775, y: -4.4753485}
+  - {x: 1.3905771, y: -4.279754}
+  - {x: 3.0110884, y: -3.3441515}
+  - {x: 4.1109548, y: -1.8303142}
+  - {x: 4.5, y: 0}
+--- !u!114 &114213986249927430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1222263992576462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d14b7c5da23dc247a3e95b3d0b74984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arenaCenter: {x: 0, y: 0}
+  arenaRadius: 4.5
+  arenaResolution: 15
