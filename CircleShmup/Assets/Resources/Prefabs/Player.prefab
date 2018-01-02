@@ -122,7 +122,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!60 &60110341316814916
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -191,7 +191,7 @@ MonoBehaviour:
   isDead: 0
   hitPoint: 5
   slide: 0
-  speed: {x: 20, y: 20}
+  speed: {x: 50, y: 50}
   sphereController: {fileID: 114560485000152674}
 --- !u!114 &114803391825515716
 MonoBehaviour:
