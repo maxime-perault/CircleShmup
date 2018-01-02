@@ -56,6 +56,7 @@ public class PlayerSphereControllerInspector : Editor
         instance.radiusGrowSpeed   = EditorGUILayout.FloatField("Radius grow speed", instance.radiusGrowSpeed);
         instance.rotationSpeed     = EditorGUILayout.FloatField("Base rotation speed", instance.rotationSpeed);
         instance.startSphereCount  = EditorGUILayout.IntField("Start sphere count", instance.startSphereCount);
+        instance.speedPenalty      = EditorGUILayout.FloatField("Speed penalty (%)", instance.speedPenalty);
 
         EditorGUILayout.EndVertical();
     }
@@ -66,6 +67,10 @@ public class PlayerSphereControllerInspector : Editor
     private void DebugSection(PlayerSphereController instance)
     {
         EditorGUILayout.BeginVertical();
+
+        EditorGUILayout.FloatField("Current rotation speed", instance.currentRotationSpeed);
+        EditorGUILayout.FloatField("Current speed penalty",  instance.currentSpeedPenalty);
+        EditorGUILayout.FloatField("Current radius ratio",   instance.currentRadiusRatio);
 
         EditorGUILayout.IntField("Current Sphere count", instance.spheres.Count);
         EditorGUILayout.Toggle("Can reverse ?", instance.canReverse);

@@ -11,18 +11,24 @@ public class PlayerSphereController : MonoBehaviour
     public List<GameObject> spheres;
     public GameObject       spherePrefab;
 
-    public int   startSphereCount  = 3;
-    public float reverseDelay      = 0.5f;
-    public float sphereDelay       = 0.5f;
-    public float radius            = 5.0f;
-    public float minRadius         = 5.0f;
-    public float maxRadius         = 25.0f;
-    public float radiusGrowSpeed   = 5.0f;
-    public float radiusCrunchSpeed = 10.0f;
-    public float rotationSpeed     = 10.0f;
+    public int   startSphereCount     = 3;
+    public float speedPenalty         = 20;
+    public float reverseDelay         = 0.5f;
+    public float sphereDelay          = 0.5f;
+    public float radius               = 5.0f;
+    public float minRadius            = 5.0f;
+    public float maxRadius            = 25.0f;
+    public float radiusGrowSpeed      = 5.0f;
+    public float radiusCrunchSpeed    = 10.0f;
+    public float rotationSpeed        = 10.0f;
 
-    public bool  canReverse        = true;
-    public bool  canAddSphere      = true;
+    // Debug
+    public float currentRotationSpeed = 0.0f;
+    public float currentSpeedPenalty  = 0.0f;
+    public float currentRadiusRatio   = 0.0f;
+    
+    public bool  canReverse           = true;
+    public bool  canAddSphere         = true;
 
     private IEnumerator addSphereCooldownCoroutine;
     private IEnumerator reverseRotationCooldownCoroutine;
@@ -85,10 +91,14 @@ public class PlayerSphereController : MonoBehaviour
      */
     void Update()
     {
-        // Normalizes radius to increases rotation speed depending the radius size
-        // The larger the radius is, faster is the rotation speed (subject to later modifications)
-        float nRadius = 0.6f + radius / maxRadius;
-        transform.Rotate(new Vector3(0.0f, 0.0f, rotationSpeed * nRadius) * Time.deltaTime);
+        // Normalizes radius to decrease by the penalty the rotation speed depending the radius size
+        // The larger the radius is, slower is the rotation speed (subject to later modifications)
+
+        currentRadiusRatio   = (radius - minRadius) / (maxRadius - minRadius);
+        currentSpeedPenalty  = (rotationSpeed / 100.0f) * currentRadiusRatio * speedPenalty;
+        currentRotationSpeed = rotationSpeed - currentSpeedPenalty;
+
+        transform.Rotate(new Vector3(0.0f, 0.0f, currentRotationSpeed) * Time.deltaTime);
     }
 
     /**
