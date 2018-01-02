@@ -32,9 +32,11 @@ public class PlayerControllerWindow : EditorWindow
      */
     void OnGUI()
     {
-        PlayerController playerController       = UnityEngine.GameObject.FindGameObjectWithTag("Player"). GetComponent<PlayerController>();
+        PlayerController playerController       = UnityEngine.GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        PlayerInputController inputController   = UnityEngine.GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInputController>();
         PlayerSphereController sphereController = UnityEngine.GameObject.FindGameObjectWithTag("Spheres").GetComponent<PlayerSphereController>();
 
+        Editor editorInput  = Editor.CreateEditor(inputController);
         Editor editorPlayer = Editor.CreateEditor(playerController);
         Editor editorWeapon = Editor.CreateEditor(sphereController);
 
@@ -42,6 +44,7 @@ public class PlayerControllerWindow : EditorWindow
         EditorGUILayout.BeginHorizontal();
         scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, true, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
 
+        editorInput.OnInspectorGUI();
         editorPlayer.OnInspectorGUI();
         editorWeapon.OnInspectorGUI();
 

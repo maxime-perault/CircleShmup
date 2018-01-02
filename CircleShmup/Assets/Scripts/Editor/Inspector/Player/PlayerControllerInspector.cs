@@ -6,7 +6,7 @@ using UnityEditor;
  * @class PlayerControllerInspector
  */
 [CustomEditor(typeof(PlayerController))]
-public class EditorPlayerInspector : Editor
+public class PlayerInspector : Editor
 {
     private const int GUI_SPACE           = 1;
     private const int LAYOUT_BOOL_WIDTH   = 100;
@@ -28,7 +28,6 @@ public class EditorPlayerInspector : Editor
         playerBody = controller.GetComponent<Rigidbody2D>();
 
         // Rendering
-        InspectorHelper.DisplayInfoMessage("You can modify all player settings from this custom editor window");
         InspectorHelper.DisplaySeparator("Rendering");
         RenderingSection(controller);
 
@@ -57,9 +56,10 @@ public class EditorPlayerInspector : Editor
     {
         EditorGUILayout.BeginVertical();
 
-        instance.slide  = EditorGUILayout.Toggle("Player Slide ", instance.slide);
-        playerBody.drag = EditorGUILayout.Slider("Player Drag ", playerBody.drag, 0.0f, 20.0f);
-        instance.speed  = EditorGUILayout.Vector2Field("Player Speed", instance.speed);
+        instance.hitPoint = EditorGUILayout.IntField("Player hit points", instance.hitPoint);
+        instance.slide    = EditorGUILayout.Toggle("Player Slide ", instance.slide);
+        playerBody.drag   = EditorGUILayout.Slider("Player Drag ", playerBody.drag, 0.0f, 20.0f);
+        instance.speed    = EditorGUILayout.Vector2Field("Player Speed", instance.speed);
 
         EditorGUILayout.EndVertical();
     }

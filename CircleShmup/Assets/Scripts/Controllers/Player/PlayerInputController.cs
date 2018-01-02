@@ -8,13 +8,18 @@ using System.Collections.Generic;
  */
 public class PlayerInputController : MonoBehaviour
 {
-    [SerializeField] private string verticalInput        = "Vertical";
-    [SerializeField] private string horizontalInput      = "Horizontal";
+    public bool canAddSphere       = true;
+    public bool canRemoveSphere    = true;
+    public bool canIncreaseRadius  = true;
+    public bool canReverseRotation = true;
+
+    [SerializeField] public string verticalInput        = "Vertical";
+    [SerializeField] public string horizontalInput      = "Horizontal";
    
-    [SerializeField] private string addSphereInput       = "AddSphere";
-    [SerializeField] private string removeSphereInput    = "RemoveSphere";
-    [SerializeField] private string increaseRadiusInput  = "IncreaseRadius";
-    [SerializeField] private string reverseRotationInput = "ReverseRotation";
+    [SerializeField] public string addSphereInput       = "AddSphere";
+    [SerializeField] public string removeSphereInput    = "RemoveSphere";
+    [SerializeField] public string increaseRadiusInput  = "IncreaseRadius";
+    [SerializeField] public string reverseRotationInput = "ReverseRotation";
     
     /**
      * Returns the horizontal and vertical axis
@@ -33,7 +38,7 @@ public class PlayerInputController : MonoBehaviour
      */
     public bool IsAddingSphere()
     {
-        return Input.GetButton(addSphereInput);
+        return (canAddSphere) ? Input.GetButton(addSphereInput) : false;
     }
 
     /**
@@ -42,7 +47,7 @@ public class PlayerInputController : MonoBehaviour
      */
     public bool IsRemovingSphere()
     {
-        return Input.GetButton(removeSphereInput);
+        return (canRemoveSphere) ? Input.GetButton(removeSphereInput) : false;
     }
 
     /**
@@ -51,7 +56,7 @@ public class PlayerInputController : MonoBehaviour
      */
     public bool IsIncreasingRadius()
     {
-        return Input.GetButton(increaseRadiusInput);
+        return (canIncreaseRadius) ? Input.GetButton(increaseRadiusInput) : false;
     }
 
     /**
@@ -60,6 +65,6 @@ public class PlayerInputController : MonoBehaviour
      */
     public bool IsReversingRotation()
     {
-        return Input.GetButton(reverseRotationInput);
+        return (canReverseRotation) ? Input.GetButton(reverseRotationInput) : false;
     }
 }

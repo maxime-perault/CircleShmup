@@ -10,7 +10,7 @@ using System.Collections.Generic;
    typeof(Rigidbody2D),
    typeof(PolygonCollider2D),
    typeof(PlayerInputController))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : Entity
 {
     public  bool                   slide;
     public  Vector2                speed;
