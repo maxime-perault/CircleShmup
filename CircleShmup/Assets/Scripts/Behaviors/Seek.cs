@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Seek
+/**
+ * 
+ * @class Seek
+ */
+public class Seek : Behavior
 {
-    // TODO
+    [SerializeField] public Transform target;
+    [SerializeField] public float     delay;
 }

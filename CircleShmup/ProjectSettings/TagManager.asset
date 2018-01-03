@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spheres
   - Arena
+  - Enemy
   layers:
   - Default
   - TransparentFX
