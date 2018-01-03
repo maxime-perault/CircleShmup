@@ -151,6 +151,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114733961502871980, guid: 10f549792aea82946999a030576f4561,
+        type: 2}
+      propertyPath: damageOnCollision
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10f549792aea82946999a030576f4561, type: 2}
   m_IsPrefabParent: 0
@@ -312,11 +317,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  hitPoint: 5
+  hitPoint: 1
+  damageOnCollision: 1
   seekBehavior:
     instance: {fileID: 2129465836}
     target: {fileID: 1217252424}
-    delay: 0
     axis: {x: 4, y: 4}
     alpha: 0
     speed: 10

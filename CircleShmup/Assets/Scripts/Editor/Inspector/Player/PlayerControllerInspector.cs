@@ -48,10 +48,12 @@ public class PlayerInspector : Editor
     {
         EditorGUILayout.BeginVertical();
 
-        instance.hitPoint = EditorGUILayout.IntField("Player hit points", instance.hitPoint);
-        instance.slide    = EditorGUILayout.Toggle("Player Slide ", instance.slide);
-        playerBody.drag   = EditorGUILayout.Slider("Player Drag ", playerBody.drag, 0.0f, 20.0f);
-        instance.speed    = EditorGUILayout.Vector2Field("Player Speed", instance.speed);
+        instance.hitPoint          = EditorGUILayout.IntField("Player hit points",    instance.hitPoint);
+        instance.damageOnCollision = EditorGUILayout.IntField("Damages on collision", instance.damageOnCollision);
+
+        instance.slide             = EditorGUILayout.Toggle("Player Slide ",      instance.slide);
+        playerBody.drag            = EditorGUILayout.Slider("Player Drag ",       playerBody.drag, 0.0f, 20.0f);
+        instance.speed             = EditorGUILayout.Vector2Field("Player Speed", instance.speed);
 
         EditorGUILayout.EndVertical();
     }

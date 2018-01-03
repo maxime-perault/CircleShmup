@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 
 /**
- * 
+ * The base enemy class
  * @class Enemy
  */
 public class Enemy : Entity
 { 
-    // TODO
+    // None for now
 }
