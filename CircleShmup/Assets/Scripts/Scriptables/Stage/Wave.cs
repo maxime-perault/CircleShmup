@@ -13,6 +13,7 @@ public class Wave
     [SerializeField] public string     WaveName;
     [SerializeField] public GameObject WaveEnemy;
     [SerializeField] public int        WaveEnemyCount;
+    [SerializeField] public float      WaveTiming;
     [SerializeField] public float      WaveDuration;
 
     /**
@@ -24,6 +25,7 @@ public class Wave
         WaveName       = "Unknown";
         WaveEnemy      = null;
         WaveEnemyCount = 0;
+        WaveTiming     = 0.0f;
         WaveDuration   = 0.0f;
     }
 
@@ -36,18 +38,20 @@ public class Wave
         WaveName       = other.WaveName;
         WaveEnemy      = other.WaveEnemy;
         WaveEnemyCount = other.WaveEnemyCount;
+        WaveTiming     = other.WaveTiming;
         WaveDuration   = other.WaveDuration;
     }
 
     /**
      * Constructs a Wave from parameters list 
      */
-    public Wave(uint id, string name, GameObject enemy, int count, float duration)
+    public Wave(uint id, string name, GameObject enemy, int count, float timing, float duration)
     {
         WaveID         = id;
         WaveName       = name;
         WaveEnemy      = enemy;
         WaveEnemyCount = count;
+        WaveTiming     = timing;
         WaveDuration   = duration;
     }
 }

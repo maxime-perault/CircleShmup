@@ -28,7 +28,7 @@ public class StageEditorPreviewView
         GUILayout.Space(10);
         EditorGUILayout.BeginHorizontal();
 
-        if (GUILayout.Button("New stage"))  { /*EditorMonsterDatabaseWindow.CreateMonster();*/ }
+        if (GUILayout.Button("New stage"))  { StageEditorController.CreateStage();        }
         if (GUILayout.Button("Remove all")) { StageEditorController.RemoveAllStages();    }
  
         GUILayout.Space(20);
@@ -47,6 +47,11 @@ public class StageEditorPreviewView
      */
     private void DisplayAllStagePreviews()
     {
+        if(StageEditorModel.databaseInstance == null)
+        {
+            return;
+        }
+
         // Getting the list of stages from the model
         List<Stage> stages = StageEditorModel.databaseInstance.stages;
 
@@ -68,8 +73,8 @@ public class StageEditorPreviewView
             EditorGUILayout.LabelField("Stage description :", stage.StageDescription);
 
             EditorGUILayout.BeginHorizontal();
-            if (GUILayout.Button("Edit",   GUILayout.Width(185))) { /*EditorMonsterDatabaseWindow.Edit(MonsterItem);*/   }
-            if (GUILayout.Button("Remove", GUILayout.Width(185))) { StageEditorController.RemoveStage(stage); }
+            if (GUILayout.Button("Edit",   GUILayout.Width(185))) { StageEditorController.EditStage(stage);           }
+            if (GUILayout.Button("Remove", GUILayout.Width(185))) { StageEditorController.RemoveStage(stage); return; }
 
             GUILayout.Space(10);
             EditorGUILayout.EndHorizontal();

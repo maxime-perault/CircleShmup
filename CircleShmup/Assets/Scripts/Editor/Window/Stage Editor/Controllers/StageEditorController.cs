@@ -26,6 +26,23 @@ public class StageEditorController
     }
 
     /**
+     * Displays the creation menu
+     */
+    public static void CreateStage()
+    {
+        StageEditorView.editionView.ToogleCreation();
+    }
+
+    /**
+     * Enables the edition of the given stage
+     * @param stage The stage to edit
+     */
+    public static void EditStage(Stage stage)
+    {
+        StageEditorView.editionView.ToogleEdition(stage);
+    }
+
+    /**
      * Removes a stage from the database. Rebuilds index.
      * @param stage The stage to remove
      */
@@ -47,20 +64,27 @@ public class StageEditorController
         List<Stage> stages = StageEditorModel.databaseInstance.stages;
         stages.Clear();
     }
-    
+
     /**
-     * Toogles the creation menu
+     * Updates a stage from another one
+     * @param old   The old stage
+     * @param other The new stage
      */
-    public static void CreateStage()
+    public static void UpdateStage(Stage old, Stage other)
     {
-        // TODO
+        List<Stage> stages = StageEditorModel.databaseInstance.stages;
+        if (stages.Contains(old))
+        {
+            int index = stages.IndexOf(old);
+            stages[index] = other;
+        }
     }
 
     /**
      * Adds a new stage in the database
      * @param stage The stage to add in the database
      */
-    public static void AddEntry(Stage stage)
+    public static void AddStage(Stage stage)
     {
         List<Stage> stages = StageEditorModel.databaseInstance.stages;
         stages.Add(stage);
