@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: StageDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterDatabase
+  stages:
+  - StageID: 0
+    StageName: 
+    StageDescription: 
+    StageDuration: 0
+    StageTimeout: 0
+    StageWaves:
+    - WaveID: 0
+      WaveName: 
+      WaveEnemy: {fileID: 0}
+      WaveEnemyCount: 0
+      WaveDuration: 0
