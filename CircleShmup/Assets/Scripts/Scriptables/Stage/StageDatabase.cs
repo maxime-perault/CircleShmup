@@ -7,7 +7,7 @@ using System.Collections.Generic;
  * @class StageDatabase
  */
 [CreateAssetMenu(fileName = "StageDatabase", menuName = "Shmup/Stage Database")]
-public class MonsterDatabase : ScriptableObject
+public class StageDatabase : ScriptableObject
 {
     public List<Stage> stages = new List<Stage>();
 }

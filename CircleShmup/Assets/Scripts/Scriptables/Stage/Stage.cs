@@ -12,7 +12,6 @@ public class Stage
     [SerializeField] public uint   StageID;
     [SerializeField] public string StageName;
     [SerializeField] public string StageDescription;
-    [SerializeField] public float  StageDuration;
     [SerializeField] public float  StageTimeout;
 
     [SerializeField] public List<Wave> StageWaves = new List<Wave>();
@@ -25,7 +24,6 @@ public class Stage
         StageID          = 0;
         StageName        = "Unknown";
         StageDescription = "Unknown";
-        StageDuration    = 0.0f;
         StageTimeout     = 0.0f;
 
         StageWaves.Clear();
@@ -39,7 +37,6 @@ public class Stage
         StageID          = other.StageID;
         StageName        = other.StageName;
         StageDescription = other.StageDescription;
-        StageDuration    = other.StageDuration;
         StageTimeout     = other.StageTimeout;
         StageWaves       = other.StageWaves;
     }
@@ -47,12 +44,11 @@ public class Stage
     /**
      * Constructs a stage from parameters list 
      */
-    public Stage(uint id, string name, string description, float duration, float timeout, List<Wave> waves)
+    public Stage(uint id, string name, string description, float timeout, List<Wave> waves)
     {
         StageID          = id;
         StageName        = name;
         StageDescription = description;
-        StageDuration    = duration;
         StageTimeout     = timeout;
         StageWaves       = waves;
     }
