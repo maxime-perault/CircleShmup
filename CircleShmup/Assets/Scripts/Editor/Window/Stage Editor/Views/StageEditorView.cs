@@ -10,6 +10,7 @@ using System.Collections.Generic;
 public class StageEditorView : EditorWindow
 {
     static private StageEditorPreviewView previewView = new StageEditorPreviewView();
+    static private StageEditorEditionView editionView = new StageEditorEditionView();
 
     /**
      * Initializes the editor window. Loads the monster database asset.
@@ -30,6 +31,7 @@ public class StageEditorView : EditorWindow
     void OnGUI()
     {
         previewView.OnGUI();
+        editionView.OnGUI();
     }
 
 }

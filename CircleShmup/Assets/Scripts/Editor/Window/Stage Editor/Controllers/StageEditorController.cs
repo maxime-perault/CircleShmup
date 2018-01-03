@@ -24,4 +24,45 @@ public class StageEditorController
             StageEditorView.Init();
         }
     }
+
+    /**
+     * Removes a stage from the database. Rebuilds index.
+     * @param stage The stage to remove
+     */
+    public static void RemoveStage(Stage stage)
+    {
+        List<Stage> stages = StageEditorModel.databaseInstance.stages;
+
+        if (stages.Contains(stage))
+        {
+            stages.Remove(stage);
+        }
+    }
+
+    /**
+     * Removes all entries from the database
+     */
+    public static void RemoveAllStages()
+    {
+        List<Stage> stages = StageEditorModel.databaseInstance.stages;
+        stages.Clear();
+    }
+    
+    /**
+     * Toogles the creation menu
+     */
+    public static void CreateStage()
+    {
+        // TODO
+    }
+
+    /**
+     * Adds a new stage in the database
+     * @param stage The stage to add in the database
+     */
+    public static void AddEntry(Stage stage)
+    {
+        List<Stage> stages = StageEditorModel.databaseInstance.stages;
+        stages.Add(stage);
+    }
 }

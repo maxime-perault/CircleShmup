@@ -22,8 +22,13 @@ MonoBehaviour:
     StageDescription: This is a stage
     StageTimeout: 2
     StageWaves: []
-  - StageID: 3
+  - StageID: 2
     StageName: Stage 2
+    StageDescription: This is a stage
+    StageTimeout: 2
+    StageWaves: []
+  - StageID: 3
+    StageName: Stage 3
     StageDescription: This is a stage
     StageTimeout: 2
     StageWaves: []
