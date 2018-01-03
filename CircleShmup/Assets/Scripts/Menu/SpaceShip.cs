@@ -23,7 +23,7 @@ public class SpaceShip : MonoBehaviour
 	
 	void Update ()
     {
-        translation = Input.GetAxis("Vertical");
+        translation = Input.GetAxisRaw("Vertical");
 
         /*
         ** SpaceShip shots
@@ -37,7 +37,7 @@ public class SpaceShip : MonoBehaviour
         /*
         ** Wait until the stick return before moving again
         */
-        if ((translation == 0) && (isMoving == true))
+        if ((isMoving == true) && (translation == 0))
             isMoving = false;
 
         /*
