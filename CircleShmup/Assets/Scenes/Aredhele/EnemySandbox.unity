@@ -154,9 +154,9 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10f549792aea82946999a030576f4561, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1217252419 stripped
+--- !u!4 &1217252424 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4005880616577634, guid: 10f549792aea82946999a030576f4561,
+  m_PrefabParentObject: {fileID: 4943375303757576, guid: 10f549792aea82946999a030576f4561,
     type: 2}
   m_PrefabInternal: {fileID: 1217252418}
 --- !u!1 &1808988524
@@ -315,7 +315,7 @@ MonoBehaviour:
   hitPoint: 5
   seekBehavior:
     instance: {fileID: 2129465836}
-    target: {fileID: 1217252419}
+    target: {fileID: 1217252424}
     delay: 0
     axis: {x: 4, y: 4}
     alpha: 0

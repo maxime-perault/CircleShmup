@@ -9,7 +9,7 @@ using System.Collections.Generic;
 public class Behavior
 {
     /**
-     * TODO
+     * The instance of the object to apply the behavior on
      */
     [SerializeField] public GameObject instance;
 }
