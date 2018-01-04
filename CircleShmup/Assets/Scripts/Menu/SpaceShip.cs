@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpaceShip : MonoBehaviour
 {
@@ -12,15 +13,28 @@ public class SpaceShip : MonoBehaviour
 
 
     public int nb_buttons = 4;
-    public GameObject SelectionObject;
+    public GameObject SelectionScript;
+    public GameObject[] buttons;
 
     void Start ()
     {
         pos.x = GetComponent<RectTransform>().localPosition.x;
         pos.y = GetComponent<RectTransform>().localPosition.y;
-        MenuClass = SelectionObject.GetComponent<SelectMenu>();
+        MenuClass = SelectionScript.GetComponent<SelectMenu>();
     }
 	
+    void ChangeButton(int y)
+    {
+        buttons[actual_button].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        buttons[actual_button].GetComponentInChildren<Text>().color = new Color32(0 ,0, 0, 255);
+        actual_button += -y;
+        pos.y += (y * 100);
+        GetComponent<RectTransform>().localPosition = new Vector3(pos.x, pos.y, 0);
+        isMoving = true;
+        buttons[actual_button].GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        buttons[actual_button].GetComponentInChildren<Text>().color = new Color32(255, 255, 255, 255);
+    }
+
 	void Update ()
     {
         translation = Input.GetAxisRaw("Vertical");
@@ -47,17 +61,12 @@ public class SpaceShip : MonoBehaviour
         {
             if ((translation < 0) && (actual_button < (nb_buttons - 1)))
             {
-                ++actual_button;
-                pos.y -= 100;
-                GetComponent<RectTransform>().localPosition = new Vector3(pos.x, pos.y, 0);
-                isMoving = true;
+                ChangeButton(-1);
+                
             }
             else if ((translation > 0) && (actual_button > 0))
             {
-                --actual_button;
-                pos.y += 100;
-                GetComponent<RectTransform>().localPosition = new Vector3(pos.x, pos.y, 0);
-                isMoving = true;
+                ChangeButton(1);
             }
         }
     }
