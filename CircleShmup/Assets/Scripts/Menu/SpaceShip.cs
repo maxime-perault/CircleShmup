@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class SpaceShip : MonoBehaviour
 {
+    public GameObject   SelectionScript;
+    public GameObject[] buttons;
+    public GameObject   ProjectilePrefab;
+    public int          nb_buttons = 5;
+
     private float       translation = 0;
     private Vector2     pos;
     private int         actual_button = 0;
@@ -12,18 +17,14 @@ public class SpaceShip : MonoBehaviour
     private bool        isFiring = false;
     private SelectMenu  MenuClass;
     private GameObject  bullet;
-
-    public int          nb_buttons = 4;
-    public float        Velocity = 300;
-    public GameObject   SelectionScript;
-    public GameObject[] buttons;
-    public GameObject   ProjectilePrefab;
+    private float       Velocity;
 
     void Start ()
     {
         pos.x = GetComponent<RectTransform>().localPosition.x;
         pos.y = GetComponent<RectTransform>().localPosition.y;
         MenuClass = SelectionScript.GetComponent<SelectMenu>();
+        Velocity = Screen.width / 4 * 10;
     }
 	
     void ChangeButton(int y)
@@ -31,7 +32,7 @@ public class SpaceShip : MonoBehaviour
         buttons[actual_button].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         buttons[actual_button].GetComponentInChildren<Text>().color = new Color32(0 ,0, 0, 255);
         actual_button += -y;
-        pos.y += (y * 100);
+        pos.y = buttons[actual_button].transform.localPosition.y;
         GetComponent<RectTransform>().localPosition = new Vector3(pos.x, pos.y, 0);
         isMoving = true;
         buttons[actual_button].GetComponent<Image>().color = new Color32(0, 0, 0, 255);
@@ -58,7 +59,7 @@ public class SpaceShip : MonoBehaviour
         if (isFiring && bullet != null)
         {
             bullet.transform.Translate(new Vector3(0, 1) * Time.deltaTime * Velocity);
-            if (bullet.transform.localPosition.y > 580)
+            if (bullet.transform.localPosition.y > (Screen.width - 650))
             {
                 DestroyObject(bullet);
                 isFiring = false;
