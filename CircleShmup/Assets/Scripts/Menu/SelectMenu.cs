@@ -6,6 +6,15 @@ using System;
 
 public class SelectMenu : MonoBehaviour
 {
+    enum e_button
+    {
+        NEWGAME = 0,
+        HIGHSCORE,
+        OPTIONS,
+        CREDITS,
+        QUITGAME
+    };
+
     void Start ()
     {
     }
@@ -15,9 +24,14 @@ public class SelectMenu : MonoBehaviour
 
     }
 
-    public void NewGame()
+    public void Select(int tmp_button)
     {
-        StartCoroutine(LoadYourAsyncScene("MainGame"));
+        e_button button = (e_button)tmp_button;
+
+        if (button == e_button.NEWGAME)
+            StartCoroutine(LoadYourAsyncScene("MainGame"));
+        if (button == e_button.QUITGAME)
+            Application.Quit();
     }
 
     /*

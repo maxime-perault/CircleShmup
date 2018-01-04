@@ -59,10 +59,12 @@ public class SpaceShip : MonoBehaviour
         if (isFiring && bullet != null)
         {
             bullet.transform.Translate(new Vector3(0, 1) * Time.deltaTime * Velocity);
+            Debug.Log(buttons[actual_button].transform.GetComponent<RectTransform>().rect.width);
             if (bullet.transform.localPosition.y >
-                (Screen.width - (550 + buttons[actual_button].transform.GetComponent<RectTransform>().rect.width / 2)))
+                (Screen.width - (450 + buttons[actual_button].transform.GetComponent<RectTransform>().rect.width / 2)))
             {
                 DestroyObject(bullet);
+                MenuClass.Select(actual_button);
                 isFiring = false;
             }
         }
