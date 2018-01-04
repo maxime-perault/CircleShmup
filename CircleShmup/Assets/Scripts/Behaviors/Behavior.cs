@@ -6,10 +6,10 @@ using System.Collections.Generic;
  * Base behavior class
  * @class Behavior
  */
-public class Behavior
+public class Behavior : MonoBehaviour
 {
     /**
      * The instance of the object to apply the behavior on
      */
-    [SerializeField] public GameObject instance;
+    public GameObject instance;
 }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -41,5 +42,13 @@ public class StageDatabase : ScriptableObject
         }
 
         return duration;
+    }
+
+    /**
+     * Avoid object reset when the scene change or after play/stop
+     */ 
+    private void OnDisable()
+    {
+        EditorUtility.SetDirty(this);
     }
 }

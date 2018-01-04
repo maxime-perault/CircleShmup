@@ -1,6 +1,6 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 /**
  * Base class for all seek behaviorss
@@ -8,5 +8,5 @@ using UnityEngine;
  */
 public class Seek : Behavior
 {
-    [SerializeField] public Transform target;
+    public Transform target;
 }

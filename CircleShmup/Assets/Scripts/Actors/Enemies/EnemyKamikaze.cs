@@ -8,14 +8,14 @@ using System.Collections.Generic;
  */
 public class EnemyKamikaze : Enemy
 {
-    public SeekElliptic seekBehavior = new SeekElliptic();
+    //public SeekElliptic seekBehavior = new SeekElliptic();
 
     /**
      * TODO
      */
     public void Start()
     {
-        seekBehavior.Init();
+        //seekBehavior.Init();
     }
 
     /**
@@ -23,7 +23,17 @@ public class EnemyKamikaze : Enemy
      */
     public void Update()
     {
-        seekBehavior.Update(Time.deltaTime);
+        //seekBehavior.Update(Time.deltaTime);
+    }
+
+    private void FixedUpdate()
+    {
+        //seekBehavior.Update(Time.deltaTime);
+    }
+
+    private void LateUpdate()
+    {
+        //seekBehavior.Update(Time.deltaTime);
     }
 
     /**
