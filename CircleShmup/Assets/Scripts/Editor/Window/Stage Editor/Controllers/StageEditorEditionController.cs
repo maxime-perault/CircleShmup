@@ -10,7 +10,8 @@ using System.Collections.Generic;
 public class StageEditorEditionController
 {
     /**
-     * TODO
+     * Adds a new wave into the wave list
+     * @param waves The list of waves
      */
     public static void AddWave(List<Wave> waves)
     {
@@ -18,7 +19,9 @@ public class StageEditorEditionController
     }
 
     /**
-     * TODO
+     * Removes a wave from the waves list
+     * @param waves The list of waves
+     * @param wave The wave to remove
      */
     public static void RemoveWave(List<Wave> waves, Wave wave)
     {
@@ -29,7 +32,8 @@ public class StageEditorEditionController
     }
 
     /**
-     * TODO
+     * Removes all entry in the waves list
+     * @param waves The list of waves to clear
      */
     public static void RemoveAll(List<Wave> waves)
     {

@@ -19,6 +19,7 @@ public class StageEditorEditionView
     private Stage        SourceStage;
     private Stage        CurrentStage;
     private Vector2      scrollBarPosition;
+
     /**
      * Constructor. Sets the state to Creation
      */
@@ -28,7 +29,7 @@ public class StageEditorEditionView
     }
 
     /**
-     * TODO
+     * Puts the editor in creation mode
      */
     public void ToogleCreation()
     {
@@ -39,7 +40,7 @@ public class StageEditorEditionView
     }
 
     /**
-     * TODO
+     * Puts the editor in edition mode
      */
     public void ToogleEdition(Stage source)
     {
@@ -54,7 +55,7 @@ public class StageEditorEditionView
      */
     public void OnGUI()
     {
-        // Display monster properties
+        // Displays stage properties
         EditorGUILayout.BeginHorizontal();
         GUILayout.BeginArea(new Rect(420, 10, 560, 220));
         GUILayout.Label("Edition", EditorStyles.boldLabel);
@@ -64,10 +65,10 @@ public class StageEditorEditionView
         GUILayout.Space(5);
 
         // Displays basic stage informations
-        CurrentStage.StageID          = (uint)EditorGUILayout.IntField  ("Stage ID",     (int)CurrentStage.StageID, GUILayout.Width(530));
-        CurrentStage.StageName        =       EditorGUILayout.TextField ("Stage name",        CurrentStage.StageName, GUILayout.Width(530));
+        CurrentStage.StageID          = (uint)EditorGUILayout.IntField  ("Stage ID",     (int)CurrentStage.StageID,          GUILayout.Width(530));
+        CurrentStage.StageName        =       EditorGUILayout.TextField ("Stage name",        CurrentStage.StageName,        GUILayout.Width(530));
         CurrentStage.StageDescription =       EditorGUILayout.TextField ("Stage description", CurrentStage.StageDescription, GUILayout.Width(530));
-        CurrentStage.StageTimeout     =       EditorGUILayout.FloatField("Stage timeout",     CurrentStage.StageTimeout, GUILayout.Width(530));
+        CurrentStage.StageTimeout     =       EditorGUILayout.FloatField("Stage timeout",     CurrentStage.StageTimeout,     GUILayout.Width(530));
 
         GUILayout.Space(10);
         EditorGUILayout.LabelField("Waves");
@@ -75,7 +76,6 @@ public class StageEditorEditionView
 
         // Display stage waves informations
         List<Wave> waves = CurrentStage.StageWaves;
-
         EditorGUILayout.LabelField("Waves count", waves.Count.ToString(), GUILayout.Width(210));
 
         GUILayout.Space(20);
@@ -95,7 +95,6 @@ public class StageEditorEditionView
         int waveCount = waves.Count;
         for(int nWave = 0; nWave < waveCount; ++nWave)
         {
-            bool removed = false;
             EditorGUILayout.BeginHorizontal();
             GUILayout.Space(400);
             if (GUILayout.Button("Remove", GUILayout.Width(140)))
@@ -105,29 +104,22 @@ public class StageEditorEditionView
             }
             EditorGUILayout.EndHorizontal();
 
-            if(!removed)
-            {
-                waves[nWave].WaveID = (uint)EditorGUILayout.IntField("Wave ID", (int)waves[nWave].WaveID);
-                waves[nWave].WaveName = EditorGUILayout.TextField("Wave name", waves[nWave].WaveName);
-                waves[nWave].WaveEnemy = EditorGUILayout.ObjectField("Wave enemy", waves[nWave].WaveEnemy, typeof(GameObject), true) as GameObject;
-                waves[nWave].WaveTiming = EditorGUILayout.FloatField("Wave timing", waves[nWave].WaveTiming);
-                waves[nWave].WaveDuration = EditorGUILayout.FloatField("Wave duration", waves[nWave].WaveDuration);
-            }
+            waves[nWave].WaveID       = (uint)EditorGUILayout.IntField   ("Wave ID",  (int)waves[nWave].WaveID);
+            waves[nWave].WaveName     =       EditorGUILayout.TextField  ("Wave name",     waves[nWave].WaveName);
+            waves[nWave].WaveEnemy    =       EditorGUILayout.ObjectField("Wave enemy",    waves[nWave].WaveEnemy, typeof(GameObject), true) as GameObject;
+            waves[nWave].WaveTiming   =       EditorGUILayout.FloatField ("Wave timing",   waves[nWave].WaveTiming);
+            waves[nWave].WaveDuration =       EditorGUILayout.FloatField ("Wave duration", waves[nWave].WaveDuration);
 
             GUILayout.Space(20);
             GUILayout.Box("", GUILayout.Width(535), GUILayout.Height(1));
             GUILayout.Space(20);
         }
 
-
-
         EditorGUILayout.EndScrollView();
         GUILayout.EndArea();
         EditorGUILayout.EndHorizontal();
 
         GUILayout.BeginArea(new Rect(420, 570, 560, 50));
-
-        // From submission
         if (State == EditionState.Creation)
         {
             if (GUILayout.Button("Create"))
@@ -144,7 +136,6 @@ public class StageEditorEditionView
                 ToogleCreation();
             }
         }
-
         GUILayout.EndArea();
 
     }

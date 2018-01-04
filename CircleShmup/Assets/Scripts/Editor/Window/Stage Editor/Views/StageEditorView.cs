@@ -30,8 +30,12 @@ public class StageEditorView : EditorWindow
      */
     void OnGUI()
     {
+        if(StageEditorController.LoadDatabase())
+        {
+            this.ShowNotification(new GUIContent("Database reloaded"));
+        }
+ 
         previewView.OnGUI();
         editionView.OnGUI();
     }
-
 }

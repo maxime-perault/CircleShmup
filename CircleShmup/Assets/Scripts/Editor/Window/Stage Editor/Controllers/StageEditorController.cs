@@ -17,8 +17,7 @@ public class StageEditorController
     [MenuItem("Shmup/Stage Editor")]
     static void Init()
     {
-        databaseLoaded = StageEditorModel.LoadStageDatabase();
-
+        LoadDatabase();
         if(databaseLoaded)
         {
             StageEditorView.Init();
@@ -88,5 +87,19 @@ public class StageEditorController
     {
         List<Stage> stages = StageEditorModel.databaseInstance.stages;
         stages.Add(stage);
+    }
+
+    /**
+     * Loads the database
+     */
+    public static bool LoadDatabase()
+    {
+        if(!StageEditorModel.databaseInstance)
+        {
+            databaseLoaded = StageEditorModel.LoadStageDatabase();
+            return true;
+        }
+
+        return false;
     }
 }
