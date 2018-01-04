@@ -11,26 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7cac20d12e24dd478ad2f3c89b41c4a, type: 3}
   m_Name: StageDatabase
   m_EditorClassIdentifier: 
-  stages:
-  - StageID: 0
-    StageName: Unknown
-    StageDescription: Unknown
-    StageTimeout: 5
-    StageWaves:
-    - WaveID: 0
-      WaveName: Unknown
-      WaveEnemy: {fileID: 0}
-      WaveEnemyCount: 0
-      WaveTiming: 0
-      WaveDuration: 0
-    - WaveID: 0
-      WaveName: Unknown
-      WaveEnemy: {fileID: 0}
-      WaveEnemyCount: 0
-      WaveTiming: 0
-      WaveDuration: 0
-  - StageID: 1
-    StageName: C
-    StageDescription: B
-    StageTimeout: 5
-    StageWaves: []
+  stages: []

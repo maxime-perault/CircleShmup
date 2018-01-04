@@ -52,4 +52,34 @@ public class Stage
         StageTimeout     = timeout;
         StageWaves       = waves;
     }
+
+    /**
+     * Returns the total duration of the stage
+     * @return The duration of the stage
+     */
+    public float GetStageDuration()
+    {
+        Wave lastet = GetLatestWave();
+        return lastet.WaveTiming + lastet.WaveDuration;
+    }
+
+    /**
+     * Returns the latest waves
+     * @return The latest chronological wave
+     */
+    public Wave GetLatestWave()
+    {
+        Wave latestWave = StageWaves[0];
+
+        int waveCount = StageWaves.Count;
+        for(int nWave = 0; nWave < waveCount; ++nWave)
+        {
+            if(StageWaves[nWave].WaveTiming > latestWave.WaveTiming)
+            {
+                latestWave = StageWaves[nWave];
+            }
+        }
+
+        return latestWave;
+    }
 }
