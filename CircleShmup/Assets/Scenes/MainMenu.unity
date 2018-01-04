@@ -376,6 +376,8 @@ MonoBehaviour:
   - {fileID: 1055108185}
   - {fileID: 685855054}
   - {fileID: 1306365328}
+  ProjectilePrefab: {fileID: 1815614387148390, guid: 4d62b5002c715794c8efcf5aee2a0f81,
+    type: 2}
 --- !u!1001 &657496523
 Prefab:
   m_ObjectHideFlags: 0

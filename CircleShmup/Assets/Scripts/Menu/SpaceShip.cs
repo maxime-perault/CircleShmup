@@ -5,16 +5,20 @@ using UnityEngine.UI;
 
 public class SpaceShip : MonoBehaviour
 {
-    private float translation = 0;
-    private Vector2 pos;
-    private int actual_button = 0;
-    private bool isMoving = false;
-    private SelectMenu MenuClass;
+    private float       translation = 0;
+    private Vector2     pos;
+    private int         actual_button = 0;
+    private bool        isMoving = false;
+    private bool        isFiring = false;
+    private SelectMenu  MenuClass;
+    private GameObject  bullet;
+    private float       Velocity = 3;
 
 
-    public int nb_buttons = 4;
-    public GameObject SelectionScript;
+    public int          nb_buttons = 4;
+    public GameObject   SelectionScript;
     public GameObject[] buttons;
+    public GameObject   ProjectilePrefab;
 
     void Start ()
     {
@@ -43,9 +47,24 @@ public class SpaceShip : MonoBehaviour
         ** SpaceShip shots
         */
         if ((Input.GetKey(KeyCode.Space) || Input.GetKey("joystick button 0"))
-            && (actual_button == 0))
+            && !isFiring)
         {
-            MenuClass.NewGame();
+            isFiring = true;
+            bullet = (GameObject)Instantiate(
+                ProjectilePrefab,
+                new Vector3(transform.position.x - 100, transform.position.y),
+                Quaternion.identity);
+        } 
+        if (isFiring && bullet != null)
+        {
+            /*
+            bullet.transform.Translate(new Vector3(1, 0) * Time.deltaTime * Velocity);
+
+            Vector3 bulletScreenPos = Camera.main.WorldToScreenPoint(bullet.transform.position);*/
+            /*
+            if (bulletScreenPos.x <= 0 || bulletScreenPos.x >= Screen.width ||
+                bulletScreenPos.y <= 0 || bulletScreenPos.y >= Screen.height)
+                DestroyObject(bullet);*/
         }
 
         /*
