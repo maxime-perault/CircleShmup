@@ -370,13 +370,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nb_buttons: 4
+  Velocity: 2000
   SelectionScript: {fileID: 1077307244}
   buttons:
   - {fileID: 508611683}
   - {fileID: 1055108185}
   - {fileID: 685855054}
   - {fileID: 1306365328}
-  ProjectilePrefab: {fileID: 1815614387148390, guid: 4d62b5002c715794c8efcf5aee2a0f81,
+  ProjectilePrefab: {fileID: 1055439013127376, guid: be5c1f3dace28fb4bbdb2addf83ed969,
     type: 2}
 --- !u!1001 &657496523
 Prefab:
@@ -571,7 +572,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 929659534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 571, y: 253, z: 0}
+  m_LocalPosition: {x: 618.5, y: 265, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1306365329}

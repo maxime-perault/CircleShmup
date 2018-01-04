@@ -12,10 +12,9 @@ public class SpaceShip : MonoBehaviour
     private bool        isFiring = false;
     private SelectMenu  MenuClass;
     private GameObject  bullet;
-    private float       Velocity = 3;
-
 
     public int          nb_buttons = 4;
+    public float        Velocity = 300;
     public GameObject   SelectionScript;
     public GameObject[] buttons;
     public GameObject   ProjectilePrefab;
@@ -52,19 +51,18 @@ public class SpaceShip : MonoBehaviour
             isFiring = true;
             bullet = (GameObject)Instantiate(
                 ProjectilePrefab,
-                new Vector3(transform.position.x - 100, transform.position.y),
-                Quaternion.identity);
+                transform);
+            //The spaceship is rotated by 90° on Z
+            bullet.transform.localPosition = new Vector3(0, 30, 0);
         } 
         if (isFiring && bullet != null)
         {
-            /*
-            bullet.transform.Translate(new Vector3(1, 0) * Time.deltaTime * Velocity);
-
-            Vector3 bulletScreenPos = Camera.main.WorldToScreenPoint(bullet.transform.position);*/
-            /*
-            if (bulletScreenPos.x <= 0 || bulletScreenPos.x >= Screen.width ||
-                bulletScreenPos.y <= 0 || bulletScreenPos.y >= Screen.height)
-                DestroyObject(bullet);*/
+            bullet.transform.Translate(new Vector3(0, 1) * Time.deltaTime * Velocity);
+            if (bullet.transform.localPosition.y > 580)
+            {
+                DestroyObject(bullet);
+                isFiring = false;
+            }
         }
 
         /*
