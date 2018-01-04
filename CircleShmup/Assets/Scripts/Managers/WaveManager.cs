@@ -79,7 +79,7 @@ public class WaveManager
             return;
         }
 
-        GameObject oiginalHandle = Resources.Load("Prefabs/WaveHandle") as GameObject;
+        GameObject oiginalHandle = Resources.Load("Prefabs/Actors/WaveHandle") as GameObject;
 
         // Creating handles
         Debug.Log("Wave Manager : ");

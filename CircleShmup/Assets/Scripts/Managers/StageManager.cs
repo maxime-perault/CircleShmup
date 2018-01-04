@@ -152,6 +152,9 @@ public class StageManager : MonoBehaviour
         // Going to the next state
         stageState = StageState.StageRunning;
 
+        // Displays message to user
+        MessageManager.Message(currentStage.StageName, 3);
+
         Debug.Log("Stage Manger : New Stage loaded");
     }
 
@@ -176,6 +179,8 @@ public class StageManager : MonoBehaviour
         // Going to the next state
         stageState = StageState.StageTimeout;
         StartCoroutine(StageTimeOut(currentStage.StageTimeout));
+
+        MessageManager.Message("Stage clear", 3);
 
         Debug.Log("Stage Manger : Stage ended");
     }
