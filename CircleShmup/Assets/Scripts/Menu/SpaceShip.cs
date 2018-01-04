@@ -59,7 +59,8 @@ public class SpaceShip : MonoBehaviour
         if (isFiring && bullet != null)
         {
             bullet.transform.Translate(new Vector3(0, 1) * Time.deltaTime * Velocity);
-            if (bullet.transform.localPosition.y > (Screen.width - 650))
+            if (bullet.transform.localPosition.y >
+                (Screen.width - (550 + buttons[actual_button].transform.GetComponent<RectTransform>().rect.width / 2)))
             {
                 DestroyObject(bullet);
                 isFiring = false;
