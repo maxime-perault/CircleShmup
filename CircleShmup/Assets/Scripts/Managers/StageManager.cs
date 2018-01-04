@@ -32,9 +32,10 @@ public class StageManager : MonoBehaviour
     ManagerState managerState = ManagerState.GameNone;
     StageState   stageState   = StageState.StageNone;
 
-    // TOOD
-    private Stage currentStage;
-    private int   currentStageIndex;
+    // Attributes
+    private WaveManager waveManager       = null;
+    private Stage       currentStage      = null;
+    private int         currentStageIndex = 0;
 
     // Coroutines
 
@@ -67,6 +68,12 @@ public class StageManager : MonoBehaviour
         if (database.stages.Count == 0)
         {
             Debug.LogError("No stage found, aborting...");
+        }
+
+        // Instanciating the wave manager
+        if(waveManager == null)
+        {
+            waveManager = new WaveManager();
         }
 
         managerState = ManagerState.GameBegin;
@@ -124,7 +131,7 @@ public class StageManager : MonoBehaviour
      */
     private void OnGamePaused()
     {
-        // TODO
+        // None
     }
 
     /**
@@ -132,7 +139,7 @@ public class StageManager : MonoBehaviour
      */
     private void OnGameEnd()
     {
-        // TODO
+        // None
     }
 
     /**
@@ -140,7 +147,12 @@ public class StageManager : MonoBehaviour
      */
     private void OnStageBegin()
     {
-        // TODO waves ?
+        waveManager.Init(currentStage, transform);
+
+        // Going to the next state
+        stageState = StageState.StageRunning;
+
+        Debug.Log("Stage Manger : New Stage loaded");
     }
 
     /**
@@ -148,7 +160,12 @@ public class StageManager : MonoBehaviour
      */
     private void OnStageRunning()
     {
-        // TODO
+        waveManager.Update(Time.deltaTime);
+        if(waveManager.GetManagerState() == WaveManager.ManagerState.ManagerDone)
+        {
+            // Going to the next state
+            stageState = StageState.StageEnd;
+        }
     }
 
     /**
@@ -156,7 +173,11 @@ public class StageManager : MonoBehaviour
      */
     private void OnStageEnd()
     {
-        // TODO
+        // Going to the next state
+        stageState = StageState.StageTimeout;
+        StartCoroutine(StageTimeOut(currentStage.StageTimeout));
+
+        Debug.Log("Stage Manger : Stage ended");
     }
 
     /**
@@ -164,6 +185,28 @@ public class StageManager : MonoBehaviour
      */
     private void OnStageTimeout()
     {
-        // TODO
+        // None
+    }
+
+    /**
+     * Wais the timeout and sets up the next state
+     */
+    private IEnumerator StageTimeOut(float timeout)
+    {
+        yield return new WaitForSeconds(timeout);
+
+        // Getting next state
+        currentStageIndex++;
+        if (currentStageIndex >= database.stages.Count)
+        {
+            // No more stage
+            stageState   = StageState.StageNone;
+            managerState = ManagerState.GameEnd;
+        }
+        else
+        {
+            stageState   = StageState.StageBegin;
+            currentStage = database.stages[currentStageIndex];
+        }
     }
 }
