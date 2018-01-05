@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4541339510937270}
   - component: {fileID: 114560485000152674}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spheres
   m_TagString: Spheres
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4919668432686304}
   - component: {fileID: 212845434835859922}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4842455272289522}
   - component: {fileID: 114689799097347438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Delayed 0.2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 60110341316814916}
   - component: {fileID: 114803391825515716}
   - component: {fileID: 114733961502871980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4943375303757576}
   - component: {fileID: 114784999812978634}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Delayed 0.5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4707522700200590}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Positions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ Transform:
   m_GameObject: {fileID: 1548042418451118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4919668432686304}
   - {fileID: 4541339510937270}
@@ -174,7 +174,7 @@ Transform:
   m_GameObject: {fileID: 1262835923298406}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4005880616577634}
   m_RootOrder: 0
@@ -236,11 +236,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
+    - - {x: -0.24971655, y: 0.19535756}
+      - {x: -0.26967418, y: 0.018304296}
+      - {x: -0.17610641, y: -0.18972647}
+      - {x: -0.15071929, y: -0.31304607}
+      - {x: 0.13669068, y: -0.27798766}
+      - {x: 0.2729606, y: -0.2059192}
+      - {x: 0.11658174, y: 0.2635004}
 --- !u!114 &114560485000152674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,9 +261,9 @@ MonoBehaviour:
   speedPenalty: 20
   reverseDelay: 0.5
   sphereDelay: 0.5
-  radius: 5
-  minRadius: 5
-  maxRadius: 10
+  radius: 1
+  minRadius: 1
+  maxRadius: 3
   radiusGrowSpeed: 2.5
   radiusCrunchSpeed: 5
   rotationSpeed: 120
@@ -296,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   hitPoint: 5
+  damageOnCollision: 0
   slide: 0
   speed: {x: 50, y: 50}
   sphereController: {fileID: 114560485000152674}
@@ -364,10 +367,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1977585975
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 30a8ad403bfb7fc44904dc6ae3c40df5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9d9c287c08d3bf499235d016195f2ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
