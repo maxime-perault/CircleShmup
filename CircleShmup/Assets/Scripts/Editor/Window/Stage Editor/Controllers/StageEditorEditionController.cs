@@ -39,4 +39,20 @@ public class StageEditorEditionController
     {
         waves.Clear();
     }
+
+    /**
+     * Toogles the spawner creation window
+     */
+    public static void CreateSpawner()
+    {
+        StageEditorSpawnerEditionView.Init(null);
+    }
+
+    /**
+     * Toogles the spawner edition window
+     */
+    public static void EditSpawner()
+    {
+        StageEditorSpawnerController.OpenSelectionWindow();
+    }
 }

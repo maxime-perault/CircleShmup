@@ -57,7 +57,7 @@ public class StageEditorEditionView
     {
         // Displays stage properties
         EditorGUILayout.BeginHorizontal();
-        GUILayout.BeginArea(new Rect(420, 10, 560, 220));
+        GUILayout.BeginArea(new Rect(420, 10, 560, 250));
         GUILayout.Label("Edition", EditorStyles.boldLabel);
 
         GUILayout.Space(10);
@@ -79,16 +79,22 @@ public class StageEditorEditionView
         EditorGUILayout.LabelField("Waves count", waves.Count.ToString(), GUILayout.Width(210));
 
         GUILayout.Space(20);
+        EditorGUILayout.BeginVertical();
         EditorGUILayout.BeginHorizontal();
         if (GUILayout.Button("Add Wave",   GUILayout.Width(270))) { StageEditorEditionController.AddWave(waves);   }
         if (GUILayout.Button("Remove all", GUILayout.Width(270))) { StageEditorEditionController.RemoveAll(waves); }
         EditorGUILayout.EndHorizontal();
+        EditorGUILayout.BeginHorizontal();
+        if (GUILayout.Button("Create Spawner", GUILayout.Width(270))) { StageEditorEditionController.CreateSpawner(); }
+        if (GUILayout.Button("Edit Spawner", GUILayout.Width(270)))   { StageEditorEditionController.EditSpawner();   }
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.EndVertical();
 
         GUILayout.EndArea();
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
-        GUILayout.BeginArea(new Rect(420, 240, 560, 320));
+        GUILayout.BeginArea(new Rect(420, 260, 560, 300));
 
         scrollBarPosition = GUILayout.BeginScrollView(scrollBarPosition, false, true, GUIStyle.none, GUI.skin.verticalScrollbar);
 

@@ -27,13 +27,7 @@ MonoBehaviour:
     StageName: Stage 0
     StageDescription: Unknown
     StageTimeout: 0
-    StageWaves:
-    - WaveID: 1
-      WaveName: Unknown
-      WaveEnemy: {fileID: 0}
-      WaveEnemyCount: 0
-      WaveTiming: 0
-      WaveDuration: 5
+    StageWaves: []
   - StageID: 0
     StageName: Unknown
     StageDescription: Unknown

@@ -65,3 +65,6 @@ TagManager:
   - name: EnnemyBullet
     uniqueID: 2268629045
     locked: 0
+  - name: UI
+    uniqueID: 2702157395
+    locked: 0
