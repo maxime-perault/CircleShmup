@@ -18,6 +18,7 @@ public class SpaceShip : MonoBehaviour
     private SelectMenu  MenuClass;
     private GameObject  bullet;
     private float       Velocity;
+    private float       bulletSpawn;
 
     void Start ()
     {
@@ -31,7 +32,7 @@ public class SpaceShip : MonoBehaviour
     {
         buttons[actual_button].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         buttons[actual_button].GetComponentInChildren<Text>().color = new Color32(0 ,0, 0, 255);
-        actual_button += -y;
+        actual_button -= y;
         pos.y = buttons[actual_button].transform.localPosition.y;
         GetComponent<RectTransform>().localPosition = new Vector3(pos.x, pos.y, 0);
         isMoving = true;
@@ -54,14 +55,16 @@ public class SpaceShip : MonoBehaviour
                 ProjectilePrefab,
                 transform);
             //The spaceship is rotated by 90° on Z
-            bullet.transform.localPosition = new Vector3(0, 30, 0);
+            bulletSpawn = transform.GetComponent<RectTransform>().rect.width / 2;
+            bullet.transform.localPosition = new Vector3(0, bulletSpawn, 0);
         } 
         if (isFiring && bullet != null)
         {
             bullet.transform.Translate(new Vector3(0, 1) * Time.deltaTime * Velocity);
             Debug.Log(buttons[actual_button].transform.GetComponent<RectTransform>().rect.width);
             if (bullet.transform.localPosition.y >
-                (Screen.width - (450 + buttons[actual_button].transform.GetComponent<RectTransform>().rect.width / 2)))
+                (Screen.width + bulletSpawn
+                - 450 - buttons[actual_button].transform.GetComponent<RectTransform>().rect.width / 2))
             {
                 DestroyObject(bullet);
                 MenuClass.Select(actual_button);
