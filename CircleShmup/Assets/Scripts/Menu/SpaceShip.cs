@@ -36,7 +36,7 @@ public class SpaceShip : MonoBehaviour
         ShootingRange = Screen.width - 
             (buttons[actual_button].transform.GetComponent<RectTransform>().anchoredPosition.x +
             buttons[actual_button].transform.GetComponent<RectTransform>().rect.width +
-            -transform.GetComponent<RectTransform>().anchoredPosition.x +
+            transform.GetComponent<RectTransform>().anchoredPosition.x +
             transform.GetComponent<RectTransform>().rect.width);
         ShootingRange /= CanvasMenu.scaleFactor;
     }
@@ -68,13 +68,13 @@ public class SpaceShip : MonoBehaviour
                 ProjectilePrefab,
                 transform);
             //The spaceship is rotated by 90° on Z
-            bullet.transform.localPosition = new Vector3(0, bulletSpawn, 0);
+            bullet.transform.localPosition = new Vector3(-bulletSpawn, 0, 0);
         } 
         if (isFiring && bullet != null)
         {
 
-            bullet.transform.Translate(new Vector3(0, 1) * Time.deltaTime * Velocity);
-            if (bullet.transform.localPosition.y > ShootingRange)
+            bullet.transform.Translate(new Vector3(-1, 0) * Time.deltaTime * Velocity);
+            if (bullet.transform.localPosition.x < -ShootingRange)
             {
                 DestroyObject(bullet);
                 MenuClass.Select(actual_button);
