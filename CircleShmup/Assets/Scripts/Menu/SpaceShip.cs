@@ -9,16 +9,22 @@ public class SpaceShip : MonoBehaviour
     public GameObject[] buttons;
     public GameObject   ProjectilePrefab;
     public int          nb_buttons = 5;
+    public Canvas       CanvasMenu;
 
     private float       translation = 0;
-    private Vector2     pos;
     private int         actual_button = 0;
-    private bool        isMoving = false;
-    private bool        isFiring = false;
     private SelectMenu  MenuClass;
+
+    //SpaceShip
+    private Vector2     pos;
+    private bool        isFiring = false;
+    private bool        isMoving = false;
+
+    //Shots
     private GameObject  bullet;
     private float       Velocity;
     private float       bulletSpawn;
+    private float       ShootingRange;
 
     void Start ()
     {
@@ -26,6 +32,13 @@ public class SpaceShip : MonoBehaviour
         pos.y = GetComponent<RectTransform>().localPosition.y;
         MenuClass = SelectionScript.GetComponent<SelectMenu>();
         Velocity = Screen.width / 4 * 10;
+        bulletSpawn = transform.GetComponent<RectTransform>().rect.width / 2;
+        ShootingRange = Screen.width - 
+            (buttons[actual_button].transform.GetComponent<RectTransform>().anchoredPosition.x +
+            buttons[actual_button].transform.GetComponent<RectTransform>().rect.width +
+            -transform.GetComponent<RectTransform>().anchoredPosition.x +
+            transform.GetComponent<RectTransform>().rect.width);
+        ShootingRange /= CanvasMenu.scaleFactor;
     }
 	
     void ChangeButton(int y)
@@ -55,16 +68,13 @@ public class SpaceShip : MonoBehaviour
                 ProjectilePrefab,
                 transform);
             //The spaceship is rotated by 90° on Z
-            bulletSpawn = transform.GetComponent<RectTransform>().rect.width / 2;
             bullet.transform.localPosition = new Vector3(0, bulletSpawn, 0);
         } 
         if (isFiring && bullet != null)
         {
+
             bullet.transform.Translate(new Vector3(0, 1) * Time.deltaTime * Velocity);
-            Debug.Log(buttons[actual_button].transform.GetComponent<RectTransform>().rect.width);
-            if (bullet.transform.localPosition.y >
-                (Screen.width + bulletSpawn
-                - 450 - buttons[actual_button].transform.GetComponent<RectTransform>().rect.width / 2))
+            if (bullet.transform.localPosition.y > ShootingRange)
             {
                 DestroyObject(bullet);
                 MenuClass.Select(actual_button);
