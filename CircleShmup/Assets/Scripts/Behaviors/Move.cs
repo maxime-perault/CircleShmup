@@ -6,7 +6,7 @@ using System.Collections.Generic;
  * Base class for all seek behaviorss
  * @class Seek
  */
-public class Seek : Behavior
+public class Move : Behavior
 {
-    public Transform target;
+    public Vector2 speed;
 }

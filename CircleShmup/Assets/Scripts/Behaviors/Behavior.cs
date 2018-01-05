@@ -11,5 +11,5 @@ public class Behavior : MonoBehaviour
     /**
      * The instance of the object to apply the behavior on
      */
-    public GameObject instance;
+    // public GameObject instance;
 }
