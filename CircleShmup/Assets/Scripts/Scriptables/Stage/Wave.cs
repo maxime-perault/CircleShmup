@@ -9,12 +9,11 @@ using System.Collections.Generic;
 [System.Serializable]
 public class Wave
 {
-    [SerializeField] public uint       WaveID;
-    [SerializeField] public string     WaveName;
-    [SerializeField] public GameObject WaveEnemy;
-    [SerializeField] public int        WaveEnemyCount;
-    [SerializeField] public float      WaveTiming;
-    [SerializeField] public float      WaveDuration;
+    [SerializeField] public uint        WaveID;
+    [SerializeField] public string      WaveName;
+    [SerializeField] public bool        WaveBlocking;
+    [SerializeField] public float       WaveTiming;
+    [SerializeField] public SpawnerData WaveSpawner;
 
     /**
      * Default constructor
@@ -23,10 +22,9 @@ public class Wave
     {
         WaveID         = 0;
         WaveName       = "Unknown";
-        WaveEnemy      = null;
-        WaveEnemyCount = 0;
+        WaveBlocking   = true;
         WaveTiming     = 0.0f;
-        WaveDuration   = 0.0f;
+        WaveSpawner    = null;
     }
 
     /**
@@ -36,22 +34,33 @@ public class Wave
     {
         WaveID         = other.WaveID;
         WaveName       = other.WaveName;
-        WaveEnemy      = other.WaveEnemy;
-        WaveEnemyCount = other.WaveEnemyCount;
+        WaveBlocking   = other.WaveBlocking;
         WaveTiming     = other.WaveTiming;
-        WaveDuration   = other.WaveDuration;
+        WaveSpawner    = other.WaveSpawner;
     }
 
     /**
      * Constructs a Wave from parameters list 
      */
-    public Wave(uint id, string name, GameObject enemy, int count, float timing, float duration)
+    public Wave(uint id, string name, bool blocking, float timing, SpawnerData spawner)
     {
         WaveID         = id;
         WaveName       = name;
-        WaveEnemy      = enemy;
-        WaveEnemyCount = count;
+        WaveBlocking   = blocking;
         WaveTiming     = timing;
-        WaveDuration   = duration;
+        WaveSpawner    = spawner;
+    }
+
+    /**
+     * Returns an estimation of the wave duration
+     */
+    public float GetWaveDuration()
+    {
+        if(WaveSpawner != null)
+        {
+            return WaveSpawner.GetLastTiming();
+        }
+
+        return 0.0f;
     }
 }

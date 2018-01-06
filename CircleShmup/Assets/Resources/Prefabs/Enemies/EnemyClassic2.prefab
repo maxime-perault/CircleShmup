@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4900728573678152}
   - component: {fileID: 212293702988193720}
   - component: {fileID: 50431098647488538}
-  - component: {fileID: 61769901050701072}
+  - component: {fileID: 60960253669721870}
   - component: {fileID: 114113656883848612}
   - component: {fileID: 114143666929514232}
   m_Layer: 9
@@ -64,8 +64,8 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &61769901050701072
-BoxCollider2D:
+--- !u!60 &60960253669721870
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -86,9 +86,26 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.33645344, y: -0.105790146}
+      - {x: 0.35, y: 0}
+      - {x: 0.38, y: 0.089999996}
+      - {x: 0.26519346, y: 0.28025803}
+      - {x: -0.02, y: 0.48}
+      - {x: -0.17999999, y: 0.48}
+      - {x: -0.29298353, y: 0.3325967}
+      - {x: -0.32272577, y: 0.25259674}
+      - {x: -0.24856424, y: 0.14233877}
+      - {x: -0.3755803, y: 0.04727429}
+      - {x: -0.41025782, y: -0.052338775}
+      - {x: -0.39545155, y: -0.20753224}
+      - {x: -0.39532232, y: -0.22025795}
+      - {x: -0.29038715, y: -0.34272572}
+      - {x: -0.17493582, y: -0.39077395}
+      - {x: -0.099999994, y: -0.48}
+      - {x: 0.07000017, y: -0.46025798}
+      - {x: 0.21272564, y: -0.37545148}
 --- !u!114 &114113656883848612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,8 +118,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  hitPoint: 1
+  hitPoint: 2
   damageOnCollision: 2
+  handle: {fileID: 0}
 --- !u!114 &114143666929514232
 MonoBehaviour:
   m_ObjectHideFlags: 1

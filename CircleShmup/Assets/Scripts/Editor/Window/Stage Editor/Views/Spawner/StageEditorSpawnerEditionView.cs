@@ -15,6 +15,7 @@ public class StageEditorSpawnerEditionView : EditorWindow
         Creation
     }
 
+    private int          spawnerCountBuffer;
     private Vector2      scrollBarPosition;
     private SpawnerData  spawnerData  = null;
     private EditionState editorState = EditionState.Creation;
@@ -35,6 +36,9 @@ public class StageEditorSpawnerEditionView : EditorWindow
         {
             window.spawnerData = data;
             window.editorState = EditionState.Edition;
+            window.spawnerCountBuffer = data.SpawnerInfo.Count;
+
+            window.spawnerData.SortSpawnerInfo();
         }
         else
         {
@@ -50,30 +54,21 @@ public class StageEditorSpawnerEditionView : EditorWindow
         GUILayout.BeginArea(new Rect(20, 20, 460, 80));
 
         spawnerData.SpawnerName       = EditorGUILayout.TextField  ("Spawner name",  spawnerData.SpawnerName);
-        spawnerData.SpawnerSpawnCount = EditorGUILayout.IntField   ("Enemy count",   spawnerData.SpawnerSpawnCount);
+        spawnerCountBuffer            = EditorGUILayout.IntField   ("Enemy count",   spawnerCountBuffer);
         spawnerData.SpawnerPrefab     = EditorGUILayout.ObjectField("Spawner enemy", spawnerData.SpawnerPrefab, typeof(GameObject), true) as GameObject;
+
+        spawnerData.SpawnerSpawnCount = spawnerCountBuffer;
 
         GUILayout.EndArea();
 
-        List<float> timings       = spawnerData.SpawnerSpawnTiming;
-        List<Transform> positions = spawnerData.SpawnerSpawnPositions;
+        List<SpawnInfo> infos = spawnerData.SpawnerInfo;
+        int diff = spawnerData.SpawnerSpawnCount - infos.Count;
 
-        int diff = spawnerData.SpawnerSpawnCount - timings.Count;
-
-        if (diff < 0)
-        {
-            for(int nData = 0; nData < (diff * -1); ++nData)
-            {
-                timings.RemoveAt(timings.Count - 1);
-                positions.RemoveAt(positions.Count - 1);
-            }
-        }
-        else if(diff > 0)
+        if(diff > 0)
         {
             for (int nData = 0; nData < diff; ++nData)
             {
-                timings.Add(0.0f);
-                positions.Add(null);
+                infos.Add(new SpawnInfo());
             }
         }
 
@@ -81,22 +76,26 @@ public class StageEditorSpawnerEditionView : EditorWindow
         scrollBarPosition = GUILayout.BeginScrollView(scrollBarPosition, false, true, GUIStyle.none, GUI.skin.verticalScrollbar);
 
         // Displays all 
-        for (int nData = 0; nData < timings.Count; ++nData)
+        for (int nData = 0; nData < spawnerData.SpawnerSpawnCount; ++nData)
         {
             EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Remove", GUILayout.Width(80)))
             {
-                // TODO
+                infos.RemoveAt(nData);
+
+                spawnerCountBuffer            -= 1;
+                spawnerData.SpawnerSpawnCount -= 1;
+
                 return;
             }
 
             GUILayout.Space(20);
             EditorGUILayout.LabelField("Timing", GUILayout.Width(45));
-            timings[nData]   = EditorGUILayout.FloatField(timings[nData], GUILayout.Width(50));
+            infos[nData].SpawnTiming   = EditorGUILayout.FloatField(infos[nData].SpawnTiming, GUILayout.Width(50));
 
             GUILayout.Space(20);
             EditorGUILayout.LabelField("Position", GUILayout.Width(55));
-            positions[nData] = EditorGUILayout.ObjectField(positions[nData], typeof(Transform), true, GUILayout.Width(150)) as Transform;
+            infos[nData].SpawnPosition = EditorGUILayout.ObjectField(infos[nData].SpawnPosition, typeof(Transform), true, GUILayout.Width(150)) as Transform;
 
             EditorGUILayout.EndHorizontal();
             GUILayout.Space(5);
@@ -110,6 +109,18 @@ public class StageEditorSpawnerEditionView : EditorWindow
         {
             if (GUILayout.Button("Create"))
             {
+                // Apply list modifications
+                diff = spawnerData.SpawnerSpawnCount - infos.Count;
+
+                if (diff < 0)
+                {
+                    for(int nData = 0; nData < (diff * -1); ++nData)
+                    {
+                        infos.RemoveAt(infos.Count - 1);
+                    }
+                }
+
+                spawnerData.SortSpawnerInfo();
                 StageEditorSpawnerController.SaveAsset(spawnerData);
                 Close();
             }

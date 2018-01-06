@@ -9,6 +9,8 @@ using System.Collections.Generic;
 public class Entity : MonoBehaviour
 {
     public bool isDead;
+    public bool isInvincible;
+
     public int  hitPoint;
     public int  damageOnCollision;
 
@@ -54,11 +56,16 @@ public class Entity : MonoBehaviour
     }
 
     /**
-     * Inflicts damages on collision
-     * @param damages The damanges received by the collision
+     * Inflicts damages
+     * @param damages The damages received
      */
-    private void OnDamage(int damages)
+    public void OnDamage(int damages)
     {
+        if(isInvincible)
+        {
+            return;
+        }
+
         hitPoint -= damages;
 
         if (hitPoint <= 0)

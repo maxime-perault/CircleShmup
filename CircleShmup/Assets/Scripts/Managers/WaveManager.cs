@@ -51,8 +51,6 @@ public class WaveManager
      */
     public void Update(float dt)
     {
-        timer += dt;
-
         // Manager switch state machine
         switch(managerState)
         {
@@ -67,14 +65,54 @@ public class WaveManager
      */
     private void OnManagerBegin()
     {
-        List<int> firstWaves = GetFirstWaves();
-        if (firstWaves.Count == 0)
+        managerState = ManagerState.ManagerRunning;
+    }
+
+    /**
+     * Called when the manager is running
+     */
+    private void OnManagerRunning()
+    {
+        bool blocking = false;
+        for (int nHandle = currentWaves.Count - 1; nHandle >= 0 ; nHandle--)
         {
-            managerState = ManagerState.ManagerDone;
+            // Check for ended waves
+            if (currentWaves[nHandle].GetState() == WaveHandle.WaveState.WaveEnd)
+            {
+                UnityEngine.GameObject.Destroy(currentWaves[nHandle].gameObject);
+                Debug.Log("Remove wave");
+                currentWaves.RemoveAt(nHandle);
+                continue;
+            }
+
+            // There is a blocking wave
+            if (currentWaves[nHandle].waveState == WaveHandle.WaveState.WaveBlocking)
+            {
+                Debug.Log("Blocking");
+                blocking = true;
+            }
+        }
+
+        if(blocking)
+        {
             return;
         }
 
-        if(timer < currenteStage.StageWaves[firstWaves[0]].WaveTiming)
+        timer += Time.deltaTime;
+
+        List<int> firstWaves = GetFirstWaves();
+        if (firstWaves.Count == 0)
+        {
+            if (currentWaves.Count == 0)
+            {
+                Debug.Log("Manager done");
+                managerState = ManagerState.ManagerDone;
+            }
+
+            return;
+        }
+
+        if (timer < currenteStage.StageWaves[firstWaves[0]].WaveTiming) // OUT OF BOUND
         {
             return;
         }
@@ -92,40 +130,8 @@ public class WaveManager
             handle.Init(wave, firstWaves[nWave]);
             currentWaves.Add(handle);
 
-            Debug.Log("    - Wave " + wave.WaveName + " loaded.");
-        }
-
-        managerState = ManagerState.ManagerRunning;
-    }
-
-    /**
-     * Called when the manager is running
-     */
-    private void OnManagerRunning()
-    {
-        bool allDone = true;
-        for(int nHandle = 0; nHandle < currentWaves.Count; ++nHandle)
-        {
-            if(currentWaves[nHandle].GetState() == WaveHandle.WaveState.WaveRunning)
-            {
-                allDone = false;
-                break;
-            }
-        }
-
-        if(allDone)
-        {
-            // Removes old index
-            for (int nHandle = 0; nHandle < currentWaves.Count; ++nHandle)
-            {
-                waveIndexes.Remove(currentWaves[nHandle].waveIndex);
-                UnityEngine.GameObject.Destroy(currentWaves[nHandle].gameObject);
-            }
-
-            currentWaves.Clear();
-            managerState = ManagerState.ManagerBegin;
-
-            Debug.Log("Wave Manager : Wave(s) done");
+            Debug.Log("    - " + wave.WaveName + " loaded.");
+            waveIndexes.Remove(firstWaves[nWave]);
         }
     }
 

@@ -1,6 +1,6 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 /**
  * TODO
@@ -21,6 +21,11 @@ public class EnemyClassic2 : Enemy
      */
     public override void OnEntityDeath()
     {
+        if(handle)
+        {
+            handle.OnEnemyDeath();
+        }
+
         Destroy(this.gameObject);
     }
 }

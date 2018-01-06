@@ -59,8 +59,8 @@ public class Stage
      */
     public float GetStageDuration()
     {
-        Wave lastet = GetLatestWave();
-        return lastet.WaveTiming + lastet.WaveDuration;
+        Wave latest = GetLatestWave();
+        return (latest != null) ? latest.WaveTiming + latest.GetWaveDuration() : 0.0f;
     }
 
     /**
@@ -69,6 +69,11 @@ public class Stage
      */
     public Wave GetLatestWave()
     {
+        if(StageWaves.Count == 0)
+        {
+            return null;
+        }
+
         Wave latestWave = StageWaves[0];
 
         int waveCount = StageWaves.Count;

@@ -4,16 +4,73 @@ using System.Collections;
 using System.Collections.Generic;
 
 /**
+ * Stores two attributes to make a list sort possible
+ * @class SpawnInfo
+ */
+[System.Serializable]
+public class SpawnInfo
+{
+    [SerializeField] public float     SpawnTiming   = 0.0f;
+    [SerializeField] public Transform SpawnPosition = null;
+
+    /**
+     * Comparisons helper
+     */
+    public int CompareTo(SpawnInfo other)
+    {
+        if(SpawnTiming > other.SpawnTiming)  return 1;
+        if(SpawnTiming == other.SpawnTiming) return 0;
+
+        return -1;
+    }
+}
+
+/**
  * Stores informations about an enemy spawner
  * @class SpawnerData
  */
+[System.Serializable]
 [CreateAssetMenu(fileName = "SpawnerData", menuName = "Shmup/Spawner Data")]
 public class SpawnerData : ScriptableObject
 {
-    public string     SpawnerName;
-    public GameObject SpawnerPrefab;
+    [SerializeField]  public string     SpawnerName;
+    [SerializeField]  public GameObject SpawnerPrefab;
 
-    public int               SpawnerSpawnCount;
-    public List<float>       SpawnerSpawnTiming    = new List<float>();
-    public List<Transform>   SpawnerSpawnPositions = new List<Transform>();
+    [SerializeField]  public int SpawnerSpawnCount;
+    [SerializeField]  public List<SpawnInfo> SpawnerInfo = new List<SpawnInfo>();
+
+    /**
+     * Returns the latest timing 
+     * @return The latest timing
+     */
+    public float GetLastTiming()
+    {
+        int timingCount = SpawnerInfo.Count;
+
+        if(timingCount == 0)
+        {
+            return 0.0f;
+        }
+
+        float lastTiming = SpawnerInfo[0].SpawnTiming;
+
+        for (int nTiming = 0; nTiming < timingCount; ++nTiming)
+        {
+            if (SpawnerInfo[nTiming].SpawnTiming > lastTiming)
+            {
+                lastTiming = SpawnerInfo[nTiming].SpawnTiming;
+            }
+        }
+
+        return lastTiming;
+    }
+
+    /**
+     * Sorts data by timing (ascending)
+     */
+    public void SortSpawnerInfo()
+    {
+        System.Comparison<SpawnInfo> comparer = (x, y) => x.CompareTo(y);
+        SpawnerInfo.Sort(comparer);
+    }
 }

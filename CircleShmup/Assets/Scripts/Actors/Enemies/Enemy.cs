@@ -7,6 +7,6 @@ using System.Collections.Generic;
  * @class Enemy
  */
 public class Enemy : Entity
-{ 
-    // None for now
+{
+    public WaveHandle handle;
 }

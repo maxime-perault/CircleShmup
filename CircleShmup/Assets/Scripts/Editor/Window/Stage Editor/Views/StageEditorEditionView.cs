@@ -112,9 +112,9 @@ public class StageEditorEditionView
 
             waves[nWave].WaveID       = (uint)EditorGUILayout.IntField   ("Wave ID",  (int)waves[nWave].WaveID);
             waves[nWave].WaveName     =       EditorGUILayout.TextField  ("Wave name",     waves[nWave].WaveName);
-            waves[nWave].WaveEnemy    =       EditorGUILayout.ObjectField("Wave enemy",    waves[nWave].WaveEnemy, typeof(GameObject), true) as GameObject;
+            waves[nWave].WaveBlocking =       EditorGUILayout.Toggle     ("Wave Blocking", waves[nWave].WaveBlocking);
             waves[nWave].WaveTiming   =       EditorGUILayout.FloatField ("Wave timing",   waves[nWave].WaveTiming);
-            waves[nWave].WaveDuration =       EditorGUILayout.FloatField ("Wave duration", waves[nWave].WaveDuration);
+            waves[nWave].WaveSpawner  =       EditorGUILayout.ObjectField("Wave spawner",  waves[nWave].WaveSpawner, typeof(SpawnerData), false) as SpawnerData;
 
             GUILayout.Space(20);
             GUILayout.Box("", GUILayout.Width(535), GUILayout.Height(1));

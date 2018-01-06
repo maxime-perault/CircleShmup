@@ -15,27 +15,30 @@ MonoBehaviour:
   - StageID: 0
     StageName: Stage 1
     StageDescription: Unknown
-    StageTimeout: 0
+    StageTimeout: 4
     StageWaves:
     - WaveID: 1
-      WaveName: Unknown
-      WaveEnemy: {fileID: 0}
-      WaveEnemyCount: 0
-      WaveTiming: 0
-      WaveDuration: 5
+      WaveName: Wave test
+      WaveBlocking: 1
+      WaveTiming: 2
+      WaveSpawner: {fileID: 11400000, guid: dce074eda7e36464aa97324f27fba592, type: 2}
   - StageID: 1
-    StageName: Stage 0
+    StageName: Stage 2
     StageDescription: Unknown
-    StageTimeout: 0
-    StageWaves: []
+    StageTimeout: 4
+    StageWaves:
+    - WaveID: 0
+      WaveName: Unknown
+      WaveBlocking: 0
+      WaveTiming: 2
+      WaveSpawner: {fileID: 0}
   - StageID: 0
-    StageName: Unknown
+    StageName: Stage 3
     StageDescription: Unknown
     StageTimeout: 0
     StageWaves:
     - WaveID: 1
       WaveName: Unknown
-      WaveEnemy: {fileID: 0}
-      WaveEnemyCount: 0
-      WaveTiming: 0
-      WaveDuration: 5
+      WaveBlocking: 0
+      WaveTiming: 5
+      WaveSpawner: {fileID: 0}
