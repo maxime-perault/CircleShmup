@@ -80,7 +80,6 @@ public class WaveManager
             if (currentWaves[nHandle].GetState() == WaveHandle.WaveState.WaveEnd)
             {
                 UnityEngine.GameObject.Destroy(currentWaves[nHandle].gameObject);
-                Debug.Log("Remove wave");
                 currentWaves.RemoveAt(nHandle);
                 continue;
             }
@@ -88,7 +87,6 @@ public class WaveManager
             // There is a blocking wave
             if (currentWaves[nHandle].waveState == WaveHandle.WaveState.WaveBlocking)
             {
-                Debug.Log("Blocking");
                 blocking = true;
             }
         }
@@ -105,14 +103,13 @@ public class WaveManager
         {
             if (currentWaves.Count == 0)
             {
-                Debug.Log("Manager done");
                 managerState = ManagerState.ManagerDone;
             }
 
             return;
         }
 
-        if (timer < currenteStage.StageWaves[firstWaves[0]].WaveTiming) // OUT OF BOUND
+        if (timer < currenteStage.StageWaves[firstWaves[0]].WaveTiming)
         {
             return;
         }
@@ -120,7 +117,6 @@ public class WaveManager
         GameObject oiginalHandle = Resources.Load("Prefabs/Actors/WaveHandle") as GameObject;
 
         // Creating handles
-        Debug.Log("Wave Manager : ");
         for (int nWave = 0; nWave < firstWaves.Count; ++nWave)
         {
             GameObject go = UnityEngine.GameObject.Instantiate(oiginalHandle, parent);
@@ -178,6 +174,7 @@ public class WaveManager
             // There is another one wave with the same timing, we must consider
             else if (waves[firstIndexes[0]].WaveTiming == waves[waveIndexes[nIndex]].WaveTiming)
             {
+                Debug.Log("Added timing : " + waves[firstIndexes[0]].WaveTiming);
                 firstIndexes.Add(waveIndexes[nIndex]);
             }
         }

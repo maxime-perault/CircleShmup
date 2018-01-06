@@ -73,4 +73,12 @@ public class SpawnerData : ScriptableObject
         System.Comparison<SpawnInfo> comparer = (x, y) => x.CompareTo(y);
         SpawnerInfo.Sort(comparer);
     }
+
+    /**
+     * Avoid object reset when the scene change or after play/stop
+     */
+    private void OnDisable()
+    {
+        EditorUtility.SetDirty(this);
+    }
 }

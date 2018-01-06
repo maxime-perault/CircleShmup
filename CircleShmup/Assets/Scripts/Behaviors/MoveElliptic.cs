@@ -11,16 +11,21 @@ public class MoveElliptic : Move
 {
     public float   rpm;
     public Vector2 axis;
-    
+    public float   clockwise;
+
     private float       alpha;
     private Vector2     velocity;
     private Rigidbody2D body;
+
+    // TMP
+    private bool        updated;
 
     /**
      * Startup method, buffers entity body
      */
     void Start()
     {
+        updated = false;
         body = GetComponent<Rigidbody2D>();
     }
 
@@ -31,12 +36,7 @@ public class MoveElliptic : Move
     void OnEnable()
     {
         // Computing start angle
-        alpha = Mathf.Atan2(transform.position.y, transform.position.x);
-
-        if (alpha < 0)
-        {
-            alpha = Mathf.PI + (Mathf.PI + alpha);
-        }
+        ComputeAproachAngle();
     }
 
     /**
@@ -44,6 +44,12 @@ public class MoveElliptic : Move
      */
     void FixedUpdate()
     {
+        if(!updated)
+        {
+            updated = true;
+            ComputeAproachAngle();
+        }
+
         // RPM Update
         speed.x = axis.x * 6.0f * rpm;
         speed.y = axis.y * 6.0f * rpm;
@@ -61,6 +67,20 @@ public class MoveElliptic : Move
         body.AddForce(velocity);
 
         // Computing next alpha
-        alpha += Time.fixedDeltaTime * rpm;
+        alpha += Time.fixedDeltaTime * rpm * clockwise;
+    }
+
+    /**
+     * Computes the current position of the object on
+     * the trigonometric circle
+     */
+    public void ComputeAproachAngle()
+    {
+        alpha = Mathf.Atan2(transform.position.y, transform.position.x);
+
+        if (alpha < 0)
+        {
+            alpha = Mathf.PI + (Mathf.PI + alpha);
+        }
     }
 }

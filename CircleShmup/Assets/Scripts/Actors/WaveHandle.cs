@@ -114,7 +114,6 @@ public class WaveHandle : MonoBehaviour
      */
     public void OnEnemyDeath()
     {
-        Debug.Log("EnemyLeft--");
         enemyLeft--;
     }
 }
