@@ -21,5 +21,10 @@ public class Sphere : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             enemy.OnDamage(damages);
         }
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+            bullet.OnDamage(damages);
+        }
     }
 }

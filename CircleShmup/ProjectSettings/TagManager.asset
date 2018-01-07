@@ -7,6 +7,7 @@ TagManager:
   - Spheres
   - Arena
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

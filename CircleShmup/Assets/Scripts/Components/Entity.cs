@@ -11,13 +11,16 @@ public class Entity : MonoBehaviour
     public bool isDead;
     public bool isInvincible;
 
-    public int  hitPoint;
-    public int  damageOnCollision;
+    public int hitPoint;
+    public int damageOnCollision;
 
     public virtual void OnEntityCollisionEnterWithPlayer()
     { /* None */ }
 
     public virtual void OnEntityCollisionEnterWithEnemy()
+    { /* None */ }
+
+    public virtual void OnEntityCollisionEnterWithArena()
     { /* None */ }
 
     public virtual void OnEntityDeath()
@@ -30,15 +33,15 @@ public class Entity : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         bool isEntity = false;
-        if(this.gameObject.tag == "Player")
+        if (this.gameObject.tag == "Player")
         {
-            if(collision.gameObject.tag == "Enemy")
+            if (collision.gameObject.tag == "Enemy")
             {
                 isEntity = true;
                 OnEntityCollisionEnterWithEnemy();
             }
         }
-        else if(this.gameObject.tag == "Enemy")
+        else if (this.gameObject.tag == "Enemy")
         {
             if (collision.gameObject.tag == "Player")
             {
@@ -47,7 +50,7 @@ public class Entity : MonoBehaviour
             }
         }
 
-        if(isEntity && !isDead)
+        if (isEntity && !isDead)
         {
             // Gets the entity components
             Entity entity = collision.gameObject.GetComponent<Entity>();
@@ -61,7 +64,7 @@ public class Entity : MonoBehaviour
      */
     public void OnDamage(int damages)
     {
-        if(isInvincible)
+        if (isInvincible)
         {
             return;
         }
