@@ -9,18 +9,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab4e19d54d23605429ef8ed3c95b28c6, type: 3}
-  m_Name: Spawner_3
+  m_Name: Spawner_4
   m_EditorClassIdentifier: 
-  SpawnerName: Spawner_3
-  SpawnerPrefab: {fileID: 1933577238765564, guid: b9038d6adc6e77f4592d35931147af5b,
+  SpawnerName: Spawner_4
+  SpawnerPrefab: {fileID: 1880964121922672, guid: 8ce25aedf05b42246be01867a0f91f5a,
     type: 2}
   SpawnerSpawnCount: 4
   SpawnerInfo:
   - SpawnTiming: 0
-    SpawnPosition: {x: -2.97, y: 0.044999998, z: 0}
-  - SpawnTiming: 1
-    SpawnPosition: {x: 2.9250002, y: 0, z: 0}
+    SpawnPosition: {x: 0, y: 0, z: 0}
   - SpawnTiming: 2
-    SpawnPosition: {x: 0.075, y: -2.97, z: 0}
-  - SpawnTiming: 2.5
-    SpawnPosition: {x: -2.97, y: 0.044999998, z: 0}
+    SpawnPosition: {x: 1.95, y: 0, z: 0}
+  - SpawnTiming: 4
+    SpawnPosition: {x: 0.05, y: -1.98, z: 0}
+  - SpawnTiming: 5
+    SpawnPosition: {x: -1.98, y: 0.03, z: 0}

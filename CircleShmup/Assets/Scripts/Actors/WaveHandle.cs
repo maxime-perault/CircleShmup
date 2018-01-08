@@ -89,7 +89,7 @@ public class WaveHandle : MonoBehaviour
 
             // We can spawn a new enemy
             GameObject enemy         = Instantiate(spawnerData.SpawnerPrefab, parentTransform);
-            enemy.transform.position = info[currentIndex].SpawnPosition.position;
+            enemy.transform.position = info[currentIndex].SpawnPosition;
 
             // Getting the enemy script attached to the game object
             // to make any feeback possible

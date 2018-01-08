@@ -11,7 +11,7 @@ using System.Collections.Generic;
 public class SpawnInfo
 {
     [SerializeField] public float     SpawnTiming   = 0.0f;
-    [SerializeField] public Transform SpawnPosition = null;
+    [SerializeField] public Vector3   SpawnPosition = new Vector3(0.0f, 0.0f, 0.0f);
 
     /**
      * Comparisons helper
