@@ -19,7 +19,9 @@ public class PlayerController : Entity
     private Rigidbody2D            body2D;
     private PolygonCollider2D      polygonCollider2D;
     private PlayerInputController  inputController;
-    
+
+    private bool playerJustStartedToMove;
+    private bool playerJustStoppedToMove;
 
     /**
      * Initializes the player controller by buffering 
@@ -30,6 +32,9 @@ public class PlayerController : Entity
         body2D            = GetComponent<Rigidbody2D>();
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         inputController   = GetComponent<PlayerInputController>();
+
+        playerJustStartedToMove = false;
+        playerJustStoppedToMove = true;
     }
 
     /**
@@ -40,9 +45,28 @@ public class PlayerController : Entity
         Vector2 axis = inputController.GetAxis();
         body2D.AddForce(new Vector2(speed.x * axis.x, speed.y * axis.y));
 
-        if (axis.x == 0.0f && axis.y == 0.0f && !slide)
+        if (axis.x == 0.0f && axis.y == 0.0f)
         {
-            body2D.velocity = new Vector2(0.0f, 0.0f);
+            if (!slide)
+            {
+                body2D.velocity = new Vector2(0.0f, 0.0f);
+            }
+
+            if(!playerJustStoppedToMove)
+            {
+                OnPlayerJustStoppedToMove();
+                playerJustStoppedToMove = true;
+                playerJustStartedToMove = false;
+            }
+        }
+        else
+        {
+            if(!playerJustStartedToMove)
+            {
+                OnPlayerJustStartedToMove();
+                playerJustStartedToMove = true;
+                playerJustStoppedToMove = false;
+            }
         }
 
         if (inputController.IsAddingSphere())
@@ -67,5 +91,21 @@ public class PlayerController : Entity
         {
             sphereController.ReverseRotation();
         }
+    }
+
+    /**
+     * TODO
+     */
+    private void OnPlayerJustStartedToMove()
+    {
+        Debug.Log("OnPlayerJustStartedToMove");
+    }
+
+    /**
+    * TODO
+    */
+    private void OnPlayerJustStoppedToMove()
+    {
+        Debug.Log("OnPlayerJustStoppedToMove");
     }
 }
