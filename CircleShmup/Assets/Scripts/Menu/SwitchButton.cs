@@ -37,10 +37,10 @@ public class SwitchButton : MonoBehaviour
         /*
         ** Select
         */
-        if (Input.GetKey(KeyCode.Space) || Input.GetKey("joystick button 0"))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0"))
         {
             MenuClass.Select(actual_button);
-        } 
+        }
 
         /*
         ** Wait until the stick return before moving again

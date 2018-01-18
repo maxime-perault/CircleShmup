@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B29443EC-A86D-4F2A-B551-D913A31F46C3}'
-    m_lastTimePsrt1: -1462565863
-    m_lastTimePart2: -1999282585
+    m_lastTimePsrt1: 441563589
+    m_lastTimePart2: -1999282540
     List:
     - Name: aTable_Play
       Path: Default Work Unit\aTable_Play
@@ -29,6 +29,30 @@ MonoBehaviour:
       ID: 1306613731
       Guid: 859252de6e92114faef6d9dae419db01
       maxAttenuation: 0
+    - Name: Beurre_Move
+      Path: Default Work Unit\Petit_Beurre\Beurre_Move
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Petit_Beurre
+        ObjectType: 4
+      - ElementName: Beurre_Move
+        ObjectType: 3
+      ID: 1219808192
+      Guid: cafec5af4ac0094db867d510d8cfcf9a
+      maxAttenuation: 0
+    - Name: Beurre_Stop
+      Path: Default Work Unit\Petit_Beurre\Beurre_Stop
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Petit_Beurre
+        ObjectType: 4
+      - ElementName: Beurre_Stop
+        ObjectType: 3
+      ID: -847774725
+      Guid: 390e27ea62d1c84eb9a0e7da441c963e
+      maxAttenuation: 0
     - Name: Main_Menu_UI_Play
       Path: Default Work Unit\Main_Menu_UI_Play
       PathAndIcons:
@@ -39,21 +63,49 @@ MonoBehaviour:
       ID: 329483606
       Guid: e933ea8333f498499573d549c57c14ba
       maxAttenuation: 0
-    - Name: Music_Play
-      Path: Default Work Unit\Music_Play
+    - Name: Music_Menu_Play
+      Path: Default Work Unit\Music\Music_Menu_Play
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Music_Menu_Play
+        ObjectType: 3
+      ID: 2013246097
+      Guid: 9e91b6bca9dbeb429a4bf518350c902b
+      maxAttenuation: 0
+    - Name: Music_Menu_Stop
+      Path: Default Work Unit\Music\Music_Menu_Stop
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Music_Menu_Stop
+        ObjectType: 3
+      ID: -1030305977
+      Guid: 11d3f9f67145194ba28766a378d871d8
+      maxAttenuation: 0
+    - Name: Music_Play
+      Path: Default Work Unit\Music\Music_Play
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
       - ElementName: Music_Play
         ObjectType: 3
       ID: 202194903
       Guid: 1ba2ceaeae34c347aac31d31a308dc8e
       maxAttenuation: 0
     - Name: Music_Stop
-      Path: Default Work Unit\Music_Stop
+      Path: Default Work Unit\Music\Music_Stop
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
       - ElementName: Music_Stop
         ObjectType: 3
       ID: -1067786235
@@ -221,6 +273,7 @@ MonoBehaviour:
   - /Shmup_Wwise
   - /Shmup_Wwise/Events
   - /Shmup_Wwise/Events/Default Work Unit
+  - /Shmup_Wwise/Events/Default Work Unit/Music
   m_lastPopulateTimePsrt1: 0
   m_lastPopulateTimePart2: 0
   autoPopulateEnabled: 1
