@@ -3,13 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 
 /**
- * TODO
+ * Enemy who moves in a elliptic way
  * @class EnemyClassic2
  */
-public class EnemyClassic2 : Enemy
+public class EnemyClassic2 : EnemyClassic
 {
     /**
-     * TODO
+     * Called once at start
+     */
+    void Start()
+    {
+        BaseStart();
+    }
+
+    /**
+     * Called on each update
+     */
+    void Update()
+    {
+        BaseUpdate();
+    }
+
+    /**
+     * Called when the entity collides with the player
      */
     public override void OnEntityCollisionEnterWithPlayer()
     {
@@ -17,10 +33,11 @@ public class EnemyClassic2 : Enemy
     }
 
     /**
-     * TODO
+     * Called when the entity is dead
      */
     public override void OnEntityDeath()
     {
+        // Notifies that this enemy is dead
         if(handle)
         {
             handle.OnEnemyDeath();
