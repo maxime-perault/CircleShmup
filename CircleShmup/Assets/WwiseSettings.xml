@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WwiseSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <WwiseProjectPath>../../../CircleShmupWwise/Shmup_Wwise/Shmup_Wwise.wproj</WwiseProjectPath>
+  <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
+  <CreateWwiseGlobal>true</CreateWwiseGlobal>
+  <CreateWwiseListener>true</CreateWwiseListener>
+  <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
+  <WwiseInstallationPathWindows>D:\Audiokinetic\Wwise 2017.1.3.6377</WwiseInstallationPathWindows>
+  <WwiseInstallationPathMac>null</WwiseInstallationPathMac>
+  <CreatedPicker>true</CreatedPicker>
+</WwiseSettings>
