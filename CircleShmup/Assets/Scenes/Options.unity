@@ -502,7 +502,7 @@ MonoBehaviour:
   - {fileID: 616108288}
   - {fileID: 1891533687}
   - {fileID: 331854911}
-  WwiseCalls: {fileID: 2122248828}
+  WwiseCalls: {fileID: 0}
 --- !u!1 &876429028
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a11cc0c5d1d634ba651f0ee2d40e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WwiseCalls: {fileID: 2122248828}
+  WwiseCalls: {fileID: 0}
 --- !u!1 &932881078
 GameObject:
   m_ObjectHideFlags: 0

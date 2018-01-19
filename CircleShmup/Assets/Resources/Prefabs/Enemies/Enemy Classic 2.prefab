@@ -74,7 +74,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -154,9 +154,7 @@ MonoBehaviour:
   bullets:
   - {fileID: 114866741595542402, guid: 1a84b5a188d526b42a8b3eb2a7194c98, type: 2}
   - {fileID: 114467111494693010, guid: 0c10dd950ab588549962111003793b76, type: 2}
-  bulletsProba:
-  - 0.5
-  - 1
+  bulletsInformation: []
 --- !u!212 &212360811453304618
 SpriteRenderer:
   m_ObjectHideFlags: 1
