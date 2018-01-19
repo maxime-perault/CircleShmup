@@ -16,7 +16,7 @@ public class Shoot : Behavior {
 
     public Bullet[] bullets;
 
-    public float[] bulletsProba;
+    public float[] bulletsInformation;
 
 
     private GameObject player;
@@ -25,7 +25,7 @@ public class Shoot : Behavior {
         player = GameObject.FindGameObjectWithTag("Player");
 
         //If GD failed in configuration : TODO
-        if (bullets.Length != bulletsProba.Length)
+        if (bullets.Length != bulletsInformation.Length)
         {
             Debug.Break();
             Debug.Log("bullets.Length != bulletsProba.Length");
@@ -39,15 +39,22 @@ public class Shoot : Behavior {
         timer += Time.fixedDeltaTime;
         if (timer > ShootDelay)
         {
-            Instantiate(chooseBullet(), this.gameObject.transform.position, Quaternion.identity);
+            shot();
             timer = 0;
         }
 
     }
 
 
+    protected virtual Bullet shot()
+    {
+        return Instantiate(chooseBullet(), this.gameObject.transform.position, Quaternion.identity); ;
+    }
+
+
     //Choose the bullet shot
-    private Bullet chooseBullet()
+    // !! Probabilistic version !! 
+    protected virtual Bullet chooseBullet()
     {
         Bullet choosenBullet = bullets[0];
         float proba = Random.Range(0f, 1f);
@@ -58,14 +65,14 @@ public class Shoot : Behavior {
             return choosenBullet;
         }
 
-        for (int i = 0; i < bulletsProba.Length; i++)
+        for (int i = 0; i < bulletsInformation.Length; i++)
         {
-            if( previous < proba && proba <= bulletsProba[i])
+            if( previous < proba && proba <= bulletsInformation[i])
             {
                 choosenBullet = bullets[i];
                 return choosenBullet;
             }
-            previous = bulletsProba[i];
+            previous = bulletsInformation[i];
         }
 
         return choosenBullet;
