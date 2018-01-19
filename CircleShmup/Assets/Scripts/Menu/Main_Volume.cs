@@ -25,9 +25,9 @@ public class Main_Volume : MonoBehaviour
 
         if ((ButtonsClass.getActualButton() == 1) && (isMoving == false))
         {
-            if ((translation < 0) && ((VolumeBar.value) - 10 >= 0))
+            if ((translation < -0.9) && ((VolumeBar.value) - 10 >= 0))
                 VolumeBar.value -= 10;
-            else if ((translation > 0) && ((VolumeBar.value) + 10 <= 100))
+            else if ((translation > 0.9) && ((VolumeBar.value) + 10 <= 100))
                 VolumeBar.value += 10;
             else
                 return;
