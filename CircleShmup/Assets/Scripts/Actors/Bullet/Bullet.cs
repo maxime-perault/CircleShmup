@@ -29,34 +29,6 @@ public class Bullet : Entity
     }
 
 
-    /**
-     * Check the collision state
-     * @param collision The collision point
-     */
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        bool isEntity = false;
-        if (this.gameObject.tag == "Bullet")
-        {
-            if (collision.gameObject.tag == "Player")
-            {
-                isEntity = true;
-                OnEntityCollisionEnterWithPlayer();
-            }
-            if (collision.gameObject.tag == "Arena")
-            {
-                isEntity = false;
-                OnEntityCollisionEnterWithArena();
-            }
-        }
-        if (isEntity && !isDead)
-        {
-            // Gets the entity components
-            Entity entity = collision.gameObject.GetComponent<Entity>();
-            OnDamage(entity.damageOnCollision);
-        }
-    }
-
     public override void OnEntityCollisionEnterWithArena()
     {
         Destroy(this.gameObject,5); //Change time

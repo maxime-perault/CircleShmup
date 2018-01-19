@@ -27,10 +27,10 @@ public class Entity : MonoBehaviour
     { /* None */ }
 
     /**
-     * Check the collision state
+     * Check the collision stateOnTriggerEnter2D
      * @param collision The collision point
      */
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         bool isEntity = false;
         if (this.gameObject.tag == "Player")
@@ -47,6 +47,19 @@ public class Entity : MonoBehaviour
             {
                 isEntity = true;
                 OnEntityCollisionEnterWithPlayer();
+            }
+        }
+        else if (this.gameObject.tag == "Bullet")
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                isEntity = true;
+                OnEntityCollisionEnterWithPlayer();
+            }
+            if (collision.gameObject.tag == "Arena")
+            {
+                isEntity = false;
+                OnEntityCollisionEnterWithArena();
             }
         }
 
