@@ -10,13 +10,13 @@ using System.Collections.Generic;
  */
 public class GameManager : MonoBehaviour
 {
-    private static GameManager GMref;
+    private static GameManager SingletonRef;
 
     void Awake()
     {
-        if (GMref == null)
+        if (SingletonRef == null)
         {
-            GMref = this;
+            SingletonRef = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
             DestroyImmediate(gameObject);
         }
     }
-
     void Start ()
     {
 		// None

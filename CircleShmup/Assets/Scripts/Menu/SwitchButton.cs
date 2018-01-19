@@ -11,13 +11,16 @@ public class SwitchButton : MonoBehaviour
     private int         actual_button = 0;
     private int         nb_buttons;
     private ASelect     MenuClass;
-    
+
+    private GameObject music;
+
     private bool        isMoving = false;
 
     void Start ()
     {
         MenuClass = SelectionScript.GetComponent<ASelect>();
         nb_buttons = buttons.Length;
+        music = GameObject.Find("MusicPlayer");
     }
 	
     void ChangeButton(int y)
@@ -63,7 +66,7 @@ public class SwitchButton : MonoBehaviour
                 ChangeButton(-(nb_buttons - 1));
             else
                 return;
-            AkSoundEngine.PostEvent("Main_Menu_UI_Play", WwiseCalls);
+            AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
         }
     }
 }

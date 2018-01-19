@@ -13,11 +13,18 @@ public class SelectOptions : ASelect
         BACKMENU
     };
 
+    private GameObject music;
+
+    private void Start()
+    {
+        music = GameObject.Find("MusicPlayer");
+    }
+
     public override void Select(int tmp_button)
     {
         e_button button = (e_button)tmp_button;
 
-        AkSoundEngine.PostEvent("Main_Menu_UI_Play", WwiseCalls);
+        AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
 
         if (button == e_button.BACKMENU)
             StartCoroutine(LoadYourAsyncScene("MainMenu"));
