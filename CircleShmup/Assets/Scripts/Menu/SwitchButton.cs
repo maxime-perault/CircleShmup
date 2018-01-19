@@ -69,4 +69,9 @@ public class SwitchButton : MonoBehaviour
             AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
         }
     }
+
+    public int getActualButton()
+    {
+        return actual_button;
+    }
 }

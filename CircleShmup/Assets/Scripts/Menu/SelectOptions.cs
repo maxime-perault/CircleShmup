@@ -24,7 +24,7 @@ public class SelectOptions : ASelect
     {
         e_button button = (e_button)tmp_button;
 
-        AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+        AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
 
         if (button == e_button.BACKMENU)
             StartCoroutine(LoadYourAsyncScene("MainMenu"));
