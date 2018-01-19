@@ -20,6 +20,16 @@ public class SelectOptions : ASelect
         music = GameObject.Find("MusicPlayer");
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 1"))
+        {
+            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            StartCoroutine(LoadYourAsyncScene("MainMenu"));
+        }
+
+    }
+
     public override void Select(int tmp_button)
     {
         e_button button = (e_button)tmp_button;
