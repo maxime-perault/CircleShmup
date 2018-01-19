@@ -88,7 +88,7 @@ public class WaveHandle : MonoBehaviour
             yield return new WaitForSeconds(info[currentIndex].SpawnTiming - elapsedTime);
 
             // We can spawn a new enemy
-            GameObject enemy         = Instantiate(spawnerData.SpawnerPrefab, parentTransform);
+            GameObject enemy         =  Instantiate(info[currentIndex].SpawnPrefab, parentTransform);
             enemy.transform.position = info[currentIndex].SpawnPosition;
 
             // Getting the enemy script attached to the game object
