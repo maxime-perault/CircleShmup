@@ -28,7 +28,7 @@ public class StageEditorSpawnerEditionView : EditorWindow
         StageEditorSpawnerEditionView window = EditorWindow.GetWindow<StageEditorSpawnerEditionView>();
 
         window.titleContent.text = "Spawner Editor";
-        window.maxSize = new Vector2(600, 500);
+        window.maxSize = new Vector2(800, 500);
         window.minSize = window.maxSize;
         window.Show();
 
@@ -51,11 +51,10 @@ public class StageEditorSpawnerEditionView : EditorWindow
      */
     void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(20, 20, 560, 80));
+        GUILayout.BeginArea(new Rect(20, 20, 760, 80));
 
-        spawnerData.SpawnerName       = EditorGUILayout.TextField  ("Spawner name",  spawnerData.SpawnerName);
-        spawnerCountBuffer            = EditorGUILayout.IntField   ("Enemy count",   spawnerCountBuffer);
-        spawnerData.SpawnerPrefab     = EditorGUILayout.ObjectField("Spawner enemy", spawnerData.SpawnerPrefab, typeof(GameObject), true) as GameObject;
+        spawnerData.SpawnerName       = EditorGUILayout.TextField("Spawner name",  spawnerData.SpawnerName);
+        spawnerCountBuffer            = EditorGUILayout.IntField("Enemy count", spawnerCountBuffer);
 
         spawnerData.SpawnerSpawnCount = spawnerCountBuffer;
 
@@ -72,7 +71,7 @@ public class StageEditorSpawnerEditionView : EditorWindow
             }
         }
 
-        GUILayout.BeginArea(new Rect(20, 100, 560, 350));
+        GUILayout.BeginArea(new Rect(20, 100, 760, 350));
         scrollBarPosition = GUILayout.BeginScrollView(scrollBarPosition, false, true, GUIStyle.none, GUI.skin.verticalScrollbar);
 
         // Displays all 
@@ -88,6 +87,10 @@ public class StageEditorSpawnerEditionView : EditorWindow
 
                 return;
             }
+
+            GUILayout.Space(20);
+            EditorGUILayout.LabelField("Prefab", GUILayout.Width(45));
+            infos[nData].SpawnPrefab = EditorGUILayout.ObjectField(infos[nData].SpawnPrefab, typeof(GameObject), true) as GameObject;
 
             GUILayout.Space(20);
             EditorGUILayout.LabelField("Timing", GUILayout.Width(45));
@@ -114,7 +117,7 @@ public class StageEditorSpawnerEditionView : EditorWindow
         EditorGUILayout.EndScrollView();
         GUILayout.EndArea();
 
-        GUILayout.BeginArea(new Rect(20, 470, 560, 30));
+        GUILayout.BeginArea(new Rect(20, 470, 760, 30));
         if (editorState == EditionState.Creation)
         {
             if (GUILayout.Button("Create"))

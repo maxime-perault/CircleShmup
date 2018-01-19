@@ -10,9 +10,10 @@ using System.Collections.Generic;
 [System.Serializable]
 public class SpawnInfo
 {
-    [SerializeField] public float     SpawnTiming   = 0.0f;
-    [SerializeField] public Vector3   SpawnPosition = new Vector3(0.0f, 0.0f, 0.0f);
-
+    [SerializeField] public GameObject SpawnPrefab   = null;
+    [SerializeField] public float      SpawnTiming   = 0.0f;
+    [SerializeField] public Vector3    SpawnPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    
     /**
      * Comparisons helper
      */
@@ -33,10 +34,8 @@ public class SpawnInfo
 [CreateAssetMenu(fileName = "SpawnerData", menuName = "Shmup/Spawner Data")]
 public class SpawnerData : ScriptableObject
 {
-    [SerializeField]  public string     SpawnerName;
-    [SerializeField]  public GameObject SpawnerPrefab;
-
-    [SerializeField]  public int SpawnerSpawnCount;
+    [SerializeField]  public string          SpawnerName;
+    [SerializeField]  public int             SpawnerSpawnCount;
     [SerializeField]  public List<SpawnInfo> SpawnerInfo = new List<SpawnInfo>();
 
     /**
