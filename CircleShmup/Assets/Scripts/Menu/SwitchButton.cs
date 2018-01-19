@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 
 public class SwitchButton : MonoBehaviour
@@ -11,13 +10,13 @@ public class SwitchButton : MonoBehaviour
     
     private int         actual_button = 0;
     private int         nb_buttons;
-    private SelectMenu  MenuClass;
+    private ASelect     MenuClass;
     
     private bool        isMoving = false;
 
     void Start ()
     {
-        MenuClass = SelectionScript.GetComponent<SelectMenu>();
+        MenuClass = SelectionScript.GetComponent<ASelect>();
         nb_buttons = buttons.Length;
     }
 	
