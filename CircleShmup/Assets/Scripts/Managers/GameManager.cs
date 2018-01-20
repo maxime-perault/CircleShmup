@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager SingletonRef;
 
+    public int invertYaxis = 1;
+
     void Awake()
     {
         if (SingletonRef == null)

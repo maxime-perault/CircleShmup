@@ -3,15 +3,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SelectOptions : ASelect
+public class SelectScore : ASelect
 {
     private GameManager manager;
-    private Toggle      Yaxis;
+
     enum e_button
     {
-        SFX = 0,
-        MUSIC,
-        INVERT,
+        SCORE = 0,
         BACKMENU
     };
 
@@ -19,7 +17,6 @@ public class SelectOptions : ASelect
     {
         base.Start();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        Yaxis = GameObject.Find("ToggleAxis").GetComponent<Toggle>();
     }
 
     private void Update()
@@ -40,13 +37,5 @@ public class SelectOptions : ASelect
 
         if (button == e_button.BACKMENU)
             StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
-        if (button == e_button.INVERT)
-        {
-            Yaxis.isOn = !Yaxis.isOn;
-            if (Yaxis.isOn == false)
-                manager.invertYaxis = 1;
-            else
-                manager.invertYaxis = -1;
-        }
     }
 }
