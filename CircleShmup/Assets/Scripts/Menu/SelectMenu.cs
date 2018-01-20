@@ -14,12 +14,10 @@ public class SelectMenu : ASelect
     };
 
     private static int id = 0;
-    private GameObject music;
 
     void Start()
     {
         music = GameObject.Find("MusicPlayer");
-
         if (id == 0)
             AkSoundEngine.PostEvent("Music_Menu_Play", music);
         ++id;
@@ -29,7 +27,7 @@ public class SelectMenu : ASelect
     {
         e_button button = (e_button)tmp_button;
 
-        AkSoundEngine.PostEvent("Main_Menu_UI_Play", WwiseCalls);
+        AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
 
         if (button == e_button.NEWGAME)
         {
@@ -40,7 +38,11 @@ public class SelectMenu : ASelect
         }
         if (button == e_button.OPTIONS)
         {
-            StartCoroutine(LoadYourAsyncScene("Options"));
+            StartCoroutine(LoadYourAsyncScene("Menu/Options"));
+        }
+        if (button == e_button.CREDITS)
+        {
+            StartCoroutine(LoadYourAsyncScene("Menu/Credits"));
         }
         if (button == e_button.QUITGAME)
             Application.Quit();

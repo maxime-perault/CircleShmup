@@ -4,11 +4,13 @@ using UnityEngine;
 
 public abstract class ASelect : MonoBehaviour
 {
-    public GameObject WwiseCalls;
+    protected GameObject music;
 
-    /*
-    ** Load the scene and wait with a yield until its done.
-    */
+    private void Start()
+    {
+        music = GameObject.Find("MusicPlayer");
+    }
+
     protected IEnumerator LoadYourAsyncScene(string name)
     {
         string path = "Scenes/"; path += name;

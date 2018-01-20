@@ -6,7 +6,6 @@ public class SwitchButton : MonoBehaviour
 {
     public GameObject   SelectionScript;
     public GameObject[] buttons;
-    public GameObject   WwiseCalls;
     
     private int         actual_button = 0;
     private int         nb_buttons;
@@ -56,17 +55,22 @@ public class SwitchButton : MonoBehaviour
         */
         if (isMoving == false)
         {
-            if ((translation < 0) && (actual_button < (nb_buttons - 1)))
+            if ((translation < -0.8) && (actual_button < (nb_buttons - 1)))
                 ChangeButton(-1);
-            else if ((translation < 0) && (actual_button == (nb_buttons - 1)))
+            else if ((translation < -0.8) && (actual_button == (nb_buttons - 1)))
                 ChangeButton(nb_buttons - 1);
-            else if ((translation > 0) && (actual_button > 0))
+            else if ((translation > 0.8) && (actual_button > 0))
                 ChangeButton(1);
-            else if ((translation > 0) && (actual_button == 0))
+            else if ((translation > 0.8 && (actual_button == 0)))
                 ChangeButton(-(nb_buttons - 1));
             else
                 return;
             AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
         }
+    }
+
+    public int getActualButton()
+    {
+        return actual_button;
     }
 }

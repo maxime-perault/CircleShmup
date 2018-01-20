@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B29443EC-A86D-4F2A-B551-D913A31F46C3}'
-    m_lastTimePsrt1: 441563589
-    m_lastTimePart2: -1999282540
+    m_lastTimePsrt1: -1544125667
+    m_lastTimePart2: -1999282301
     List:
     - Name: aTable_Play
       Path: Default Work Unit\aTable_Play
@@ -28,6 +28,18 @@ MonoBehaviour:
         ObjectType: 3
       ID: 1306613731
       Guid: 859252de6e92114faef6d9dae419db01
+      maxAttenuation: 0
+    - Name: Beurre_Hit
+      Path: Default Work Unit\Petit_Beurre\Beurre_Hit
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Petit_Beurre
+        ObjectType: 4
+      - ElementName: Beurre_Hit
+        ObjectType: 3
+      ID: 1259523794
+      Guid: 92e311de248d5748b08678a9a5b44747
       maxAttenuation: 0
     - Name: Beurre_Move
       Path: Default Work Unit\Petit_Beurre\Beurre_Move
@@ -53,15 +65,41 @@ MonoBehaviour:
       ID: -847774725
       Guid: 390e27ea62d1c84eb9a0e7da441c963e
       maxAttenuation: 0
-    - Name: Main_Menu_UI_Play
-      Path: Default Work Unit\Main_Menu_UI_Play
+    - Name: Ennemy_Pop
+      Path: Default Work Unit\Ennemies\Ennemy_Pop
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Ennemy_Pop
+        ObjectType: 3
+      ID: -894485567
+      Guid: 7c9b7eab6a0b5146860ba56b3292a3a3
+      maxAttenuation: 0
+    - Name: Main_Menu_UI_Play
+      Path: Default Work Unit\UI\Main_Menu_UI_Play
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
       - ElementName: Main_Menu_UI_Play
         ObjectType: 3
       ID: 329483606
       Guid: e933ea8333f498499573d549c57c14ba
+      maxAttenuation: 0
+    - Name: Main_Menu_UI_Validate
+      Path: Default Work Unit\UI\Main_Menu_UI_Validate
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Main_Menu_UI_Validate
+        ObjectType: 3
+      ID: -108200398
+      Guid: 8260a9b5ac347f40a2ed7c54bfd25e91
       maxAttenuation: 0
     - Name: Music_Menu_Play
       Path: Default Work Unit\Music\Music_Menu_Play
@@ -111,12 +149,68 @@ MonoBehaviour:
       ID: -1067786235
       Guid: a6e6b0cda5b264459617676b3f7409f2
       maxAttenuation: 0
+    - Name: Piment_Charge
+      Path: Default Work Unit\Ennemies\Piment\Piment_Charge
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Piment
+        ObjectType: 4
+      - ElementName: Piment_Charge
+        ObjectType: 3
+      ID: -1380328045
+      Guid: 37e363830785d5409c72c1c2558a5f66
+      maxAttenuation: 0
+    - Name: Piment_Cogne
+      Path: Default Work Unit\Ennemies\Piment\Piment_Cogne
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Piment
+        ObjectType: 4
+      - ElementName: Piment_Cogne
+        ObjectType: 3
+      ID: -160912041
+      Guid: 14a23410dee28f44bb168ff4129e2a86
+      maxAttenuation: 0
+    - Name: Piment_Prep_Play
+      Path: Default Work Unit\Ennemies\Piment\Piment_Prep_Play
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Piment
+        ObjectType: 4
+      - ElementName: Piment_Prep_Play
+        ObjectType: 3
+      ID: 1649919439
+      Guid: f029fe16f01dab41b6df538d6ce8a8b2
+      maxAttenuation: 0
+    - Name: Piment_Prep_Stop
+      Path: Default Work Unit\Ennemies\Piment\Piment_Prep_Stop
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Piment
+        ObjectType: 4
+      - ElementName: Piment_Prep_Stop
+        ObjectType: 3
+      ID: 72582861
+      Guid: 51cf72e2419ef34abaa6616737d368e0
+      maxAttenuation: 0
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{6F94EAA9-4877-497D-86E4-9102BB699B60}'
-    m_lastTimePsrt1: -1461683156
-    m_lastTimePart2: -1999282585
+    m_lastTimePsrt1: -1480257985
+    m_lastTimePart2: -1999282327
     List:
     - Name: Reverb
       Path: Default Work Unit\Master Audio Bus\Reverb
@@ -147,8 +241,8 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{924CB3FF-351A-4BF4-870E-AB084808EFAB}'
-    m_lastTimePsrt1: -1456425597
-    m_lastTimePart2: -1999282585
+    m_lastTimePsrt1: -1480247781
+    m_lastTimePart2: -1999282327
     List:
     - Name: Shmup_SoundBank
       Path: Default Work Unit\Shmup_SoundBank
@@ -163,9 +257,27 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{BD1B3C21-0013-423E-B3D9-94D432D5F7F0}'
-    m_lastTimePsrt1: -1462561101
-    m_lastTimePart2: -1999282585
-    List: []
+    m_lastTimePsrt1: -958092326
+    m_lastTimePart2: -1999282338
+    List:
+    - Name: Music_Volume
+      Path: Default Work Unit\Music_Volume
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music_Volume
+        ObjectType: 13
+      ID: 1006694123
+      Guid: 9f9bdb1ab46a98498ffc2253d1104e3d
+    - Name: SFX_Volume
+      Path: Default Work Unit\SFX_Volume
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX_Volume
+        ObjectType: 13
+      ID: 1564184899
+      Guid: 2aab901814350b43beffd8ea5b35f6c6
   - PhysicalPath: Game Parameters\Factory SoundSeed Air Game Syncs.wwu
     ParentPhysicalPath: 
     Guid: '{3B167755-FB42-458B-98BF-96F557AFB3B9}'
@@ -271,9 +383,18 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Shmup_Wwise
+  - /Shmup_Wwise/Auxiliary Busses
+  - /Shmup_Wwise/Auxiliary Busses/Default Work Unit
+  - /Shmup_Wwise/Auxiliary Busses/Default Work Unit/Master Audio Bus
   - /Shmup_Wwise/Events
   - /Shmup_Wwise/Events/Default Work Unit
+  - /Shmup_Wwise/Events/Default Work Unit/Ennemies
+  - /Shmup_Wwise/Events/Default Work Unit/Ennemies/Piment
   - /Shmup_Wwise/Events/Default Work Unit/Music
+  - /Shmup_Wwise/Events/Default Work Unit/Petit_Beurre
+  - /Shmup_Wwise/Events/Default Work Unit/UI
+  - /Shmup_Wwise/SoundBanks
+  - /Shmup_Wwise/SoundBanks/Default Work Unit
   m_lastPopulateTimePsrt1: 0
   m_lastPopulateTimePart2: 0
   autoPopulateEnabled: 1
