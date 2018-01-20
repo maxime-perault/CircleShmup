@@ -42,8 +42,10 @@ public class SelectOptions : ASelect
         if (button == e_button.INVERT)
         {
             Yaxis.isOn = !Yaxis.isOn;
-            manager.invertYaxis = Yaxis.isOn;
+            if (Yaxis.isOn == false)
+                manager.invertYaxis = 1;
+            else
+                manager.invertYaxis = -1;
         }
-            
     }
 }

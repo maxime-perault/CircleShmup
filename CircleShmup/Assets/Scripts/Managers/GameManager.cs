@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager SingletonRef;
 
-    public bool invertYaxis = false;
+    public int invertYaxis = 1;
 
     void Awake()
     {
