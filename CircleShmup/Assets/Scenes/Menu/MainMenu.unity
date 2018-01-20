@@ -914,7 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943fea63317c00547b25398ecdfa9cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WwiseCalls: {fileID: 1510587922}
+  WwiseCalls: {fileID: 690918971}
 --- !u!1 &1296389456
 GameObject:
   m_ObjectHideFlags: 0

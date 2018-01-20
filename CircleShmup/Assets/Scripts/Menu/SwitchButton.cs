@@ -6,7 +6,6 @@ public class SwitchButton : MonoBehaviour
 {
     public GameObject   SelectionScript;
     public GameObject[] buttons;
-    public GameObject   WwiseCalls;
     
     private int         actual_button = 0;
     private int         nb_buttons;

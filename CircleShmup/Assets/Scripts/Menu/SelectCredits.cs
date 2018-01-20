@@ -2,17 +2,19 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class SelectOptions : ASelect
+public class SelectCredits : ASelect
 {
     enum e_button
     {
-        SFX = 0,
-        MUSIC,
-        AZERTY,
-        INVERT,
-        BACKMENU
+        MC = 0,
+        PROG,
+        SD,
+        GRAPH,
+        GD,
+        ERGO,
+        BACK
     };
-
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 1"))
@@ -29,7 +31,7 @@ public class SelectOptions : ASelect
 
         AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
 
-        if (button == e_button.BACKMENU)
+        if (button == e_button.BACK)
             StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
     }
 }
