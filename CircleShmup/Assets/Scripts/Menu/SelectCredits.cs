@@ -14,7 +14,12 @@ public class SelectCredits : ASelect
         ERGO,
         BACK
     };
-    
+
+    private new void Start()
+    {
+        base.Start();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 1"))

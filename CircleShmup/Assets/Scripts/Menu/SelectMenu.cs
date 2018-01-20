@@ -15,9 +15,9 @@ public class SelectMenu : ASelect
 
     private static int id = 0;
 
-    void Start()
+    private new void Start()
     {
-        music = GameObject.Find("MusicPlayer");
+        base.Start();
         if (id == 0)
             AkSoundEngine.PostEvent("Music_Menu_Play", music);
         ++id;
@@ -35,6 +35,10 @@ public class SelectMenu : ASelect
             AkSoundEngine.PostEvent("Music_Menu_Stop", music);
             AkSoundEngine.PostEvent("Music_Stop", music);
             AkSoundEngine.PostEvent("Music_Play", music);
+        }
+        if (button == e_button.HIGHSCORE)
+        {
+            StartCoroutine(LoadYourAsyncScene("Menu/HighScore"));
         }
         if (button == e_button.OPTIONS)
         {

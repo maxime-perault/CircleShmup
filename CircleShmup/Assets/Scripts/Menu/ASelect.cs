@@ -6,7 +6,7 @@ public abstract class ASelect : MonoBehaviour
 {
     protected GameObject music;
 
-    private void Start()
+    protected void Start()
     {
         music = GameObject.Find("MusicPlayer");
     }
