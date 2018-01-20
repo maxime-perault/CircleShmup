@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B29443EC-A86D-4F2A-B551-D913A31F46C3}'
-    m_lastTimePsrt1: -958097209
-    m_lastTimePart2: -1999282338
+    m_lastTimePsrt1: -1544125667
+    m_lastTimePart2: -1999282301
     List:
     - Name: aTable_Play
       Path: Default Work Unit\aTable_Play
@@ -28,6 +28,18 @@ MonoBehaviour:
         ObjectType: 3
       ID: 1306613731
       Guid: 859252de6e92114faef6d9dae419db01
+      maxAttenuation: 0
+    - Name: Beurre_Hit
+      Path: Default Work Unit\Petit_Beurre\Beurre_Hit
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Petit_Beurre
+        ObjectType: 4
+      - ElementName: Beurre_Hit
+        ObjectType: 3
+      ID: 1259523794
+      Guid: 92e311de248d5748b08678a9a5b44747
       maxAttenuation: 0
     - Name: Beurre_Move
       Path: Default Work Unit\Petit_Beurre\Beurre_Move
