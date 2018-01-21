@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager  SingletonRef;
 
-    public string[] inputs;
+    public string[]     inputs;
     public ScoreBoard[] scoreboard;
-    public int      invertYaxis = 1;
+    public int          invertYaxis = 1;
 
     public enum e_input
     {
@@ -59,13 +59,16 @@ public class GameManager : MonoBehaviour
             scoreboard[i].name = "NAMENAME";
             scoreboard[i].score = 0;
         }
-        scoreboard[97].score = 97;
-        scoreboard[38].score = 38;
-        scoreboard[22].score = 22;
-        scoreboard[21].score = 21;
-        scoreboard[12].score = 12;
-        scoreboard[11].score = 12;
+        
         Array.Sort<ScoreBoard>(scoreboard, (x, y) => y.score.CompareTo(x.score));
+
+        addScore(97, "TESTTEST");
+        addScore(38, "TESTTEST");
+        addScore(22, "TESTTEST");
+        addScore(12, "TESTTEST");
+        addScore(21, "TESTTEST");
+        addScore(12, "TESTTEST");
+
 
         inputs[(int)e_input.TURNLEFT] = "Mouse0";
         inputs[(int)e_input.TURNRIGHT] = "Mouse1";
@@ -78,6 +81,17 @@ public class GameManager : MonoBehaviour
         inputs[(int)e_input.DOWN] = "DownArrow";
         inputs[(int)e_input.LEFT] = "LeftArrow";
         inputs[(int)e_input.RIGHT] = "RightArrow";
+    }
+
+    public void addScore(int score, string name)
+    {
+        
+        if (score > scoreboard[98].score)
+        {
+            scoreboard[98].name = name;
+            scoreboard[98].score = score;
+        }
+        Array.Sort<ScoreBoard>(scoreboard, (x, y) => y.score.CompareTo(x.score));
     }
 
     public bool GetKeyDown(GameManager.e_input input)
