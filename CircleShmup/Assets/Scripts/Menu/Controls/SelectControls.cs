@@ -7,6 +7,8 @@ using System;
 public class SelectControls : ASelect
 {
     public GameObject[]     InputText;
+    private DynamicA        infoA;
+    private DynamicB        infoB;
 
     private GameManager     manager;
     private bool            isMoving = false;
@@ -23,6 +25,8 @@ public class SelectControls : ASelect
         {
             InputText[i].GetComponent<Text>().text = manager.inputs[i];
         }
+        infoA = GameObject.Find("TextInfoA").GetComponent<DynamicA>();
+        infoB = GameObject.Find("TextInfoB").GetComponent<DynamicB>();
     }
 
     public void UpdateValue(string text)
@@ -34,6 +38,11 @@ public class SelectControls : ASelect
         manager.inputs[actual_button] = text;
         isLocked = false;
         InputText[actual_button].GetComponent<Text>().color = new Color32(0, 0, 0, 255);
+
+        if (actual_button == (int)GameManager.e_input.ACCEPT)
+            infoA.UpdateButton();
+        else if (actual_button == (int)GameManager.e_input.CANCEL)
+            infoB.UpdateButton();
     }
 
     void ChangeButton(int y)
