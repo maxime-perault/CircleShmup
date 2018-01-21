@@ -76,14 +76,17 @@ public class SelectControls : ASelect
         if (manager.GetKeyDown(GameManager.e_input.DOWN) && ((actual_button + 1) < InputText.Length))
         {
             ChangeButton(1);
+            AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
         }
         else if (manager.GetKeyDown(GameManager.e_input.UP) && ((actual_button - 1) >= 0))
         {
             ChangeButton(-1);
+            AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
         }
 
         if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
         {
+            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
             WaitInput();
         }
     }
