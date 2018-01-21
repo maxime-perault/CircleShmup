@@ -32,21 +32,23 @@ public class PlayerInputInspector : Editor
     private void InputSection(PlayerInputController instance)
     {
         EditorGUILayout.BeginVertical(GUILayout.Width(300.0f));
-
-        instance.canAddSphere       = EditorGUILayout.Toggle("Allow add sphere ?",       instance.canAddSphere);
-        instance.canRemoveSphere    = EditorGUILayout.Toggle("Allow remove sphere ?",    instance.canRemoveSphere);
-        instance.canIncreaseRadius  = EditorGUILayout.Toggle("Allow increase radius ?",  instance.canIncreaseRadius);
-        instance.canReverseRotation = EditorGUILayout.Toggle("Allow reverse rotation ?", instance.canReverseRotation);
+                                                                                                       
+        instance.canAddSphere                = EditorGUILayout.Toggle("Allow add sphere ?",            instance.canAddSphere);
+        instance.canRemoveSphere             = EditorGUILayout.Toggle("Allow remove sphere ?",         instance.canRemoveSphere);
+        instance.canIncreaseRadius           = EditorGUILayout.Toggle("Allow increase radius ?",       instance.canIncreaseRadius);
+        instance.canClockwiseRotation        = EditorGUILayout.Toggle("Allow clockwise rotation ?",    instance.canClockwiseRotation);
+        instance.canCounterClockwiseRotation = EditorGUILayout.Toggle("Allow c. clockwise rotation ?", instance.canCounterClockwiseRotation);
 
         EditorGUILayout.Space();
 
         instance.verticalInput   = EditorGUILayout.TextField("Vertical input",   instance.verticalInput);
         instance.horizontalInput = EditorGUILayout.TextField("Horizontal input", instance.horizontalInput);
 
-        instance.addSphereInput       = EditorGUILayout.TextField("Add sphere input",       instance.addSphereInput);
-        instance.removeSphereInput    = EditorGUILayout.TextField("Remove sphere input",    instance.removeSphereInput);
-        instance.increaseRadiusInput  = EditorGUILayout.TextField("Increase radius input",  instance.increaseRadiusInput);
-        instance.reverseRotationInput = EditorGUILayout.TextField("Reverse rotation input", instance.reverseRotationInput);
+        instance.addSphereInput                = EditorGUILayout.TextField("Add sphere input",            instance.addSphereInput);
+        instance.removeSphereInput             = EditorGUILayout.TextField("Remove sphere input",         instance.removeSphereInput);
+        instance.increaseRadiusInput           = EditorGUILayout.TextField("Increase radius input",       instance.increaseRadiusInput);
+        instance.clockwiseRotationInput        = EditorGUILayout.TextField("Clockwise rotation input",    instance.clockwiseRotationInput);
+        instance.counterClockwiseRotationInput = EditorGUILayout.TextField("C. Clockwise rotation input", instance.counterClockwiseRotationInput);
 
         EditorGUILayout.EndVertical();
     }

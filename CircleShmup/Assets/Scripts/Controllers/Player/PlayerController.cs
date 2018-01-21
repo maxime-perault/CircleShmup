@@ -87,9 +87,13 @@ public class PlayerController : Entity
             sphereController.DecreaseRadius();
         }
 
-        if (inputController.IsReversingRotation())
+        if (inputController.IsClockwiseRotation())
         {
-            sphereController.ReverseRotation();
+            sphereController.ReverseClockwise();
+        }
+        else if (inputController.IsCounterClockwiseRotation())
+        {
+            sphereController.ReverseCounterClockwise();
         }
     }
 

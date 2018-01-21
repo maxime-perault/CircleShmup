@@ -8,19 +8,21 @@ using System.Collections.Generic;
  */
 public class PlayerInputController : MonoBehaviour
 {
-    public bool canAddSphere       = true;
-    public bool canRemoveSphere    = true;
-    public bool canIncreaseRadius  = true;
-    public bool canReverseRotation = true;
+    public bool canAddSphere                = true;
+    public bool canRemoveSphere             = true;
+    public bool canIncreaseRadius           = true;
+    public bool canClockwiseRotation        = true;
+    public bool canCounterClockwiseRotation = true;
 
-    [SerializeField] public string verticalInput        = "Vertical";
-    [SerializeField] public string horizontalInput      = "Horizontal";
-   
-    [SerializeField] public string addSphereInput       = "AddSphere";
-    [SerializeField] public string removeSphereInput    = "RemoveSphere";
-    [SerializeField] public string increaseRadiusInput  = "IncreaseRadius";
-    [SerializeField] public string reverseRotationInput = "ReverseRotation";
-    
+    [SerializeField] public string verticalInput                 = "Vertical";
+    [SerializeField] public string horizontalInput               = "Horizontal";
+                                                                 
+    [SerializeField] public string addSphereInput                = "AddSphere";
+    [SerializeField] public string removeSphereInput             = "RemoveSphere";
+    [SerializeField] public string increaseRadiusInput           = "IncreaseRadius";
+    [SerializeField] public string clockwiseRotationInput        = "ClockwiseRotation";
+    [SerializeField] public string counterClockwiseRotationInput = "CounterClockwiseRotation";
+
     /**
      * Returns the horizontal and vertical axis
      * @return A vector2 containing the axis
@@ -60,11 +62,20 @@ public class PlayerInputController : MonoBehaviour
     }
 
     /**
-     * Tells if the player is pressing the button "ReverseRotation"
+     * Tells if the player is pressing the button "ClockwiseRotation"
      * @return True or false
      */
-    public bool IsReversingRotation()
+    public bool IsClockwiseRotation()
     {
-        return (canReverseRotation) ? Input.GetButton(reverseRotationInput) : false;
+        return (canClockwiseRotation) ? Input.GetAxis(clockwiseRotationInput) == 1.0f : false;
+    }
+
+    /**
+    * Tells if the player is pressing the button "CounterClockwiseRotation"
+    * @return True or false
+    */
+    public bool IsCounterClockwiseRotation()
+    {
+        return (canCounterClockwiseRotation) ? Input.GetAxis(counterClockwiseRotationInput) == 1.0f : false;
     }
 }

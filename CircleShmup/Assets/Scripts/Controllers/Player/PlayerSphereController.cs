@@ -102,11 +102,23 @@ public class PlayerSphereController : MonoBehaviour
     }
 
     /**
-     * Reverses the rotation direction
+     * Reverses the rotation direction (clockwise)
      */
-    public void ReverseRotation()
+    public void ReverseClockwise()
     {
-        if (canReverse)
+        if (canReverse && rotationSpeed <= 0.0f)
+        {
+            canReverse = false;
+            rotationSpeed *= -1.0f;
+        }
+    }
+
+    /**
+     * Reverses the rotation direction (counter clockwise)
+     */
+    public void ReverseCounterClockwise()
+    {
+        if (canReverse && rotationSpeed >= 0.0f)
         {
             canReverse = false;
             rotationSpeed *= -1.0f;
