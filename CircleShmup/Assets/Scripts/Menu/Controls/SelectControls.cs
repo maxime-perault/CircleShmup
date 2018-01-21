@@ -11,6 +11,7 @@ public class SelectControls : ASelect
     private GameManager     manager;
     private bool            isMoving = false;
     private bool            isLocked = false;
+    private bool            isWaiting = false;
     private int             actual_button = 0;
 
     private new void Start()
@@ -49,12 +50,21 @@ public class SelectControls : ASelect
     void WaitInput()
     {
         InputText[actual_button].GetComponent<Text>().color = new Color32(255, 255, 255, 255);
+        isWaiting = true;
     }
 
     private void Update()
     {
-        if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
-            isLocked = true;
+        if (isWaiting == true)
+        {
+            if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
+            {
+                isLocked = true;
+                isWaiting = false;
+            }
+            else
+                return;
+        }
         if (isLocked == true)
         {
             foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
@@ -62,10 +72,8 @@ public class SelectControls : ASelect
                 if (Input.GetKeyDown(kcode))
                     UpdateValue(kcode.ToString());
             }
-            if (isLocked)
-                return;
+            return;
         }
-
 
         if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1"))
         {

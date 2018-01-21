@@ -10,6 +10,7 @@ public class SwitchButton : MonoBehaviour
     private int         actual_button = 0;
     private int         nb_buttons;
     private ASelect     MenuClass;
+    private GameManager manager;
 
     private GameObject      music;
     private RectTransform   masterButton;
@@ -24,6 +25,7 @@ public class SwitchButton : MonoBehaviour
         music = GameObject.Find("MusicPlayer");
         masterButton = GameObject.Find("MasterButton").GetComponent<RectTransform>();
         rotates = new float[5] {45, 12, -27, -61, -90};
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 	
     void ChangeButton(int y)
@@ -49,7 +51,7 @@ public class SwitchButton : MonoBehaviour
         /*
         ** Select
         */
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0"))
+        if (manager.GetKeyUp(GameManager.e_input.ACCEPT) || Input.GetKeyDown("joystick button 0"))
         {
             MenuClass.Select(actual_button);
         }
@@ -65,13 +67,13 @@ public class SwitchButton : MonoBehaviour
         */
         if (isMoving == false)
         {
-            if ((translation < -0.8) && (actual_button < (nb_buttons - 1)))
+            if ((manager.GetKeyDown(GameManager.e_input.DOWN) || (translation < -0.8)) && (actual_button < (nb_buttons - 1)))
                 ChangeButton(-1);
-            else if ((translation < -0.8) && (actual_button == (nb_buttons - 1)))
+            else if ((manager.GetKeyDown(GameManager.e_input.DOWN) || (translation < -0.8)) && (actual_button == (nb_buttons - 1)))
                 ChangeButton(nb_buttons - 1);
-            else if ((translation > 0.8) && (actual_button > 0))
+            else if ((manager.GetKeyDown(GameManager.e_input.UP) || (translation > 0.8)) && (actual_button > 0))
                 ChangeButton(1);
-            else if ((translation > 0.8 && (actual_button == 0)))
+            else if ((manager.GetKeyDown(GameManager.e_input.UP) || (translation > 0.8)) && (actual_button == 0))
                 ChangeButton(-(nb_buttons - 1));
             else
                 return;

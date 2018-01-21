@@ -11,6 +11,7 @@ public class SFX_Volume : MonoBehaviour
     private int                     value = 50;
     private RectTransform           FXButton;
     private float[]                 rotates;
+    private GameManager             manager;
 
     void setUpSound(int volume)
     {
@@ -25,12 +26,12 @@ public class SFX_Volume : MonoBehaviour
 
         if ((ButtonsClass.getActualButton() == 0) && (isMoving == false))
         {
-            if ((translation > 0.8) && ((value + 10) <= 100))
+            if (((translation > 0.8) || manager.GetKeyDown(GameManager.e_input.RIGHT)) && ((value + 10) <= 100))
             {
                 value += 10;
                 setUpSound(value);
             }
-            else if ((translation < -0.8) && ((value - 10) >= 0))
+            else if (((translation < -0.8) || manager.GetKeyDown(GameManager.e_input.LEFT)) && ((value - 10) >= 0))
             {
                 value -= 10;
                 setUpSound(value);
@@ -56,5 +57,6 @@ public class SFX_Volume : MonoBehaviour
         FXButton = GameObject.Find("FX_Button").GetComponent<RectTransform>();
         value = (int)music.GetComponent<MusicPlayer>().SFX_Volume;
         setUpSound(value);
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 }

@@ -11,6 +11,7 @@ public class Main_Volume : MonoBehaviour
     private int                     value = 50;
     private RectTransform           MainButton;
     private float[]                 rotates;
+    private GameManager             manager;
 
     void setUpSound(int volume)
     {
@@ -25,12 +26,12 @@ public class Main_Volume : MonoBehaviour
 
         if ((ButtonsClass.getActualButton() == 1) && (isMoving == false))
         {
-            if ((translation > 0.8) && ((value + 10) <= 100))
+            if (((translation > 0.8) || manager.GetKeyDown(GameManager.e_input.RIGHT)) && ((value + 10) <= 100))
             {
                 value += 10;
                 setUpSound(value);
             }
-            else if ((translation < -0.8) && ((value - 10) >= 0))
+            else if (((translation < -0.8) || manager.GetKeyDown(GameManager.e_input.LEFT)) && ((value - 10) >= 0))
             {
                 value -= 10;
                 setUpSound(value);
@@ -55,5 +56,6 @@ public class Main_Volume : MonoBehaviour
         MainButton = GameObject.Find("Music_Button").GetComponent<RectTransform>();
         value = (int)music.GetComponent<MusicPlayer>().Main_Volume;
         setUpSound(value);
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 }

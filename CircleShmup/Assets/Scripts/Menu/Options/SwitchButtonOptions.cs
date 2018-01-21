@@ -10,6 +10,7 @@ public class SwitchButtonOptions : MonoBehaviour
     private int actual_button = 0;
     private int nb_buttons;
     private ASelect MenuClass;
+    private GameManager manager;
 
     private GameObject music;
 
@@ -20,6 +21,7 @@ public class SwitchButtonOptions : MonoBehaviour
         MenuClass = SelectionScript.GetComponent<ASelect>();
         nb_buttons = buttons.Length;
         music = GameObject.Find("MusicPlayer");
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void ChangeButton(int y)
@@ -39,7 +41,7 @@ public class SwitchButtonOptions : MonoBehaviour
         /*
         ** Select Button
         */
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0"))
+        if (manager.GetKeyDown(GameManager.e_input.ACCEPT) || Input.GetKeyDown("joystick button 0"))
         {
             MenuClass.Select(actual_button);
         }
@@ -55,13 +57,13 @@ public class SwitchButtonOptions : MonoBehaviour
         */
         if (isMoving == false)
         {
-            if ((translation < -0.8) && (actual_button < (nb_buttons - 1)))
+            if (((translation < -0.8) || manager.GetKeyDown(GameManager.e_input.DOWN)) && (actual_button < (nb_buttons - 1)))
                 ChangeButton(-1);
-            else if ((translation < -0.8) && (actual_button == (nb_buttons - 1)))
+            else if (((translation < -0.8) || manager.GetKeyDown(GameManager.e_input.DOWN)) && (actual_button == (nb_buttons - 1)))
                 ChangeButton(nb_buttons - 1);
-            else if ((translation > 0.8) && (actual_button > 0))
+            else if (((translation > 0.8) || manager.GetKeyDown(GameManager.e_input.UP)) && (actual_button > 0))
                 ChangeButton(1);
-            else if ((translation > 0.8 && (actual_button == 0)))
+            else if (((translation > 0.8 || manager.GetKeyDown(GameManager.e_input.UP)) && (actual_button == 0)))
                 ChangeButton(-(nb_buttons - 1));
             else
                 return;

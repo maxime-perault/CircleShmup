@@ -15,7 +15,7 @@ public class SelectScore : ASelect
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 1"))
+        if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1"))
         {
             AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
             StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
