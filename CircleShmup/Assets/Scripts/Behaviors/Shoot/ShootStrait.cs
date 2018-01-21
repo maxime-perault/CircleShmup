@@ -8,9 +8,9 @@ public class ShootStrait : Shoot {
     private int actualBullet = 0;
 
     //The shot behavior
-    protected override Bullet shot()
+    protected override void shotBehavior()
     {
-        return Instantiate(chooseBullet(), this.gameObject.transform.position, Quaternion.identity); ;
+        Instantiate(chooseBullet(), this.gameObject.transform.position, Quaternion.identity); ;
     }
 
     //Choose the bullet shot

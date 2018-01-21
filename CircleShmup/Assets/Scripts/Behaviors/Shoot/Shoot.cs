@@ -8,7 +8,13 @@ using UnityEngine;
  */
 public class Shoot : Behavior {
 
-   
+
+    //Animator
+    public Animator animator;
+
+    //Player
+    private GameObject player;
+
 
     public float ShootDelay = 1f;
 
@@ -19,7 +25,16 @@ public class Shoot : Behavior {
     public float[] bulletsInformation;
 
 
-    private GameObject player;
+    private float animationTimer = 0.75f;
+
+    enum State
+    {
+        idle = 0,
+        preShot = 1,
+        Shot = 2
+    }
+
+    private State state = State.idle;
 
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -36,19 +51,37 @@ public class Shoot : Behavior {
     //Shot bullet every "ShootDelay"
 	void FixedUpdate () {
 
+
+
         timer += Time.fixedDeltaTime;
-        if (timer > ShootDelay)
+        if (timer > ShootDelay-animationTimer)
         {
-            shot();
+            this.state = State.preShot;
+            animator.SetBool("ShotSoon", true);
             timer = 0;
+        }
+
+        if (this.state == State.preShot && animator.GetCurrentAnimatorStateInfo(0).IsName("Mais_Shot"))
+        {
+            animator.SetBool("ShotSoon", false);
+            this.state = State.Shot;
+            shot();
+        }
+        if(this.state == State.Shot && animator.GetCurrentAnimatorStateInfo(0).IsName("Mais_MoveNeutral"))
+        {
+            this.state = State.idle;
         }
 
     }
 
-
-    protected virtual Bullet shot()
+    private void shot()
     {
-        return Instantiate(chooseBullet(), this.gameObject.transform.position, Quaternion.identity); ;
+            shotBehavior();        
+    }
+
+    protected virtual void shotBehavior()
+    {
+        Instantiate(chooseBullet(), this.gameObject.transform.position, Quaternion.identity);
     }
 
 
