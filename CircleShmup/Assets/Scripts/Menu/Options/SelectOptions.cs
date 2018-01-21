@@ -5,21 +5,27 @@ using UnityEngine.UI;
 
 public class SelectOptions : ASelect
 {
-    private GameManager manager;
-    private Toggle      Yaxis;
+    private GameManager         manager;
+    private SwitchButtonOptions ButtonsClass;
+
     enum e_button
     {
         SFX = 0,
         MUSIC,
         INVERT,
-        BACKMENU
+        CONTROLS
     };
 
     private new void Start()
     {
         base.Start();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        Yaxis = GameObject.Find("ToggleAxis").GetComponent<Toggle>();
+        ButtonsClass = GameObject.Find("ChangeButton").GetComponent<SwitchButtonOptions>();
+
+        if (manager.invertYaxis == 1)
+            ButtonsClass.DisableButton((int)e_button.INVERT);
+        else
+            ButtonsClass.EnableButton((int)e_button.INVERT);
     }
 
     private void Update()
@@ -29,24 +35,25 @@ public class SelectOptions : ASelect
             AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
             StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
         }
-
     }
 
     public override void Select(int tmp_button)
     {
         e_button button = (e_button)tmp_button;
 
-        AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
-
-        if (button == e_button.BACKMENU)
-            StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
         if (button == e_button.INVERT)
         {
-            Yaxis.isOn = !Yaxis.isOn;
-            if (Yaxis.isOn == false)
-                manager.invertYaxis = 1;
-            else
+            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            if (manager.invertYaxis == 1)
+            {
+                ButtonsClass.EnableButton((int)e_button.INVERT);
                 manager.invertYaxis = -1;
+            }
+            else
+            {
+                ButtonsClass.DisableButton((int)e_button.INVERT);
+                manager.invertYaxis = 1;
+            }
         }
     }
 }

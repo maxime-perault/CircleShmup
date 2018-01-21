@@ -2,42 +2,42 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class SwitchButton : MonoBehaviour
+public class SwitchButtonOptions : MonoBehaviour
 {
-    public GameObject   SelectionScript;
+    public GameObject SelectionScript;
     public GameObject[] buttons;
-    
-    private int         actual_button = 0;
-    private int         nb_buttons;
-    private ASelect     MenuClass;
+
+    private int actual_button = 0;
+    private int nb_buttons;
+    private ASelect MenuClass;
 
     private GameObject music;
 
-    private bool        isMoving = false;
+    private bool isMoving = false;
 
-    void Start ()
+    void Start()
     {
         MenuClass = SelectionScript.GetComponent<ASelect>();
         nb_buttons = buttons.Length;
         music = GameObject.Find("MusicPlayer");
     }
-	
+
     void ChangeButton(int y)
     {
-        buttons[actual_button].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-        buttons[actual_button].GetComponentInChildren<Text>().color = new Color32(0 ,0, 0, 255);
+        buttons[actual_button].GetComponent<Image>().color = new Color32(120, 120, 120, 255);
+
         actual_button -= y;
         isMoving = true;
-        buttons[actual_button].GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        buttons[actual_button].GetComponentInChildren<Text>().color = new Color32(255, 255, 255, 255);
+
+        buttons[actual_button].GetComponent<Image>().color = new Color32(220, 220, 220, 255);
     }
 
-	void Update ()
+    void Update()
     {
         float translation = Input.GetAxisRaw("Vertical");
 
         /*
-        ** Select
+        ** Select Button
         */
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0"))
         {
@@ -72,5 +72,19 @@ public class SwitchButton : MonoBehaviour
     public int getActualButton()
     {
         return actual_button;
+    }
+
+    public void EnableButton(int button)
+    {
+        buttons[button].GetComponent<Image>().sprite
+            = Resources.Load<Sprite>("Menu/options/" + buttons[button].GetComponent<Image>().sprite.name.Replace("_light", ""));
+        buttons[button].GetComponent<Image>().sprite
+            = Resources.Load<Sprite>("Menu/options/" + buttons[button].GetComponent<Image>().sprite.name + "_light");
+    }
+
+    public void DisableButton(int button)
+    {
+        buttons[button].GetComponent<Image>().sprite
+            = Resources.Load<Sprite>("Menu/options/" + buttons[button].GetComponent<Image>().sprite.name.Replace("_light", ""));
     }
 }
