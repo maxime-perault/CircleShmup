@@ -56,8 +56,18 @@ public class GameManager : MonoBehaviour
         inputs[(int)e_input.LEFT] = "LeftArrow";
         inputs[(int)e_input.RIGHT] = "RightArrow";
     }
-	
-	void Update ()
+
+    public bool GetKeyDown(GameManager.e_input input)
+    {
+        return Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), inputs[(int)input]));
+    }
+
+    public bool GetKeyUp(GameManager.e_input input)
+    {
+        return Input.GetKeyUp((KeyCode)System.Enum.Parse(typeof(KeyCode), inputs[(int)input]));
+    }
+
+    void Update ()
     {
 		// None
 	}

@@ -2,37 +2,89 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class SelectControls : ASelect
 {
     public GameObject[]     InputText;
 
     private GameManager     manager;
+    private bool            isMoving = false;
+    private bool            isLocked = false;
+    private int             actual_button = 0;
 
     private new void Start()
     {
         base.Start();
+
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        InputText[0].GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.TURNLEFT];
-        InputText[1].GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.TURNRIGHT];
+        for (int i = 0; i < manager.inputs.Length; i++)
+        {
+            InputText[i].GetComponent<Text>().text = manager.inputs[i];
+        }
+    }
 
-        InputText[2].GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.ACCEPT];
-        InputText[3].GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.CANCEL];
-        InputText[4].GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.PAUSE];
+    public void UpdateValue(string text)
+    {
+        for (int i = 0; i < manager.inputs.Length; i++)
+            if (manager.inputs[i] == text)
+                return;
+        InputText[actual_button].GetComponent<Text>().text = text;
+        manager.inputs[actual_button] = text;
+        isLocked = false;
+        InputText[actual_button].GetComponent<Text>().color = new Color32(0, 0, 0, 255);
+    }
 
-        InputText[5].GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.UP];
-        InputText[6].GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.DOWN];
-        InputText[7].GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.LEFT];
-        InputText[8].GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.RIGHT];
+    void ChangeButton(int y)
+    {
+        InputText[actual_button].transform.parent.gameObject.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        InputText[actual_button].GetComponent<Text>().color = new Color32(173, 173, 173, 255);
+
+        actual_button += y;
+
+        InputText[actual_button].transform.parent.gameObject.GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+        InputText[actual_button].GetComponent<Text>().color = new Color32(0, 0, 0, 255);
+    }
+
+    void WaitInput()
+    {
+        InputText[actual_button].GetComponent<Text>().color = new Color32(255, 255, 255, 255);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 1"))
+        if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
+            isLocked = true;
+        if (isLocked == true)
+        {
+            foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
+            {
+                if (Input.GetKeyDown(kcode))
+                    UpdateValue(kcode.ToString());
+            }
+            if (isLocked)
+                return;
+        }
+
+
+        if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1"))
         {
             AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
             StartCoroutine(LoadYourAsyncScene("Menu/Options"));
         }
 
+        if (manager.GetKeyDown(GameManager.e_input.DOWN) && ((actual_button + 1) < InputText.Length))
+        {
+            ChangeButton(1);
+        }
+        else if (manager.GetKeyDown(GameManager.e_input.UP) && ((actual_button - 1) >= 0))
+        {
+            ChangeButton(-1);
+        }
+
+        if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
+        {
+            WaitInput();
+        }
     }
 }

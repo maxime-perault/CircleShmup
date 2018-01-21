@@ -13,7 +13,7 @@ public class SwitchButton : MonoBehaviour
 
     private GameObject      music;
     private RectTransform   masterButton;
-    private float[]           rotates;
+    private float[]         rotates;
 
     private bool        isMoving = false;
 
