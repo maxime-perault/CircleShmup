@@ -41,7 +41,7 @@ public class SFX_Volume : MonoBehaviour
             isMoving = true;
             AkSoundEngine.SetRTPCValue("SFX_Volume", value, music);
             AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
-            music.GetComponent<MusicPlayer>().Main_Volume = value;
+            music.GetComponent<MusicPlayer>().SFX_Volume = value;
 
         }
         if ((isMoving == true) && (translation == 0))
