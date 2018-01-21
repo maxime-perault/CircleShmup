@@ -55,5 +55,10 @@ public class SelectOptions : ASelect
                 manager.invertYaxis = 1;
             }
         }
+        if (button == e_button.CONTROLS)
+        {
+            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            StartCoroutine(LoadYourAsyncScene("Menu/Controls"));
+        }
     }
 }
