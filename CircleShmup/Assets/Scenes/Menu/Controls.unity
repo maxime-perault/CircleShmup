@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 358989228}
   - component: {fileID: 358989227}
   m_Layer: 5
-  m_Name: TextTR
+  m_Name: TextLEFT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 563074881}
   - component: {fileID: 563074880}
   m_Layer: 5
-  m_Name: TextTR
+  m_Name: TextDOWN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 566688260}
   - component: {fileID: 566688259}
   m_Layer: 5
-  m_Name: TextTR
+  m_Name: TextUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1612,7 +1612,7 @@ GameObject:
   - component: {fileID: 1283391561}
   - component: {fileID: 1283391560}
   m_Layer: 5
-  m_Name: TextTR
+  m_Name: TextA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1880,7 +1880,7 @@ GameObject:
   - component: {fileID: 1416381086}
   - component: {fileID: 1416381085}
   m_Layer: 5
-  m_Name: TextTR
+  m_Name: TextRIGHT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2023,7 +2023,7 @@ GameObject:
   - component: {fileID: 1530273986}
   - component: {fileID: 1530273985}
   m_Layer: 5
-  m_Name: TextTR
+  m_Name: TextB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2412,7 +2412,7 @@ GameObject:
   - component: {fileID: 1624152095}
   - component: {fileID: 1624152094}
   m_Layer: 5
-  m_Name: TextTR
+  m_Name: TextPAUSE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2656,13 +2656,13 @@ MonoBehaviour:
   InputText:
   - {fileID: 1831755467}
   - {fileID: 558737222}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1283391558}
+  - {fileID: 1530273983}
+  - {fileID: 1624152092}
+  - {fileID: 566688257}
+  - {fileID: 563074878}
+  - {fileID: 358989225}
+  - {fileID: 1416381083}
 --- !u!1 &1831755467
 GameObject:
   m_ObjectHideFlags: 0
