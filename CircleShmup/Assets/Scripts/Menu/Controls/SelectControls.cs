@@ -47,6 +47,7 @@ public class SelectControls : ASelect
 
     void ChangeButton(int y)
     {
+        AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
         InputText[actual_button].transform.parent.gameObject.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
         InputText[actual_button].GetComponent<Text>().color = new Color32(173, 173, 173, 255);
 
@@ -91,15 +92,13 @@ public class SelectControls : ASelect
         }
 
         if (manager.GetKeyDown(GameManager.e_input.DOWN) && ((actual_button + 1) < InputText.Length))
-        {
             ChangeButton(1);
-            AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
-        }
+        else if (manager.GetKeyDown(GameManager.e_input.DOWN) && (actual_button == (InputText.Length - 1)))
+            ChangeButton(-(InputText.Length - 1));
         else if (manager.GetKeyDown(GameManager.e_input.UP) && ((actual_button - 1) >= 0))
-        {
             ChangeButton(-1);
-            AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
-        }
+        else if (manager.GetKeyDown(GameManager.e_input.UP) && (actual_button == 0))
+            ChangeButton(InputText.Length - 1);
 
         if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
         {
