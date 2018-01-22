@@ -23,15 +23,44 @@ public class PlayerInputController : MonoBehaviour
     [SerializeField] public string clockwiseRotationInput        = "ClockwiseRotation";
     [SerializeField] public string counterClockwiseRotationInput = "CounterClockwiseRotation";
 
+    private GameManager gameManagerInstance;
+
+    /**
+     * Called at behavior start
+     */
+    public void Start()
+    {
+        // Buffering the game manager
+        gameManagerInstance = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        if (!gameManagerInstance)
+        {
+            Debug.LogError("Cannot find the game manager ...");
+        }
+    }
+
     /**
      * Returns the horizontal and vertical axis
      * @return A vector2 containing the axis
      */
     public Vector2 GetAxis()
     {
-        return new Vector2(
+        Vector2 axis = new Vector2(
             Input.GetAxis(horizontalInput), 
             Input.GetAxis(verticalInput));
+
+        if(axis == Vector2.zero)
+        {
+            axis.x =
+                (gameManagerInstance.GetKeyDown(GameManager.e_input.RIGHT) ?  1.0f : 0.0f) +
+                (gameManagerInstance.GetKeyDown(GameManager.e_input.LEFT)  ? -1.0f : 0.0f);
+
+            axis.y =
+                (gameManagerInstance.GetKeyDown(GameManager.e_input.UP)   ?  1.0f : 0.0f) +
+                (gameManagerInstance.GetKeyDown(GameManager.e_input.DOWN) ? -1.0f : 0.0f);
+        }
+       
+        return axis * gameManagerInstance.invertYaxis;
     }
     
     /**
@@ -58,7 +87,12 @@ public class PlayerInputController : MonoBehaviour
      */
     public bool IsIncreasingRadius()
     {
-        return (canIncreaseRadius) ? Input.GetButton(increaseRadiusInput) : false;
+        // Deprecated
+        // return (canIncreaseRadius) ? 
+        //     (Input.GetButton(increaseRadiusInput)) ||
+        //     (gameManagerInstance.GetKeyDown(GameManager.e_input.ACCEPT)) : false;
+
+        return false;
     }
 
     /**
@@ -67,7 +101,9 @@ public class PlayerInputController : MonoBehaviour
      */
     public bool IsClockwiseRotation()
     {
-        return (canClockwiseRotation) ? Input.GetAxis(clockwiseRotationInput) == 1.0f : false;
+        return (canClockwiseRotation) ? 
+            (Input.GetAxis(clockwiseRotationInput) == 1.0f) ||
+            (gameManagerInstance.GetKeyDown(GameManager.e_input.TURNLEFT)) : false;
     }
 
     /**
@@ -76,6 +112,8 @@ public class PlayerInputController : MonoBehaviour
     */
     public bool IsCounterClockwiseRotation()
     {
-        return (canCounterClockwiseRotation) ? Input.GetAxis(counterClockwiseRotationInput) == 1.0f : false;
+        return (canCounterClockwiseRotation) ? 
+            (Input.GetAxis(counterClockwiseRotationInput) == 1.0f) ||
+            (gameManagerInstance.GetKeyDown(GameManager.e_input.TURNRIGHT)) : false;
     }
 }
