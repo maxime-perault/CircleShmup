@@ -70,17 +70,17 @@ public class GameManager : MonoBehaviour
         addScore(12, "TESTTEST");
 
 
-        inputs[(int)e_input.TURNLEFT] = "Mouse0";
-        inputs[(int)e_input.TURNRIGHT] = "Mouse1";
+        inputs[(int)e_input.TURNLEFT] = "LeftControl";
+        inputs[(int)e_input.TURNRIGHT] = "Space";
 
         inputs[(int)e_input.ACCEPT] = "Space";
         inputs[(int)e_input.CANCEL] = "Escape";
         inputs[(int)e_input.PAUSE] = "Escape";
 
-        inputs[(int)e_input.UP] = "UpArrow";
-        inputs[(int)e_input.DOWN] = "DownArrow";
-        inputs[(int)e_input.LEFT] = "LeftArrow";
-        inputs[(int)e_input.RIGHT] = "RightArrow";
+        inputs[(int)e_input.UP] = "Z";
+        inputs[(int)e_input.DOWN] = "S";
+        inputs[(int)e_input.LEFT] = "Q";
+        inputs[(int)e_input.RIGHT] = "D";
     }
 
     public void addScore(int score, string name)
