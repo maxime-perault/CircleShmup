@@ -33,7 +33,10 @@ public class SelectControls : ASelect
     {
         for (int i = 0; i < manager.inputs.Length; i++)
             if (manager.inputs[i] == text)
+            {
+                AkSoundEngine.PostEvent("Main_Menu_UI_Error", music);
                 return;
+            }
         InputText[actual_button].GetComponent<Text>().text = text;
         manager.inputs[actual_button] = text;
         isLocked = false;
@@ -87,7 +90,7 @@ public class SelectControls : ASelect
 
         if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1"))
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
             StartCoroutine(LoadYourAsyncScene("Menu/Options"));
         }
 
