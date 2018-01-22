@@ -77,4 +77,12 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: shot
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 5b30210838f6b9046a1af07a1884bf99,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
