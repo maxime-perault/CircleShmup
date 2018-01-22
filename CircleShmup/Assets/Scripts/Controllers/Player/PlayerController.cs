@@ -78,22 +78,25 @@ public class PlayerController : Entity
             sphereController.RemoveSphere();
         }
 
-        if (inputController.IsIncreasingRadius())
+        bool bIncreaseRadius = false;
+        if (inputController.IsClockwiseRotation())
+        {
+            bIncreaseRadius = true;
+            sphereController.ReverseClockwise();
+        }
+        else if (inputController.IsCounterClockwiseRotation())
+        {
+            bIncreaseRadius = true;
+            sphereController.ReverseCounterClockwise();
+        }
+
+        if(bIncreaseRadius)
         {
             sphereController.IncreaseRadius();
         }
         else
         {
             sphereController.DecreaseRadius();
-        }
-
-        if (inputController.IsClockwiseRotation())
-        {
-            sphereController.ReverseClockwise();
-        }
-        else if (inputController.IsCounterClockwiseRotation())
-        {
-            sphereController.ReverseCounterClockwise();
         }
     }
 

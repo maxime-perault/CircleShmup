@@ -8,12 +8,16 @@ using System.Collections.Generic;
  */
 public class EnemyClassic2 : EnemyClassic
 {
+
+    private GameObject music;
+
     /**
      * Called once at start
      */
     void Start()
     {
         BaseStart();
+        music = GameObject.Find("MusicPlayer");
     }
 
     /**
@@ -38,11 +42,21 @@ public class EnemyClassic2 : EnemyClassic
     public override void OnEntityDeath()
     {
         // Notifies that this enemy is dead
-        if(handle)
+        if (handle)
         {
             handle.OnEnemyDeath();
         }
 
         Destroy(this.gameObject);
+    }
+
+    public void Mais_Move_Up()
+    {
+        AkSoundEngine.PostEvent("Mais_Move_Up", music);
+    }
+
+    public void Mais_Move_Down()
+    {
+        AkSoundEngine.PostEvent("Mais_Move_Down", music);
     }
 }

@@ -32,7 +32,7 @@ public class SelectOptions : ASelect
     {
         if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1"))
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
             StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
         }
     }
