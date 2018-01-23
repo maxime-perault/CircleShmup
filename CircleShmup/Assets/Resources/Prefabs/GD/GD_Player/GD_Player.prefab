@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 60924905749262300}
   - component: {fileID: 114212202490279160}
   - component: {fileID: 114284248290722078}
+  - component: {fileID: 114379833190189922}
   m_Layer: 10
   m_Name: GD_Player
   m_TagString: Player
@@ -297,6 +298,18 @@ MonoBehaviour:
   slide: 1
   speed: {x: 75, y: 75}
   sphereController: {fileID: 114780270547456780}
+--- !u!114 &114379833190189922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095822498313386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aec44154bbf0b6488b59049b41a3ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 4783298376165004}
 --- !u!114 &114456624577593620
 MonoBehaviour:
   m_ObjectHideFlags: 1

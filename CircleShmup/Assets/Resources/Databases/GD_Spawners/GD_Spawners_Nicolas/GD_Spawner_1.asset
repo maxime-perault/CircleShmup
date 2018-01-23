@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: GD_Spawner_1
   m_EditorClassIdentifier: 
   SpawnerName: Spawner_1
-  SpawnerSpawnCount: 1
+  SpawnerSpawnCount: 2
   SpawnerInfo:
   - SpawnPrefab: {fileID: 1663742183731084, guid: 84a9fe31437ff004ba344f66f3614918,
       type: 2}

@@ -20,32 +20,32 @@ MonoBehaviour:
     - WaveID: 0
       WaveName: Wave 1
       WaveBlocking: 1
-      WaveTiming: 1
+      WaveTiming: 0
       WaveSpawner: {fileID: 11400000, guid: 862111daaeac2a445a38467ce9722e01, type: 2}
     - WaveID: 1
       WaveName: Wave 2
       WaveBlocking: 1
-      WaveTiming: 2
+      WaveTiming: 1
       WaveSpawner: {fileID: 11400000, guid: a325af0a5e546ae47b6545fbfc3d27c3, type: 2}
     - WaveID: 2
       WaveName: Wave 3
       WaveBlocking: 1
-      WaveTiming: 3
+      WaveTiming: 2
       WaveSpawner: {fileID: 11400000, guid: 0181675dfd4ad51448700cb9362417c5, type: 2}
     - WaveID: 3
       WaveName: Wave 4
       WaveBlocking: 1
-      WaveTiming: 4
+      WaveTiming: 3
       WaveSpawner: {fileID: 11400000, guid: ed412198a03d356488df6a8f214fa532, type: 2}
     - WaveID: 4
       WaveName: Wave 5
       WaveBlocking: 1
-      WaveTiming: 5
+      WaveTiming: 4
       WaveSpawner: {fileID: 11400000, guid: 2216c7404dbda9e498454ce5c8c8d356, type: 2}
     - WaveID: 5
       WaveName: Wave 6
       WaveBlocking: 1
-      WaveTiming: 6
+      WaveTiming: 5
       WaveSpawner: {fileID: 11400000, guid: 09c4ff1fc9250744d9439302451715f7, type: 2}
     - WaveID: 6
       WaveName: Wave 7
@@ -55,5 +55,5 @@ MonoBehaviour:
     - WaveID: 7
       WaveName: Wave 8
       WaveBlocking: 1
-      WaveTiming: 8
+      WaveTiming: 9
       WaveSpawner: {fileID: 11400000, guid: bf050e89fa4938b4d81bdae20247709f, type: 2}
