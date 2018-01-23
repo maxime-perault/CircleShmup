@@ -6,7 +6,8 @@ public class RotatePoele : MonoBehaviour {
 
 	public PlayerInputController inputController;
 
-	public float maxRotX, maxRotY;
+	public float maxRotX, maxRotY = 8f; // base 8
+	public float lerpSpeed = 0.03f; // base 0,03
 
 	private float poeleX, poeleY;
 	private Vector2 playerInput;
@@ -30,7 +31,8 @@ public class RotatePoele : MonoBehaviour {
 		poeleX = playerInput.x * maxRotX;
 		poeleY = playerInput.y * maxRotY * -1f;
 
-		this.transform.rotation = Quaternion.Euler (poeleY, poeleX, 0f);
+		// this.transform.rotation = Quaternion.Euler (poeleY, poeleX, 0f);
+		this.transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler (poeleY, poeleX, 0f), Time.time * lerpSpeed);
 		
 	}
 }
