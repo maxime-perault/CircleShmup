@@ -29,20 +29,20 @@ MonoBehaviour:
   - SpawnPrefab: {fileID: 1663742183731084, guid: 17de03a6847606f4693c49063b605d8a,
       type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 0, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 1663742183731084, guid: 17de03a6847606f4693c49063b605d8a,
-      type: 2}
-    SpawnTiming: 0.5
-    SpawnPosition: {x: 0, y: 4.5, z: 0}
-  - SpawnPrefab: {fileID: 1663742183731084, guid: 17de03a6847606f4693c49063b605d8a,
-      type: 2}
-    SpawnTiming: 0.5
-    SpawnPosition: {x: 0, y: 4.5, z: 0}
-  - SpawnPrefab: {fileID: 1663742183731084, guid: 17de03a6847606f4693c49063b605d8a,
-      type: 2}
-    SpawnTiming: 0.5
     SpawnPosition: {x: 0, y: -4.5, z: 0}
   - SpawnPrefab: {fileID: 1663742183731084, guid: 17de03a6847606f4693c49063b605d8a,
       type: 2}
-    SpawnTiming: 0.5
+    SpawnTiming: 0.75
+    SpawnPosition: {x: 0, y: 4.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 17de03a6847606f4693c49063b605d8a,
+      type: 2}
+    SpawnTiming: 0.75
     SpawnPosition: {x: 0, y: -4.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 17de03a6847606f4693c49063b605d8a,
+      type: 2}
+    SpawnTiming: 0.75
+    SpawnPosition: {x: 4.5, y: 0, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 17de03a6847606f4693c49063b605d8a,
+      type: 2}
+    SpawnTiming: 0.75
+    SpawnPosition: {x: -4.5, y: 0, z: 0}

@@ -200,7 +200,7 @@ MonoBehaviour:
   isDead: 0
   isInvincible: 0
   hitPoint: 1
-  damageOnCollision: 1
+  damageOnCollision: 0
   handle: {fileID: 0}
   shootDelay: 0
 --- !u!114 &114420967287159346
