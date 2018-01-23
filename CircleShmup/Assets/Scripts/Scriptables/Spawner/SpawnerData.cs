@@ -1,5 +1,8 @@
-﻿using UnityEngine;
-using UnityEditor;
+﻿#if UNITY_EDITOR
+    using UnityEditor;
+#endif
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -78,6 +81,8 @@ public class SpawnerData : ScriptableObject
      */
     private void OnDisable()
     {
-        EditorUtility.SetDirty(this);
+        #if UNITY_EDITOR
+            EditorUtility.SetDirty(this);
+        #endif
     }
 }
