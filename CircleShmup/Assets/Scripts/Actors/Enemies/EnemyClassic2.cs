@@ -16,8 +16,9 @@ public class EnemyClassic2 : EnemyClassic
      */
     void Start()
     {
-        BaseStart();
         music = GameObject.Find("MusicPlayer");
+        BaseStart();
+        AkSoundEngine.PostEvent("Ennemy_Pop", music);
     }
 
     /**
@@ -41,13 +42,18 @@ public class EnemyClassic2 : EnemyClassic
      */
     public override void OnEntityDeath()
     {
+        Mais_Death();
         // Notifies that this enemy is dead
         if (handle)
         {
             handle.OnEnemyDeath();
         }
-
         Destroy(this.gameObject);
+    }
+
+    public override void HitSound()
+    {
+        Mais_Hit();
     }
 
     public void Mais_Move_Up()
@@ -58,5 +64,25 @@ public class EnemyClassic2 : EnemyClassic
     public void Mais_Move_Down()
     {
         AkSoundEngine.PostEvent("Mais_Move_Down", music);
+    }
+
+    public void Mais_Hit()
+    {
+        AkSoundEngine.PostEvent("Mais_Hit", music);
+    }
+
+    public void Mais_Death()
+    {
+        AkSoundEngine.PostEvent("Mais_Death", music);
+    }
+
+    public void Mais_Shot_Prep()
+    {
+        AkSoundEngine.PostEvent("Mais_Shot_Prep", music);
+    }
+
+    public void Mais_Shot_Fire()
+    {
+        AkSoundEngine.PostEvent("Mais_Shot_Fire", music);
     }
 }

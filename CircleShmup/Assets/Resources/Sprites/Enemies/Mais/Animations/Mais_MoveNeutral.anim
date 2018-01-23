@@ -20,25 +20,25 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: bd3d42f89c792624c8d1353d551742ec, type: 3}
-    - time: 0.083333336
+    - time: 0.09090909
       value: {fileID: 21300002, guid: bd3d42f89c792624c8d1353d551742ec, type: 3}
-    - time: 0.16666667
+    - time: 0.18181819
       value: {fileID: 21300004, guid: bd3d42f89c792624c8d1353d551742ec, type: 3}
-    - time: 0.25
+    - time: 0.27272728
       value: {fileID: 21300006, guid: bd3d42f89c792624c8d1353d551742ec, type: 3}
-    - time: 0.33333334
+    - time: 0.36363637
       value: {fileID: 21300008, guid: bd3d42f89c792624c8d1353d551742ec, type: 3}
-    - time: 0.41666666
+    - time: 0.45454547
       value: {fileID: 21300010, guid: bd3d42f89c792624c8d1353d551742ec, type: 3}
-    - time: 0.5
+    - time: 0.54545456
       value: {fileID: 21300012, guid: bd3d42f89c792624c8d1353d551742ec, type: 3}
-    - time: 0.5833333
+    - time: 0.6363636
       value: {fileID: 21300014, guid: bd3d42f89c792624c8d1353d551742ec, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 12
+  m_SampleRate: 11
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -66,7 +66,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6666666
+    m_StopTime: 0.72727275
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -87,14 +87,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 0.16666667
+  - time: 0.18181819
     functionName: Mais_Move_Up
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.5833333
+  - time: 0.6363636
     functionName: Mais_Move_Down
     data: 
     objectReferenceParameter: {fileID: 0}
