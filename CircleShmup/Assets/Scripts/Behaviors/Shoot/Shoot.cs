@@ -38,8 +38,10 @@ public class Shoot : Behavior {
             Debug.Break();
             Debug.Log("bullets.Length != bulletsProba.Length");
         }
+        animator.SetBool("ShotSoon", true);
+        timer = 0;
 
-	}
+    }
 	
     //Shot bullet every "ShootDelay"
 	void FixedUpdate () {
