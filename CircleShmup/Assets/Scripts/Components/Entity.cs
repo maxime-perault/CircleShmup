@@ -82,8 +82,8 @@ public class Entity : MonoBehaviour
             return;
         }
 
+        OnHit();
         hitPoint -= damages;
-        HitSound();
 
         if (hitPoint <= 0)
         {
@@ -93,7 +93,7 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public virtual void  HitSound()
+    public virtual void OnHit()
     {
         //PlaySound
     }

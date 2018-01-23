@@ -8,6 +8,7 @@ using System.Collections.Generic;
  */
 public class EnemyClassic2 : EnemyClassic
 {
+    private Animator animator;
 
     private GameObject music;
 
@@ -19,6 +20,8 @@ public class EnemyClassic2 : EnemyClassic
         music = GameObject.Find("MusicPlayer");
         BaseStart();
         AkSoundEngine.PostEvent("Ennemy_Pop", music);
+        animator = this.GetComponent<Animator>();
+        animator.SetBool("LowLife", false);
     }
 
     /**
@@ -51,8 +54,9 @@ public class EnemyClassic2 : EnemyClassic
         Destroy(this.gameObject);
     }
 
-    public override void HitSound()
+    public override void OnHit()
     {
+        animator.SetBool("LowLife", true);
         Mais_Hit();
     }
 
