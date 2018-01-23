@@ -11,18 +11,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab4e19d54d23605429ef8ed3c95b28c6, type: 3}
   m_Name: GD_Spawner_5
   m_EditorClassIdentifier: 
-  SpawnerName: Spawner_6
-  SpawnerSpawnCount: 4
+  SpawnerName: Spawner_5
+  SpawnerSpawnCount: 3
   SpawnerInfo:
-  - SpawnPrefab: {fileID: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 84a9fe31437ff004ba344f66f3614918,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
+    SpawnPosition: {x: 0, y: 3.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 84a9fe31437ff004ba344f66f3614918,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
+    SpawnPosition: {x: -2.5, y: -2.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 84a9fe31437ff004ba344f66f3614918,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
-    SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
+    SpawnPosition: {x: 2.5, y: -2.5, z: 0}

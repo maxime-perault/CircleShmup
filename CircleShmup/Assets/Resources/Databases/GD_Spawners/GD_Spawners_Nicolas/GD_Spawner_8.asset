@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab4e19d54d23605429ef8ed3c95b28c6, type: 3}
   m_Name: GD_Spawner_8
   m_EditorClassIdentifier: 
-  SpawnerName: Spawner_6
-  SpawnerSpawnCount: 4
+  SpawnerName: Spawner_8
+  SpawnerSpawnCount: 8
   SpawnerInfo:
   - SpawnPrefab: {fileID: 0}
     SpawnTiming: 0
