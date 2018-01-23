@@ -14,11 +14,11 @@ MonoBehaviour:
   SpawnerName: Spawner_4
   SpawnerSpawnCount: 4
   SpawnerInfo:
-  - SpawnPrefab: {fileID: 1974657354225930, guid: b036b68876e69da42a98f048c40d0e61,
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 84a9fe31437ff004ba344f66f3614918,
       type: 2}
     SpawnTiming: 0
     SpawnPosition: {x: 0, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 1817730535677758, guid: 7b86c622b080b55478aa99317aba8a09,
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 6a08b4fc47e0ebc49af4fca148d5c46a,
       type: 2}
     SpawnTiming: 0
     SpawnPosition: {x: -2.5, y: 0, z: 0}

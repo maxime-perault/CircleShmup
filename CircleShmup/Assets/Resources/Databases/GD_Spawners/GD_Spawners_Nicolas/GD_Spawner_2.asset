@@ -14,7 +14,7 @@ MonoBehaviour:
   SpawnerName: Spawner_2
   SpawnerSpawnCount: 1
   SpawnerInfo:
-  - SpawnPrefab: {fileID: 1817730535677758, guid: d4168e365f5794743a18f47780985371,
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 17de03a6847606f4693c49063b605d8a,
       type: 2}
     SpawnTiming: 0
     SpawnPosition: {x: -4.5, y: 0, z: 0}

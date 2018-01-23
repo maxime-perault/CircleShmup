@@ -14,15 +14,15 @@ MonoBehaviour:
   SpawnerName: Spawner_3
   SpawnerSpawnCount: 3
   SpawnerInfo:
-  - SpawnPrefab: {fileID: 1817730535677758, guid: 85b8d7a503ce5f3498b54f74fbfe14ca,
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 17de03a6847606f4693c49063b605d8a,
       type: 2}
     SpawnTiming: 0
     SpawnPosition: {x: 0, y: 4.5, z: 0}
-  - SpawnPrefab: {fileID: 1817730535677758, guid: 7b86c622b080b55478aa99317aba8a09,
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 6a08b4fc47e0ebc49af4fca148d5c46a,
       type: 2}
     SpawnTiming: 0
     SpawnPosition: {x: 0, y: 3.5, z: 0}
-  - SpawnPrefab: {fileID: 1817730535677758, guid: c963998dfd80db7458e2f70681228568,
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 0b523359eb5846d4888bcc869f402c02,
       type: 2}
     SpawnTiming: 0
     SpawnPosition: {x: 0, y: 2.5, z: 0}
