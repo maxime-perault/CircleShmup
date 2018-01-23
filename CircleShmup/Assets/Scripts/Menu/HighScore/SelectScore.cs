@@ -7,7 +7,11 @@ public class SelectScore : ASelect
 {
     private GameManager manager;
     private Scrollbar   scrollbar;
-    private Text        scoreText;
+
+    private Text        scorePos;
+    private Text        scoreValue;
+    private Text        scoreName;
+
     private Text        firstScore;
     private Text        secondScore;
     private Text        thirdScore;
@@ -17,13 +21,18 @@ public class SelectScore : ASelect
         base.Start();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         scrollbar = GameObject.Find("Scrollbar").GetComponent<Scrollbar>();
-        scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
+
+        scorePos = GameObject.Find("ScorePos").GetComponent<Text>();
+        scoreValue = GameObject.Find("ScoreValue").GetComponent<Text>();
+        scoreName = GameObject.Find("ScoreName").GetComponent<Text>();
 
         firstScore = GameObject.Find("FirstPlace").GetComponent<Text>();
         secondScore = GameObject.Find("SecondPlace").GetComponent<Text>();
         thirdScore = GameObject.Find("ThirdPlace").GetComponent<Text>();
 
-        string fullBoard = "";
+        string fullBoardPos = "";
+        string fullBoardName = "";
+        string fullBoardScore = "";
 
         firstScore.text = getPos(1) + " " + manager.scoreboard[0].name + " " + getScore(manager.scoreboard[0].score) + "\n";
         secondScore.text = getPos(2) + " " + manager.scoreboard[1].name + " " + getScore(manager.scoreboard[1].score) + "\n";
@@ -31,9 +40,15 @@ public class SelectScore : ASelect
         for (int i = 3; i < manager.scoreboard.Length; i++)
         {
             if (i < 99)
-                fullBoard += getPos(i + 1) + " " + manager.scoreboard[i].name + " " +  getScore(manager.scoreboard[i].score) + "\n";
+            {
+                fullBoardPos += getPos(i + 1) + "\n";
+                fullBoardName += manager.scoreboard[i].name + "\n";
+                fullBoardScore += getScore(manager.scoreboard[i].score) + "\n";
+            }
         }
-        scoreText.text = fullBoard;
+        scorePos.text = fullBoardPos;
+        scoreValue.text = fullBoardScore;
+        scoreName.text = fullBoardName;
     }
 
     string  getPos(int nb)
