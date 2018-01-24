@@ -21,6 +21,6 @@ public class GameWinController : ASelect
      */
     public void GameWin()
     {
-        StartCoroutine(LoadYourAsyncScene("End/GameOver"));
+        StartCoroutine(LoadYourAsyncScene("End/Victory"));
     }
 }
