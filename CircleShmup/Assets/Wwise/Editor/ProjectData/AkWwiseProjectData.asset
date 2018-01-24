@@ -16,18 +16,56 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B29443EC-A86D-4F2A-B551-D913A31F46C3}'
-    m_lastTimePsrt1: 628563453
-    m_lastTimePart2: -1999281721
+    m_lastTimePsrt1: -97748458
+    m_lastTimePart2: -1999281374
     List:
-    - Name: aTable_Play
-      Path: Default Work Unit\aTable_Play
+    - Name: A_Table_1
+      Path: Default Work Unit\Other\A_Table_1
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: aTable_Play
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: A_Table_1
         ObjectType: 3
-      ID: 1306613731
-      Guid: 859252de6e92114faef6d9dae419db01
+      ID: 363471131
+      Guid: dcdebb1cdadbaf4ea1fb6eca84d020b6
+      maxAttenuation: 0
+    - Name: A_Table_2
+      Path: Default Work Unit\Other\A_Table_2
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: A_Table_2
+        ObjectType: 3
+      ID: 363471128
+      Guid: fb21f978de57bb4db4c554c39cec83f9
+      maxAttenuation: 0
+    - Name: A_Table_3
+      Path: Default Work Unit\Other\A_Table_3
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: A_Table_3
+        ObjectType: 3
+      ID: 363471129
+      Guid: d66b3a2e8eb3a44ab0457008c4bfdfcf
+      maxAttenuation: 0
+    - Name: Beurre_Death
+      Path: Default Work Unit\Petit_Beurre\Beurre_Death
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Petit_Beurre
+        ObjectType: 4
+      - ElementName: Beurre_Death
+        ObjectType: 3
+      ID: 1566481283
+      Guid: 3bb584b306c14c4c9cb7d15c8e30f1fc
       maxAttenuation: 0
     - Name: Beurre_Hit
       Path: Default Work Unit\Petit_Beurre\Beurre_Hit
@@ -79,6 +117,20 @@ MonoBehaviour:
       ID: 1392079844
       Guid: a45485cd1d9747408375e829989265f6
       maxAttenuation: 0
+    - Name: Brochette_Hit_Invulnerable
+      Path: Default Work Unit\Ennemies\Brochette\Brochette_Hit_Invulnerable
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Brochette
+        ObjectType: 4
+      - ElementName: Brochette_Hit_Invulnerable
+        ObjectType: 3
+      ID: -562277131
+      Guid: cd469e2a03a613458edfc5421c8b40b0
+      maxAttenuation: 0
     - Name: Brochette_Tomato_Destroy
       Path: Default Work Unit\Ennemies\Brochette\Brochette_Tomato_Destroy
       PathAndIcons:
@@ -93,6 +145,30 @@ MonoBehaviour:
       ID: 1450580127
       Guid: f9855437d3cf3041a16d79f161d696e5
       maxAttenuation: 0
+    - Name: End_Fail
+      Path: Default Work Unit\Other\End_Fail
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: End_Fail
+        ObjectType: 3
+      ID: 1316671051
+      Guid: 9251725ac34d0440b71dbeee29cb0f24
+      maxAttenuation: 0
+    - Name: End_Victory
+      Path: Default Work Unit\Other\End_Victory
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: End_Victory
+        ObjectType: 3
+      ID: -1677314685
+      Guid: 5af4f6e01faf204089abd34495402e61
+      maxAttenuation: 0
     - Name: Ennemy_Pop
       Path: Default Work Unit\Ennemies\Ennemy_Pop
       PathAndIcons:
@@ -104,6 +180,18 @@ MonoBehaviour:
         ObjectType: 3
       ID: -894485567
       Guid: 7c9b7eab6a0b5146860ba56b3292a3a3
+      maxAttenuation: 0
+    - Name: Friture
+      Path: Default Work Unit\Other\Friture
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: Friture
+        ObjectType: 3
+      ID: -709973868
+      Guid: 10313679516b6341b256c50dbc69154a
       maxAttenuation: 0
     - Name: Main_Menu_UI_Back
       Path: Default Work Unit\UI\Main_Menu_UI_Back
@@ -153,6 +241,34 @@ MonoBehaviour:
       ID: -108200398
       Guid: 8260a9b5ac347f40a2ed7c54bfd25e91
       maxAttenuation: 0
+    - Name: Mais_Death
+      Path: Default Work Unit\Ennemies\Mais\Mais_Death
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Mais
+        ObjectType: 4
+      - ElementName: Mais_Death
+        ObjectType: 3
+      ID: 1164865332
+      Guid: fc657d9cde6da84aaf6e9107c86b7a36
+      maxAttenuation: 0
+    - Name: Mais_Hit
+      Path: Default Work Unit\Ennemies\Mais\Mais_Hit
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Mais
+        ObjectType: 4
+      - ElementName: Mais_Hit
+        ObjectType: 3
+      ID: 54069141
+      Guid: adaa51218f2f484894c8e4be2c354091
+      maxAttenuation: 0
     - Name: Mais_Move_Down
       Path: Default Work Unit\Ennemies\Mais\Mais_Move_Down
       PathAndIcons:
@@ -180,6 +296,34 @@ MonoBehaviour:
         ObjectType: 3
       ID: -1063279829
       Guid: d565a2050d0cf447a4393589134a7360
+      maxAttenuation: 0
+    - Name: Mais_Shot_Fire
+      Path: Default Work Unit\Ennemies\Mais\Mais_Shot_Fire
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Mais
+        ObjectType: 4
+      - ElementName: Mais_Shot_Fire
+        ObjectType: 3
+      ID: 1271300845
+      Guid: 09d69a330d780d46b27b3278d6f8973a
+      maxAttenuation: 0
+    - Name: Mais_Shot_Prep
+      Path: Default Work Unit\Ennemies\Mais\Mais_Shot_Prep
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Mais
+        ObjectType: 4
+      - ElementName: Mais_Shot_Prep
+        ObjectType: 3
+      ID: -1246074908
+      Guid: 81d097a7d0e4f548be49f9977a82496d
       maxAttenuation: 0
     - Name: Music_Menu_Play
       Path: Default Work Unit\Music\Music_Menu_Play
@@ -257,6 +401,20 @@ MonoBehaviour:
       ID: -160912041
       Guid: 14a23410dee28f44bb168ff4129e2a86
       maxAttenuation: 0
+    - Name: Piment_Cogne_Player
+      Path: Default Work Unit\Ennemies\Piment\Piment_Cogne_Player
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Piment
+        ObjectType: 4
+      - ElementName: Piment_Cogne_Player
+        ObjectType: 3
+      ID: -405071619
+      Guid: 3b3cf47e22816441b2c3c9f137c7942f
+      maxAttenuation: 0
     - Name: Piment_Prep_Play
       Path: Default Work Unit\Ennemies\Piment\Piment_Prep_Play
       PathAndIcons:
@@ -284,6 +442,18 @@ MonoBehaviour:
         ObjectType: 3
       ID: 72582861
       Guid: 51cf72e2419ef34abaa6616737d368e0
+      maxAttenuation: 0
+    - Name: Stage_Cleared
+      Path: Default Work Unit\Other\Stage_Cleared
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: Stage_Cleared
+        ObjectType: 3
+      ID: -947226312
+      Guid: 4a1a81e664914f43a4fd42a3b67e5ed7
       maxAttenuation: 0
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -337,9 +507,18 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{BD1B3C21-0013-423E-B3D9-94D432D5F7F0}'
-    m_lastTimePsrt1: 628568469
-    m_lastTimePart2: -1999281721
+    m_lastTimePsrt1: -97743443
+    m_lastTimePart2: -1999281374
     List:
+    - Name: Ball_Distance
+      Path: Default Work Unit\Ball_Distance
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ball_Distance
+        ObjectType: 13
+      ID: -2028294624
+      Guid: ddd78d9f1eb96d44b6819cc0c0e838ad
     - Name: Music_Volume
       Path: Default Work Unit\Music_Volume
       PathAndIcons:
