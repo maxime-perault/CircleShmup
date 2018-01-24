@@ -152,6 +152,7 @@ public class EnemyArrow1 : Enemy
         state = EEnemyState.WaitForMove;
         moveComponent.enabled = false;
         animator.SetBool("Collision", true);
+        this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     public override void OnHit(int hitPoint)
