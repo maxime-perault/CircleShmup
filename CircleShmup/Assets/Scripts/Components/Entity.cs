@@ -86,7 +86,7 @@ public class Entity : MonoBehaviour
         OnHit(hitPoint);
         hitPoint -= damages;
 
-        if (hitPoint <= 0)
+        if (hitPoint <= 0 && !isDead)
         {
             hitPoint = 0;
             isDead = true;
@@ -96,6 +96,6 @@ public class Entity : MonoBehaviour
 
     public virtual void OnHit(int hitPoint)
     {
-        //PlaySound
+        // PlaySound
     }
 }
