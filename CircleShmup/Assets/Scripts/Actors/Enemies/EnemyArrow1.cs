@@ -49,7 +49,9 @@ public class EnemyArrow1 : Enemy
         moveComponent.enabled = false;
 
         state = EEnemyState.WaitForMove;
-        StartCoroutine(WaitForMove());   
+        StartCoroutine(WaitForMove());
+
+        Piment_Prep_Play();
     }
 
     /**
@@ -139,6 +141,8 @@ public class EnemyArrow1 : Enemy
         yield return new WaitForSeconds(delayBeforeAttack);
         moveComponent.endPoint = playerBufferedPositon;
         animator.SetBool("Rush", true);
+        Piment_Charge();
+        Piment_Prep_Stop();
         rotation = false;
         state = EEnemyState.EnableMoveComponent;
     }
@@ -152,6 +156,7 @@ public class EnemyArrow1 : Enemy
 
     public override void OnHit(int hitPoint)
     {
+        Piment_Cogne_Player();
         OnEntityDeath();
     }
 
@@ -159,4 +164,29 @@ public class EnemyArrow1 : Enemy
     {
         Destroy(this.gameObject);
     }
+
+    public void Piment_Cogne()
+    {
+        AkSoundEngine.PostEvent("Piment_Cogne", music);
+    }
+
+    public void Piment_Prep_Play()
+    {
+        AkSoundEngine.PostEvent("Piment_Prep_Play", music);
+    }
+
+    public void Piment_Prep_Stop()
+    {
+        AkSoundEngine.PostEvent("Piment_Prep_Stop", music);
+    }
+
+    public void Piment_Charge()
+    {
+        AkSoundEngine.PostEvent("Piment_Charge", music);
+    }
+
+    public void Piment_Cogne_Player()
+    {
+        AkSoundEngine.PostEvent("Piment_Cogne_Player", music);
+    }  
 }
