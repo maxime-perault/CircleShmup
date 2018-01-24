@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     public bool              isMainSceneLoaded;
     public int               currentScore;
 
+    private GameObject       musicPlayer;
     private StageManager     stageManager;
     private PlayerController playerController;
     public EGameState        gameManagerState;
@@ -170,7 +171,8 @@ public class GameManager : MonoBehaviour
      */
     public void OnGameEnter()
     {
-        stageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
+        musicPlayer      = GameObject.Find("MusicPlayer");
+        stageManager     = GameObject.Find("StageManager").GetComponent<StageManager>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
         if (stageManager == null)
@@ -181,6 +183,8 @@ public class GameManager : MonoBehaviour
         currentScore      = 0;
         isMainSceneLoaded = true;
         gameManagerState  = EGameState.GameRunning;
+
+        AkSoundEngine.PostEvent("Friture", musicPlayer);
     }
 
     /**

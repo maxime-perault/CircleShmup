@@ -11,6 +11,7 @@ public class PlayerSphereController : MonoBehaviour
     public bool             paused;
     public List<GameObject> spheres;
     public GameObject       spherePrefab;
+    public GameObject       musicObject;
 
     public int startSphereCount    = 3;
     public float speedPenalty      = 20;
@@ -52,6 +53,7 @@ public class PlayerSphereController : MonoBehaviour
         AddSphere(startSphereCount);
 
         paused = false;
+        musicObject = GameObject.Find("MusicPlayer");
     }
 
     /**
@@ -113,6 +115,8 @@ public class PlayerSphereController : MonoBehaviour
 
         sRadius = radius;
         sMaxRadius = maxRadius;
+
+        AkSoundEngine.SetRTPCValue("Ball_Distance", 100.0f * currentRadiusRatio, musicObject);
     }
 
     /**
