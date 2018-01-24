@@ -25,21 +25,22 @@ public class ScoreManager : MonoBehaviour
      */
     void Start()
     {
-        // TODO
+        AddScore(999, Vector3.zero);
     }
 
     /**
      * Display a score at the top of an enemy
      * @param score The score to display / add
      */
-    public static void AddScore(int score)
+    public static void AddScore(int score, Vector3 position)
     {
-        // GameObject score = Instantiate(instance.messagePrefab, instance.parent.transform);
+        position.x -= 0.1f;
+        position.y += 0.5f;
 
-        // Text text = go.GetComponent<Text>();
-        // text.text = message;
-        // 
-        // Destroy(go, duration);
-        // return go;
+        GameObject go = Instantiate(managerInstance.messagePrefab, managerInstance.transform);
+        go.transform.position = position;
+
+        Score scoreComponent = go.GetComponent<Score>();
+        scoreComponent.SetScore(score);
     }
 }
