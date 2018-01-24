@@ -21,6 +21,7 @@ public class PlayerController : Entity
     private PolygonCollider2D      polygonCollider2D;
     private PlayerInputController  inputController;
 
+    private GameObject musicPlayer;
     private bool playerJustStartedToMove;
     private bool playerJustStoppedToMove;
 
@@ -37,6 +38,8 @@ public class PlayerController : Entity
         paused = false;
         playerJustStartedToMove = false;
         playerJustStoppedToMove = true;
+
+        musicPlayer = GameObject.Find("MusicPlayer");
     }
 
     /**
@@ -112,7 +115,7 @@ public class PlayerController : Entity
      */
     private void OnPlayerJustStartedToMove()
     {
-        // TODO
+        AkSoundEngine.PostEvent("Beurre_Move", musicPlayer);
     }
 
     /**
@@ -120,7 +123,7 @@ public class PlayerController : Entity
      */
     private void OnPlayerJustStoppedToMove()
     {
-        // TODO
+        AkSoundEngine.PostEvent("Beurre_Stop", musicPlayer);
     }
 
     /**
