@@ -227,6 +227,7 @@ public class GameManager : MonoBehaviour
      */
     public void OnGameOver()
     {
+        AkSoundEngine.PostEvent("End_Fail", musicPlayer);
         gameOverController.GameOver();
     }
 
@@ -235,6 +236,7 @@ public class GameManager : MonoBehaviour
      */
     public void OnGameWin()
     {
+        AkSoundEngine.PostEvent("End_Victory", musicPlayer);
         gameWinController.GameWin();
     }
 

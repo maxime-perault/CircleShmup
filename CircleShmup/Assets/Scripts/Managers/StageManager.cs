@@ -8,6 +8,7 @@ using System.Collections.Generic;
  */
 public class StageManager : MonoBehaviour
 {
+    public GameObject    musicPlayer;
     public bool          paused;
     public StageDatabase database;
 
@@ -79,6 +80,8 @@ public class StageManager : MonoBehaviour
 
         managerState = ManagerState.GameBegin;
         Debug.Log("Stage manager successfully initialized !");
+
+        musicPlayer = GameObject.Find("MusicPlayer");
     }
 
     /**
@@ -203,6 +206,7 @@ public class StageManager : MonoBehaviour
         StartCoroutine(StageTimeOut(currentStage.StageTimeout));
 
         MessageManager.Message("Stage clear", 3);
+        AkSoundEngine.PostEvent("Stage_Cleared", musicPlayer);
 
         Debug.Log("Stage Manger : Stage ended");
     }

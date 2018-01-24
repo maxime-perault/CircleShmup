@@ -131,8 +131,15 @@ public class PlayerController : Entity
      */
     public override void OnEntityDeath()
     {
+        AkSoundEngine.PostEvent("Beurre_Death", musicPlayer);
+
         GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gameManager.OnGameOver();
+    }
+
+    public override void OnHit(int hitPoint)
+    {
+        AkSoundEngine.PostEvent("Beurre_Hit", musicPlayer);
     }
 
     /**
