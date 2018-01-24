@@ -89,10 +89,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6739c07c8fab5f3488c762018c5d76d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScore: 200
   isDead: 0
   isInvincible: 0
   hitPoint: 1
   damageOnCollision: 1
+  instancier: {fileID: 0}
   speed: 5
 --- !u!212 &212227662557737826
 SpriteRenderer:

@@ -8,6 +8,7 @@ using System.Collections.Generic;
  */
 public class Entity : MonoBehaviour
 {
+    public int  baseScore;
     public bool isDead;
     public bool isInvincible;
 
@@ -93,6 +94,30 @@ public class Entity : MonoBehaviour
 
         if (hitPoint <= 0 && !isDead)
         {
+            int currentScore = baseScore;
+            if (gameObject.tag == "Bullet")
+            {
+                Bullet bullet = gameObject.GetComponent<Bullet>();
+                currentScore -= 20 * (bullet.instancier.bulletCount - 1);
+
+                if (currentScore < 0)
+                {
+                    currentScore = 0;
+                }
+            }
+
+            // Scoring
+            int multiplier = 1;
+            if (PlayerSphereController.sRadius >= (PlayerSphereController.sMaxRadius - 0.1f))
+            {
+                multiplier = 3;
+            }
+
+            if (currentScore != 0)
+            {
+                ScoreManager.AddScore(currentScore * multiplier, this.transform.position);
+            }
+
             hitPoint = 0;
             isDead = true;
             OnEntityDeath();

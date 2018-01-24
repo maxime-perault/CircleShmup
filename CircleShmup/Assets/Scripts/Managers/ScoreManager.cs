@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
      */
     void Start()
     {
-        AddScore(999, Vector3.zero);
+         // None
     }
 
     /**
@@ -35,7 +35,7 @@ public class ScoreManager : MonoBehaviour
     public static void AddScore(int score, Vector3 position)
     {
         position.x -= 0.1f;
-        position.y += 0.5f;
+        position.y += 0.2f;
 
         GameObject go = Instantiate(managerInstance.messagePrefab, managerInstance.transform);
         go.transform.position = position;

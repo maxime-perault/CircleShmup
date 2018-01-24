@@ -12,24 +12,27 @@ public class PlayerSphereController : MonoBehaviour
     public List<GameObject> spheres;
     public GameObject       spherePrefab;
 
-    public int   startSphereCount     = 3;
-    public float speedPenalty         = 20;
-    public float reverseDelay         = 0.5f;
-    public float sphereDelay          = 0.5f;
-    public float radius               = 5.0f;
-    public float minRadius            = 5.0f;
-    public float maxRadius            = 25.0f;
-    public float radiusGrowSpeed      = 5.0f;
-    public float radiusCrunchSpeed    = 10.0f;
-    public float rotationSpeed        = 10.0f;
+    public int startSphereCount    = 3;
+    public float speedPenalty      = 20;
+    public float reverseDelay      = 0.5f;
+    public float sphereDelay       = 0.5f;
+    public float radius            = 5.0f;
+    public float minRadius         = 5.0f;
+    public float maxRadius         = 25.0f;
+    public float radiusGrowSpeed   = 5.0f;
+    public float radiusCrunchSpeed = 10.0f;
+    public float rotationSpeed     = 10.0f;
 
     // Debug
     public float currentRotationSpeed = 0.0f;
     public float currentSpeedPenalty  = 0.0f;
     public float currentRadiusRatio   = 0.0f;
-    
-    public bool  canReverse           = true;
-    public bool  canAddSphere         = true;
+
+    public bool canReverse   = true;
+    public bool canAddSphere = true;
+
+    public static float sRadius    = 5.0f;
+    public static float sMaxRadius = 25.0f;
 
     private IEnumerator addSphereCooldownCoroutine;
     private IEnumerator reverseRotationCooldownCoroutine;
@@ -40,7 +43,7 @@ public class PlayerSphereController : MonoBehaviour
     void Start()
     {
         // Creates the two coroutine timers
-        addSphereCooldownCoroutine       = WairForAddSphereCooldown();
+        addSphereCooldownCoroutine = WairForAddSphereCooldown();
         reverseRotationCooldownCoroutine = WairForInversionCooldown();
 
         StartCoroutine(addSphereCooldownCoroutine);
@@ -58,9 +61,9 @@ public class PlayerSphereController : MonoBehaviour
      */
     private IEnumerator WairForAddSphereCooldown()
     {
-        while(true)
+        while (true)
         {
-            if(!canAddSphere)
+            if (!canAddSphere)
             {
                 yield return new WaitForSeconds(sphereDelay);
                 canAddSphere = true;
@@ -94,7 +97,7 @@ public class PlayerSphereController : MonoBehaviour
      */
     void Update()
     {
-        if(paused)
+        if (paused)
         {
             return;
         }
@@ -102,11 +105,14 @@ public class PlayerSphereController : MonoBehaviour
         // Normalizes radius to decrease by the penalty the rotation speed depending the radius size
         // The larger the radius is, slower is the rotation speed (subject to later modifications)
 
-        currentRadiusRatio   = (radius - minRadius) / (maxRadius - minRadius);
-        currentSpeedPenalty  = (rotationSpeed / 100.0f) * currentRadiusRatio * speedPenalty;
+        currentRadiusRatio = (radius - minRadius) / (maxRadius - minRadius);
+        currentSpeedPenalty = (rotationSpeed / 100.0f) * currentRadiusRatio * speedPenalty;
         currentRotationSpeed = rotationSpeed - currentSpeedPenalty;
 
         transform.Rotate(new Vector3(0.0f, 0.0f, currentRotationSpeed) * Time.deltaTime);
+
+        sRadius = radius;
+        sMaxRadius = maxRadius;
     }
 
     /**

@@ -8,11 +8,11 @@ using System.Collections.Generic;
  */
 public class Score : MonoBehaviour
 {
-    public int iScore;
+    public int    iScore;
     public string sScore;
-    public float upTime;
-    public float upSpeed;
-    public float rotationSpeed;
+    public float  upTime;
+    public float  upSpeed;
+    public float  rotationSpeed;
 
     public Sprite addSprite;
     public Sprite subSprite;
@@ -40,14 +40,15 @@ public class Score : MonoBehaviour
     public void SetScore(int score)
     {
         iScore = score;
-        sScore = iScore.ToString();
 
         if (score > 0)
         {
+            sScore = iScore.ToString();
             placeholder[0].GetComponent<SpriteRenderer>().sprite = addSprite;
         }
         else
         {
+            sScore = (iScore * -1).ToString();
             placeholder[0].GetComponent<SpriteRenderer>().sprite = subSprite;
         }
 
@@ -136,7 +137,7 @@ public class Score : MonoBehaviour
             }
         }
 
-        if(allRotated)
+        if (allRotated)
         {
             Destroy(this.gameObject);
         }

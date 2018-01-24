@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325140c5543887f4685c7e63cb57552c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScore: 4000
   isDead: 0
   isInvincible: 0
   hitPoint: 1

@@ -10,7 +10,8 @@ using UnityEngine;
 public class Bullet : Entity
 {
     private GameObject player;
-    private Vector2 goalPosition;
+    private Vector2    goalPosition;
+    public Shoot       instancier;
 
     public float speed = 1f;
 
@@ -23,7 +24,7 @@ public class Bullet : Entity
 
     public override void OnEntityCollisionEnterWithArena()
     {
-        Destroy(this.gameObject,5); //Change time
+        Destroy(this.gameObject, 5); //Change time
     }
 
 

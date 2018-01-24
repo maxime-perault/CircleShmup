@@ -6,8 +6,10 @@ using UnityEngine;
  * Shoot behavior class
  * @class Shoot
  */
-public class Shoot : Behavior {
+public class Shoot : Behavior
+{
 
+    public int bulletCount;
 
     //Animator
     private Animator animator;
@@ -27,7 +29,10 @@ public class Shoot : Behavior {
     //Todo change Animation Timer function Animation Lenght
     private float animationTimer = 0.75f;
 
-    void Start () {
+    void Start()
+    {
+
+        bulletCount = 0;
 
         player = GameObject.FindGameObjectWithTag("Player");
         animator = this.GetComponent<Animator>();
@@ -42,12 +47,13 @@ public class Shoot : Behavior {
         timer = 0;
 
     }
-	
+
     //Shot bullet every "ShootDelay"
-	void FixedUpdate () {
+    void FixedUpdate()
+    {
 
         timer += Time.fixedDeltaTime;
-        if (timer > ShootDelay-animationTimer)
+        if (timer > ShootDelay - animationTimer)
         {
             animator.SetBool("ShotSoon", true);
             timer = 0;
@@ -57,14 +63,15 @@ public class Shoot : Behavior {
     public void shot()
     {
         animator.SetBool("ShotSoon", false);
-        shotBehavior();        
+        shotBehavior();
     }
 
     protected virtual void shotBehavior()
     {
-        Instantiate(chooseBullet(), this.gameObject.transform.position, Quaternion.identity);
+        Bullet bullet = Instantiate(chooseBullet(), this.gameObject.transform.position, Quaternion.identity);
+        bullet.instancier = this;
+        bulletCount++;
     }
-
 
     //Choose the bullet shot
     // !! Probabilistic version !! 
@@ -81,7 +88,7 @@ public class Shoot : Behavior {
 
         for (int i = 0; i < bulletsInformation.Length; i++)
         {
-            if( previous < proba && proba <= bulletsInformation[i])
+            if (previous < proba && proba <= bulletsInformation[i])
             {
                 choosenBullet = bullets[i];
                 return choosenBullet;

@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d94117de64feb428b2c71d691b9940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletCount: 0
   ShootDelay: 2
   bullets:
   - {fileID: 114665817297504406, guid: 5e2233aac2b078043979ff9805ec801e, type: 2}
@@ -199,10 +200,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b50047421906c24dbc9c85aba7970ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScore: 750
   isDead: 0
   isInvincible: 0
   hitPoint: 2
   damageOnCollision: 2
+  bufferIndex: 0
   handle: {fileID: 0}
   shootDelay: 0
 --- !u!114 &114420967287159346

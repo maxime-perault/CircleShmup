@@ -365,6 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec9493288d086c49901ffe5c5ad8dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScore: 500
   isDead: 0
   isInvincible: 0
   hitPoint: 1
@@ -384,6 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec9493288d086c49901ffe5c5ad8dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScore: 500
   isDead: 0
   isInvincible: 0
   hitPoint: 1
@@ -403,6 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec9493288d086c49901ffe5c5ad8dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScore: 500
   isDead: 0
   isInvincible: 0
   hitPoint: 1
@@ -422,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec9493288d086c49901ffe5c5ad8dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScore: 500
   isDead: 0
   isInvincible: 0
   hitPoint: 1
@@ -441,6 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5863e0e673ca3c34da43f99d4187880f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScore: 2500
   isDead: 0
   isInvincible: 1
   hitPoint: 1
