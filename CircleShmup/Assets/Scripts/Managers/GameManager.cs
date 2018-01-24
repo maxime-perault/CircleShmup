@@ -118,7 +118,6 @@ public class GameManager : MonoBehaviour
                 }
             }
         }, 0, 99);
-
         inputs[(int)e_input.TURNLEFT] = "Mouse0";
         inputs[(int)e_input.TURNRIGHT] = "Mouse1";
 

@@ -63,18 +63,15 @@ public class SelectScore : ASelect
     {
         if (nb > 99999)
         {
-            nb /= 1000;
-            return string.Format("{0:N3}", nb);
+            return (nb.ToString().Insert(3, "."));
         }
         else if (nb > 9999)
         {
-            nb /= 1000;
-            return ("0" + string.Format("{0:N2}", nb));
+            return (("0" + nb.ToString()).Insert(3, "."));
         }
         else if (nb > 999)
         {
-            nb /= 1000;
-            return ("00" + string.Format("{0:N1}", nb));
+            return (("00" + nb.ToString()).Insert(3, "."));
         }
         else
         {
