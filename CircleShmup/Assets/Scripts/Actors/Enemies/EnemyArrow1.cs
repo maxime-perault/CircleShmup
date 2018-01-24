@@ -13,6 +13,10 @@ public class EnemyArrow1 : Enemy
     private Vector3    entityBufferedPosition;
     private MoveLinear moveComponent;
 
+    private Animator animator;
+    private GameObject music;
+    private bool rotation = true;
+
     /**
      * States of the arrow enemy
      */
@@ -32,6 +36,10 @@ public class EnemyArrow1 : Enemy
      */
     void Start()
     {
+        music = GameObject.Find("MusicPlayer");
+        AkSoundEngine.PostEvent("Ennemy_Pop", music);
+        animator = this.GetComponent<Animator>();
+
         entityBufferedPosition = transform.position;
         playerBufferedPositon  = GameObject.FindGameObjectWithTag("Player").transform.position;
 
@@ -41,7 +49,9 @@ public class EnemyArrow1 : Enemy
         moveComponent.enabled = false;
 
         state = EEnemyState.WaitForMove;
-        StartCoroutine(WaitForMove());   
+        StartCoroutine(WaitForMove());
+
+        Piment_Prep_Play();
     }
 
     /**
@@ -49,7 +59,18 @@ public class EnemyArrow1 : Enemy
      */
     void Update()
     {
-        switch(state)
+        playerBufferedPositon = GameObject.FindGameObjectWithTag("Player").transform.position;;
+
+        if (rotation)
+        {
+            Vector3 diff = playerBufferedPositon - transform.position;
+            diff.Normalize();
+            float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 90);
+        }
+
+
+        switch (state)
         {
             case EEnemyState.EnableMoveComponent: EnableMoveComponent(); break;
             case EEnemyState.DoUntilDeath:                               break;
@@ -63,7 +84,7 @@ public class EnemyArrow1 : Enemy
      */
     public override void OnEntityCollisionEnterWithPlayer()
     {
-        // None
+        animator.SetBool("Collision", true);
     }
 
     /**
@@ -94,13 +115,14 @@ public class EnemyArrow1 : Enemy
      */
     public override void OnEntityDeath()
     {
+
+        animator.SetBool("Collision", true);
         // Notifies that this enemy is dead
         if (handle)
         {
             handle.OnEnemyDeath(bufferIndex);
         }
-
-        Destroy(this.gameObject);
+        destroy();
     }
 
     /**
@@ -117,6 +139,55 @@ public class EnemyArrow1 : Enemy
     private IEnumerator WaitForMove()
     {
         yield return new WaitForSeconds(delayBeforeAttack);
+        moveComponent.endPoint = playerBufferedPositon;
+        animator.SetBool("Rush", true);
+        Piment_Charge();
+        Piment_Prep_Stop();
+        rotation = false;
         state = EEnemyState.EnableMoveComponent;
     }
+
+    public override void OnEntityCollisionEnterWithArena()
+    {
+        state = EEnemyState.WaitForMove;
+        moveComponent.enabled = false;
+        animator.SetBool("Collision", true);
+        this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+    public override void OnHit(int hitPoint)
+    {
+        Piment_Cogne_Player();
+        OnEntityDeath();
+    }
+
+    public void destroy()
+    {
+        Destroy(this.gameObject);
+    }
+
+    public void Piment_Cogne()
+    {
+        AkSoundEngine.PostEvent("Piment_Cogne", music);
+    }
+
+    public void Piment_Prep_Play()
+    {
+        AkSoundEngine.PostEvent("Piment_Prep_Play", music);
+    }
+
+    public void Piment_Prep_Stop()
+    {
+        AkSoundEngine.PostEvent("Piment_Prep_Stop", music);
+    }
+
+    public void Piment_Charge()
+    {
+        AkSoundEngine.PostEvent("Piment_Charge", music);
+    }
+
+    public void Piment_Cogne_Player()
+    {
+        AkSoundEngine.PostEvent("Piment_Cogne_Player", music);
+    }  
 }

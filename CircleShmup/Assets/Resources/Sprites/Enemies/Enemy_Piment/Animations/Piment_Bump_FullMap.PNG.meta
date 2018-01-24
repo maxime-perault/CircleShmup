@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 339140fb96be9cc4fb5232dc7bfbceba
-timeCreated: 1516796388
+timeCreated: 1516804166
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -172,10 +172,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3580
-        width: 417
-        height: 716
+        x: 74
+        y: 3605
+        width: 258
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,10 +186,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_1
       rect:
         serializedVersion: 2
-        x: 417
-        y: 3580
-        width: 417
-        height: 716
+        x: 492
+        y: 3605
+        width: 256
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,10 +200,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_2
       rect:
         serializedVersion: 2
-        x: 834
-        y: 3580
-        width: 417
-        height: 716
+        x: 892
+        y: 3605
+        width: 273
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_3
       rect:
         serializedVersion: 2
-        x: 1251
-        y: 3580
-        width: 417
-        height: 716
+        x: 1308
+        y: 3605
+        width: 275
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_4
       rect:
         serializedVersion: 2
-        x: 1668
-        y: 3580
-        width: 417
-        height: 716
+        x: 1727
+        y: 3603
+        width: 282
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +242,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2864
-        width: 417
-        height: 716
+        x: 58
+        y: 2887
+        width: 284
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_6
       rect:
         serializedVersion: 2
-        x: 417
-        y: 2864
-        width: 417
-        height: 716
+        x: 475
+        y: 2887
+        width: 284
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,10 +270,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_7
       rect:
         serializedVersion: 2
-        x: 834
-        y: 2864
-        width: 417
-        height: 716
+        x: 893
+        y: 2887
+        width: 284
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,10 +284,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_8
       rect:
         serializedVersion: 2
-        x: 1251
-        y: 2864
-        width: 417
-        height: 716
+        x: 1310
+        y: 2887
+        width: 282
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,10 +298,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_9
       rect:
         serializedVersion: 2
-        x: 1668
-        y: 2864
-        width: 417
-        height: 716
+        x: 1727
+        y: 2887
+        width: 282
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,10 +312,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2148
-        width: 417
-        height: 716
+        x: 58
+        y: 2172
+        width: 284
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,10 +326,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_11
       rect:
         serializedVersion: 2
-        x: 417
-        y: 2148
-        width: 417
-        height: 716
+        x: 475
+        y: 2172
+        width: 284
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,10 +340,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_12
       rect:
         serializedVersion: 2
-        x: 834
-        y: 2148
-        width: 417
-        height: 716
+        x: 893
+        y: 2172
+        width: 281
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,10 +354,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_13
       rect:
         serializedVersion: 2
-        x: 1251
-        y: 2148
-        width: 417
-        height: 716
+        x: 1310
+        y: 2172
+        width: 282
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,10 +368,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_14
       rect:
         serializedVersion: 2
-        x: 1668
-        y: 2148
-        width: 417
-        height: 716
+        x: 1727
+        y: 2172
+        width: 282
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,10 +382,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1432
-        width: 417
-        height: 716
+        x: 58
+        y: 1455
+        width: 284
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -396,10 +396,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_16
       rect:
         serializedVersion: 2
-        x: 417
-        y: 1432
-        width: 417
-        height: 716
+        x: 475
+        y: 1455
+        width: 284
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,10 +410,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_17
       rect:
         serializedVersion: 2
-        x: 834
-        y: 1432
-        width: 417
-        height: 716
+        x: 893
+        y: 1455
+        width: 283
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,10 +424,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_18
       rect:
         serializedVersion: 2
-        x: 1251
-        y: 1432
-        width: 417
-        height: 716
+        x: 1310
+        y: 1455
+        width: 282
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -438,10 +438,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_19
       rect:
         serializedVersion: 2
-        x: 1668
-        y: 1432
-        width: 417
-        height: 716
+        x: 1727
+        y: 1455
+        width: 282
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,10 +452,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 716
-        width: 417
-        height: 716
+        x: 33
+        y: 790
+        width: 381
+        height: 348
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,10 +466,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_21
       rect:
         serializedVersion: 2
-        x: 417
-        y: 716
-        width: 417
-        height: 716
+        x: 450
+        y: 790
+        width: 381
+        height: 348
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -480,10 +480,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_22
       rect:
         serializedVersion: 2
-        x: 834
-        y: 716
-        width: 417
-        height: 716
+        x: 916
+        y: 805
+        width: 291
+        height: 415
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -494,10 +494,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_23
       rect:
         serializedVersion: 2
-        x: 1251
-        y: 716
-        width: 417
-        height: 716
+        x: 1333
+        y: 805
+        width: 290
+        height: 415
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -508,10 +508,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_24
       rect:
         serializedVersion: 2
-        x: 1668
-        y: 716
-        width: 417
-        height: 716
+        x: 1805
+        y: 853
+        width: 206
+        height: 396
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -522,10 +522,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_25
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 417
-        height: 716
+        x: 135
+        y: 137
+        width: 208
+        height: 397
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -536,10 +536,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_26
       rect:
         serializedVersion: 2
-        x: 417
-        y: 0
-        width: 417
-        height: 716
+        x: 498
+        y: 175
+        width: 313
+        height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -550,10 +550,10 @@ TextureImporter:
       name: Piment_Bump_FullMap_27
       rect:
         serializedVersion: 2
-        x: 834
-        y: 0
-        width: 417
-        height: 716
+        x: 916
+        y: 175
+        width: 312
+        height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
