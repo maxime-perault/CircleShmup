@@ -49,6 +49,11 @@ public class Entity : MonoBehaviour
                 isEntity = true;
                 OnEntityCollisionEnterWithPlayer();
             }
+            if (collision.gameObject.tag == "Arena")
+            {
+                isEntity = false;
+                OnEntityCollisionEnterWithArena();
+            }
         }
         else if (this.gameObject.tag == "Bullet")
         {
