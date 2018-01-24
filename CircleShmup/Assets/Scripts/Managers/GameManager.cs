@@ -14,25 +14,6 @@ public struct ScoreBoard
     public int     score;
 };
 
-namespace GameJolt.UI.Controllers
-{
-    public class APIScore : MonoBehaviour
-    {
-        public void GetAllScores(int tableID = 319146)
-        {
-            API.Scores.Get(scores => {
-                if (scores != null)
-                {
-                    for (int i = 0; i < scores.Length; ++i)
-                    {
-                        Debug.Log(scores[i]);
-                    }
-                }
-            }, tableID, 99);
-        }
-    }
-}
-
 /**
  * Main game manager, shares data between scenes
  * stores game states
@@ -71,7 +52,6 @@ public class GameManager : MonoBehaviour
     public bool isMainSceneLoaded;
     private StageManager stageManager;
     private PlayerController playerController;
-    private GameJolt.UI.Controllers.APIScore api;
     public EGameState gameManagerState;
 
     private static GameManager SingletonRef;
@@ -102,9 +82,9 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    /**
-        * Called when the object is instanciated
-        */
+    /*
+     * Called when the object is instanciated
+     */
     void Start()
     {
         stageManager = null;
@@ -119,17 +99,19 @@ public class GameManager : MonoBehaviour
             scoreboard[i].name = "NAMENAME";
             scoreboard[i].score = 0;
         }
-
-        Array.Sort<ScoreBoard>(scoreboard, (x, y) => y.score.CompareTo(x.score));
-
-        addScore(97, "TESTTEST");
-        addScore(38, "TESTTEST");
-        addScore(22, "TESTTEST");
-        addScore(12, "TESTTEST");
-        addScore(21, "TESTTEST");
-        addScore(12, "TESTTEST");
-
-        //api.GetAllScores();
+        
+        //Get the highscoreboard from GameJolt
+        GameJolt.API.Scores.Get(scores => {
+            if (scores != null)
+            {
+                Debug.Log(scores.Length);
+                for (int i = 0; i < scores.Length; ++i)
+                {
+                    scoreboard[i].score = scores[i].Value;
+                    scoreboard[i].name = scores[i].GuestName;
+                }
+            }
+        }, 0, 99);
 
         inputs[(int)e_input.TURNLEFT] = "Mouse0";
         inputs[(int)e_input.TURNRIGHT] = "Mouse1";
@@ -153,6 +135,9 @@ public class GameManager : MonoBehaviour
             scoreboard[98].name = name;
             scoreboard[98].score = score;
         }
+        GameJolt.API.Scores.Add(score, score.ToString(), name, 0, "", (bool success) => {
+            Debug.Log(string.Format("Score Add {0}.", success ? "Successful" : "Failed"));
+        });
         Array.Sort<ScoreBoard>(scoreboard, (x, y) => y.score.CompareTo(x.score));
     }
 
