@@ -8,14 +8,20 @@ using System.Collections.Generic;
  */
 public class EnemyZucchini1 : Enemy
 {
-    public  float        rotationSpeed;
-    public  float        rotationDirection;
-    public  float        delayBeforeAttack;
+    public float rotationSpeed;
+    public float rotationDirection;
+    public float delayBeforeAttack;
 
-    public  Transform    spriteGroup;
+    public Transform[] TabTransf;
 
-    private int          tomateCounter;
+    public Sprite[] SpriteList;
+
+    public Transform spriteGroup;
+
+    private int tomateCounter;
     private MoveElliptic moveComponent;
+
+    private GameObject music;
 
     /**
      * States of the arrow enemy
@@ -36,10 +42,14 @@ public class EnemyZucchini1 : Enemy
      */
     void Start()
     {
+
+        music = GameObject.Find("MusicPlayer");
+        AkSoundEngine.PostEvent("Ennemy_Pop", music);
+
         tomateCounter = 0;
         moveComponent = GetComponent<MoveElliptic>();
 
-        if(moveComponent != null)
+        if (moveComponent != null)
         {
             moveComponent.enabled = false;
             state = EEnemyState.WaitForMove;
@@ -59,7 +69,7 @@ public class EnemyZucchini1 : Enemy
         switch (state)
         {
             case EEnemyState.EnableMoveComponent: EnableMoveComponent(); break;
-            case EEnemyState.DoUntilDeath:        DoUntilDeath();        break;
+            case EEnemyState.DoUntilDeath: DoUntilDeath(); break;
             default:
                 break;
         }
@@ -86,7 +96,7 @@ public class EnemyZucchini1 : Enemy
      */
     public override void OnGamePaused()
     {
-       // None
+        // None
     }
 
     /**
@@ -102,18 +112,38 @@ public class EnemyZucchini1 : Enemy
      */
     public void OnTomateDestroyed(ZucchiniTomate.ETomateSide side)
     {
-        switch(side)
+        Brochette_Tomato_Destroy();
+        switch (side)
         {
-            case ZucchiniTomate.ETomateSide.North: Debug.Log("North down !"); break;
-            case ZucchiniTomate.ETomateSide.South: Debug.Log("South down !"); break;
-            case ZucchiniTomate.ETomateSide.West:  Debug.Log("West  down !"); break;
-            case ZucchiniTomate.ETomateSide.East:  Debug.Log("East  down !"); break;
+            case ZucchiniTomate.ETomateSide.North:
+                Debug.Log("North down !");
+                TabTransf[4].GetComponent<SpriteRenderer>().sprite = SpriteList[5];
+                break;
+            case ZucchiniTomate.ETomateSide.South:
+                TabTransf[1].GetComponent<SpriteRenderer>().sprite = SpriteList[2];
+                Debug.Log("South down !");
+                break;
+            case ZucchiniTomate.ETomateSide.West:
+                TabTransf[2].GetComponent<SpriteRenderer>().sprite = SpriteList[3];
+                Debug.Log("West  down !");  
+                break;
+            case ZucchiniTomate.ETomateSide.East:
+                TabTransf[3].GetComponent<SpriteRenderer>().sprite = SpriteList[4];
+                Debug.Log("East  down !");
+                break;
             default: break;
         }
 
         tomateCounter++;
-        if(tomateCounter == 4)
+
+        if (tomateCounter == 2)
         {
+            TabTransf[0].GetComponent<SpriteRenderer>().sprite = SpriteList[0];
+        }
+
+        if (tomateCounter == 4)
+        {
+            TabTransf[0].GetComponent<SpriteRenderer>().sprite = SpriteList[1];
             OnAllTomateDestroyed();
         }
     }
@@ -132,6 +162,7 @@ public class EnemyZucchini1 : Enemy
      */
     public override void OnEntityDeath()
     {
+        Brochette_Death();
         // Notifies that this enemy is dead
         if (handle)
         {
@@ -157,5 +188,20 @@ public class EnemyZucchini1 : Enemy
     {
         yield return new WaitForSeconds(delayBeforeAttack);
         state = EEnemyState.EnableMoveComponent;
+    }
+
+    public void Brochette_Tomato_Destroy()
+    {
+        AkSoundEngine.PostEvent("Brochette_Tomato_Destroy", music);
+    }
+
+    public void Brochette_Death()
+    {
+        AkSoundEngine.PostEvent("Brochette_Death", music);
+    }
+
+    public void Brochette_Hit_Invincible()
+    {
+        AkSoundEngine.PostEvent("Brochette_Hit_Invincible", music);
     }
 }
