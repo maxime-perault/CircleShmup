@@ -219,6 +219,10 @@ Prefab:
       propertyPath: damageOnCollision
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1548042418451118, guid: 10f549792aea82946999a030576f4561, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10f549792aea82946999a030576f4561, type: 2}
   m_IsPrefabParent: 0
@@ -260,6 +264,10 @@ Prefab:
     - target: {fileID: 4573629990203246, guid: 0d3d445d4a9626f4ab94351d9e3bdae0, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521277874026124, guid: 0d3d445d4a9626f4ab94351d9e3bdae0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d3d445d4a9626f4ab94351d9e3bdae0, type: 2}
@@ -628,6 +636,10 @@ Prefab:
     - target: {fileID: 4776552108359524, guid: 429dc2321bf16c5418220ecdd27291e3, type: 2}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222263992576462, guid: 429dc2321bf16c5418220ecdd27291e3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 429dc2321bf16c5418220ecdd27291e3, type: 2}
