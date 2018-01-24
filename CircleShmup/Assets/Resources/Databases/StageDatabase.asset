@@ -27,3 +27,13 @@ MonoBehaviour:
       WaveBlocking: 1
       WaveTiming: 10
       WaveSpawner: {fileID: 11400000, guid: 4563c4629dc01ff43ad9e5d9b198b589, type: 2}
+  - StageID: 1
+    StageName: Stage 2
+    StageDescription: Balbliblou
+    StageTimeout: 2
+    StageWaves:
+    - WaveID: 1
+      WaveName: Wave 1
+      WaveBlocking: 1
+      WaveTiming: 2
+      WaveSpawner: {fileID: 11400000, guid: dce074eda7e36464aa97324f27fba592, type: 2}

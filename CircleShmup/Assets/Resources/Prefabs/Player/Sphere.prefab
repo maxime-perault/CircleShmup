@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4477864090079082}
   - component: {fileID: 212632986342379046}
   - component: {fileID: 60747092683271562}
+  - component: {fileID: 50484260231281744}
   - component: {fileID: 114428094373406244}
   m_Layer: 10
   m_Name: Sphere
@@ -42,6 +43,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50484260231281744
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1530049120004036}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!60 &60747092683271562
 PolygonCollider2D:
   m_ObjectHideFlags: 1
