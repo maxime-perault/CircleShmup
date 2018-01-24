@@ -101,7 +101,6 @@ public class PlayerInputController : MonoBehaviour
      */
     public bool IsClockwiseRotation()
     {
-        Debug.Log(gameManagerInstance.GetKeyDown(GameManager.e_input.TURNLEFT));
         return (canClockwiseRotation) ? 
             (Input.GetAxis(clockwiseRotationInput) == 1.0f) ||
             (gameManagerInstance.GetKeyDown(GameManager.e_input.TURNLEFT)) : false;

@@ -19,11 +19,13 @@ public class EnemyArrow1 : Enemy
     private enum EEnemyState
     {
         WaitForMove,
+        EnemyPaused,
         EnableMoveComponent,
         DoUntilDeath
     }
 
     private EEnemyState state;
+    private EEnemyState previousState;
 
     /**
      * Called at start
@@ -65,6 +67,29 @@ public class EnemyArrow1 : Enemy
     }
 
     /**
+     * Called when the game is paused
+     */
+    public override void OnGamePaused()
+    {
+        previousState = state;
+        state         = EEnemyState.EnemyPaused;
+
+        // Disables components
+        moveComponent.enabled = false;
+    }
+
+    /**
+     * Called when the game resumes
+     */
+    public override void OnGameResumed()
+    {
+        // Restores state
+        state = previousState;
+
+        moveComponent.enabled = true;
+    }
+
+    /**
      * Called when the entity is dead
      */
     public override void OnEntityDeath()
@@ -72,7 +97,7 @@ public class EnemyArrow1 : Enemy
         // Notifies that this enemy is dead
         if (handle)
         {
-            handle.OnEnemyDeath();
+            handle.OnEnemyDeath(bufferIndex);
         }
 
         Destroy(this.gameObject);

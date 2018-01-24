@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Name: Spawner_3
   m_EditorClassIdentifier: 
   SpawnerName: Spawner_3
-  SpawnerPrefab: {fileID: 1933577238765564, guid: b9038d6adc6e77f4592d35931147af5b,
-    type: 2}
   SpawnerSpawnCount: 4
   SpawnerInfo:
-  - SpawnTiming: 0
+  - SpawnPrefab: {fileID: 0}
+    SpawnTiming: 0
     SpawnPosition: {x: -2.97, y: 0.044999998, z: 0}
-  - SpawnTiming: 1
+  - SpawnPrefab: {fileID: 0}
+    SpawnTiming: 1
     SpawnPosition: {x: 2.9250002, y: 0, z: 0}
-  - SpawnTiming: 2
+  - SpawnPrefab: {fileID: 0}
+    SpawnTiming: 2
     SpawnPosition: {x: 0.075, y: -2.97, z: 0}
-  - SpawnTiming: 2.5
+  - SpawnPrefab: {fileID: 0}
+    SpawnTiming: 2.5
     SpawnPosition: {x: -2.97, y: 0.044999998, z: 0}

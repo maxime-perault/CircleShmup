@@ -8,6 +8,7 @@ using System.Collections.Generic;
  */
 public class PlayerSphereController : MonoBehaviour
 {
+    public bool             paused;
     public List<GameObject> spheres;
     public GameObject       spherePrefab;
 
@@ -46,6 +47,8 @@ public class PlayerSphereController : MonoBehaviour
         StartCoroutine(reverseRotationCooldownCoroutine);
 
         AddSphere(startSphereCount);
+
+        paused = false;
     }
 
     /**
@@ -63,7 +66,7 @@ public class PlayerSphereController : MonoBehaviour
                 canAddSphere = true;
             }
 
-            yield return new WaitForSeconds(0.016f);
+            yield return new WaitForEndOfFrame();
         }
     }
 
@@ -82,7 +85,7 @@ public class PlayerSphereController : MonoBehaviour
                 canReverse = true;
             }
 
-            yield return new WaitForSeconds(0.016f);
+            yield return new WaitForEndOfFrame();
         }
     }
 
@@ -91,6 +94,11 @@ public class PlayerSphereController : MonoBehaviour
      */
     void Update()
     {
+        if(paused)
+        {
+            return;
+        }
+
         // Normalizes radius to decrease by the penalty the rotation speed depending the radius size
         // The larger the radius is, slower is the rotation speed (subject to later modifications)
 
@@ -214,5 +222,25 @@ public class PlayerSphereController : MonoBehaviour
 
             spheres[nSphere].transform.localPosition = new Vector3(x, y, 0.0f);
         }
+    }
+
+    /**
+     * Called when the game is paused
+     */
+    public void OnGamePaused()
+    {
+        paused = true;
+        StopAllCoroutines();
+    }
+
+    /**
+     * Called when the game resumes
+     */
+    public void OnGameResumed()
+    {
+        paused = false;
+
+        StartCoroutine(addSphereCooldownCoroutine);
+        StartCoroutine(reverseRotationCooldownCoroutine);
     }
 }

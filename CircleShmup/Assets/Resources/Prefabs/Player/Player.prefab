@@ -210,7 +210,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!60 &60110341316814916
 PolygonCollider2D:
@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772fad4633201fe4aacbe766e597d9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paused: 0
   spheres: []
   spherePrefab: {fileID: 1530049120004036, guid: 206cbee015b958c43ad106bbbd1dc399,
     type: 2}
@@ -297,8 +298,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
+  isInvincible: 0
   hitPoint: 5
   damageOnCollision: 0
+  paused: 0
   slide: 0
   speed: {x: 50, y: 50}
   sphereController: {fileID: 114560485000152674}
@@ -329,13 +332,15 @@ MonoBehaviour:
   canAddSphere: 1
   canRemoveSphere: 1
   canIncreaseRadius: 1
-  canReverseRotation: 1
+  canClockwiseRotation: 1
+  canCounterClockwiseRotation: 1
   verticalInput: Vertical
   horizontalInput: Horizontal
   addSphereInput: AddSphere
   removeSphereInput: RemoveSphere
   increaseRadiusInput: IncreaseRadius
-  reverseRotationInput: ReverseRotation
+  clockwiseRotationInput: ClockwiseRotation
+  counterClockwiseRotationInput: CounterClockwiseRotation
 --- !u!212 &212845434835859922
 SpriteRenderer:
   m_ObjectHideFlags: 1

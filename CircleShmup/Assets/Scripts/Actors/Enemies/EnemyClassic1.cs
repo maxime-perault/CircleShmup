@@ -9,8 +9,8 @@ using UnityEngine;
 public class EnemyClassic1 : EnemyClassic
 {
     /**
-    * Called once at start
-    */
+     * Called once at start
+     */
     void Start()
     {
         BaseStart();
@@ -33,6 +33,22 @@ public class EnemyClassic1 : EnemyClassic
     }
 
     /**
+     * Called when the game is paused
+     */
+    public override void OnGamePaused()
+    {
+        shootComponent.OnGamePaused();
+    }
+
+    /**
+     * Called when the game resumes
+     */
+    public override void OnGameResumed()
+    {
+        shootComponent.OnGameResumed();
+    }
+
+    /**
      * Called when the entity is dead
      */
     public override void OnEntityDeath()
@@ -40,7 +56,7 @@ public class EnemyClassic1 : EnemyClassic
         // Notifies that this enemy is dead
         if (handle)
         {
-            handle.OnEnemyDeath();
+            handle.OnEnemyDeath(bufferIndex);
         }
 
         Destroy(this.gameObject);

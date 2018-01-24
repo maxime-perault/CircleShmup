@@ -20,8 +20,9 @@ public class EnemyClassic : Enemy
         DoUntilDeath
     }
 
+    protected ShootStrait shootComponent;
+
     private EBaseState  state;
-    private Shoot       shootComponent;
     private IEnumerator waitCoroutine;
 
     /**
@@ -29,8 +30,8 @@ public class EnemyClassic : Enemy
      */
     protected void BaseStart()
     {
-        state = EBaseState.WaitForShoot;
-        shootComponent = GetComponent<Shoot>();
+        state          = EBaseState.WaitForShoot;
+        shootComponent = GetComponent<ShootStrait>();
 
         shootComponent.enabled = false;
 

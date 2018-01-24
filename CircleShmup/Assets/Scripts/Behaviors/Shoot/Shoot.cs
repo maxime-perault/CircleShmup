@@ -91,4 +91,20 @@ public class Shoot : Behavior {
 
         return choosenBullet;
     }
+
+    /**
+     * Called when the game is paused
+     */
+    public virtual void OnGamePaused()
+    {
+        // TODO
+    }
+
+    /**
+     * Called when the game resumes
+     */
+    public virtual void OnGameResumed()
+    {
+        // TODO
+    }
 }

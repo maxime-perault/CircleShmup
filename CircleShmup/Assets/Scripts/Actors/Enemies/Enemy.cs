@@ -8,5 +8,22 @@ using System.Collections.Generic;
  */
 public class Enemy : Entity
 {
+    public int        bufferIndex;
     public WaveHandle handle;
+
+    /**
+     * Called when the game is paused
+     */
+    public virtual void OnGamePaused()
+    {
+        // None
+    }
+
+    /**
+     * Called when the game resumes
+     */
+    public virtual void OnGameResumed()
+    {
+        // None
+    }
 }

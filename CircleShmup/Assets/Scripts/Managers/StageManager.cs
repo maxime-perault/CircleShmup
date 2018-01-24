@@ -8,6 +8,7 @@ using System.Collections.Generic;
  */
 public class StageManager : MonoBehaviour
 {
+    public bool          paused;
     public StageDatabase database;
 
     private enum ManagerState
@@ -85,6 +86,11 @@ public class StageManager : MonoBehaviour
      */
     void Update()
     {
+        if(paused)
+        {
+            return;
+        }
+
         // Manager switch state machine 
         switch(managerState)
         {
@@ -129,9 +135,25 @@ public class StageManager : MonoBehaviour
     /**
      * Called when the game is paused
      */
-    private void OnGamePaused()
+    public void OnGamePaused()
     {
-        // None
+        if (waveManager != null)
+        {
+            Debug.Log("Stage Manager : Game paused");
+            waveManager.OnGamePaused();
+        }
+    }
+
+    /**
+     * Called when the game resumes
+     */
+    public void OnGameResumed()
+    {
+        if(waveManager != null)
+        {
+            Debug.Log("Stage Manager : Game resumed");
+            waveManager.OnGameResumed();
+        }
     }
 
     /**

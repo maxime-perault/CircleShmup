@@ -16,7 +16,7 @@ public class WaveManager
         ManagerDone
     }
 
-    private float timer;
+    private float        timer;
     private Transform    parent;
     private ManagerState managerState = ManagerState.ManagerNone;
 
@@ -57,6 +57,30 @@ public class WaveManager
             case ManagerState.ManagerBegin:   OnManagerBegin();   break;
             case ManagerState.ManagerRunning: OnManagerRunning(); break;
             default: break;
+        }
+    }
+
+    /**
+     * Called when the game is paused
+     */
+    public void OnGamePaused()
+    {
+        int handleCount = currentWaves.Count;
+        for(int nHandle = 0; nHandle < handleCount; ++nHandle)
+        {
+            currentWaves[nHandle].OnGamePaused();
+        }
+    }
+
+    /**
+     * Called when the game resumes
+     */
+    public void OnGameResumed()
+    {
+        int handleCount = currentWaves.Count;
+        for (int nHandle = 0; nHandle < handleCount; ++nHandle)
+        {
+            currentWaves[nHandle].OnGameResumed();
         }
     }
 

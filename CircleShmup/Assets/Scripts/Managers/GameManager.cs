@@ -1,7 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System;
+
+/**
+ * Helper struct for scores
+ */ 
+public struct ScoreBoard
+{
+    public string  name;
+    public int     score;
+};
 
 /**
  * Main game manager, shares data between scenes
@@ -9,21 +20,12 @@ using System;
  * This class is a singleton non destroyable on LoadScene
  * @class GameManager
  */
-
-public struct ScoreBoard
-{
-    public string  name;
-    public int     score;
-};
-
 public class GameManager : MonoBehaviour
 {
-    private static GameManager  SingletonRef;
-
-    public string[]     inputs;
-    public ScoreBoard[] scoreboard;
-    public int          invertYaxis = 1;
-
+    /**
+     * Enum to adress inputs name with 
+     * natural language
+     */
     public enum e_input
     {
         TURNLEFT = 0,
@@ -37,20 +39,58 @@ public class GameManager : MonoBehaviour
         RIGHT
     };
 
+    /**
+     * Enum to store the current game state 
+     */
+    public enum EGameState
+    {
+        GameNone,
+        GamePaused,
+        GameRunning
+    }
+
+    public bool              isMainSceneLoaded;
+    private StageManager     stageManager;
+    private PlayerController playerController;
+    public EGameState        gameManagerState;
+
+    private static GameManager  SingletonRef;
+
+    public string[]     inputs;
+    public ScoreBoard[] scoreboard;
+    public int          invertYaxis = 1;
+
+    /**
+     * Called once when the object is loaded
+     */
     void Awake()
     {
         if (SingletonRef == null)
         {
             SingletonRef = this;
+
+            // Make sure that the object is not destroyed
+            // when loading scenes
             DontDestroyOnLoad(gameObject);
         }
         else
         {
             DestroyImmediate(gameObject);
         }
+
+        // Subscribes to the scene managment events
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
+    /**
+     * Called when the object is instanciated
+     */
     void Start ()
     {
+        stageManager      = null;
+        isMainSceneLoaded = false;
+        gameManagerState  = EGameState.GameNone;
+
         inputs = new string[System.Enum.GetNames(typeof(e_input)).Length];
         scoreboard = new ScoreBoard[99];
 
@@ -83,6 +123,116 @@ public class GameManager : MonoBehaviour
         inputs[(int)e_input.RIGHT] = "RightArrow";
     }
 
+    /**
+     * Called when a scene is loaded (Unity Callback)
+     */
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainGame" )
+        {
+            OnGameEnter();
+        }
+        else
+        {
+            isMainSceneLoaded = false;
+            gameManagerState  = EGameState.GameNone;
+        }
+    }
+
+    /**
+     * TODO
+     */
+    public void OnGameEnter()
+    {
+        stageManager     = GameObject.Find("StageManager").GetComponent<StageManager>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
+        if (stageManager == null)
+        {
+            Debug.LogError("Fatal error, the stage manager is not instanciated !");
+        }
+
+        isMainSceneLoaded = true;
+        gameManagerState  = EGameState.GameRunning;
+    }
+
+    /**
+     * TODO
+     */
+    public void OnGameExit()
+    {
+        stageManager     = null;
+        playerController = null;
+    }
+
+    /**
+     * TODO
+     */
+    public void OnGamePaused()
+    {
+        Time.timeScale = 0.0f;
+        //stageManager.OnGamePaused();
+        //playerController.OnGamePaused();
+        
+        // TODO Trigger interface
+        gameManagerState = EGameState.GamePaused;
+    }
+
+    /**
+     * TODO
+     */
+    public void OnGameResumed()
+    {
+        Time.timeScale = 1.0f;
+        //stageManager.OnGameResumed();
+        //playerController.OnGameResumed();
+
+        // TODO Remove interface
+        gameManagerState = EGameState.GameRunning;
+    }
+
+    /**
+     * TODO
+     */
+    public void Update()
+    {
+        if(isMainSceneLoaded)
+        {
+            if (GetKeyDown(e_input.CANCEL) && gameManagerState == EGameState.GameRunning)
+            {
+                // Pause request
+                OnGamePaused();
+            }
+            else if (GetKeyDown(e_input.CANCEL) && gameManagerState == EGameState.GamePaused)
+            {
+                // Resume request
+                OnGameResumed();
+            }
+        }
+    }
+
+    /**
+     * Called when the game has to be paused 
+     * (back to desktop etc. - This is a Unity Callback) 
+     */
+    public void OnApplicationPause(bool pause)
+    {
+        if(isMainSceneLoaded)
+        {
+            if(pause)
+            {
+                OnGamePaused();
+            }
+            else
+            {
+                OnGameResumed();
+            }
+        }
+    }
+
+    /**
+     * TODO
+     */
     public void addScore(int score, string name)
     {
         
@@ -94,11 +244,17 @@ public class GameManager : MonoBehaviour
         Array.Sort<ScoreBoard>(scoreboard, (x, y) => y.score.CompareTo(x.score));
     }
 
+    /**
+     * TODO
+     */
     public bool GetKeyDown(GameManager.e_input input)
     {
         return Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), inputs[(int)input]));
     }
 
+    /**
+     * TODO
+     */
     public bool GetKeyUp(GameManager.e_input input)
     {
         return Input.GetKeyUp((KeyCode)System.Enum.Parse(typeof(KeyCode), inputs[(int)input]));

@@ -8,9 +8,10 @@ using System.Collections.Generic;
  */
 public class EnemyClassic2 : EnemyClassic
 {
-    private Animator animator;
+    private Animator     animator;
+    private GameObject   music;
 
-    private GameObject music;
+    private MoveElliptic moveComponent;
 
     /**
      * Called once at start
@@ -22,6 +23,8 @@ public class EnemyClassic2 : EnemyClassic
         AkSoundEngine.PostEvent("Ennemy_Pop", music);
         animator = this.GetComponent<Animator>();
         animator.SetBool("LowLife", false);
+
+        moveComponent  = GetComponent<MoveElliptic>();
     }
 
     /**
@@ -41,16 +44,36 @@ public class EnemyClassic2 : EnemyClassic
     }
 
     /**
+     * Called when the game is paused
+     */
+    public override void OnGamePaused()
+    {
+        moveComponent.enabled = false;
+        shootComponent.OnGamePaused();
+    }
+
+    /**
+     * Called when the game resumes
+     */
+    public override void OnGameResumed()
+    {
+        moveComponent.enabled = true;
+        shootComponent.OnGameResumed();
+    }
+
+    /**
      * Called when the entity is dead
      */
     public override void OnEntityDeath()
     {
         Mais_Death();
+
         // Notifies that this enemy is dead
         if (handle)
         {
-            handle.OnEnemyDeath();
+            handle.OnEnemyDeath(bufferIndex);
         }
+
         Destroy(this.gameObject);
     }
 

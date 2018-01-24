@@ -12,19 +12,29 @@ MonoBehaviour:
   m_Name: Spawner_2
   m_EditorClassIdentifier: 
   SpawnerName: Spwaner_2
-  SpawnerPrefab: {fileID: 1933577238765564, guid: b9038d6adc6e77f4592d35931147af5b,
-    type: 2}
   SpawnerSpawnCount: 6
   SpawnerInfo:
-  - SpawnTiming: 1
+  - SpawnPrefab: {fileID: 1663742183731084, guid: c291a7f61f6d5fa4b8561dc44bbc8d32,
+      type: 2}
+    SpawnTiming: 1
     SpawnPosition: {x: 0.1, y: -3.96, z: 0}
-  - SpawnTiming: 1.5
+  - SpawnPrefab: {fileID: 1663742183731084, guid: c291a7f61f6d5fa4b8561dc44bbc8d32,
+      type: 2}
+    SpawnTiming: 1.5
     SpawnPosition: {x: 0.1, y: -3.96, z: 0}
-  - SpawnTiming: 2
+  - SpawnPrefab: {fileID: 1663742183731084, guid: c291a7f61f6d5fa4b8561dc44bbc8d32,
+      type: 2}
+    SpawnTiming: 2
     SpawnPosition: {x: 0.1, y: -3.96, z: 0}
-  - SpawnTiming: 2.5
+  - SpawnPrefab: {fileID: 1663742183731084, guid: c291a7f61f6d5fa4b8561dc44bbc8d32,
+      type: 2}
+    SpawnTiming: 2.5
     SpawnPosition: {x: 0.1, y: -3.96, z: 0}
-  - SpawnTiming: 3
+  - SpawnPrefab: {fileID: 1663742183731084, guid: c291a7f61f6d5fa4b8561dc44bbc8d32,
+      type: 2}
+    SpawnTiming: 3
     SpawnPosition: {x: 0.1, y: -3.96, z: 0}
-  - SpawnTiming: 3.5
+  - SpawnPrefab: {fileID: 1663742183731084, guid: c291a7f61f6d5fa4b8561dc44bbc8d32,
+      type: 2}
+    SpawnTiming: 3.5
     SpawnPosition: {x: 0.1, y: -3.96, z: 0}

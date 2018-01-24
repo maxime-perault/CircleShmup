@@ -27,18 +27,3 @@ MonoBehaviour:
       WaveBlocking: 1
       WaveTiming: 10
       WaveSpawner: {fileID: 11400000, guid: 4563c4629dc01ff43ad9e5d9b198b589, type: 2}
-    - WaveID: 2
-      WaveName: Wave 3
-      WaveBlocking: 1
-      WaveTiming: 14
-      WaveSpawner: {fileID: 11400000, guid: 3436af6489427ef4d9df749f09c5bd54, type: 2}
-    - WaveID: 3
-      WaveName: Wave 4
-      WaveBlocking: 1
-      WaveTiming: 17
-      WaveSpawner: {fileID: 11400000, guid: f4be7d667fd338541beea6f1a11730b6, type: 2}
-  - StageID: 1
-    StageName: Stage 2
-    StageDescription: Example stage
-    StageTimeout: 4
-    StageWaves: []

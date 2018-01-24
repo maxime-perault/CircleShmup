@@ -12,6 +12,7 @@ using System.Collections.Generic;
    typeof(PlayerInputController))]
 public class PlayerController : Entity
 {
+    public  bool                   paused;
     public  bool                   slide;
     public  Vector2                speed;
     public  PlayerSphereController sphereController;
@@ -33,6 +34,7 @@ public class PlayerController : Entity
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         inputController   = GetComponent<PlayerInputController>();
 
+        paused = false;
         playerJustStartedToMove = false;
         playerJustStoppedToMove = true;
     }
@@ -42,6 +44,11 @@ public class PlayerController : Entity
      */
     void Update()
     {
+        if(paused)
+        {
+            return;
+        }
+
         Vector2 axis = inputController.GetAxis();
         body2D.AddForce(new Vector2(speed.x * axis.x, speed.y * axis.y));
 
@@ -105,14 +112,32 @@ public class PlayerController : Entity
      */
     private void OnPlayerJustStartedToMove()
     {
-        Debug.Log("OnPlayerJustStartedToMove");
+        // TODO
     }
 
     /**
-    * TODO
-    */
+     * TODO
+     */
     private void OnPlayerJustStoppedToMove()
     {
-        Debug.Log("OnPlayerJustStoppedToMove");
+        // TODO
+    }
+
+    /**
+     * Called when the game is paused
+     */
+    public void OnGamePaused()
+    {
+        paused = true;
+        sphereController.OnGamePaused();
+    }
+
+    /**
+     * Called when the game resumes
+     */
+    public void OnGameResumed()
+    {
+        paused = false;
+        sphereController.OnGameResumed();
     }
 }
