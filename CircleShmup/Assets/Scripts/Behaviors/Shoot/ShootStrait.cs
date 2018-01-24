@@ -10,7 +10,16 @@ public class ShootStrait : Shoot {
     //The shot behavior
     protected override void shotBehavior()
     {
-        Instantiate(chooseBullet(), this.gameObject.transform.position, Quaternion.identity); ;
+        Bullet bulletShot = Instantiate(chooseBullet(), this.gameObject.transform.position, Quaternion.identity);
+        
+        Rigidbody2D body = bulletShot.gameObject.GetComponent<Rigidbody2D>();
+
+        //Set Direction then shot
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Vector2 goalPosition = new Vector2(player.transform.position.x, player.transform.position.y);
+        Vector2 direction = goalPosition - body.position;
+        body.velocity = direction.normalized * bulletShot.speed;
+
     }
 
     //Choose the bullet shot

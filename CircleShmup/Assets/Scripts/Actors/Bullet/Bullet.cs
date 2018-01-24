@@ -9,9 +9,7 @@ using UnityEngine;
  */
 public class Bullet : Entity
 {
-
     private GameObject player;
-    private Rigidbody2D body;
     private Vector2 goalPosition;
 
     public float speed = 1f;
@@ -20,12 +18,6 @@ public class Bullet : Entity
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        goalPosition = new Vector2(player.transform.position.x, player.transform.position.y);
-        body = this.gameObject.GetComponent<Rigidbody2D>();
-
-        //Set Direction then shot
-        Vector2 direction = goalPosition - body.position;
-        body.velocity = direction.normalized * speed;
     }
 
 
