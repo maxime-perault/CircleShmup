@@ -13,6 +13,8 @@ public class EnemyClassic2 : EnemyClassic
 
     private MoveElliptic moveComponent;
 
+    private int initialHitPoint;
+
     /**
      * Called once at start
      */
@@ -25,6 +27,8 @@ public class EnemyClassic2 : EnemyClassic
         animator.SetBool("LowLife", false);
 
         moveComponent  = GetComponent<MoveElliptic>();
+
+        initialHitPoint = hitPoint;
     }
 
     /**
@@ -77,9 +81,10 @@ public class EnemyClassic2 : EnemyClassic
         Destroy(this.gameObject);
     }
 
-    public override void OnHit()
+    public override void OnHit(int hitPoint)
     {
-        animator.SetBool("LowLife", true);
+        if( hitPoint <= initialHitPoint/2)
+            animator.SetBool("LowLife", true);
         Mais_Hit();
     }
 

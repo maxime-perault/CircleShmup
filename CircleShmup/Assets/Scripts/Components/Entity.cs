@@ -12,6 +12,7 @@ public class Entity : MonoBehaviour
     public bool isInvincible;
 
     public int hitPoint;
+
     public int damageOnCollision;
 
     public virtual void OnEntityCollisionEnterWithPlayer()
@@ -82,7 +83,7 @@ public class Entity : MonoBehaviour
             return;
         }
 
-        OnHit();
+        OnHit(hitPoint);
         hitPoint -= damages;
 
         if (hitPoint <= 0)
@@ -93,7 +94,7 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public virtual void OnHit()
+    public virtual void OnHit(int hitPoint)
     {
         //PlaySound
     }
