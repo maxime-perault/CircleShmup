@@ -10,6 +10,7 @@ using System.Collections.Generic;
 public class MoveElliptic : Move
 {
     public float   rpm;
+    public Vector2 origin;
     public Vector2 axis;
     public float   clockwise;
 
@@ -18,7 +19,7 @@ public class MoveElliptic : Move
     private Rigidbody2D body;
 
     // TMP
-    private bool        updated;
+    private bool updated;
 
     /**
      * Startup method, buffers entity body
@@ -44,7 +45,7 @@ public class MoveElliptic : Move
      */
     void FixedUpdate()
     {
-        if(!updated)
+        if (!updated)
         {
             updated = true;
             ComputeAproachAngle();
@@ -54,11 +55,11 @@ public class MoveElliptic : Move
         speed.x = axis.x * 6.0f * rpm;
         speed.y = axis.y * 6.0f * rpm;
 
-        float X = axis.x * Mathf.Cos(alpha);
-        float Y = axis.y * Mathf.Sin(alpha);
+        float X = origin.x + axis.x * Mathf.Cos(alpha);
+        float Y = origin.y + axis.y * Mathf.Sin(alpha);
 
         Vector2 currentPosition = body.position;
-        Vector2 nextPosition    = new Vector2(X, Y);
+        Vector2 nextPosition = new Vector2(X, Y);
 
         // Direction
         Vector2 direction = (nextPosition - currentPosition).normalized;
