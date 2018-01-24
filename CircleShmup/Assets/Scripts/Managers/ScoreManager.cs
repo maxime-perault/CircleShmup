@@ -9,9 +9,10 @@ using System.Collections.Generic;
  */
 public class ScoreManager : MonoBehaviour
 {
+    private int                 managerScore;
     public  GameObject          messagePrefab;
     private static ScoreManager managerInstance;
-
+    
     /**
      * Called once at loading time
      */
@@ -25,7 +26,7 @@ public class ScoreManager : MonoBehaviour
      */
     void Start()
     {
-         // None
+        managerScore = 0;
     }
 
     /**
@@ -42,5 +43,15 @@ public class ScoreManager : MonoBehaviour
 
         Score scoreComponent = go.GetComponent<Score>();
         scoreComponent.SetScore(score);
+
+        managerInstance.managerScore += score;
+    }
+
+    /**
+     * Returns the current score
+     */
+    public static int GetScore()
+    {
+        return managerInstance.managerScore;
     }
 }

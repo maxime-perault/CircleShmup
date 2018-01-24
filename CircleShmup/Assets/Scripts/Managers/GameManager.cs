@@ -23,9 +23,9 @@ public struct ScoreBoard
 public class GameManager : MonoBehaviour
 {
     /**
-        * Enum to adress inputs name with 
-        * natural language
-        */
+     * Enum to adress inputs name with 
+     * natural language
+     */
     public enum e_input
     {
         TURNLEFT = 0,
@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
     };
 
     /**
-        * Enum to store the current game state 
-        */
+     * Enum to store the current game state 
+     */
     public enum EGameState
     {
         GameNone,
@@ -49,16 +49,20 @@ public class GameManager : MonoBehaviour
         GameRunning
     }
 
-    public bool isMainSceneLoaded;
-    private StageManager stageManager;
+    public bool              isMainSceneLoaded;
+    public int               currentScore;
+
+    private StageManager     stageManager;
     private PlayerController playerController;
-    public EGameState gameManagerState;
+    public EGameState        gameManagerState;
 
-    private static GameManager SingletonRef;
+    private static GameManager        SingletonRef;
+    private        GameOverController gameOverController;
+    private        GameWinController  gameWinController;
 
-    public string[] inputs;
+    public string[]     inputs;
     public ScoreBoard[] scoreboard;
-    public int invertYaxis = 1;
+    public int          invertYaxis = 1;
 
     /*
      * Called once when the object is loaded
@@ -87,9 +91,10 @@ public class GameManager : MonoBehaviour
      */
     void Start()
     {
-        stageManager = null;
+        currentScore      = 0;
+        stageManager      = null;
         isMainSceneLoaded = false;
-        gameManagerState = EGameState.GameNone;
+        gameManagerState  = EGameState.GameNone;
 
         inputs = new string[System.Enum.GetNames(typeof(e_input)).Length];
         scoreboard = new ScoreBoard[99];
@@ -124,8 +129,10 @@ public class GameManager : MonoBehaviour
         inputs[(int)e_input.DOWN] = "DownArrow";
         inputs[(int)e_input.LEFT] = "LeftArrow";
         inputs[(int)e_input.RIGHT] = "RightArrow";
-    }
 
+        gameOverController = GetComponent<GameOverController>();
+        gameWinController  = GetComponent<GameWinController>();
+    }
 
     public void addScore(int score, string name, int tableID = 319146)
     {
@@ -143,8 +150,8 @@ public class GameManager : MonoBehaviour
 
 
     /**
-        * Called when a scene is loaded (Unity Callback)
-        */
+     * Called when a scene is loaded (Unity Callback)
+     */
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "MainGame")
@@ -159,8 +166,8 @@ public class GameManager : MonoBehaviour
     }
 
     /**
-        * TODO
-        */
+     * TODO
+     */
     public void OnGameEnter()
     {
         stageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
@@ -171,13 +178,14 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Fatal error, the stage manager is not instanciated !");
         }
 
+        currentScore      = 0;
         isMainSceneLoaded = true;
-        gameManagerState = EGameState.GameRunning;
+        gameManagerState  = EGameState.GameRunning;
     }
 
     /**
-        * TODO
-        */
+     * TODO
+     */
     public void OnGameExit()
     {
         stageManager = null;
@@ -185,8 +193,8 @@ public class GameManager : MonoBehaviour
     }
 
     /**
-        * TODO
-        */
+     * TODO
+     */
     public void OnGamePaused()
     {
         Time.timeScale = 0.0f;
@@ -198,8 +206,8 @@ public class GameManager : MonoBehaviour
     }
 
     /**
-        * TODO
-        */
+     * TODO
+      */
     public void OnGameResumed()
     {
         Time.timeScale = 1.0f;
@@ -211,8 +219,24 @@ public class GameManager : MonoBehaviour
     }
 
     /**
-        * TODO
-        */
+     * TODO
+     */
+    public void OnGameOver()
+    {
+        gameOverController.GameOver();
+    }
+
+    /**
+     * TODO
+     */
+    public void OnGameWin()
+    {
+        gameWinController.GameWin();
+    }
+
+    /**
+     * TODO
+     */
     public void Update()
     {
         if (isMainSceneLoaded)
@@ -231,9 +255,9 @@ public class GameManager : MonoBehaviour
     }
 
     /**
-        * Called when the game has to be paused 
-        * (back to desktop etc. - This is a Unity Callback) 
-        */
+     * Called when the game has to be paused 
+     * (back to desktop etc. - This is a Unity Callback) 
+     */
     public void OnApplicationPause(bool pause)
     {
         if (isMainSceneLoaded)
@@ -250,16 +274,16 @@ public class GameManager : MonoBehaviour
     }
 
     /**
-        * TODO
-        */
+     * TODO
+     */
     public bool GetKeyDown(GameManager.e_input input)
     {
         return Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), inputs[(int)input]));
     }
 
     /**
-        * TODO
-        */
+     * TODO
+     */
     public bool GetKeyUp(GameManager.e_input input)
     {
         return Input.GetKeyUp((KeyCode)System.Enum.Parse(typeof(KeyCode), inputs[(int)input]));

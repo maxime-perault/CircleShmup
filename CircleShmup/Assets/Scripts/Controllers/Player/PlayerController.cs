@@ -124,6 +124,15 @@ public class PlayerController : Entity
     }
 
     /**
+     * TODO
+     */
+    public override void OnEntityDeath()
+    {
+        GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager.OnGameOver();
+    }
+
+    /**
      * Called when the game is paused
      */
     public void OnGamePaused()

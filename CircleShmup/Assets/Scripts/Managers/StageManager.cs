@@ -229,6 +229,10 @@ public class StageManager : MonoBehaviour
             // No more stage
             stageState   = StageState.StageNone;
             managerState = ManagerState.GameEnd;
+
+            GameManager gameManager  = GameObject.Find("GameManager").GetComponent<GameManager>();
+            gameManager.currentScore = ScoreManager.GetScore();
+            gameManager.OnGameWin();
         }
         else
         {
