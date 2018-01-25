@@ -118,8 +118,8 @@ public class GameManager : MonoBehaviour
                 }
             }
         }, 0, 99);
-        inputs[(int)e_input.TURNLEFT] = "Mouse0";
-        inputs[(int)e_input.TURNRIGHT] = "Mouse1";
+        inputs[(int)e_input.TURNLEFT] = "Q";
+        inputs[(int)e_input.TURNRIGHT] = "D";
 
         inputs[(int)e_input.ACCEPT] = "Space";
         inputs[(int)e_input.CANCEL] = "Escape";
