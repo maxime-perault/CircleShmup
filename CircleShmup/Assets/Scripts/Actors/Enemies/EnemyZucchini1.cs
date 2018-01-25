@@ -22,6 +22,7 @@ public class EnemyZucchini1 : Enemy
     private MoveElliptic moveComponent;
 
     private GameObject music;
+    private PlayerSphereController sphereController;
 
     /**
      * States of the arrow enemy
@@ -42,8 +43,10 @@ public class EnemyZucchini1 : Enemy
      */
     void Start()
     {
+        music             = GameObject.Find("MusicPlayer");
+        GameObject player = GameObject.FindWithTag("Player");
+        sphereController  = player.transform.GetComponentInChildren<PlayerSphereController>();
 
-        music = GameObject.Find("MusicPlayer");
         AkSoundEngine.PostEvent("Ennemy_Pop", music);
 
         tomateCounter = 0;
@@ -170,6 +173,16 @@ public class EnemyZucchini1 : Enemy
         }
 
         Destroy(this.gameObject);
+    }
+
+    /**
+     * TODO
+     */
+    public override void OnInvincibleHit(int hitPoint)
+    {
+        // Reverse player rotation direction
+        sphereController.Reverse();
+        Debug.Log("Reverse ......");
     }
 
     /**

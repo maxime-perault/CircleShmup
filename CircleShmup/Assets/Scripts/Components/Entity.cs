@@ -86,6 +86,7 @@ public class Entity : MonoBehaviour
     {
         if (isInvincible)
         {
+            OnInvincibleHit(hitPoint);
             return;
         }
 
@@ -127,5 +128,10 @@ public class Entity : MonoBehaviour
     public virtual void OnHit(int hitPoint)
     {
         // PlaySound
+    }
+
+    public virtual void OnInvincibleHit(int hitPoint)
+    {
+        // None
     }
 }

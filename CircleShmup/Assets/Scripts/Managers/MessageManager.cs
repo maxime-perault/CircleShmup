@@ -30,7 +30,7 @@ public class MessageManager : MonoBehaviour
     public static GameObject Message(string message, float duration)
     {
         GameObject go = Instantiate(instance.messagePrefab, instance.parent.transform);
-        Debug.Log("message");
+
         Text text = go.GetComponent<Text>();
         text.text = message;
 

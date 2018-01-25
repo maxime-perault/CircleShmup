@@ -183,8 +183,8 @@ public class GameManager : MonoBehaviour
         currentScore      = 0;
         isMainSceneLoaded = true;
         gameManagerState  = EGameState.GameRunning;
-    
-        AkSoundEngine.PostEvent("Friture", musicPlayer);
+
+        AkSoundEngine.PostEvent("Friture",      musicPlayer);
     }
 
     /**
@@ -192,10 +192,9 @@ public class GameManager : MonoBehaviour
      */
     public void OnGameExit()
     {
+        musicPlayer      = null;
         stageManager     = null;
         playerController = null;
-
-        AkSoundEngine.PostEvent("Friture_Stop", musicPlayer);
     }
 
     /**
@@ -229,7 +228,8 @@ public class GameManager : MonoBehaviour
      */
     public void OnGameOver()
     {
-        AkSoundEngine.PostEvent("End_Fail", musicPlayer);
+        AkSoundEngine.PostEvent("Friture_Stop", musicPlayer);
+        AkSoundEngine.PostEvent("End_Fail",     musicPlayer);
         gameOverController.GameOver();
     }
 
@@ -238,7 +238,8 @@ public class GameManager : MonoBehaviour
      */
     public void OnGameWin()
     {
-        AkSoundEngine.PostEvent("End_Victory", musicPlayer);
+        AkSoundEngine.PostEvent("Friture_Stop", musicPlayer);
+        AkSoundEngine.PostEvent("End_Victory",  musicPlayer);
         gameWinController.GameWin();
     }
 
