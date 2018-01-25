@@ -12,17 +12,9 @@ MonoBehaviour:
   m_Name: GD_Spawner_15
   m_EditorClassIdentifier: 
   SpawnerName: Spawner_6
-  SpawnerSpawnCount: 4
+  SpawnerSpawnCount: 1
   SpawnerInfo:
-  - SpawnPrefab: {fileID: 0}
+  - SpawnPrefab: {fileID: 1077445210580840, guid: ae9f4a3c621872f4cb5361d19e014f69,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
-    SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
-    SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
-    SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
+    SpawnPosition: {x: 0, y: 0, z: 0}

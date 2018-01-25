@@ -14,15 +14,19 @@ MonoBehaviour:
   SpawnerName: Spawner_6
   SpawnerSpawnCount: 4
   SpawnerInfo:
-  - SpawnPrefab: {fileID: 0}
+  - SpawnPrefab: {fileID: 1077445210580840, guid: 82ae9a00a895dae4aa336c14c0055510,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
+    SpawnPosition: {x: 0, y: 4.5, z: 0}
+  - SpawnPrefab: {fileID: 1077445210580840, guid: 82ae9a00a895dae4aa336c14c0055510,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
+    SpawnPosition: {x: 0, y: -4.5, z: 0}
+  - SpawnPrefab: {fileID: 1077445210580840, guid: 82ae9a00a895dae4aa336c14c0055510,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
+    SpawnPosition: {x: -4.5, y: 0, z: 0}
+  - SpawnPrefab: {fileID: 1077445210580840, guid: 82ae9a00a895dae4aa336c14c0055510,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
+    SpawnPosition: {x: 4.5, y: 0, z: 0}

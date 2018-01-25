@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7cac20d12e24dd478ad2f3c89b41c4a, type: 3}
+  m_Name: GD_StageDatabase_2
+  m_EditorClassIdentifier: 
+  stages:
+  - StageID: 0
+    StageName: "Ap\xE9ro"
+    StageDescription: Premier stage de test
+    StageTimeout: 5
+    StageWaves:
+    - WaveID: 0
+      WaveName: Wave 1
+      WaveBlocking: 1
+      WaveTiming: 0
+      WaveSpawner: {fileID: 11400000, guid: ac97ca19a7cfd3c49a850e9cef27fac2, type: 2}
+    - WaveID: 1
+      WaveName: Wave 2
+      WaveBlocking: 1
+      WaveTiming: 1
+      WaveSpawner: {fileID: 11400000, guid: 5cc45615008d5104f881d099bafcd8f8, type: 2}
+    - WaveID: 2
+      WaveName: Wave 3
+      WaveBlocking: 1
+      WaveTiming: 2
+      WaveSpawner: {fileID: 11400000, guid: 5000bf5683620334baa0020ecc09b747, type: 2}
+    - WaveID: 3
+      WaveName: Wave 4
+      WaveBlocking: 1
+      WaveTiming: 3
+      WaveSpawner: {fileID: 11400000, guid: 39f9b0fe4d639b94b90e926930c8489a, type: 2}
+    - WaveID: 4
+      WaveName: Wave 5
+      WaveBlocking: 1
+      WaveTiming: 10
+      WaveSpawner: {fileID: 11400000, guid: fd0686c597cae0c49b50f2a4a58c4e77, type: 2}
+    - WaveID: 5
+      WaveName: Wave 6
+      WaveBlocking: 1
+      WaveTiming: 11
+      WaveSpawner: {fileID: 11400000, guid: 5000bf5683620334baa0020ecc09b747, type: 2}
+    - WaveID: 6
+      WaveName: Wave 7
+      WaveBlocking: 1
+      WaveTiming: 12
+      WaveSpawner: {fileID: 11400000, guid: ac97ca19a7cfd3c49a850e9cef27fac2, type: 2}
+    - WaveID: 7
+      WaveName: Wave 8
+      WaveBlocking: 1
+      WaveTiming: 13
+      WaveSpawner: {fileID: 11400000, guid: 5cc45615008d5104f881d099bafcd8f8, type: 2}

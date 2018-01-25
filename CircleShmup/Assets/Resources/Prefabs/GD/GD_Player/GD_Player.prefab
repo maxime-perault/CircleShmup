@@ -291,10 +291,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5598d5b21632c774e9d0c7bd51808077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScore: 0
   isDead: 0
   isInvincible: 0
   hitPoint: 5
   damageOnCollision: 0
+  paused: 0
   slide: 1
   speed: {x: 75, y: 75}
   sphereController: {fileID: 114780270547456780}
@@ -334,9 +336,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772fad4633201fe4aacbe766e597d9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paused: 0
   spheres: []
   spherePrefab: {fileID: 1149838103473874, guid: 1e3bd703695752d4d838427d4988c648,
     type: 2}
+  musicObject: {fileID: 0}
   startSphereCount: 3
   speedPenalty: 40
   reverseDelay: 0.5

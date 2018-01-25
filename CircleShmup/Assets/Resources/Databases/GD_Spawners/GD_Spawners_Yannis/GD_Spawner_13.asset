@@ -12,17 +12,29 @@ MonoBehaviour:
   m_Name: GD_Spawner_13
   m_EditorClassIdentifier: 
   SpawnerName: Spawner_6
-  SpawnerSpawnCount: 4
+  SpawnerSpawnCount: 6
   SpawnerInfo:
-  - SpawnPrefab: {fileID: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 6979590edca374349bb099795392ed1b,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
+    SpawnPosition: {x: 2.45, y: 2.45, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 6979590edca374349bb099795392ed1b,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
+    SpawnPosition: {x: 2.45, y: -2.45, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 6979590edca374349bb099795392ed1b,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
+    SpawnPosition: {x: -2.45, y: 2.45, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 6979590edca374349bb099795392ed1b,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
+    SpawnPosition: {x: -2.45, y: -2.45, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 0b523359eb5846d4888bcc869f402c02,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 0, y: 2.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: eb434ee6c468e504da4fea23f1039a02,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 0, y: 4.5, z: 0}
