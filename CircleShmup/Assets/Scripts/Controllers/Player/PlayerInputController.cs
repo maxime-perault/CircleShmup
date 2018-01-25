@@ -23,6 +23,8 @@ public class PlayerInputController : MonoBehaviour
     [SerializeField] public string clockwiseRotationInput        = "ClockwiseRotation";
     [SerializeField] public string counterClockwiseRotationInput = "CounterClockwiseRotation";
 
+    private bool        mouseLeftHold;
+    private bool        mouseRightHold;
     private GameManager gameManagerInstance;
 
     /**
@@ -31,6 +33,8 @@ public class PlayerInputController : MonoBehaviour
     public void Start()
     {
         // Buffering the game manager
+        mouseLeftHold       = false;
+        mouseRightHold      = false;
         gameManagerInstance = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         if (!gameManagerInstance)
@@ -101,9 +105,16 @@ public class PlayerInputController : MonoBehaviour
      */
     public bool IsClockwiseRotation()
     {
-        return (canClockwiseRotation) ? 
-            (Input.GetAxis(clockwiseRotationInput) == 1.0f) ||
-            (gameManagerInstance.GetKeyDown(GameManager.e_input.TURNLEFT)) : false;
+        if(gameManagerInstance.GetKeyDown(GameManager.e_input.TURNLEFT))
+        {
+            mouseRightHold = true;
+        }
+        else if(gameManagerInstance.GetKeyUp(GameManager.e_input.TURNLEFT))
+        {
+            mouseRightHold = false;
+        }
+
+        return (canClockwiseRotation) ? (Input.GetAxis(clockwiseRotationInput) == 1.0f) || mouseRightHold : false;
     }
 
     /**
@@ -112,8 +123,15 @@ public class PlayerInputController : MonoBehaviour
     */
     public bool IsCounterClockwiseRotation()
     {
-        return (canCounterClockwiseRotation) ? 
-            (Input.GetAxis(counterClockwiseRotationInput) == 1.0f) ||
-            (gameManagerInstance.GetKeyDown(GameManager.e_input.TURNRIGHT)) : false;
+        if (gameManagerInstance.GetKeyDown(GameManager.e_input.TURNRIGHT))
+        {
+            mouseLeftHold = true;
+        }
+        else if (gameManagerInstance.GetKeyUp(GameManager.e_input.TURNRIGHT))
+        {
+            mouseLeftHold = false;
+        }
+
+        return (canCounterClockwiseRotation) ? (Input.GetAxis(counterClockwiseRotationInput) == 1.0f) || mouseLeftHold : false;
     }
 }
