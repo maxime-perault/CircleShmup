@@ -182,7 +182,7 @@ public class EnemyZucchini1 : Enemy
     {
         // Reverse player rotation direction
         sphereController.Reverse();
-        Debug.Log("Reverse ......");
+        AkSoundEngine.PostEvent("Brochette_Hit_Invincible", music);
     }
 
     /**

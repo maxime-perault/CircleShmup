@@ -140,6 +140,10 @@ public class PlayerSphereController : MonoBehaviour
         {
             canReverse = false;
             rotationSpeed *= -1.0f;
+
+            // Restart the coroutine
+            StopCoroutine(reverseRotationCooldownCoroutine);
+            StartCoroutine(reverseRotationCooldownCoroutine);
         }
     }
 
