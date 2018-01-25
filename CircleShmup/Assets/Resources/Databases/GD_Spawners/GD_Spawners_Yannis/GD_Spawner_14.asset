@@ -12,17 +12,53 @@ MonoBehaviour:
   m_Name: GD_Spawner_14
   m_EditorClassIdentifier: 
   SpawnerName: Spawner_6
-  SpawnerSpawnCount: 4
+  SpawnerSpawnCount: 12
   SpawnerInfo:
-  - SpawnPrefab: {fileID: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 6afa49cd5e564d9449cb23f4c2d4a708,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
+    SpawnPosition: {x: 0, y: 4.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 6afa49cd5e564d9449cb23f4c2d4a708,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
+    SpawnPosition: {x: 3.9, y: 2.25, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 6afa49cd5e564d9449cb23f4c2d4a708,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
-  - SpawnPrefab: {fileID: 0}
+    SpawnPosition: {x: 3.9, y: -2.25, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 6afa49cd5e564d9449cb23f4c2d4a708,
+      type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 3.9, y: 0, z: 0}
+    SpawnPosition: {x: 0, y: -4.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: c3ef49da4eb2e3343bce4c0343a0ba72,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 0, y: 3.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: c3ef49da4eb2e3343bce4c0343a0ba72,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 3, y: 1.75, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: c3ef49da4eb2e3343bce4c0343a0ba72,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 3, y: -1.75, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: c3ef49da4eb2e3343bce4c0343a0ba72,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 0, y: -3.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: be852c0434757ad43b0d18bd80a0db1e,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 0, y: 2.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: be852c0434757ad43b0d18bd80a0db1e,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 2.16, y: 1.25, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: be852c0434757ad43b0d18bd80a0db1e,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 2.16, y: -1.25, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: be852c0434757ad43b0d18bd80a0db1e,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 0, y: -2.5, z: 0}

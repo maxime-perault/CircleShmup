@@ -21,16 +21,16 @@ MonoBehaviour:
       WaveName: Wave 1
       WaveBlocking: 1
       WaveTiming: 0
-      WaveSpawner: {fileID: 11400000, guid: 862111daaeac2a445a38467ce9722e01, type: 2}
+      WaveSpawner: {fileID: 11400000, guid: b7023e0d9f78e324d96e992c2cd83661, type: 2}
     - WaveID: 1
       WaveName: Wave 2
       WaveBlocking: 1
-      WaveTiming: 1
+      WaveTiming: 3
       WaveSpawner: {fileID: 11400000, guid: a325af0a5e546ae47b6545fbfc3d27c3, type: 2}
     - WaveID: 2
       WaveName: Wave 3
       WaveBlocking: 1
-      WaveTiming: 2
+      WaveTiming: 3
       WaveSpawner: {fileID: 11400000, guid: 0181675dfd4ad51448700cb9362417c5, type: 2}
     - WaveID: 3
       WaveName: Wave 4
@@ -57,3 +57,48 @@ MonoBehaviour:
       WaveBlocking: 1
       WaveTiming: 9
       WaveSpawner: {fileID: 11400000, guid: bf050e89fa4938b4d81bdae20247709f, type: 2}
+  - StageID: 0
+    StageName: "Entr\xE9e"
+    StageDescription: Second stage de test
+    StageTimeout: 5
+    StageWaves:
+    - WaveID: 0
+      WaveName: Wave 1
+      WaveBlocking: 1
+      WaveTiming: 0
+      WaveSpawner: {fileID: 11400000, guid: 91a2a92c8bff89643bd03ad8018d311a, type: 2}
+    - WaveID: 1
+      WaveName: Wave 2
+      WaveBlocking: 1
+      WaveTiming: 1
+      WaveSpawner: {fileID: 11400000, guid: e7fd6eab07351a24c9498c1c6df46bde, type: 2}
+    - WaveID: 2
+      WaveName: Wave 3
+      WaveBlocking: 1
+      WaveTiming: 2
+      WaveSpawner: {fileID: 11400000, guid: b53f72625e7839749a3ca5af77afe70d, type: 2}
+    - WaveID: 3
+      WaveName: Wave 4
+      WaveBlocking: 1
+      WaveTiming: 3
+      WaveSpawner: {fileID: 11400000, guid: 39f9b0fe4d639b94b90e926930c8489a, type: 2}
+    - WaveID: 4
+      WaveName: Wave 5
+      WaveBlocking: 1
+      WaveTiming: 4
+      WaveSpawner: {fileID: 11400000, guid: fd0686c597cae0c49b50f2a4a58c4e77, type: 2}
+    - WaveID: 5
+      WaveName: Wave 6
+      WaveBlocking: 1
+      WaveTiming: 10
+      WaveSpawner: {fileID: 11400000, guid: 5000bf5683620334baa0020ecc09b747, type: 2}
+    - WaveID: 6
+      WaveName: Wave 7
+      WaveBlocking: 1
+      WaveTiming: 11
+      WaveSpawner: {fileID: 11400000, guid: ac97ca19a7cfd3c49a850e9cef27fac2, type: 2}
+    - WaveID: 7
+      WaveName: Wave 8
+      WaveBlocking: 1
+      WaveTiming: 12
+      WaveSpawner: {fileID: 11400000, guid: 5cc45615008d5104f881d099bafcd8f8, type: 2}
