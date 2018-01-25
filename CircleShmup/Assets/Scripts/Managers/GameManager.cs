@@ -244,19 +244,6 @@ public class GameManager : MonoBehaviour
      */
     public void Update()
     {
-        if (isMainSceneLoaded)
-        {
-            if (GetKeyDown(e_input.CANCEL) && gameManagerState == EGameState.GameRunning)
-            {
-                // Pause request
-                OnGamePaused();
-            }
-            else if (GetKeyDown(e_input.CANCEL) && gameManagerState == EGameState.GamePaused)
-            {
-                // Resume request
-                OnGameResumed();
-            }
-        }
     }
 
     /**
