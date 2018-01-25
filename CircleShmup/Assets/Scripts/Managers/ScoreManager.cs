@@ -35,6 +35,12 @@ public class ScoreManager : MonoBehaviour
      */
     public static void AddScore(int score, Vector3 position)
     {
+        if(managerInstance == null)
+        {
+            Debug.Log("Did you add the score manager to the scene ?");
+            return;
+        }
+
         position.x -= 0.1f;
         position.y += 0.2f;
 
