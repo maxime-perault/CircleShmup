@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
 
     public bool              isMainSceneLoaded;
     public int               currentScore;
+    public uint              fritureUID;
 
     private GameObject       musicPlayer;
     private StageManager     stageManager;
@@ -92,6 +93,7 @@ public class GameManager : MonoBehaviour
      */
     void Start()
     {
+        fritureUID        = 0;
         currentScore      = 0;
         stageManager      = null;
         isMainSceneLoaded = false;
@@ -160,6 +162,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            OnGameExit();
             isMainSceneLoaded = false;
             gameManagerState = EGameState.GameNone;
         }
@@ -183,7 +186,12 @@ public class GameManager : MonoBehaviour
         isMainSceneLoaded = true;
         gameManagerState  = EGameState.GameRunning;
 
-        AkSoundEngine.PostEvent("Friture", musicPlayer);
+        if(fritureUID != 0)
+        {
+            AkSoundEngine.StopPlayingID(fritureUID, 1);
+        }
+
+        fritureUID = AkSoundEngine.PostEvent("Friture", musicPlayer);
     }
 
     /**
@@ -191,8 +199,13 @@ public class GameManager : MonoBehaviour
      */
     public void OnGameExit()
     {
-        stageManager = null;
+        stageManager     = null;
         playerController = null;
+
+        if (fritureUID != 0)
+        {
+            AkSoundEngine.StopPlayingID(fritureUID);
+        }
     }
 
     /**
