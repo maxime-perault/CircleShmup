@@ -55,6 +55,27 @@ public class PlayerController : Entity
         Vector2 axis = inputController.GetAxis();
         body2D.AddForce(new Vector2(speed.x * axis.x, speed.y * axis.y));
 
+
+        // Animator hooks :)
+        if(axis.x > 0)
+        {
+            // The player is going on the right
+        }
+        else if(axis.x < 0)
+        {
+            // The player is going on the left
+        }
+        
+        if(axis.y > 0)
+        {
+            // The player is going up
+        }
+        else if(axis.y < 0)
+        {
+            // The player is going down
+        }
+        //
+
         if (axis.x == 0.0f && axis.y == 0.0f)
         {
             if (!slide)
