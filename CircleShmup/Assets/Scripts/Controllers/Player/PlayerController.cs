@@ -20,6 +20,7 @@ public class PlayerController : Entity
     private Rigidbody2D            body2D;
     private PolygonCollider2D      polygonCollider2D;
     private PlayerInputController  inputController;
+    private ParticleSystem         particleSystem;
 
     private GameObject musicPlayer;
     private bool playerJustStartedToMove;
@@ -36,7 +37,9 @@ public class PlayerController : Entity
         body2D            = GetComponent<Rigidbody2D>();
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         inputController   = GetComponent<PlayerInputController>();
-        Panimator         = GetComponentsInChildren<PlayerAnimator>()[0];
+        Panimator         = GetComponentInChildren<PlayerAnimator>();
+        particleSystem    = GetComponentInChildren<ParticleSystem>();
+        particleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
 
         paused = false;
         playerJustStartedToMove = false;
@@ -164,9 +167,10 @@ public class PlayerController : Entity
     public override void OnHit(int hitPoint)
     {
         AkSoundEngine.PostEvent("Beurre_Hit", musicPlayer);
+        particleSystem.Play();
 
         // Player life hook
-        switch(hitPoint)
+        switch (hitPoint)
         {
             case 0:  break;
             case 1:  break;
