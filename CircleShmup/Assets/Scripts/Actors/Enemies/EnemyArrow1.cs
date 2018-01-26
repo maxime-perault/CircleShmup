@@ -17,6 +17,7 @@ public class EnemyArrow1 : Enemy
     private GameObject music;
     private bool rotation = true;
     private ParticleSystem particleSystem;
+    private ParticleSystem PopparticleSystem;
 
     /**
      * States of the arrow enemy
@@ -56,6 +57,11 @@ public class EnemyArrow1 : Enemy
 
         particleSystem = GetComponentInChildren<ParticleSystem>();
         particleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
+
+        PopparticleSystem = GetComponentsInChildren<ParticleSystem>()[1];
+        PopparticleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
+
+        PopparticleSystem.Play();
     }
 
     /**
