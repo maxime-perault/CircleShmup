@@ -17,6 +17,8 @@ public class EnemyClassic2 : EnemyClassic
 
     private ParticleSystem particleSystem;
 
+    private TrailRenderer trail;
+
     /**
      * Called once at start
      */
@@ -27,6 +29,7 @@ public class EnemyClassic2 : EnemyClassic
         AkSoundEngine.PostEvent("Ennemy_Pop", music);
         animator = this.GetComponent<Animator>();
         animator.SetBool("LowLife", false);
+        trail = GetComponent<TrailRenderer>();
 
         moveComponent  = GetComponent<MoveElliptic>();
 
@@ -84,6 +87,9 @@ public class EnemyClassic2 : EnemyClassic
         }
 
         this.shootComponent.alive = false;
+
+        trail.enabled = false;
+
         animator.SetBool("Die", true);
 
     }

@@ -28,6 +28,8 @@ public class EnemyZucchini1 : Enemy
 
     private ParticleSystem PopparticleSystem;
 
+    private TrailRenderer trail;
+
 
     /**
      * States of the arrow enemy
@@ -52,6 +54,7 @@ public class EnemyZucchini1 : Enemy
         GameObject player = GameObject.FindWithTag("Player");
         sphereController  = player.transform.GetComponentInChildren<PlayerSphereController>();
         animator = GetComponent<Animator>();
+        trail = GetComponent<TrailRenderer>();
 
         AkSoundEngine.PostEvent("Ennemy_Pop", music);
 
@@ -187,6 +190,7 @@ public class EnemyZucchini1 : Enemy
         TabTransf[3].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         TabTransf[4].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         TabTransf[5].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+        trail.enabled = false;
 
         //Animator
         animator.SetBool("Die", true);
