@@ -207,6 +207,7 @@ public class GameManager : MonoBehaviour
         //playerController.OnGamePaused();
 
         // TODO Trigger interface
+
         gameManagerState = EGameState.GamePaused;
     }
 

@@ -82,6 +82,7 @@ public class SelectIGMenu : ASelect
             }
             else if (actual_button == 1)
             {
+                AkSoundEngine.PostEvent("Friture_Stop", music);
                 StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
                 manager.OnGameResumed();
                 AkSoundEngine.PostEvent("Music_Menu_Stop", music);
