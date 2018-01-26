@@ -19,6 +19,8 @@ public class EnemyArrow1 : Enemy
     private ParticleSystem particleSystem;
     private ParticleSystem PopparticleSystem;
 
+    private TrailRenderer trail;
+
     /**
      * States of the arrow enemy
      */
@@ -38,9 +40,11 @@ public class EnemyArrow1 : Enemy
      */
     void Start()
     {
+
         music = GameObject.Find("MusicPlayer");
         AkSoundEngine.PostEvent("Ennemy_Pop", music);
         animator = this.GetComponent<Animator>();
+        trail = GetComponent<TrailRenderer>();
 
         entityBufferedPosition = transform.position;
         playerBufferedPositon  = GameObject.FindGameObjectWithTag("Player").transform.position;
@@ -133,6 +137,7 @@ public class EnemyArrow1 : Enemy
         {
             handle.OnEnemyDeath(bufferIndex);
         }
+        trail.enabled = false;
         destroy();
     }
 
@@ -164,6 +169,7 @@ public class EnemyArrow1 : Enemy
         moveComponent.enabled = false;
         animator.SetBool("Collision", true);
         this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        trail.enabled = false;
         if (handle)
         {
             handle.OnEnemyDeath(bufferIndex);
