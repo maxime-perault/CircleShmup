@@ -48,7 +48,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323957597224672}
   serializedVersion: 5
-  lengthInSec: 1
+  lengthInSec: 0.8
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -101,14 +101,14 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 812254013
+  randomSeed: 33599230
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.6
+      scalar: 0.8
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -253,7 +253,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1094,14 +1094,14 @@ ParticleSystem:
         - serializedVersion: 2
           time: 0
           value: 0
-          inSlope: 1.8391262
-          outSlope: 1.8391262
+          inSlope: 3.3193908
+          outSlope: 3.3193908
           tangentMode: 0
         - serializedVersion: 2
-          time: 0.50323486
+          time: 0.2932129
           value: 1
-          inSlope: 2.2744882
-          outSlope: 2.2744882
+          inSlope: 3.121098
+          outSlope: 3.121098
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2

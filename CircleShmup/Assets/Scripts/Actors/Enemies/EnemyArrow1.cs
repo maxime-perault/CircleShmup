@@ -16,6 +16,7 @@ public class EnemyArrow1 : Enemy
     private Animator animator;
     private GameObject music;
     private bool rotation = true;
+    private ParticleSystem particleSystem;
 
     /**
      * States of the arrow enemy
@@ -52,6 +53,9 @@ public class EnemyArrow1 : Enemy
         StartCoroutine(WaitForMove());
 
         Piment_Prep_Play();
+
+        particleSystem = GetComponentInChildren<ParticleSystem>();
+        particleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
     }
 
     /**
@@ -157,6 +161,7 @@ public class EnemyArrow1 : Enemy
 
     public override void OnHit(int hitPoint)
     {
+        particleSystem.Play();
         Piment_Cogne_Player();
         OnEntityDeath();
     }

@@ -15,6 +15,8 @@ public class EnemyClassic2 : EnemyClassic
 
     private int initialHitPoint;
 
+    private ParticleSystem particleSystem;
+
     /**
      * Called once at start
      */
@@ -29,6 +31,9 @@ public class EnemyClassic2 : EnemyClassic
         moveComponent  = GetComponent<MoveElliptic>();
 
         initialHitPoint = hitPoint;
+
+        particleSystem = GetComponentInChildren<ParticleSystem>();
+        particleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
     }
 
     /**
@@ -78,12 +83,19 @@ public class EnemyClassic2 : EnemyClassic
             handle.OnEnemyDeath(bufferIndex);
         }
 
+        animator.SetBool("Die", true);
+
+    }
+
+    public void destroy()
+    {
         Destroy(this.gameObject);
     }
 
     public override void OnHit(int hitPoint)
     {
-        if( hitPoint <= initialHitPoint/2)
+        particleSystem.Play();
+        if ( hitPoint <= initialHitPoint/2)
             animator.SetBool("LowLife", true);
         Mais_Hit();
     }

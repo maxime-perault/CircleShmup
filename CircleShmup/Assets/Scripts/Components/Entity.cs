@@ -127,7 +127,7 @@ public class Entity : MonoBehaviour
 
     public virtual void OnHit(int hitPoint)
     {
-        // PlaySound
+        //PlaySound
     }
 
     public virtual void OnInvincibleHit(int hitPoint)

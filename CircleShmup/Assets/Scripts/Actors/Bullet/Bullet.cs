@@ -24,7 +24,7 @@ public class Bullet : Entity
 
     public override void OnEntityCollisionEnterWithArena()
     {
-        Destroy(this.gameObject, 0.3f); //Change time
+        Destroy(this.gameObject, 0.1f); //Change time
     }
 
     /**

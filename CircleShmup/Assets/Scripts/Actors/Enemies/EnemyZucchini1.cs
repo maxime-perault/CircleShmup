@@ -24,6 +24,7 @@ public class EnemyZucchini1 : Enemy
     private GameObject music;
     private PlayerSphereController sphereController;
 
+
     /**
      * States of the arrow enemy
      */
@@ -174,6 +175,12 @@ public class EnemyZucchini1 : Enemy
 
         Destroy(this.gameObject);
     }
+
+    public override void OnHit(int hitPoint)
+    {
+        base.OnHit(hitPoint);
+    }
+
 
     /**
      * TODO
