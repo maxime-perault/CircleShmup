@@ -26,6 +26,8 @@ public class Shoot : Behavior
 
     public float[] bulletsInformation;
 
+    public bool alive = true;
+
     //Todo change Animation Timer function Animation Lenght
     private float animationTimer = 0.75f;
 
@@ -53,7 +55,7 @@ public class Shoot : Behavior
     {
 
         timer += Time.fixedDeltaTime;
-        if (timer > ShootDelay - animationTimer)
+        if (timer > ShootDelay - animationTimer && alive)
         {
             animator.SetBool("ShotSoon", true);
             timer = 0;

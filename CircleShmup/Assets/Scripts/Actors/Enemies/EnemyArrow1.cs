@@ -173,7 +173,7 @@ public class EnemyArrow1 : Enemy
     {
         particleSystem.Play();
         Piment_Cogne_Player();
-        OnEntityDeath();
+        //OnEntityDeath();
     }
 
     public void destroy()

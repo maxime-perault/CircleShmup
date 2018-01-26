@@ -83,6 +83,7 @@ public class EnemyClassic2 : EnemyClassic
             handle.OnEnemyDeath(bufferIndex);
         }
 
+        this.shootComponent.alive = false;
         animator.SetBool("Die", true);
 
     }

@@ -24,6 +24,8 @@ public class EnemyZucchini1 : Enemy
     private GameObject music;
     private PlayerSphereController sphereController;
 
+    private Animator animator;
+
 
     /**
      * States of the arrow enemy
@@ -47,6 +49,7 @@ public class EnemyZucchini1 : Enemy
         music             = GameObject.Find("MusicPlayer");
         GameObject player = GameObject.FindWithTag("Player");
         sphereController  = player.transform.GetComponentInChildren<PlayerSphereController>();
+        animator = GetComponent<Animator>();
 
         AkSoundEngine.PostEvent("Ennemy_Pop", music);
 
@@ -172,7 +175,19 @@ public class EnemyZucchini1 : Enemy
         {
             handle.OnEnemyDeath(bufferIndex);
         }
+        TabTransf[0].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+        TabTransf[1].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+        TabTransf[2].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+        TabTransf[3].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+        TabTransf[4].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+        TabTransf[5].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
 
+        //Animator
+        animator.SetBool("Die", true);
+    }
+
+    public void Die()
+    {
         Destroy(this.gameObject);
     }
 
