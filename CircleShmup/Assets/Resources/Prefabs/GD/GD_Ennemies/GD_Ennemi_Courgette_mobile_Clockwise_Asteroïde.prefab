@@ -371,7 +371,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: b29b843ae1d9f1b45bdad92b9c5101e6, type: 2}
+  - {fileID: 2100000, guid: 026fe97dca525b946a959df2c0981ccd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

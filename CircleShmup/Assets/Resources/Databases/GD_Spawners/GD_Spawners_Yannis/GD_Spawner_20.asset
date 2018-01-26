@@ -29,7 +29,7 @@ MonoBehaviour:
   - SpawnPrefab: {fileID: 1172362838616386, guid: 018f69478090f814e9eef67236dc2c97,
       type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 0, y: -0.1, z: 0}
+    SpawnPosition: {x: 0.1, y: 0, z: 0}
   - SpawnPrefab: {fileID: 1663742183731084, guid: 17de03a6847606f4693c49063b605d8a,
       type: 2}
     SpawnTiming: 0

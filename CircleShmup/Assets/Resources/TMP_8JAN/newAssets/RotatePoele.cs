@@ -28,7 +28,7 @@ public class RotatePoele : MonoBehaviour {
 		playerInput = inputController.GetAxis();
 		// Debug.Log (playerInput);
 
-		poeleX = playerInput.x * maxRotX -4;
+		poeleX = playerInput.x * maxRotX;
 		poeleY = playerInput.y * maxRotY * -1f;
 
 		// this.transform.rotation = Quaternion.Euler (poeleY, poeleX, 0f);

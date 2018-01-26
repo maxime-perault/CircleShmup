@@ -9,50 +9,51 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1077445210580840}
+  m_RootGameObject: {fileID: 1663742183731084}
   m_IsPrefabParent: 1
---- !u!1 &1077445210580840
+--- !u!1 &1663742183731084
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4818012067345600}
-  - component: {fileID: 50513009053212766}
-  - component: {fileID: 60847810345004268}
-  - component: {fileID: 95474951380936178}
-  - component: {fileID: 212646309014639798}
-  - component: {fileID: 114867006291595438}
-  - component: {fileID: 114403135116455528}
-  - component: {fileID: 96703874922673136}
+  - component: {fileID: 4014166440520558}
+  - component: {fileID: 50483532070669672}
+  - component: {fileID: 60822112706611442}
+  - component: {fileID: 95180150023372412}
+  - component: {fileID: 212692438755468416}
+  - component: {fileID: 114222986619438764}
+  - component: {fileID: 114420967287159346}
+  - component: {fileID: 114049714971142960}
+  - component: {fileID: 96005563296779432}
   m_Layer: 9
-  m_Name: GD_Ennemi_PulseFixe_8_Full_Des_2sec
+  m_Name: GD_Enemy_Ellip_Tir_Des_4sec_Loin_Desactive
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4818012067345600
+  m_IsActive: 0
+--- !u!4 &4014166440520558
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1077445210580840}
+  m_GameObject: {fileID: 1663742183731084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.76, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50513009053212766
+--- !u!50 &50483532070669672
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1077445210580840}
+  m_GameObject: {fileID: 1663742183731084}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -66,12 +67,12 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!60 &60847810345004268
+--- !u!60 &60822112706611442
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1077445210580840}
+  m_GameObject: {fileID: 1663742183731084}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -153,16 +154,16 @@ PolygonCollider2D:
       - {x: 0.08, y: -0.485}
       - {x: 0.11333334, y: -0.47500002}
       - {x: 0.15333334, y: -0.44166666}
---- !u!95 &95474951380936178
+--- !u!95 &95180150023372412
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1077445210580840}
+  m_GameObject: {fileID: 1663742183731084}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4a8e0054b2ca27f4e91ec2c929dc4ea6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9e2e48b7bc787354cbb6489fe9074db4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -170,13 +171,13 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!96 &96703874922673136
+--- !u!96 &96005563296779432
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1077445210580840}
+  m_GameObject: {fileID: 1663742183731084}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -263,30 +264,29 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114403135116455528
+--- !u!114 &114049714971142960
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1077445210580840}
+  m_GameObject: {fileID: 1663742183731084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcae69c1f0617754598056fdbb11c73c, type: 3}
+  m_Script: {fileID: 11500000, guid: 26d94117de64feb428b2c71d691b9940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletCount: 0
-  ShootDelay: 2
+  ShootDelay: 4
   bullets:
   - {fileID: 114866741595542402, guid: bc649ea626415744481f7569ad048c4d, type: 2}
   bulletsInformation:
   - 1
-  numberBulletPerPulse: 8
---- !u!114 &114867006291595438
+--- !u!114 &114222986619438764
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1077445210580840}
+  m_GameObject: {fileID: 1663742183731084}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b50047421906c24dbc9c85aba7970ba, type: 3}
@@ -295,17 +295,33 @@ MonoBehaviour:
   baseScore: 0
   isDead: 0
   isInvincible: 0
-  hitPoint: 2
+  hitPoint: 1
   damageOnCollision: 1
   bufferIndex: 0
   handle: {fileID: 0}
-  shootDelay: 0
---- !u!212 &212646309014639798
+  shootDelay: 2
+--- !u!114 &114420967287159346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1663742183731084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae516d60fe35f64f8e521f19b93e051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 0, y: 0}
+  rpm: 1
+  origin: {x: 0, y: 0}
+  axis: {x: 4.5, y: 4.5}
+  clockwise: -1
+--- !u!212 &212692438755468416
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1077445210580840}
+  m_GameObject: {fileID: 1663742183731084}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -335,7 +351,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 38594a2879ffa6c41bf7028bfe2c2381, type: 3}
-  m_Color: {r: 0.9411765, g: 0.7254902, b: 0.015686275, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

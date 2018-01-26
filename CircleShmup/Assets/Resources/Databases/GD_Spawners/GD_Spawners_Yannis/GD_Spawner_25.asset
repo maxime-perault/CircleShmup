@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4e19d54d23605429ef8ed3c95b28c6, type: 3}
+  m_Name: GD_Spawner_25
+  m_EditorClassIdentifier: 
+  SpawnerName: Spawner_6
+  SpawnerSpawnCount: 10
+  SpawnerInfo:
+  - SpawnPrefab: {fileID: 1663742183731084, guid: b73b4de174038aa40a73b72d18150c4e,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: -4.5, y: 0, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: b73b4de174038aa40a73b72d18150c4e,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 4.5, y: 0, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 7cf7ab2761038cc4a9171dbde99b68e1,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: -3.5, y: -2.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 7cf7ab2761038cc4a9171dbde99b68e1,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 3.5, y: -2.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 4ec2b0bb38af7fb45b6df9dd657fe1c4,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: 3.5, y: 2.5, z: 0}
+  - SpawnPrefab: {fileID: 1663742183731084, guid: 4ec2b0bb38af7fb45b6df9dd657fe1c4,
+      type: 2}
+    SpawnTiming: 0
+    SpawnPosition: {x: -3.5, y: 2.5, z: 0}
+  - SpawnPrefab: {fileID: 1274043627863606, guid: 2857442c7ad857147b310cf916e92d54,
+      type: 2}
+    SpawnTiming: 2
+    SpawnPosition: {x: 0, y: -4, z: 0}
+  - SpawnPrefab: {fileID: 1274043627863606, guid: 2857442c7ad857147b310cf916e92d54,
+      type: 2}
+    SpawnTiming: 4
+    SpawnPosition: {x: 0, y: 4, z: 0}
+  - SpawnPrefab: {fileID: 1274043627863606, guid: 2857442c7ad857147b310cf916e92d54,
+      type: 2}
+    SpawnTiming: 6
+    SpawnPosition: {x: 0, y: -4, z: 0}
+  - SpawnPrefab: {fileID: 1274043627863606, guid: 2857442c7ad857147b310cf916e92d54,
+      type: 2}
+    SpawnTiming: 8
+    SpawnPosition: {x: 0, y: 4, z: 0}

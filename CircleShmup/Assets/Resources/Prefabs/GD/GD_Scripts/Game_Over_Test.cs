@@ -25,7 +25,6 @@ public class Game_Over_Test : MonoBehaviour {
 
 		hitpoints = GetComponent<PlayerController> ().hitPoint;
 		vie = ("" + hitpoints);
-		Debug.Log (hitpoints);
 
 		if (hitpoints <= 0)
 			SceneManager.LoadScene (SceneManager.GetActiveScene().name);

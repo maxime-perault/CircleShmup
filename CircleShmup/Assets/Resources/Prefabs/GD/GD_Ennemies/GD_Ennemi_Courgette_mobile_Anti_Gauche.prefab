@@ -371,7 +371,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: b29b843ae1d9f1b45bdad92b9c5101e6, type: 2}
+  - {fileID: 2100000, guid: 026fe97dca525b946a959df2c0981ccd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -391,7 +391,7 @@ TrailRenderer:
   m_SortingLayerID: 1341671203
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 3
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.6
@@ -407,8 +407,8 @@ TrailRenderer:
       - serializedVersion: 2
         time: 1
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -0.054539077
+        outSlope: -0.054539077
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

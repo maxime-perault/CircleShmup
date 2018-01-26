@@ -14,10 +14,10 @@ MonoBehaviour:
   SpawnerName: Spawner_6
   SpawnerSpawnCount: 7
   SpawnerInfo:
-  - SpawnPrefab: {fileID: 1172362838616386, guid: 0f55cbca1cf4bde4cbb9bd9ac69f233d,
+  - SpawnPrefab: {fileID: 1612234995092266, guid: 3f65a1bd7200e804a828668ae677b95e,
       type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 0, y: -3, z: 0}
+    SpawnPosition: {x: 0, y: -2.5, z: 0}
   - SpawnPrefab: {fileID: 1077445210580840, guid: c61b4e19c4ed7c04a9d1f82d4f163a8c,
       type: 2}
     SpawnTiming: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
   - SpawnPrefab: {fileID: 1663742183731084, guid: 7b5d6d8f0dccdf94eba13d7dbfe65c15,
       type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: -1, y: 2, z: 0}
+    SpawnPosition: {x: -2, y: 3, z: 0}
   - SpawnPrefab: {fileID: 1663742183731084, guid: 13335db2109e5b74897b7ca9f4786d33,
       type: 2}
     SpawnTiming: 0
@@ -37,8 +37,8 @@ MonoBehaviour:
   - SpawnPrefab: {fileID: 1663742183731084, guid: da117d7141ebbcb42aceda48385f334e,
       type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 2, y: 4, z: 0}
+    SpawnPosition: {x: 1.8, y: -0.2, z: 0}
   - SpawnPrefab: {fileID: 1663742183731084, guid: da117d7141ebbcb42aceda48385f334e,
       type: 2}
-    SpawnTiming: 0
-    SpawnPosition: {x: 0, y: 2, z: 0}
+    SpawnTiming: 0.5
+    SpawnPosition: {x: 4, y: 2, z: 0}

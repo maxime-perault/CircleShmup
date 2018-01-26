@@ -207,7 +207,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 6
+  m_LinearDrag: 15
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -332,11 +332,11 @@ MonoBehaviour:
   baseScore: 0
   isDead: 0
   isInvincible: 0
-  hitPoint: 5
+  hitPoint: 6
   damageOnCollision: 1
   paused: 0
-  slide: 0
-  speed: {x: 50, y: 50}
+  slide: 1
+  speed: {x: 75, y: 75}
   sphereController: {fileID: 114560485000152674}
 --- !u!114 &114784999812978634
 MonoBehaviour:

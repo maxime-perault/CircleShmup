@@ -17,8 +17,8 @@ MonoBehaviour:
   - SpawnPrefab: {fileID: 1663742183731084, guid: cccfeb5d45e3d4f4ba485def02c1cd13,
       type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: 4.5, y: 0, z: 0}
+    SpawnPosition: {x: 3.5, y: 0, z: 0}
   - SpawnPrefab: {fileID: 1663742183731084, guid: cccfeb5d45e3d4f4ba485def02c1cd13,
       type: 2}
     SpawnTiming: 0
-    SpawnPosition: {x: -4.5, y: 0, z: 0}
+    SpawnPosition: {x: -3.5, y: 0, z: 0}
