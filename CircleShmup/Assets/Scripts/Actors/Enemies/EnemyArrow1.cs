@@ -115,7 +115,7 @@ public class EnemyArrow1 : Enemy
      */
     public override void OnEntityDeath()
     {
-
+        Piment_Prep_Stop();
         animator.SetBool("Collision", true);
         // Notifies that this enemy is dead
         if (handle)
@@ -163,6 +163,7 @@ public class EnemyArrow1 : Enemy
 
     public void destroy()
     {
+        Piment_Prep_Stop();
         Destroy(this.gameObject);
     }
 

@@ -25,6 +25,8 @@ public class PlayerController : Entity
     private bool playerJustStartedToMove;
     private bool playerJustStoppedToMove;
 
+    private PlayerAnimator Panimator;
+
     /**
      * Initializes the player controller by buffering 
      * all needed components
@@ -34,6 +36,7 @@ public class PlayerController : Entity
         body2D            = GetComponent<Rigidbody2D>();
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         inputController   = GetComponent<PlayerInputController>();
+        Panimator         = GetComponentsInChildren<PlayerAnimator>()[0];
 
         paused = false;
         playerJustStartedToMove = false;
@@ -59,20 +62,20 @@ public class PlayerController : Entity
         // Animator hooks :)
         if(axis.x > 0)
         {
-            // The player is going on the right
+            Panimator.Right();
         }
         else if(axis.x < 0)
         {
-            // The player is going on the left
+            Panimator.Left();
         }
         
         if(axis.y > 0)
         {
-            // The player is going up
+
         }
         else if(axis.y < 0)
         {
-            // The player is going down
+
         }
         //
 
