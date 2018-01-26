@@ -60,7 +60,7 @@ public class EnemyZucchini1 : Enemy
 
         PopparticleSystem = GetComponentsInChildren<ParticleSystem>()[0];
         PopparticleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
-        PopparticleSystem.GetComponent<Renderer>().material.color = new Color(0.82f, 0.18f, 0.18f);
+        //PopparticleSystem.GetComponent<Renderer>(). .material.color = new Color(0.82f, 0.18f, 0.18f);
 
         if (moveComponent != null)
         {
