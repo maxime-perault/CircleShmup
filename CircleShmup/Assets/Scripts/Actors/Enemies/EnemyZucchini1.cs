@@ -26,6 +26,8 @@ public class EnemyZucchini1 : Enemy
 
     private Animator animator;
 
+    private ParticleSystem PopparticleSystem;
+
 
     /**
      * States of the arrow enemy
@@ -55,6 +57,10 @@ public class EnemyZucchini1 : Enemy
 
         tomateCounter = 0;
         moveComponent = GetComponent<MoveElliptic>();
+
+        PopparticleSystem = GetComponentsInChildren<ParticleSystem>()[0];
+        PopparticleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
+        PopparticleSystem.GetComponent<Renderer>().material.color = new Color(0.82f, 0.18f, 0.18f);
 
         if (moveComponent != null)
         {

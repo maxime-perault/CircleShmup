@@ -60,6 +60,7 @@ public class EnemyArrow1 : Enemy
 
         PopparticleSystem = GetComponentsInChildren<ParticleSystem>()[1];
         PopparticleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
+        PopparticleSystem.GetComponent<Renderer>().material.color = new Color(0.82f, 0.18f, 0.18f);
 
         PopparticleSystem.Play();
     }
