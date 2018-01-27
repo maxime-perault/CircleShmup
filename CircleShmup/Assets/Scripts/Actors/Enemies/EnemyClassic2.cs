@@ -16,6 +16,7 @@ public class EnemyClassic2 : EnemyClassic
     private int initialHitPoint;
 
     private ParticleSystem particleSystem;
+    private ParticleSystem PopparticleSystem;
 
     private TrailRenderer trail;
 
@@ -28,6 +29,8 @@ public class EnemyClassic2 : EnemyClassic
     {
         collider = GetComponent<PolygonCollider2D>();
         collider.enabled = false;
+        StartCoroutine("SafePop");
+
         music = GameObject.Find("MusicPlayer");
         BaseStart();
         AkSoundEngine.PostEvent("Ennemy_Pop", music);
@@ -41,6 +44,12 @@ public class EnemyClassic2 : EnemyClassic
 
         particleSystem = GetComponentInChildren<ParticleSystem>();
         particleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
+
+        PopparticleSystem = GetComponentsInChildren<ParticleSystem>()[1];
+        PopparticleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
+        PopparticleSystem.GetComponent<Renderer>().material.color = new Color(0.82f, 0.18f, 0.18f);
+
+        PopparticleSystem.Play();
     }
 
     /**
@@ -114,6 +123,12 @@ public class EnemyClassic2 : EnemyClassic
     public void enableCollision()
     {
         collider.enabled = true;
+    }
+
+    IEnumerator SafePop()
+    {
+        yield return new WaitForSeconds(0.5f);
+        enableCollision();
     }
 
     public void Mais_Move_Up()
