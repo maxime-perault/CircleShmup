@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
      */
     void Awake()
     {
+        Cursor.visible = false;
         if (SingletonRef == null)
         {
             SingletonRef = this;

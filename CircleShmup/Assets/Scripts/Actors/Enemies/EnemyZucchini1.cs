@@ -18,6 +18,8 @@ public class EnemyZucchini1 : Enemy
 
     public Transform spriteGroup;
 
+    private SpriteRenderer[] SpriteToHide;
+
     private int tomateCounter;
     private MoveElliptic moveComponent;
 
@@ -51,6 +53,14 @@ public class EnemyZucchini1 : Enemy
      */
     void Start()
     {
+        SpriteToHide = GetComponentsInChildren<SpriteRenderer>();
+        GetComponent<SpriteRenderer>().enabled = false;
+        foreach (SpriteRenderer sprite in SpriteToHide)
+        {
+            sprite.enabled = false;
+        }
+        StartCoroutine("HidePop");
+
         collider = GetComponent<CircleCollider2D>();
         collider.enabled = false;
         StartCoroutine("SafePop");
@@ -94,6 +104,16 @@ public class EnemyZucchini1 : Enemy
             case EEnemyState.DoUntilDeath: DoUntilDeath(); break;
             default:
                 break;
+        }
+    }
+
+    IEnumerator HidePop()
+    {
+        yield return new WaitForSeconds(0.15f);
+        GetComponent<SpriteRenderer>().enabled = true;
+        foreach (SpriteRenderer sprite in SpriteToHide)
+        {
+            sprite.enabled = true;
         }
     }
 

@@ -23,6 +23,8 @@ public class EnemyArrow1 : Enemy
 
     private PolygonCollider2D collider;
 
+    private SpriteRenderer sprite;
+
     /**
      * States of the arrow enemy
      */
@@ -42,6 +44,10 @@ public class EnemyArrow1 : Enemy
      */
     void Start()
     {
+        sprite = this.GetComponent<SpriteRenderer>();
+        sprite.enabled = false;
+        StartCoroutine("HidePop");
+
         collider = GetComponent<PolygonCollider2D>();
         collider.enabled = false;
         StartCoroutine("SafePop");
@@ -103,6 +109,12 @@ public class EnemyArrow1 : Enemy
     {
         yield return new WaitForSeconds(1f);
         enableCollision();
+    }
+
+    IEnumerator HidePop()
+    {
+        yield return new WaitForSeconds(0.15f);
+        sprite.enabled = true;
     }
 
     /**
