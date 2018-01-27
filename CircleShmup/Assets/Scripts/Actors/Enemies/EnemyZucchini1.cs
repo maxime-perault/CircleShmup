@@ -212,10 +212,6 @@ public class EnemyZucchini1 : Enemy
     {
         Brochette_Death();
         // Notifies that this enemy is dead
-        if (handle)
-        {
-            handle.OnEnemyDeath(bufferIndex);
-        }
         TabTransf[0].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         TabTransf[1].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         TabTransf[2].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
@@ -230,6 +226,10 @@ public class EnemyZucchini1 : Enemy
 
     public void Die()
     {
+        if (handle)
+        {
+            handle.OnEnemyDeath(bufferIndex);
+        }
         Destroy(this.gameObject);
     }
 

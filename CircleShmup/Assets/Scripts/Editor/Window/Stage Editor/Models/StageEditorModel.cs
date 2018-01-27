@@ -17,7 +17,7 @@ public class StageEditorModel
      */
     public static bool LoadStageDatabase()
     {
-        databaseInstance = (StageDatabase)Resources.Load("Databases/StageDatabase") as StageDatabase;
+        databaseInstance = (StageDatabase)Resources.Load("Databases/GD_Spawners/GD_StageDatabase") as StageDatabase;
         if (!databaseInstance)
         {
             EditorUtility.DisplayDialog(

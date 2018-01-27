@@ -155,12 +155,12 @@ public class EnemyArrow1 : Enemy
     {
         Piment_Prep_Stop();
         animator.SetBool("Collision", true);
-        // Notifies that this enemy is dead
+        trail.enabled = false;
         if (handle)
         {
             handle.OnEnemyDeath(bufferIndex);
+            Debug.Log("PimentHandle");
         }
-        trail.enabled = false;
         destroy();
     }
 
@@ -188,15 +188,19 @@ public class EnemyArrow1 : Enemy
 
     public override void OnEntityCollisionEnterWithArena()
     {
+        if (handle)
+        {
+            handle.OnEnemyDeath(bufferIndex);
+            Debug.Log("PimentHandle");
+        }
+
         state = EEnemyState.WaitForMove;
         moveComponent.enabled = false;
         animator.SetBool("Collision", true);
         this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         trail.enabled = false;
-        if (handle)
-        {
-            handle.OnEnemyDeath(bufferIndex);
-        }
+
+       
     }
 
     public void enableCollision()
@@ -212,8 +216,13 @@ public class EnemyArrow1 : Enemy
     }
 
     public void destroy()
-    {
+    {    
         Piment_Prep_Stop();
+        if (handle)
+        {
+            handle.OnEnemyDeath(bufferIndex);
+            Debug.Log("PimentHandle");
+        }
         Destroy(this.gameObject);
     }
 

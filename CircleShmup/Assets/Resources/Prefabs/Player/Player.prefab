@@ -403,15 +403,15 @@ MonoBehaviour:
     type: 2}
   musicObject: {fileID: 0}
   startSphereCount: 3
-  speedPenalty: 40
+  speedPenalty: 20
   reverseDelay: 0.25
   sphereDelay: 0.5
   radius: 1.25
   minRadius: 1.25
   maxRadius: 2.5
-  radiusGrowSpeed: 1
-  radiusCrunchSpeed: 5
-  rotationSpeed: -120
+  radiusGrowSpeed: 1.25
+  radiusCrunchSpeed: 6
+  rotationSpeed: -110
   currentRotationSpeed: 0
   currentSpeedPenalty: 0
   currentRadiusRatio: 0
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f03f8dee1a26242aee66416d57f0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeAmount: 0.3
+  shakeAmount: 0.21
   decreaseFactor: 1
 --- !u!114 &114803391825515716
 MonoBehaviour:

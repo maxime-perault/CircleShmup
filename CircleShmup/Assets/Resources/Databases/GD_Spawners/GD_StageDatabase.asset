@@ -20,8 +20,8 @@ MonoBehaviour:
     - WaveID: 0
       WaveName: Wave 1
       WaveBlocking: 1
-      WaveTiming: 5
-      WaveSpawner: {fileID: 11400000, guid: 862111daaeac2a445a38467ce9722e01, type: 2}
+      WaveTiming: 2
+      WaveSpawner: {fileID: 11400000, guid: a325af0a5e546ae47b6545fbfc3d27c3, type: 2}
     - WaveID: 1
       WaveName: Wave 2
       WaveBlocking: 1
@@ -71,16 +71,6 @@ MonoBehaviour:
       WaveName: Wave 4
       WaveBlocking: 1
       WaveTiming: 9
-      WaveSpawner: {fileID: 11400000, guid: 38dd9e0922069094ab0987ebad617050, type: 2}
-    - WaveID: 4
-      WaveName: Wave 5
-      WaveBlocking: 1
-      WaveTiming: 11
-      WaveSpawner: {fileID: 11400000, guid: b451fa2cfaf6f1044b8ce752be24cd03, type: 2}
-    - WaveID: 5
-      WaveName: Wave 6
-      WaveBlocking: 1
-      WaveTiming: 14
       WaveSpawner: {fileID: 11400000, guid: 584d17e9a12f70e4eb76b6d11f8a8ea1, type: 2}
   - StageID: 2
     StageName: Secondi Piatti
@@ -91,7 +81,7 @@ MonoBehaviour:
       WaveName: Wave 1
       WaveBlocking: 1
       WaveTiming: 5
-      WaveSpawner: {fileID: 11400000, guid: 5000bf5683620334baa0020ecc09b747, type: 2}
+      WaveSpawner: {fileID: 11400000, guid: b53f72625e7839749a3ca5af77afe70d, type: 2}
     - WaveID: 1
       WaveName: Wave 2
       WaveBlocking: 1

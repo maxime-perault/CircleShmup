@@ -107,12 +107,6 @@ public class EnemyClassic2 : EnemyClassic
     {
         Mais_Death();
 
-        // Notifies that this enemy is dead
-        if (handle)
-        {
-            handle.OnEnemyDeath(bufferIndex);
-        }
-
         this.shootComponent.alive = false;
 
         trail.enabled = false;
@@ -123,6 +117,10 @@ public class EnemyClassic2 : EnemyClassic
 
     public void destroy()
     {
+        if (handle)
+        {
+            handle.OnEnemyDeath(bufferIndex);
+        }
         Destroy(this.gameObject);
     }
 

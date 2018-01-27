@@ -51,4 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5ebad183a205941b7b6edd799135d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  database: {fileID: 11400000, guid: dbf268fd82becce40889c7aa97284d03, type: 2}
+  musicPlayer: {fileID: 0}
+  paused: 0
+  database: {fileID: 11400000, guid: fce9d500fe1a6944abe0d170f0a4bda4, type: 2}
+  hpGetBack: 6

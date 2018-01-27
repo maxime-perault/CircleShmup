@@ -30,19 +30,3 @@ MonoBehaviour:
       type: 2}
     SpawnTiming: 0
     SpawnPosition: {x: 0, y: -4, z: 0}
-  - SpawnPrefab: {fileID: 1274043627863606, guid: 7559c74cb29de28458efe1ef92eb306d,
-      type: 2}
-    SpawnTiming: 2
-    SpawnPosition: {x: 2.8, y: 2.8, z: 0}
-  - SpawnPrefab: {fileID: 1274043627863606, guid: 7559c74cb29de28458efe1ef92eb306d,
-      type: 2}
-    SpawnTiming: 2
-    SpawnPosition: {x: 2.8, y: -2.8, z: 0}
-  - SpawnPrefab: {fileID: 1274043627863606, guid: 7559c74cb29de28458efe1ef92eb306d,
-      type: 2}
-    SpawnTiming: 2
-    SpawnPosition: {x: -2.8, y: 2.8, z: 0}
-  - SpawnPrefab: {fileID: 1274043627863606, guid: 7559c74cb29de28458efe1ef92eb306d,
-      type: 2}
-    SpawnTiming: 2
-    SpawnPosition: {x: -2.8, y: -2.8, z: 0}

@@ -16,6 +16,8 @@ public class WaveHandle : MonoBehaviour
         WaveEnd
     }
 
+    public int startEnemyCount;
+
     public bool      paused;
     public Wave      wave;
     public WaveState waveState;
@@ -25,10 +27,11 @@ public class WaveHandle : MonoBehaviour
     private SpawnerData spawnerData;
     private IEnumerator spawnerCoroutine;
     private Transform   parentTransform;
-    private List<Enemy> enemyReferenceBuffer = new List<Enemy>();
+    public List<Enemy> enemyReferenceBuffer = new List<Enemy>();
 
-    private int         enemyLeft;
-    private int         currentIndex;
+    public int         enemyLeft;
+    public int debugSpawnCount;
+    private int        currentIndex;
 
     /**
      * Initializes the wave handle
@@ -43,6 +46,8 @@ public class WaveHandle : MonoBehaviour
         waveState    = WaveState.WaveRunning;
         spawnerData  = wave.WaveSpawner;
 
+        startEnemyCount = spawnerData.SpawnerInfo.Count;
+
         if(spawnerData == null)
         {
             waveState = WaveState.WaveEnd;
@@ -53,7 +58,8 @@ public class WaveHandle : MonoBehaviour
         spawnerCoroutine = SpawnEnemies();
         StartCoroutine(spawnerCoroutine);
 
-        enemyLeft = spawnerData.SpawnerSpawnCount;
+        debugSpawnCount = spawnerData.SpawnerSpawnCount;
+        enemyLeft = spawnerData.SpawnerInfo.Count;
         parentTransform = GameObject.Find("Enemies").transform;
     }
 
@@ -69,8 +75,10 @@ public class WaveHandle : MonoBehaviour
 
         elapsedTime += Time.deltaTime;
 
-        if(enemyLeft == 0)
+ 
+        if (enemyLeft <= 0)
         {
+  
             waveState = WaveState.WaveEnd;
         }
     }
@@ -148,7 +156,7 @@ public class WaveHandle : MonoBehaviour
             currentIndex++;
         }
 
-        if(!wave.WaveBlocking || enemyLeft == 0)
+        if(!wave.WaveBlocking || enemyLeft <= 0)
         {
             waveState = WaveState.WaveEnd;
         }
@@ -163,7 +171,10 @@ public class WaveHandle : MonoBehaviour
      */
     public void OnEnemyDeath(int bufferIndex)
     {
-        enemyLeft--;
-        enemyReferenceBuffer[bufferIndex] = null;
+        if(enemyReferenceBuffer[bufferIndex] != null)
+        {
+            enemyLeft -= 1;
+            enemyReferenceBuffer[bufferIndex] = null;
+        }
     }
 }
