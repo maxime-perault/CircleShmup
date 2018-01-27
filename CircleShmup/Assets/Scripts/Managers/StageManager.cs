@@ -118,6 +118,15 @@ public class StageManager : MonoBehaviour
         // Going to the next state
         stageState   = StageState.StageBegin;
         managerState = ManagerState.GameRunning;
+
+        // "A table" management
+        switch(currentStageIndex)
+        {
+            case 1: AkSoundEngine.PostEvent("A_Table_1", musicPlayer); break;
+            case 2: AkSoundEngine.PostEvent("A_Table_2", musicPlayer); break;
+            case 3: AkSoundEngine.PostEvent("A_Table_3", musicPlayer); break;
+            default: break;
+        }
     }
 
     /**
