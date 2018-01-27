@@ -25,8 +25,6 @@ public class ScreenShake : MonoBehaviour
             Vector3 random = Random.insideUnitSphere * shakeAmount;
             camera.transform.localPosition = new Vector3(random.x, random.y, previousCam.z);
 
-            Handheld.Vibrate();
-
             shake -= Time.deltaTime * decreaseFactor;
         }
         else

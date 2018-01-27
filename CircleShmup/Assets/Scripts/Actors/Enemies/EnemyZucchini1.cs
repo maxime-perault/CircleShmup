@@ -30,6 +30,7 @@ public class EnemyZucchini1 : Enemy
 
     private TrailRenderer trail;
 
+    private CircleCollider2D collider;
 
     /**
      * States of the arrow enemy
@@ -50,6 +51,11 @@ public class EnemyZucchini1 : Enemy
      */
     void Start()
     {
+        collider = GetComponent<CircleCollider2D>();
+        collider.enabled = false;
+        StartCoroutine("SafePop");
+
+
         music             = GameObject.Find("MusicPlayer");
         GameObject player = GameObject.FindWithTag("Player");
         sphereController  = player.transform.GetComponentInChildren<PlayerSphereController>();
@@ -89,6 +95,12 @@ public class EnemyZucchini1 : Enemy
             default:
                 break;
         }
+    }
+
+    IEnumerator SafePop()
+    {
+        yield return new WaitForSeconds(0.5f);
+        enableCollision();     
     }
 
     /**
@@ -224,6 +236,12 @@ public class EnemyZucchini1 : Enemy
     {
         moveComponent.enabled = true;
         state = EEnemyState.DoUntilDeath;
+    }
+
+
+    public void enableCollision()
+    {
+        collider.enabled = true;
     }
 
     /**

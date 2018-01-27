@@ -21,6 +21,8 @@ public class EnemyArrow1 : Enemy
 
     private TrailRenderer trail;
 
+    private PolygonCollider2D collider;
+
     /**
      * States of the arrow enemy
      */
@@ -40,7 +42,8 @@ public class EnemyArrow1 : Enemy
      */
     void Start()
     {
-
+        collider = GetComponent<PolygonCollider2D>();
+        collider.enabled = false;
         music = GameObject.Find("MusicPlayer");
         AkSoundEngine.PostEvent("Ennemy_Pop", music);
         animator = this.GetComponent<Animator>();
@@ -174,6 +177,11 @@ public class EnemyArrow1 : Enemy
         {
             handle.OnEnemyDeath(bufferIndex);
         }
+    }
+
+    public void enableCollision()
+    {
+        collider.enabled = true;
     }
 
     public override void OnHit(int hitPoint)

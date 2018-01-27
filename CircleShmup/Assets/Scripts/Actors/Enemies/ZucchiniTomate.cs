@@ -10,6 +10,8 @@ public class ZucchiniTomate : Enemy
 {
 
     private ParticleSystem particleSystem;
+
+    private CircleCollider2D collider;
     /**
      * TODO
      */
@@ -28,8 +30,22 @@ public class ZucchiniTomate : Enemy
     {
         particleSystem = GetComponentInChildren<ParticleSystem>();
         particleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
+
+        collider = GetComponent<CircleCollider2D>();
+        collider.enabled = false;
+        StartCoroutine("SafePop");
     }
 
+    IEnumerator SafePop()
+    {
+        yield return new WaitForSeconds(0.5f);
+        enableCollision();
+    }
+
+    public void enableCollision()
+    {
+        collider.enabled = true;
+    }
     /**
      * Called when the entity collides with the player
      */
