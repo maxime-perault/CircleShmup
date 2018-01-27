@@ -127,7 +127,7 @@ public class EnemyClassic2 : EnemyClassic
 
     IEnumerator SafePop()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         enableCollision();
     }
 
