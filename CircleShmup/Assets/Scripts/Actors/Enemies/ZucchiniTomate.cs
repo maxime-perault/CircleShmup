@@ -8,6 +8,8 @@ using System.Collections.Generic;
  */
 public class ZucchiniTomate : Enemy
 {
+
+    private ParticleSystem particleSystem;
     /**
      * TODO
      */
@@ -22,6 +24,12 @@ public class ZucchiniTomate : Enemy
     public ETomateSide    side;
     public EnemyZucchini1 enemyInstance;
 
+    private void Start()
+    {
+        particleSystem = GetComponentInChildren<ParticleSystem>();
+        particleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
+    }
+
     /**
      * Called when the entity collides with the player
      */
@@ -35,6 +43,7 @@ public class ZucchiniTomate : Enemy
      */
     public override void OnEntityDeath()
     {
+        particleSystem.Play();
         Debug.Log("Tomate : OnEntityDeath");
         enemyInstance.OnTomateDestroyed(side);
     }
