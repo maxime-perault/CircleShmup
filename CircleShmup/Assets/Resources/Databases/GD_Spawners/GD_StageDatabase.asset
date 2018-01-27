@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stages:
   - StageID: 0
-    StageName: "Entr\xE9e l\xE9g\xE8re"
+    StageName: Antipasti
     StageDescription: Premier stage de test
     StageTimeout: 3
     StageWaves:
@@ -48,7 +48,7 @@ MonoBehaviour:
       WaveTiming: 10
       WaveSpawner: {fileID: 11400000, guid: e7fd6eab07351a24c9498c1c6df46bde, type: 2}
   - StageID: 1
-    StageName: "Plat de r\xE9sistance"
+    StageName: Primi Piatti
     StageDescription: Second stage de test
     StageTimeout: 3
     StageWaves:
@@ -83,7 +83,7 @@ MonoBehaviour:
       WaveTiming: 14
       WaveSpawner: {fileID: 11400000, guid: 584d17e9a12f70e4eb76b6d11f8a8ea1, type: 2}
   - StageID: 2
-    StageName: Fromage fort
+    StageName: Secondi Piatti
     StageDescription: "Troisi\xE8me stage de test"
     StageTimeout: 3
     StageWaves:
@@ -113,7 +113,7 @@ MonoBehaviour:
       WaveTiming: 15
       WaveSpawner: {fileID: 11400000, guid: dfa38b55fa7a65944b51659aaec6382f, type: 2}
   - StageID: 3
-    StageName: "Dessert acidul\xE9"
+    StageName: Dolce
     StageDescription: Dernier stage de test
     StageTimeout: 3
     StageWaves:
