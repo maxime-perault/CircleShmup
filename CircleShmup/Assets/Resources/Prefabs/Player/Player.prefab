@@ -81,6 +81,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1670656301874660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4711123529385048}
+  - component: {fileID: 54080055428331350}
+  m_Layer: 0
+  m_Name: attachTacheHuile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1683993480024018
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +159,7 @@ Transform:
   - {fileID: 4541339510937270}
   - {fileID: 4707522700200590}
   - {fileID: 4121394223438098}
+  - {fileID: 4711123529385048}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -186,6 +203,19 @@ Transform:
   - {fileID: 4842455272289522}
   m_Father: {fileID: 4005880616577634}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4711123529385048
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1670656301874660}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4005880616577634}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4842455272289522
 Transform:
@@ -237,7 +267,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1.1
   m_LinearDrag: 15
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -246,6 +276,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!54 &54080055428331350
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1670656301874660}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!60 &60110341316814916
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -373,6 +418,14 @@ MonoBehaviour:
   slide: 1
   speed: {x: 75, y: 75}
   sphereController: {fileID: 114560485000152674}
+  playerStateRenderer: {fileID: 0}
+  playerStateSprites:
+  - {fileID: 21300000, guid: 1d0eb4da7cb97b149a5a87845305ecd3, type: 3}
+  - {fileID: 21300000, guid: d69800bb39d80694aaaacbf6200fd75a, type: 3}
+  - {fileID: 21300000, guid: d37752af7351acc4ebe547999e73d730, type: 3}
+  - {fileID: 21300000, guid: 6cd4ba28908c4da4c803a39d82c762ec, type: 3}
+  - {fileID: 21300000, guid: 7a6128ec454b23742b56f5916bbf525a, type: 3}
+  - {fileID: 21300000, guid: 7bba669ef750dc34890f3f821d3f861e, type: 3}
 --- !u!114 &114784999812978634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3833,7 +3886,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1977585975
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02d23b923d7a4714db5f78bd7800df0a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

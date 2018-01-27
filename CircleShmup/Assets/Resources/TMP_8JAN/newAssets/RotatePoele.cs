@@ -21,18 +21,19 @@ public class RotatePoele : MonoBehaviour {
 	void Update () {
 
 		// gere l'effet rotation de la poele avec l'input du joystick.
+		if (Time.deltaTime != 0) {
+			poeleX = 0;
+			poeleY = 0;
 
-		poeleX = 0;
-		poeleY = 0;
+			playerInput = inputController.GetAxis ();
+			// Debug.Log (playerInput);
 
-		playerInput = inputController.GetAxis();
-		// Debug.Log (playerInput);
+			poeleX = playerInput.x * maxRotX;
+			poeleY = playerInput.y * maxRotY * -1f;
 
-		poeleX = playerInput.x * maxRotX;
-		poeleY = playerInput.y * maxRotY * -1f;
-
-		// this.transform.rotation = Quaternion.Euler (poeleY, poeleX, 0f);
-		this.transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler (poeleY, poeleX, 0f), Time.time * lerpSpeed);
+			// this.transform.rotation = Quaternion.Euler (poeleY, poeleX, 0f);
+			this.transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler (poeleY, poeleX, 0f), lerpSpeed);
+		}
 		
 	}
 }
