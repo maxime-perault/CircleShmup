@@ -113,7 +113,7 @@ MonoBehaviour:
       WaveTiming: 15
       WaveSpawner: {fileID: 11400000, guid: dfa38b55fa7a65944b51659aaec6382f, type: 2}
   - StageID: 3
-    StageName: Dolce
+    StageName: Fromaggio & Dolce
     StageDescription: Dernier stage de test
     StageTimeout: 3
     StageWaves:
