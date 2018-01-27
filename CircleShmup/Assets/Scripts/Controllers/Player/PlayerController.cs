@@ -53,7 +53,7 @@ public class PlayerController : Entity
     /**
      * Updates the player states
      */
-    void Update()
+    void FixedUpdate()
     {
         if(paused)
         {
