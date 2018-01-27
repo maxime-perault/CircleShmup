@@ -122,8 +122,8 @@ public class StageManager : MonoBehaviour
         // "A table" management
         switch(currentStageIndex)
         {
-            case 1: AkSoundEngine.PostEvent("A_Table_1", musicPlayer); break;
-            case 2: AkSoundEngine.PostEvent("A_Table_2", musicPlayer); break;
+            case 0: AkSoundEngine.PostEvent("A_Table_1", musicPlayer); break;
+            case 1: AkSoundEngine.PostEvent("A_Table_2", musicPlayer); break;
             case 3: AkSoundEngine.PostEvent("A_Table_3", musicPlayer); break;
             default: break;
         }
