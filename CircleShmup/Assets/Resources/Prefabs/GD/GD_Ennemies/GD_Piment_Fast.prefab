@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe39b444a46154e4d88e4d0e167ef22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 100, y: 100}
+  speed: {x: 75, y: 75}
   startPoint: {x: 0, y: 0}
   endPoint: {x: 0, y: 0}
 --- !u!114 &114792795742365990
@@ -413,7 +413,7 @@ MonoBehaviour:
   damageOnCollision: 1
   bufferIndex: 0
   handle: {fileID: 0}
-  delayBeforeAttack: 0.5
+  delayBeforeAttack: 1
 --- !u!198 &198753142995883058
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -7230,7 +7230,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1341671203
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fd5bed1835ed8b7448b646aaf52765ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7274,7 +7274,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1977585975
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d6d51d5971e459641a6a2fa46a5abfe1, type: 3}
   m_Color: {r: 0.8235294, g: 0.1882353, b: 0.1882353, a: 1}

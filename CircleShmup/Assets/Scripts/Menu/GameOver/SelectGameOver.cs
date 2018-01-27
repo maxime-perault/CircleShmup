@@ -27,7 +27,7 @@ public class SelectGameOver : ASelect
         if (Time.time > TimeToWait)
         {
             if (transVec.y == 0)
-                transVec.y = 599.4f;
+                transVec.y = 600f;
             else
                 transVec.y = 0;
             bg.anchoredPosition = new Vector3(transVec.x, transVec.y, transVec.z);

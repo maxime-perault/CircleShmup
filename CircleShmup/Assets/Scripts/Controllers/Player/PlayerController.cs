@@ -30,6 +30,8 @@ public class PlayerController : Entity
 
     private PlayerAnimator Panimator;
 
+    private ScreenShake screenshake;
+
     /**
      * Initializes the player controller by buffering 
      * all needed components
@@ -42,6 +44,8 @@ public class PlayerController : Entity
         Panimator         = GetComponentInChildren<PlayerAnimator>();
         particleSystem    = GetComponentInChildren<ParticleSystem>();
         particleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
+
+        screenshake = GetComponent<ScreenShake>();
 
         paused = false;
         playerJustStartedToMove = false;
@@ -173,6 +177,7 @@ public class PlayerController : Entity
 
     public override void OnHit(int hitPoint)
     {
+        screenshake.Shake(0.3f);
         AkSoundEngine.PostEvent("Beurre_Hit", musicPlayer);
         particleSystem.Play();
     }

@@ -19,11 +19,15 @@ public class EnemyClassic2 : EnemyClassic
 
     private TrailRenderer trail;
 
+    private PolygonCollider2D collider;
+
     /**
      * Called once at start
      */
     void Start()
     {
+        collider = GetComponent<PolygonCollider2D>();
+        collider.enabled = false;
         music = GameObject.Find("MusicPlayer");
         BaseStart();
         AkSoundEngine.PostEvent("Ennemy_Pop", music);
@@ -105,6 +109,11 @@ public class EnemyClassic2 : EnemyClassic
         if ( hitPoint <= initialHitPoint/2)
             animator.SetBool("LowLife", true);
         Mais_Hit();
+    }
+
+    public void enableCollision()
+    {
+        collider.enabled = true;
     }
 
     public void Mais_Move_Up()

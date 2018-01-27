@@ -574,14 +574,14 @@ Prefab:
       propertyPath: playerStateRenderer
       value: 
       objectReference: {fileID: 374371776}
+    - target: {fileID: 114793727035584016, guid: 10f549792aea82946999a030576f4561,
+        type: 2}
+      propertyPath: shakeAmount
+      value: 0.21
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10f549792aea82946999a030576f4561, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &331599450 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4005880616577634, guid: 10f549792aea82946999a030576f4561,
-    type: 2}
-  m_PrefabInternal: {fileID: 331599449}
 --- !u!1 &374371775
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,48 +655,6 @@ Transform:
   m_Father: {fileID: 827954867}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &433427947
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 331599450}
-    m_Modifications:
-    - target: {fileID: 4013768521659854, guid: 0a965c0206addd24eaec827bd849013c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013768521659854, guid: 0a965c0206addd24eaec827bd849013c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013768521659854, guid: 0a965c0206addd24eaec827bd849013c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.069
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013768521659854, guid: 0a965c0206addd24eaec827bd849013c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013768521659854, guid: 0a965c0206addd24eaec827bd849013c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013768521659854, guid: 0a965c0206addd24eaec827bd849013c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013768521659854, guid: 0a965c0206addd24eaec827bd849013c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013768521659854, guid: 0a965c0206addd24eaec827bd849013c, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 0a965c0206addd24eaec827bd849013c, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &584420880
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +948,7 @@ RectTransform:
   m_GameObject: {fileID: 827954863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 0.009264184, y: 0.009264184, z: 0.009264184}
+  m_LocalScale: {x: 0.00925926, y: 0.00925926, z: 0.00925926}
   m_Children:
   - {fileID: 1613989802}
   - {fileID: 1071766076}
@@ -1633,6 +1591,55 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cce6a92baa2e18f4db7d8ffe54bdaf0c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1588150448 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1044285862435128, guid: cce6a92baa2e18f4db7d8ffe54bdaf0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1588150447}
+--- !u!212 &1588150449
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1588150448}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.5133333, y: 1.3366667}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
 --- !u!1 &1613989799
 GameObject:
   m_ObjectHideFlags: 0
