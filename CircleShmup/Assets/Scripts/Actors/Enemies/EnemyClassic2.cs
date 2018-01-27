@@ -16,6 +16,7 @@ public class EnemyClassic2 : EnemyClassic
     private int initialHitPoint;
 
     private ParticleSystem particleSystem;
+    private ParticleSystem PopparticleSystem;
 
     private TrailRenderer trail;
 
@@ -43,6 +44,12 @@ public class EnemyClassic2 : EnemyClassic
 
         particleSystem = GetComponentInChildren<ParticleSystem>();
         particleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
+
+        PopparticleSystem = GetComponentsInChildren<ParticleSystem>()[1];
+        PopparticleSystem.GetComponent<Renderer>().sortingLayerName = "UI";
+        PopparticleSystem.GetComponent<Renderer>().material.color = new Color(0.82f, 0.18f, 0.18f);
+
+        PopparticleSystem.Play();
     }
 
     /**
