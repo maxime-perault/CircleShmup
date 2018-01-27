@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114049714971142960}
   - component: {fileID: 96362201862567684}
   m_Layer: 9
-  m_Name: GD_Enemy_Ellip_Tir_Des_2sec_Moy
+  m_Name: GD_Enemy_Ellip_Tir_Des_3sec_Moy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletCount: 0
-  ShootDelay: 2
+  ShootDelay: 3
   bullets:
   - {fileID: 114866741595542402, guid: bc649ea626415744481f7569ad048c4d, type: 2}
   bulletsInformation:
@@ -3772,7 +3772,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1341671203
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 38594a2879ffa6c41bf7028bfe2c2381, type: 3}
   m_Color: {r: 0.93333334, g: 0.92156863, b: 0.54901963, a: 1}

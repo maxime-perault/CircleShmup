@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1663742183731084}
   m_IsPrefabParent: 1
+--- !u!1 &1575767973587586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4313816147099222}
+  - component: {fileID: 198755105058272552}
+  - component: {fileID: 199176785113701840}
+  m_Layer: 0
+  m_Name: FX_hit_particle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1663742183731084
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,27 +43,10 @@ GameObject:
   - component: {fileID: 114222986619438764}
   - component: {fileID: 114420967287159346}
   - component: {fileID: 114049714971142960}
-  - component: {fileID: 96679340135857496}
+  - component: {fileID: 96436122312079588}
   m_Layer: 9
-  m_Name: GD_Enemy_Ellip_Tir_Des_2sec_Proche_spfa
+  m_Name: GD_Enemy_Ellip_Tir_Des_3sec_Lune_1
   m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1803974008341470
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4984137333454814}
-  - component: {fileID: 198216859531014324}
-  - component: {fileID: 199134028529500008}
-  m_Layer: 0
-  m_Name: FX_hit_particle
-  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,16 +61,16 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4984137333454814}
+  - {fileID: 4313816147099222}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4984137333454814
+--- !u!4 &4313816147099222
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1803974008341470}
+  m_GameObject: {fileID: 1575767973587586}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -202,7 +202,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!96 &96679340135857496
+--- !u!96 &96436122312079588
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletCount: 0
-  ShootDelay: 2
+  ShootDelay: 3
   bullets:
   - {fileID: 114866741595542402, guid: bc649ea626415744481f7569ad048c4d, type: 2}
   bulletsInformation:
@@ -344,16 +344,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0}
-  rpm: 2
-  origin: {x: 0, y: 0}
-  axis: {x: 2.5, y: 2.5}
-  clockwise: -1
---- !u!198 &198216859531014324
+  rpm: 1
+  origin: {x: -2, y: 2}
+  axis: {x: 1, y: 1}
+  clockwise: 1
+--- !u!198 &198755105058272552
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1803974008341470}
+  m_GameObject: {fileID: 1575767973587586}
   serializedVersion: 5
   lengthInSec: 0.3
   simulationSpeed: 1
@@ -408,7 +408,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1929191817
+  randomSeed: -2015369245
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3686,13 +3686,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &199134028529500008
+--- !u!199 &199176785113701840
 ParticleSystemRenderer:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1803974008341470}
+  m_GameObject: {fileID: 1575767973587586}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -3772,7 +3772,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1341671203
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 38594a2879ffa6c41bf7028bfe2c2381, type: 3}
   m_Color: {r: 0.93333334, g: 0.92156863, b: 0.54901963, a: 1}
