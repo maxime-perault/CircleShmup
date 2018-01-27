@@ -28,6 +28,8 @@ public class EnemyClassic2 : EnemyClassic
     {
         collider = GetComponent<PolygonCollider2D>();
         collider.enabled = false;
+        StartCoroutine("SafePop");
+
         music = GameObject.Find("MusicPlayer");
         BaseStart();
         AkSoundEngine.PostEvent("Ennemy_Pop", music);
@@ -114,6 +116,12 @@ public class EnemyClassic2 : EnemyClassic
     public void enableCollision()
     {
         collider.enabled = true;
+    }
+
+    IEnumerator SafePop()
+    {
+        yield return new WaitForSeconds(0.5f);
+        enableCollision();
     }
 
     public void Mais_Move_Up()

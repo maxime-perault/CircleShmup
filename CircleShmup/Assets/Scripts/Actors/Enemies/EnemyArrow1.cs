@@ -44,6 +44,8 @@ public class EnemyArrow1 : Enemy
     {
         collider = GetComponent<PolygonCollider2D>();
         collider.enabled = false;
+        StartCoroutine("SafePop");
+
         music = GameObject.Find("MusicPlayer");
         AkSoundEngine.PostEvent("Ennemy_Pop", music);
         animator = this.GetComponent<Animator>();
@@ -95,6 +97,12 @@ public class EnemyArrow1 : Enemy
             default:
                 break;
         }
+    }
+
+    IEnumerator SafePop()
+    {
+        yield return new WaitForSeconds(0.5f);
+        enableCollision();
     }
 
     /**
