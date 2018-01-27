@@ -112,7 +112,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1341671203
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_Time: 0.2
   m_Parameters:
@@ -183,10 +183,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6739c07c8fab5f3488c762018c5d76d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScore: 0
   isDead: 0
   isInvincible: 0
   hitPoint: 99
   damageOnCollision: 1
+  instancier: {fileID: 0}
   speed: 3
 --- !u!212 &212727197057250714
 SpriteRenderer:
@@ -220,7 +222,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2026338251
-  m_SortingLayer: 7
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5827aef4169a4ce45bf5a4810c9d180d, type: 3}
   m_Color: {r: 0.77254903, g: 0.43137255, b: 0, a: 1}

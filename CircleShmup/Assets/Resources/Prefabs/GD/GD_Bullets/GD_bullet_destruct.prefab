@@ -94,7 +94,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: b29b843ae1d9f1b45bdad92b9c5101e6, type: 2}
+  - {fileID: 2100000, guid: 8f74cc240ec28b947b0759dbf521be10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,9 +112,9 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1341671203
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: -1
-  m_Time: 0.2
+  m_Time: 0.25
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.3
@@ -130,8 +130,8 @@ TrailRenderer:
       - serializedVersion: 2
         time: 1
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -1.4195392
+        outSlope: -1.4195392
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -183,10 +183,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6739c07c8fab5f3488c762018c5d76d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScore: 200
   isDead: 0
   isInvincible: 0
   hitPoint: 1
   damageOnCollision: 1
+  instancier: {fileID: 0}
   speed: 3
 --- !u!212 &212369173487961630
 SpriteRenderer:
@@ -220,7 +222,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2026338251
-  m_SortingLayer: 7
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5827aef4169a4ce45bf5a4810c9d180d, type: 3}
   m_Color: {r: 0.88235295, g: 0.85801214, b: 0, a: 1}

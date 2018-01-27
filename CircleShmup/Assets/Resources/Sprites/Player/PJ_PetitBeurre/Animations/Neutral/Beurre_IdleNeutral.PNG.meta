@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 02d23b923d7a4714db5f78bd7800df0a
-timeCreated: 1516895544
+timeCreated: 1517009386
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -151,10 +151,19 @@ TextureImporter:
         width: 500
         height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -185, y: 96}
+        - {x: -185, y: -216}
+        - {x: -176, y: -230}
+        - {x: 180, y: -230}
+        - {x: 193, y: -227}
+        - {x: 193, y: 198}
+        - {x: 189, y: 229}
+        - {x: -159, y: 229}
+        - {x: -177, y: 168}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Beurre_IdleNeutral_1
@@ -165,10 +174,17 @@ TextureImporter:
         width: 500
         height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -130, y: 214}
+        - {x: -205, y: 179}
+        - {x: -205, y: -212}
+        - {x: -200, y: -230}
+        - {x: 217, y: -230}
+        - {x: 217, y: 56}
+        - {x: 157, y: 214}
       tessellationDetail: 0
     outline: []
     physicsShape: []

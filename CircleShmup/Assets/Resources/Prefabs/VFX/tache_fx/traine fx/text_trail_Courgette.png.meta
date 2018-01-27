@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3ffaad45ce4dff34cbdd7f65def35f68
-timeCreated: 1517008515
+guid: f77a05ae73def164a94639e0acf6bc4b
+timeCreated: 1516899142
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -36,7 +36,7 @@ TextureImporter:
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -46,7 +46,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 600
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -78,62 +78,7 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
-    physicsShape:
-    - - {x: 95.5, y: -123.5}
-      - {x: 105.5, y: -117.5}
-      - {x: 113.5, y: -111.5}
-      - {x: 132.5, y: -92.5}
-      - {x: 142.5, y: -78.5}
-      - {x: 150.5, y: -64.5}
-      - {x: 154.5, y: -50.5}
-      - {x: 154.5, y: -37.5}
-      - {x: 153.5, y: -23.5}
-      - {x: 150.5, y: -7.5}
-      - {x: 148.5, y: -1.5}
-      - {x: 142.5, y: 13.5}
-      - {x: 136.5, y: 26.5}
-      - {x: 124.5, y: 46.5}
-      - {x: 122.5, y: 64.5}
-      - {x: 118.5, y: 78.5}
-      - {x: 109.5, y: 92.5}
-      - {x: 92.5, y: 109.5}
-      - {x: 87.5, y: 113.5}
-      - {x: 76.5, y: 118.5}
-      - {x: 67.5, y: 121.5}
-      - {x: 33.5, y: 128.5}
-      - {x: 12.5, y: 135.5}
-      - {x: 4.5, y: 137.5}
-      - {x: -4.5, y: 139.5}
-      - {x: -14.5, y: 141.5}
-      - {x: -30.5, y: 141.5}
-      - {x: -39.5, y: 140.5}
-      - {x: -72.5, y: 135.5}
-      - {x: -82.5, y: 133.5}
-      - {x: -106.5, y: 122.5}
-      - {x: -119.5, y: 114.5}
-      - {x: -131.5, y: 105.5}
-      - {x: -141.5, y: 90.5}
-      - {x: -145.5, y: 73.5}
-      - {x: -146.5, y: 66.5}
-      - {x: -146.5, y: 44.5}
-      - {x: -144.5, y: 33.5}
-      - {x: -142.5, y: 21.5}
-      - {x: -135.5, y: 2.5}
-      - {x: -133.5, y: -32.5}
-      - {x: -130.5, y: -47.5}
-      - {x: -125.5, y: -60.5}
-      - {x: -115.5, y: -79.5}
-      - {x: -109.5, y: -88.5}
-      - {x: -91.5, y: -109.5}
-      - {x: -76.5, y: -119.5}
-      - {x: -63.5, y: -125.5}
-      - {x: -39.5, y: -134.5}
-      - {x: -30.5, y: -135.5}
-      - {x: -1.5, y: -140.5}
-      - {x: 37.5, y: -140.5}
-      - {x: 44.5, y: -139.5}
-      - {x: 63.5, y: -135.5}
-      - {x: 79.5, y: -130.5}
+    physicsShape: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

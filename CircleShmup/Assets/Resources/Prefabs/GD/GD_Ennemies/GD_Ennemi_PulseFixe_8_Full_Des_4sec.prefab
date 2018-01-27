@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114867006291595438}
   - component: {fileID: 114403135116455528}
   - component: {fileID: 96703874922673136}
+  - component: {fileID: 114237768704935472}
   m_Layer: 9
   m_Name: GD_Ennemi_PulseFixe_8_Full_Des_4sec
   m_TagString: Enemy
@@ -216,7 +217,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: b29b843ae1d9f1b45bdad92b9c5101e6, type: 2}
+  - {fileID: 2100000, guid: 8f74cc240ec28b947b0759dbf521be10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -233,27 +234,27 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1341671203
-  m_SortingLayer: 3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 0.6
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.6
+    widthMultiplier: 0.7
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0.6206894
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
-        time: 1
+        time: 0.9972534
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -1.3643022
+        outSlope: -1.3643022
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -294,6 +295,22 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
+--- !u!114 &114237768704935472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1077445210580840}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae516d60fe35f64f8e521f19b93e051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 0, y: 0}
+  rpm: 0
+  origin: {x: 0, y: 0}
+  axis: {x: 0, y: 0}
+  clockwise: 0
 --- !u!114 &114403135116455528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -311,6 +328,7 @@ MonoBehaviour:
   - {fileID: 114866741595542402, guid: bc649ea626415744481f7569ad048c4d, type: 2}
   bulletsInformation:
   - 1
+  alive: 1
   numberBulletPerPulse: 8
 --- !u!114 &114867006291595438
 MonoBehaviour:
@@ -323,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b50047421906c24dbc9c85aba7970ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseScore: 0
+  baseScore: 500
   isDead: 0
   isInvincible: 0
   hitPoint: 2

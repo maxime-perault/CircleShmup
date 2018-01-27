@@ -217,7 +217,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: b29b843ae1d9f1b45bdad92b9c5101e6, type: 2}
+  - {fileID: 2100000, guid: 8f74cc240ec28b947b0759dbf521be10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -234,27 +234,27 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1341671203
-  m_SortingLayer: 3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 0.6
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.6
+    widthMultiplier: 0.7
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0.6206894
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
-        time: 1
+        time: 0.9972534
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -1.3643022
+        outSlope: -1.3643022
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -312,6 +312,7 @@ MonoBehaviour:
   - {fileID: 114866741595542402, guid: bc649ea626415744481f7569ad048c4d, type: 2}
   bulletsInformation:
   - 1
+  alive: 1
 --- !u!114 &114222986619438764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -323,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b50047421906c24dbc9c85aba7970ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseScore: 0
+  baseScore: 500
   isDead: 0
   isInvincible: 0
   hitPoint: 1
@@ -3774,7 +3775,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 38594a2879ffa6c41bf7028bfe2c2381, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9338235, g: 0.9232162, b: 0.54930794, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

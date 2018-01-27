@@ -247,6 +247,7 @@ public class PlayerSphereController : MonoBehaviour
             float y = Mathf.Sin(alpha * nSphere) * radius;
 
             spheres[nSphere].transform.localPosition = new Vector3(x, y, 0.0f);
+			spheres[nSphere].transform.localRotation = Quaternion.Euler(new Vector3 (0, 0, 135 + (-270 * Mathf.Sin (nSphere * alpha))));
         }
     }
 

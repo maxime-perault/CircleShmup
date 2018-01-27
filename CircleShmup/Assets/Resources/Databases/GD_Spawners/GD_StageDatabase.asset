@@ -21,7 +21,7 @@ MonoBehaviour:
       WaveName: Wave 1
       WaveBlocking: 1
       WaveTiming: 5
-      WaveSpawner: {fileID: 11400000, guid: 0bd3f3ca741954b43bb2c9e2810fd8e7, type: 2}
+      WaveSpawner: {fileID: 11400000, guid: 862111daaeac2a445a38467ce9722e01, type: 2}
     - WaveID: 1
       WaveName: Wave 2
       WaveBlocking: 1
