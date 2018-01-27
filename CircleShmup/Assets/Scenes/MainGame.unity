@@ -993,7 +993,7 @@ RectTransform:
   m_GameObject: {fileID: 827954863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 0.0092545925, y: 0.0092545925, z: 0.0092545925}
+  m_LocalScale: {x: 0.009259258, y: 0.009259258, z: 0.009259258}
   m_Children:
   - {fileID: 1613989802}
   - {fileID: 1071766076}
@@ -1920,7 +1920,7 @@ Prefab:
     - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
         type: 2}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
         type: 2}
@@ -1935,7 +1935,7 @@ Prefab:
     - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
         type: 2}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
         type: 2}
@@ -1960,7 +1960,7 @@ Prefab:
     - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
         type: 2}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].time
-      value: 0.02659607
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
         type: 2}
@@ -1980,12 +1980,12 @@ Prefab:
     - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
         type: 2}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
-      value: -0.06722087
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
         type: 2}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
-      value: -0.06722087
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
         type: 2}
@@ -1995,6 +1995,30 @@ Prefab:
     - target: {fileID: 4918141052494590, guid: 9381ad50e96a0b445b50bd1a3453012d, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
+        type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993946873447768, guid: 9381ad50e96a0b445b50bd1a3453012d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
+        type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 18890
+      objectReference: {fileID: 0}
+    - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
+        type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.atime2
+      value: 44718
+      objectReference: {fileID: 0}
+    - target: {fileID: 198789050443855332, guid: 9381ad50e96a0b445b50bd1a3453012d,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9381ad50e96a0b445b50bd1a3453012d, type: 2}
@@ -2104,6 +2128,7 @@ GameObject:
   - component: {fileID: 1984737340}
   - component: {fileID: 1984737343}
   - component: {fileID: 1984737339}
+  - component: {fileID: 1984737344}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2201,6 +2226,18 @@ MonoBehaviour:
     initialListenerList: []
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &1984737344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1984737338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: bc72ce28562db8041b5df92078683b90, type: 2}
 --- !u!114 &2002650170 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114803391825515716, guid: 10f549792aea82946999a030576f4561,
