@@ -27,6 +27,8 @@ public class PlayerInspector : Editor
         InspectorHelper.DisplaySeparator("Gameplay");
         GameplaySection(controller);
 
+        DrawDefaultInspector();
+
         // Editor bug fix with custom window
         EditorUtility.SetDirty(controller);
     }

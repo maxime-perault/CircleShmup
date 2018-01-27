@@ -8,9 +8,10 @@ using System.Collections.Generic;
  */
 public class StageManager : MonoBehaviour
 {
-    public GameObject    musicPlayer;
-    public bool          paused;
-    public StageDatabase database;
+    public GameObject       musicPlayer;
+    public bool             paused;
+    public StageDatabase    database;
+    public int              hpGetBack;
 
     private enum ManagerState
     {
@@ -208,6 +209,8 @@ public class StageManager : MonoBehaviour
         MessageManager.Message("Stage clear", 3);
         AkSoundEngine.PostEvent("Stage_Cleared", musicPlayer);
 
+        // Refill player hp
+        GameObject.FindWithTag("Player").GetComponent<PlayerController>().hitPoint = hpGetBack;
         Debug.Log("Stage Manger : Stage ended");
     }
 

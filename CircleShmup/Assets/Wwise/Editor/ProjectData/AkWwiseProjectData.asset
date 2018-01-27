@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B29443EC-A86D-4F2A-B551-D913A31F46C3}'
-    m_lastTimePsrt1: -97748458
-    m_lastTimePart2: -1999281374
+    m_lastTimePsrt1: 721926427
+    m_lastTimePart2: -1999281164
     List:
     - Name: A_Table_1
       Path: Default Work Unit\Other\A_Table_1
@@ -192,6 +192,18 @@ MonoBehaviour:
         ObjectType: 3
       ID: -709973868
       Guid: 10313679516b6341b256c50dbc69154a
+      maxAttenuation: 0
+    - Name: Friture_Stop
+      Path: Default Work Unit\Other\Friture_Stop
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: Friture_Stop
+        ObjectType: 3
+      ID: 1198778259
+      Guid: 89b7f9557f6d6545901cd32e1dcff8a0
       maxAttenuation: 0
     - Name: Main_Menu_UI_Back
       Path: Default Work Unit\UI\Main_Menu_UI_Back

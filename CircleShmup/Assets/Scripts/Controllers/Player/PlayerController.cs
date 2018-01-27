@@ -16,6 +16,8 @@ public class PlayerController : Entity
     public  bool                   slide;
     public  Vector2                speed;
     public  PlayerSphereController sphereController;
+    public SpriteRenderer          playerStateRenderer;
+    public List<Sprite>            playerStateSprites = new List<Sprite>();
 
     private Rigidbody2D            body2D;
     private PolygonCollider2D      polygonCollider2D;
@@ -135,6 +137,19 @@ public class PlayerController : Entity
         {
             sphereController.DecreaseRadius();
         }
+
+        // Player life hook
+        switch (hitPoint)
+        {
+            case 0: playerStateRenderer.sprite = playerStateSprites[0]; break;
+            case 1: playerStateRenderer.sprite = playerStateSprites[1]; break;
+            case 2: playerStateRenderer.sprite = playerStateSprites[2]; break;
+            case 3: playerStateRenderer.sprite = playerStateSprites[3]; break;
+            case 4: playerStateRenderer.sprite = playerStateSprites[4]; break;
+            case 5: playerStateRenderer.sprite = playerStateSprites[5]; break;
+            case 6: playerStateRenderer.sprite = playerStateSprites[5]; break;
+            default: break;
+        }
     }
 
     /**
@@ -168,18 +183,6 @@ public class PlayerController : Entity
     {
         AkSoundEngine.PostEvent("Beurre_Hit", musicPlayer);
         particleSystem.Play();
-
-        // Player life hook
-        switch (hitPoint)
-        {
-            case 0:  break;
-            case 1:  break;
-            case 2:  break;
-            case 3:  break;
-            case 4:  break;
-            case 5:  break;
-            default: break;
-        }
     }
 
     /**

@@ -11,6 +11,7 @@ public class ScoreManager : MonoBehaviour
 {
     private int                 managerScore;
     public  GameObject          messagePrefab;
+    public  Text                managerUiScoreText;
     private static ScoreManager managerInstance;
     
     /**
@@ -51,6 +52,7 @@ public class ScoreManager : MonoBehaviour
         scoreComponent.SetScore(score);
 
         managerInstance.managerScore += score;
+        managerInstance.managerUiScoreText.text = managerInstance.managerScore.ToString();
     }
 
     /**
