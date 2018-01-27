@@ -101,7 +101,7 @@ public class EnemyArrow1 : Enemy
 
     IEnumerator SafePop()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         enableCollision();
     }
 

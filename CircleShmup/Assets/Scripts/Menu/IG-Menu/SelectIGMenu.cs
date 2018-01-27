@@ -8,6 +8,7 @@ public class SelectIGMenu : ASelect
 {
     private GameManager     manager;
     private GameObject      igmenu;
+    private GameObject      messageStage;
 
     public  GameObject[]    buttons;
     private bool isMoving = false;
@@ -45,6 +46,9 @@ public class SelectIGMenu : ASelect
             AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
             manager.OnGamePaused();
             igmenu.SetActive(true);
+            messageStage = GameObject.Find("StageMessageText(Clone)");
+            if (messageStage != null)
+                messageStage.SetActive(false);
             return;
         }
 
@@ -60,6 +64,8 @@ public class SelectIGMenu : ASelect
         {
             AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
             igmenu.SetActive(false);
+            if (messageStage != null)
+                messageStage.SetActive(true);
             manager.OnGameResumed();
         }
 
@@ -78,6 +84,8 @@ public class SelectIGMenu : ASelect
             {
                 AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
                 igmenu.SetActive(false);
+                if (messageStage != null)
+                    messageStage.SetActive(true);
                 manager.OnGameResumed();
             }
             else if (actual_button == 1)

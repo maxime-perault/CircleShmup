@@ -38,7 +38,7 @@ public class ZucchiniTomate : Enemy
 
     IEnumerator SafePop()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         enableCollision();
     }
 
