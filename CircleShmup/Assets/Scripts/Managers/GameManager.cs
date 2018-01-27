@@ -110,7 +110,6 @@ public class GameManager : MonoBehaviour
         GameJolt.API.Scores.Get(scores => {
             if (scores != null)
             {
-                Debug.Log(scores.Length);
                 for (int i = 0; i < scores.Length; ++i)
                 {
                     scoreboard[i].score = scores[i].Value;

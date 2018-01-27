@@ -1,0 +1,654 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc619ca6f44f3834d86480e36ed382ee, type: 3}
+  m_Name: AkWwiseProjectData 3
+  m_EditorClassIdentifier: 
+  CurrentPluginConfig: 
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{B29443EC-A86D-4F2A-B551-D913A31F46C3}'
+    m_lastTimePsrt1: -704998519
+    m_lastTimePart2: -1999281381
+    List:
+    - Name: A_Table_1
+      Path: Default Work Unit\Other\A_Table_1
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: A_Table_1
+        ObjectType: 3
+      ID: 363471131
+      Guid: dcdebb1cdadbaf4ea1fb6eca84d020b6
+      maxAttenuation: 0
+    - Name: A_Table_2
+      Path: Default Work Unit\Other\A_Table_2
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: A_Table_2
+        ObjectType: 3
+      ID: 363471128
+      Guid: fb21f978de57bb4db4c554c39cec83f9
+      maxAttenuation: 0
+    - Name: A_Table_3
+      Path: Default Work Unit\Other\A_Table_3
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: A_Table_3
+        ObjectType: 3
+      ID: 363471129
+      Guid: d66b3a2e8eb3a44ab0457008c4bfdfcf
+      maxAttenuation: 0
+    - Name: Beurre_Death
+      Path: Default Work Unit\Petit_Beurre\Beurre_Death
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Petit_Beurre
+        ObjectType: 4
+      - ElementName: Beurre_Death
+        ObjectType: 3
+      ID: 1566481283
+      Guid: 3bb584b306c14c4c9cb7d15c8e30f1fc
+      maxAttenuation: 0
+    - Name: Beurre_Hit
+      Path: Default Work Unit\Petit_Beurre\Beurre_Hit
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Petit_Beurre
+        ObjectType: 4
+      - ElementName: Beurre_Hit
+        ObjectType: 3
+      ID: 1259523794
+      Guid: 92e311de248d5748b08678a9a5b44747
+      maxAttenuation: 0
+    - Name: Beurre_Move
+      Path: Default Work Unit\Petit_Beurre\Beurre_Move
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Petit_Beurre
+        ObjectType: 4
+      - ElementName: Beurre_Move
+        ObjectType: 3
+      ID: 1219808192
+      Guid: cafec5af4ac0094db867d510d8cfcf9a
+      maxAttenuation: 0
+    - Name: Beurre_Stop
+      Path: Default Work Unit\Petit_Beurre\Beurre_Stop
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Petit_Beurre
+        ObjectType: 4
+      - ElementName: Beurre_Stop
+        ObjectType: 3
+      ID: -847774725
+      Guid: 390e27ea62d1c84eb9a0e7da441c963e
+      maxAttenuation: 0
+    - Name: Brochette_Death
+      Path: Default Work Unit\Ennemies\Brochette\Brochette_Death
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Brochette
+        ObjectType: 4
+      - ElementName: Brochette_Death
+        ObjectType: 3
+      ID: 1392079844
+      Guid: a45485cd1d9747408375e829989265f6
+      maxAttenuation: 0
+    - Name: Brochette_Hit_Invulnerable
+      Path: Default Work Unit\Ennemies\Brochette\Brochette_Hit_Invulnerable
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Brochette
+        ObjectType: 4
+      - ElementName: Brochette_Hit_Invulnerable
+        ObjectType: 3
+      ID: -562277131
+      Guid: cd469e2a03a613458edfc5421c8b40b0
+      maxAttenuation: 0
+    - Name: Brochette_Tomato_Destroy
+      Path: Default Work Unit\Ennemies\Brochette\Brochette_Tomato_Destroy
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Brochette
+        ObjectType: 4
+      - ElementName: Brochette_Tomato_Destroy
+        ObjectType: 3
+      ID: 1450580127
+      Guid: f9855437d3cf3041a16d79f161d696e5
+      maxAttenuation: 0
+    - Name: End_Fail
+      Path: Default Work Unit\Other\End_Fail
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: End_Fail
+        ObjectType: 3
+      ID: 1316671051
+      Guid: 9251725ac34d0440b71dbeee29cb0f24
+      maxAttenuation: 0
+    - Name: End_Victory
+      Path: Default Work Unit\Other\End_Victory
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: End_Victory
+        ObjectType: 3
+      ID: -1677314685
+      Guid: 5af4f6e01faf204089abd34495402e61
+      maxAttenuation: 0
+    - Name: Ennemy_Pop
+      Path: Default Work Unit\Ennemies\Ennemy_Pop
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Ennemy_Pop
+        ObjectType: 3
+      ID: -894485567
+      Guid: 7c9b7eab6a0b5146860ba56b3292a3a3
+      maxAttenuation: 0
+    - Name: Friture
+      Path: Default Work Unit\Other\Friture
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: Friture
+        ObjectType: 3
+      ID: -709973868
+      Guid: 10313679516b6341b256c50dbc69154a
+      maxAttenuation: 0
+    - Name: Main_Menu_UI_Back
+      Path: Default Work Unit\UI\Main_Menu_UI_Back
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Main_Menu_UI_Back
+        ObjectType: 3
+      ID: 15365369
+      Guid: c31caea7e3b6f347814c435d1a923b84
+      maxAttenuation: 0
+    - Name: Main_Menu_UI_Error
+      Path: Default Work Unit\UI\Main_Menu_UI_Error
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Main_Menu_UI_Error
+        ObjectType: 3
+      ID: 877765698
+      Guid: c567ffa4d9df5047ade796415c6f629c
+      maxAttenuation: 0
+    - Name: Main_Menu_UI_Play
+      Path: Default Work Unit\UI\Main_Menu_UI_Play
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Main_Menu_UI_Play
+        ObjectType: 3
+      ID: 329483606
+      Guid: e933ea8333f498499573d549c57c14ba
+      maxAttenuation: 0
+    - Name: Main_Menu_UI_Validate
+      Path: Default Work Unit\UI\Main_Menu_UI_Validate
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Main_Menu_UI_Validate
+        ObjectType: 3
+      ID: -108200398
+      Guid: 8260a9b5ac347f40a2ed7c54bfd25e91
+      maxAttenuation: 0
+    - Name: Mais_Death
+      Path: Default Work Unit\Ennemies\Mais\Mais_Death
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Mais
+        ObjectType: 4
+      - ElementName: Mais_Death
+        ObjectType: 3
+      ID: 1164865332
+      Guid: fc657d9cde6da84aaf6e9107c86b7a36
+      maxAttenuation: 0
+    - Name: Mais_Hit
+      Path: Default Work Unit\Ennemies\Mais\Mais_Hit
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Mais
+        ObjectType: 4
+      - ElementName: Mais_Hit
+        ObjectType: 3
+      ID: 54069141
+      Guid: adaa51218f2f484894c8e4be2c354091
+      maxAttenuation: 0
+    - Name: Mais_Move_Down
+      Path: Default Work Unit\Ennemies\Mais\Mais_Move_Down
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Mais
+        ObjectType: 4
+      - ElementName: Mais_Move_Down
+        ObjectType: 3
+      ID: -1734175896
+      Guid: 1c093604a8d91c46a729f6f8ae89d80e
+      maxAttenuation: 0
+    - Name: Mais_Move_Up
+      Path: Default Work Unit\Ennemies\Mais\Mais_Move_Up
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Mais
+        ObjectType: 4
+      - ElementName: Mais_Move_Up
+        ObjectType: 3
+      ID: -1063279829
+      Guid: d565a2050d0cf447a4393589134a7360
+      maxAttenuation: 0
+    - Name: Mais_Shot_Fire
+      Path: Default Work Unit\Ennemies\Mais\Mais_Shot_Fire
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Mais
+        ObjectType: 4
+      - ElementName: Mais_Shot_Fire
+        ObjectType: 3
+      ID: 1271300845
+      Guid: 09d69a330d780d46b27b3278d6f8973a
+      maxAttenuation: 0
+    - Name: Mais_Shot_Prep
+      Path: Default Work Unit\Ennemies\Mais\Mais_Shot_Prep
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Mais
+        ObjectType: 4
+      - ElementName: Mais_Shot_Prep
+        ObjectType: 3
+      ID: -1246074908
+      Guid: 81d097a7d0e4f548be49f9977a82496d
+      maxAttenuation: 0
+    - Name: Music_Menu_Play
+      Path: Default Work Unit\Music\Music_Menu_Play
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Music_Menu_Play
+        ObjectType: 3
+      ID: 2013246097
+      Guid: 9e91b6bca9dbeb429a4bf518350c902b
+      maxAttenuation: 0
+    - Name: Music_Menu_Stop
+      Path: Default Work Unit\Music\Music_Menu_Stop
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Music_Menu_Stop
+        ObjectType: 3
+      ID: -1030305977
+      Guid: 11d3f9f67145194ba28766a378d871d8
+      maxAttenuation: 0
+    - Name: Music_Play
+      Path: Default Work Unit\Music\Music_Play
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Music_Play
+        ObjectType: 3
+      ID: 202194903
+      Guid: 1ba2ceaeae34c347aac31d31a308dc8e
+      maxAttenuation: 0
+    - Name: Music_Stop
+      Path: Default Work Unit\Music\Music_Stop
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Music_Stop
+        ObjectType: 3
+      ID: -1067786235
+      Guid: a6e6b0cda5b264459617676b3f7409f2
+      maxAttenuation: 0
+    - Name: Piment_Charge
+      Path: Default Work Unit\Ennemies\Piment\Piment_Charge
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Piment
+        ObjectType: 4
+      - ElementName: Piment_Charge
+        ObjectType: 3
+      ID: -1380328045
+      Guid: 37e363830785d5409c72c1c2558a5f66
+      maxAttenuation: 0
+    - Name: Piment_Cogne
+      Path: Default Work Unit\Ennemies\Piment\Piment_Cogne
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Piment
+        ObjectType: 4
+      - ElementName: Piment_Cogne
+        ObjectType: 3
+      ID: -160912041
+      Guid: 14a23410dee28f44bb168ff4129e2a86
+      maxAttenuation: 0
+    - Name: Piment_Cogne_Player
+      Path: Default Work Unit\Ennemies\Piment\Piment_Cogne_Player
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Piment
+        ObjectType: 4
+      - ElementName: Piment_Cogne_Player
+        ObjectType: 3
+      ID: -405071619
+      Guid: 3b3cf47e22816441b2c3c9f137c7942f
+      maxAttenuation: 0
+    - Name: Piment_Prep_Play
+      Path: Default Work Unit\Ennemies\Piment\Piment_Prep_Play
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Piment
+        ObjectType: 4
+      - ElementName: Piment_Prep_Play
+        ObjectType: 3
+      ID: 1649919439
+      Guid: f029fe16f01dab41b6df538d6ce8a8b2
+      maxAttenuation: 0
+    - Name: Piment_Prep_Stop
+      Path: Default Work Unit\Ennemies\Piment\Piment_Prep_Stop
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ennemies
+        ObjectType: 4
+      - ElementName: Piment
+        ObjectType: 4
+      - ElementName: Piment_Prep_Stop
+        ObjectType: 3
+      ID: 72582861
+      Guid: 51cf72e2419ef34abaa6616737d368e0
+      maxAttenuation: 0
+    - Name: Stage_Cleared
+      Path: Default Work Unit\Other\Stage_Cleared
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Other
+        ObjectType: 4
+      - ElementName: Stage_Cleared
+        ObjectType: 3
+      ID: -947226312
+      Guid: 4a1a81e664914f43a4fd42a3b67e5ed7
+      maxAttenuation: 0
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{6F94EAA9-4877-497D-86E4-9102BB699B60}'
+    m_lastTimePsrt1: -1480257985
+    m_lastTimePart2: -1999282327
+    List:
+    - Name: Reverb
+      Path: Default Work Unit\Master Audio Bus\Reverb
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Reverb
+        ObjectType: 1
+      ID: 348963605
+      Guid: b0727cdc798b3245a6f646d5648df906
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{7B3FC9FD-F90D-4FDD-8426-B62100F920D8}'
+    m_lastTimePsrt1: -1456420185
+    m_lastTimePart2: -1999282585
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{E2DB1062-DF9A-4435-8362-164E7FFE7405}'
+    m_lastTimePsrt1: -1456410145
+    m_lastTimePart2: -1999282585
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{924CB3FF-351A-4BF4-870E-AB084808EFAB}'
+    m_lastTimePsrt1: -1480247781
+    m_lastTimePart2: -1999282327
+    List:
+    - Name: Shmup_SoundBank
+      Path: Default Work Unit\Shmup_SoundBank
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Shmup_SoundBank
+        ObjectType: 7
+      ID: -1354350788
+      Guid: 82f272021ce2324c8359dcf17ca2e4f5
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{BD1B3C21-0013-423E-B3D9-94D432D5F7F0}'
+    m_lastTimePsrt1: -704993508
+    m_lastTimePart2: -1999281381
+    List:
+    - Name: Ball_Distance
+      Path: Default Work Unit\Ball_Distance
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ball_Distance
+        ObjectType: 13
+      ID: -2028294624
+      Guid: ddd78d9f1eb96d44b6819cc0c0e838ad
+    - Name: Music_Volume
+      Path: Default Work Unit\Music_Volume
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music_Volume
+        ObjectType: 13
+      ID: 1006694123
+      Guid: 9f9bdb1ab46a98498ffc2253d1104e3d
+    - Name: SFX_Volume
+      Path: Default Work Unit\SFX_Volume
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX_Volume
+        ObjectType: 13
+      ID: 1564184899
+      Guid: 2aab901814350b43beffd8ea5b35f6c6
+  - PhysicalPath: Game Parameters\Factory SoundSeed Air Game Syncs.wwu
+    ParentPhysicalPath: 
+    Guid: '{3B167755-FB42-458B-98BF-96F557AFB3B9}'
+    m_lastTimePsrt1: -1462556090
+    m_lastTimePart2: -1999282585
+    List:
+    - Name: SS_Air_Fear
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Fear
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Fear
+        ObjectType: 13
+      ID: 1351367891
+      Guid: 59062ef746431c4ea1b1dab46a05101e
+    - Name: SS_Air_Freefall
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Freefall
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Freefall
+        ObjectType: 13
+      ID: -1292209176
+      Guid: 37fe2d2f9e4f944d83d853cca39781ad
+    - Name: SS_Air_Fury
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Fury
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Fury
+        ObjectType: 13
+      ID: 1029930033
+      Guid: dc79aea23acaba4696529986c322a87b
+    - Name: SS_Air_Month
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Month
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Month
+        ObjectType: 13
+      ID: -1646418679
+      Guid: 45b4e209a3c47f44b3ca818a1d925ef7
+    - Name: SS_Air_Presence
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Presence
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Presence
+        ObjectType: 13
+      ID: -447042342
+      Guid: 1a81b7e32f7b0f49b44f5fe51b468041
+    - Name: SS_Air_RPM
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_RPM
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_RPM
+        ObjectType: 13
+      ID: 822163944
+      Guid: ab9048a3d5b92645a64d5290c43ef2dc
+    - Name: SS_Air_Size
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Size
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Size
+        ObjectType: 13
+      ID: -1220270574
+      Guid: efeb291393a12e47a38c64668b494879
+    - Name: SS_Air_Storm
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Storm
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Storm
+        ObjectType: 13
+      ID: -579304704
+      Guid: db8c3fe9d1063747acaf7cd44bbed783
+    - Name: SS_Air_TimeOfDay
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_TimeOfDay
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_TimeOfDay
+        ObjectType: 13
+      ID: -1091570167
+      Guid: 2ca76f537e8c8b4cae03ef34fdadc314
+    - Name: SS_Air_Turbulence
+      Path: Factory SoundSeed Air Game Syncs\SS_Air_Turbulence
+      PathAndIcons:
+      - ElementName: Factory SoundSeed Air Game Syncs
+        ObjectType: 12
+      - ElementName: SS_Air_Turbulence
+        ObjectType: 13
+      ID: -134719478
+      Guid: 197ba8edaa73a0409f192073606db710
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{63DD1F06-ECB0-4854-A5EA-649E17C3C773}'
+    m_lastTimePsrt1: -1456405065
+    m_lastTimePart2: -1999282585
+    List: []
+  ExpandedItems: []
+  m_lastPopulateTimePsrt1: 0
+  m_lastPopulateTimePart2: 0
+  autoPopulateEnabled: 1
+  basePath: Audio\GeneratedSoundBanks
+  language: English(US)
+  defaultPoolSize: 4096
+  lowerPoolSize: 2048
+  streamingPoolSize: 1024
+  preparePoolSize: 0
+  memoryCutoffThreshold: 0.95
+  callbackManagerBufferSize: 4
