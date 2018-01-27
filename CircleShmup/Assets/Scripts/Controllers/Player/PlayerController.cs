@@ -74,14 +74,6 @@ public class PlayerController : Entity
             Panimator.Left();
         }
         
-        if(axis.y > 0)
-        {
-
-        }
-        else if(axis.y < 0)
-        {
-
-        }
         //
 
         if (axis.x == 0.0f && axis.y == 0.0f)
@@ -141,13 +133,13 @@ public class PlayerController : Entity
         // Player life hook
         switch (hitPoint)
         {
-            case 0: playerStateRenderer.sprite = playerStateSprites[0]; break;
-            case 1: playerStateRenderer.sprite = playerStateSprites[1]; break;
-            case 2: playerStateRenderer.sprite = playerStateSprites[2]; break;
-            case 3: playerStateRenderer.sprite = playerStateSprites[3]; break;
-            case 4: playerStateRenderer.sprite = playerStateSprites[4]; break;
-            case 5: playerStateRenderer.sprite = playerStateSprites[5]; break;
-            case 6: playerStateRenderer.sprite = playerStateSprites[5]; break;
+            case 0: playerStateRenderer.sprite = playerStateSprites[0]; Panimator.SetLife(0); break;
+            case 1: playerStateRenderer.sprite = playerStateSprites[1]; Panimator.SetLife(1); break;
+            case 2: playerStateRenderer.sprite = playerStateSprites[2]; Panimator.SetLife(2); break;
+            case 3: playerStateRenderer.sprite = playerStateSprites[3]; Panimator.SetLife(3); break;
+            case 4: playerStateRenderer.sprite = playerStateSprites[4]; Panimator.SetLife(4); break;
+            case 5: playerStateRenderer.sprite = playerStateSprites[5]; Panimator.SetLife(5); break;
+            case 6: playerStateRenderer.sprite = playerStateSprites[5]; Panimator.SetLife(6); break;
             default: break;
         }
     }
