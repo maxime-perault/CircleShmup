@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="125">
+	<RootPaths>
+		<ProjectRoot>D:\ENJMIN 2017-2018-Lourd\SHMUP_WWISE\Shmup_Wwise\</ProjectRoot>
+		<SourceFilesRoot>D:\ENJMIN 2017-2018-Lourd\SHMUP_WWISE\Shmup_Wwise\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\ENJMIN 2017-2018-Lourd\SHMUP_WWISE\Shmup_Wwise\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\ENJMIN 2017-2018-Lourd\SHMUP_WWISE\Shmup_Wwise\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2940616508" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Shmup_SoundBank</ObjectPath>
+			<ShortName>Shmup_SoundBank</ShortName>
+			<Path>Shmup_SoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="363471131" Name="A_Table_1" ObjectPath="\Events\Default Work Unit\Other\A_Table_1"/>
+				<Event Id="363471128" Name="A_Table_2" ObjectPath="\Events\Default Work Unit\Other\A_Table_2"/>
+				<Event Id="363471129" Name="A_Table_3" ObjectPath="\Events\Default Work Unit\Other\A_Table_3"/>
+				<Event Id="1566481283" Name="Beurre_Death" ObjectPath="\Events\Default Work Unit\Petit_Beurre\Beurre_Death"/>
+				<Event Id="1259523794" Name="Beurre_Hit" ObjectPath="\Events\Default Work Unit\Petit_Beurre\Beurre_Hit"/>
+				<Event Id="1219808192" Name="Beurre_Move" ObjectPath="\Events\Default Work Unit\Petit_Beurre\Beurre_Move"/>
+				<Event Id="3447192571" Name="Beurre_Stop" ObjectPath="\Events\Default Work Unit\Petit_Beurre\Beurre_Stop"/>
+				<Event Id="1392079844" Name="Brochette_Death" ObjectPath="\Events\Default Work Unit\Ennemies\Brochette\Brochette_Death"/>
+				<Event Id="3732690165" Name="Brochette_Hit_Invulnerable" ObjectPath="\Events\Default Work Unit\Ennemies\Brochette\Brochette_Hit_Invulnerable"/>
+				<Event Id="1450580127" Name="Brochette_Tomato_Destroy" ObjectPath="\Events\Default Work Unit\Ennemies\Brochette\Brochette_Tomato_Destroy"/>
+				<Event Id="1316671051" Name="End_Fail" ObjectPath="\Events\Default Work Unit\Other\End_Fail"/>
+				<Event Id="2617652611" Name="End_Victory" ObjectPath="\Events\Default Work Unit\Other\End_Victory"/>
+				<Event Id="3400481729" Name="Ennemy_Pop" ObjectPath="\Events\Default Work Unit\Ennemies\Ennemy_Pop"/>
+				<Event Id="3584993428" Name="Friture" ObjectPath="\Events\Default Work Unit\Other\Friture"/>
+				<Event Id="1198778259" Name="Friture_Stop" ObjectPath="\Events\Default Work Unit\Other\Friture_Stop"/>
+				<Event Id="15365369" Name="Main_Menu_UI_Back" ObjectPath="\Events\Default Work Unit\UI\Main_Menu_UI_Back"/>
+				<Event Id="877765698" Name="Main_Menu_UI_Error" ObjectPath="\Events\Default Work Unit\UI\Main_Menu_UI_Error"/>
+				<Event Id="329483606" Name="Main_Menu_UI_Play" ObjectPath="\Events\Default Work Unit\UI\Main_Menu_UI_Play"/>
+				<Event Id="4186766898" Name="Main_Menu_UI_Validate" ObjectPath="\Events\Default Work Unit\UI\Main_Menu_UI_Validate"/>
+				<Event Id="1164865332" Name="Mais_Death" ObjectPath="\Events\Default Work Unit\Ennemies\Mais\Mais_Death"/>
+				<Event Id="54069141" Name="Mais_Hit" ObjectPath="\Events\Default Work Unit\Ennemies\Mais\Mais_Hit"/>
+				<Event Id="2560791400" Name="Mais_Move_Down" ObjectPath="\Events\Default Work Unit\Ennemies\Mais\Mais_Move_Down"/>
+				<Event Id="3231687467" Name="Mais_Move_Up" ObjectPath="\Events\Default Work Unit\Ennemies\Mais\Mais_Move_Up"/>
+				<Event Id="1271300845" Name="Mais_Shot_Fire" ObjectPath="\Events\Default Work Unit\Ennemies\Mais\Mais_Shot_Fire"/>
+				<Event Id="3048892388" Name="Mais_Shot_Prep" ObjectPath="\Events\Default Work Unit\Ennemies\Mais\Mais_Shot_Prep"/>
+				<Event Id="2013246097" Name="Music_Menu_Play" ObjectPath="\Events\Default Work Unit\Music\Music_Menu_Play"/>
+				<Event Id="3264661319" Name="Music_Menu_Stop" ObjectPath="\Events\Default Work Unit\Music\Music_Menu_Stop"/>
+				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\Music\Music_Play"/>
+				<Event Id="3227181061" Name="Music_Stop" ObjectPath="\Events\Default Work Unit\Music\Music_Stop"/>
+				<Event Id="2914639251" Name="Piment_Charge" ObjectPath="\Events\Default Work Unit\Ennemies\Piment\Piment_Charge"/>
+				<Event Id="4134055255" Name="Piment_Cogne" ObjectPath="\Events\Default Work Unit\Ennemies\Piment\Piment_Cogne"/>
+				<Event Id="3889895677" Name="Piment_Cogne_Player" ObjectPath="\Events\Default Work Unit\Ennemies\Piment\Piment_Cogne_Player"/>
+				<Event Id="1649919439" Name="Piment_Prep_Play" ObjectPath="\Events\Default Work Unit\Ennemies\Piment\Piment_Prep_Play"/>
+				<Event Id="72582861" Name="Piment_Prep_Stop" ObjectPath="\Events\Default Work Unit\Ennemies\Piment\Piment_Prep_Stop"/>
+				<Event Id="3347740984" Name="Stage_Cleared" ObjectPath="\Events\Default Work Unit\Other\Stage_Cleared"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="16367516" Language="SFX">
+					<ShortName>Petit_Beurre_Hit.wav</ShortName>
+					<Path>SFX\Petit_Beurre_Hit_1C9C67B2.wem</Path>
+				</File>
+				<File Id="24549672" Language="SFX">
+					<ShortName>Piment_Charge.wav</ShortName>
+					<Path>SFX\Piment_Charge_1C9C67B2.wem</Path>
+				</File>
+				<File Id="72504660" Language="SFX">
+					<ShortName>PetitBeurreMove1.wav</ShortName>
+					<Path>SFX\PetitBeurreMove1_1C9C67B2.wem</Path>
+				</File>
+				<File Id="74836667" Language="SFX">
+					<ShortName>Main_Menu_UI_1.wav</ShortName>
+					<Path>SFX\Main_Menu_UI_1_D4944599.wem</Path>
+				</File>
+				<File Id="81027486" Language="SFX">
+					<ShortName>Plotch_Mais_1.wav</ShortName>
+					<Path>SFX\Plotch_Mais_1_5D7A8BAA.wem</Path>
+				</File>
+				<File Id="239112230" Language="SFX">
+					<ShortName>Brochette_Tomato_Destroy.wav</ShortName>
+					<Path>SFX\Brochette_Tomato_Destroy_075266FC.wem</Path>
+				</File>
+				<File Id="255192302" Language="SFX">
+					<ShortName>Piment_prep.wav</ShortName>
+					<Path>SFX\Piment_prep_1C9C67B2.wem</Path>
+				</File>
+				<File Id="283993139" Language="SFX">
+					<ShortName>A_Table_2.wav</ShortName>
+					<Path>SFX\A_Table_2_1C9C67B2.wem</Path>
+				</File>
+				<File Id="287832618" Language="SFX">
+					<ShortName>Main_Menu_UI_2.wav</ShortName>
+					<Path>SFX\Main_Menu_UI_2_7B459017.wem</Path>
+				</File>
+				<File Id="291601537" Language="SFX">
+					<ShortName>A_Table_1.wav</ShortName>
+					<Path>SFX\A_Table_1_1C9C67B2.wem</Path>
+				</File>
+				<File Id="293664093" Language="SFX">
+					<ShortName>Shmupv2_1.wav</ShortName>
+					<Path>SFX\Shmupv2_1_F17FB28C.wem</Path>
+				</File>
+				<File Id="305806161" Language="SFX">
+					<ShortName>Mais_Hit.wav</ShortName>
+					<Path>SFX\Mais_Hit_02F793AC.wem</Path>
+				</File>
+				<File Id="331415265" Language="SFX">
+					<ShortName>Friture.wav</ShortName>
+					<Path>SFX\Friture_F17FB28C.wem</Path>
+				</File>
+				<File Id="343836097" Language="SFX">
+					<ShortName>Mais_Death.wav</ShortName>
+					<Path>SFX\Mais_Death_ECD74F5B.wem</Path>
+				</File>
+				<File Id="351504492" Language="SFX">
+					<ShortName>Main_Menu_UI_Negative.wav</ShortName>
+					<Path>SFX\Main_Menu_UI_Negative_BC1512CB.wem</Path>
+				</File>
+				<File Id="396360447" Language="SFX">
+					<ShortName>Main_Menu_UI_Back.wav</ShortName>
+					<Path>SFX\Main_Menu_UI_Back_4CB36812.wem</Path>
+				</File>
+				<File Id="425211512" Language="SFX">
+					<ShortName>End_Victory.wav</ShortName>
+					<Path>SFX\End_Victory_1C9C67B2.wem</Path>
+				</File>
+				<File Id="449901230" Language="SFX">
+					<ShortName>Petit_Beurre_Death.wav</ShortName>
+					<Path>SFX\Petit_Beurre_Death_1C9C67B2.wem</Path>
+				</File>
+				<File Id="524348654" Language="SFX">
+					<ShortName>Mais_Shot_Prep.wav</ShortName>
+					<Path>SFX\Mais_Shot_Prep_B60D87FD.wem</Path>
+				</File>
+				<File Id="648817926" Language="SFX">
+					<ShortName>Mais_Shot_Fire.wav</ShortName>
+					<Path>SFX\Mais_Shot_Fire_BDA6FC72.wem</Path>
+				</File>
+				<File Id="658795816" Language="SFX">
+					<ShortName>Brochette_Death.wav</ShortName>
+					<Path>SFX\Brochette_Death_00DA7168.wem</Path>
+				</File>
+				<File Id="670496894" Language="SFX">
+					<ShortName>Plotch_Mais_2.wav</ShortName>
+					<Path>SFX\Plotch_Mais_2_1076FD7D.wem</Path>
+				</File>
+				<File Id="676187997" Language="SFX">
+					<ShortName>Shmup musique Menu.wav</ShortName>
+					<Path>SFX\Shmup musique Menu_F17FB28C.wem</Path>
+				</File>
+				<File Id="691860946" Language="SFX">
+					<ShortName>Brochette_Hit_Invulnerable.wav</ShortName>
+					<Path>SFX\Brochette_Hit_Invulnerable_1C9C67B2.wem</Path>
+				</File>
+				<File Id="834534856" Language="SFX">
+					<ShortName>PetitBeurreStop.wav</ShortName>
+					<Path>SFX\PetitBeurreStop_1C9C67B2.wem</Path>
+				</File>
+				<File Id="873245161" Language="SFX">
+					<ShortName>Whoosh_Mais.wav</ShortName>
+					<Path>SFX\Whoosh_Mais_FA018E8D.wem</Path>
+				</File>
+				<File Id="918847094" Language="SFX">
+					<ShortName>End_Fail.wav</ShortName>
+					<Path>SFX\End_Fail_1C9C67B2.wem</Path>
+				</File>
+				<File Id="919315819" Language="SFX">
+					<ShortName>A_Table_3.wav</ShortName>
+					<Path>SFX\A_Table_3_1C9C67B2.wem</Path>
+				</File>
+				<File Id="930639951" Language="SFX">
+					<ShortName>Piment_Cogne.wav</ShortName>
+					<Path>SFX\Piment_Cogne_1C9C67B2.wem</Path>
+				</File>
+				<File Id="947057396" Language="SFX">
+					<ShortName>Stage_Cleared.wav</ShortName>
+					<Path>SFX\Stage_Cleared_DD6B4ECD.wem</Path>
+				</File>
+				<File Id="967738362" Language="SFX">
+					<ShortName>Ennemy_Pop_1.wav</ShortName>
+					<Path>SFX\Ennemy_Pop_1_8C4D9007.wem</Path>
+				</File>
+				<File Id="981617341" Language="SFX">
+					<ShortName>Piment_Cogne_Player.wav</ShortName>
+					<Path>SFX\Piment_Cogne_Player_1C9C67B2.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

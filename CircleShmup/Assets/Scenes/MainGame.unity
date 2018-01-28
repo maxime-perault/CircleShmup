@@ -1359,7 +1359,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'LIFES  :'
+  m_Text: 'LIVES  :'
 --- !u!222 &877989455
 CanvasRenderer:
   m_ObjectHideFlags: 0

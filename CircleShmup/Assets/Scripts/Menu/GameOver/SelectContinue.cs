@@ -82,7 +82,10 @@ public class SelectContinue : ASelect
                     TimeToWait = Time.realtimeSinceStartup + 1f;
                 }
                 else
+                {
                     manager.OnGameOver();
+                    gameObject.SetActive(false);
+                }
             }
         }
     }
