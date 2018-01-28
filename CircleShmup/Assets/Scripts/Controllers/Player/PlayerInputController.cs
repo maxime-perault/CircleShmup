@@ -107,14 +107,16 @@ public class PlayerInputController : MonoBehaviour
     {
         if(gameManagerInstance.GetKeyDown(GameManager.e_input.TURNLEFT))
         {
-            mouseRightHold = true;
+            mouseLeftHold = true;
         }
         else if(gameManagerInstance.GetKeyUp(GameManager.e_input.TURNLEFT))
         {
-            mouseRightHold = false;
+            mouseLeftHold = false;
         }
 
-        return (canClockwiseRotation) ? (Input.GetAxis(clockwiseRotationInput) == 1.0f) || mouseRightHold : false;
+        if (Input.GetAxis(clockwiseRotationInput) == 1.0f || mouseLeftHold == true)
+            return true;
+        return false;
     }
 
     /**
@@ -125,13 +127,15 @@ public class PlayerInputController : MonoBehaviour
     {
         if (gameManagerInstance.GetKeyDown(GameManager.e_input.TURNRIGHT))
         {
-            mouseLeftHold = true;
+            mouseRightHold = true;
         }
         else if (gameManagerInstance.GetKeyUp(GameManager.e_input.TURNRIGHT))
         {
-            mouseLeftHold = false;
+            mouseRightHold = false;
         }
 
-        return (canCounterClockwiseRotation) ? (Input.GetAxis(counterClockwiseRotationInput) == 1.0f) || mouseLeftHold : false;
+        if (Input.GetAxis(counterClockwiseRotationInput) == 1.0f || mouseRightHold == true)
+            return true;
+        return false;
     }
 }

@@ -61,6 +61,12 @@ public class PlayerController : Entity
         scontinue = GameObject.Find("Continue_script").GetComponent<SelectContinue>();
     }
 
+    private void Update()
+    {
+        inputController.IsClockwiseRotation();
+        inputController.IsCounterClockwiseRotation();
+    }
+
     /**
      * Updates the player states
      */
