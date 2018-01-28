@@ -52,6 +52,7 @@ public class ScoreManager : MonoBehaviour
         scoreComponent.SetScore(score);
 
         managerInstance.managerScore += score;
+        GameObject.Find("GameManager").GetComponent<GameManager>().currentScore += score;
         managerInstance.managerUiScoreText.text = managerInstance.managerScore.ToString();
     }
 

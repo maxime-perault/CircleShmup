@@ -19,7 +19,7 @@ public class Score : MonoBehaviour
 
     public List<Sprite> numbers = new List<Sprite>();
     public List<GameObject> placeholder = new List<GameObject>();
-
+    
     /**
      * States of the score
      */
@@ -40,7 +40,6 @@ public class Score : MonoBehaviour
     public void SetScore(int score)
     {
         iScore = score;
-
         if (score > 0)
         {
             sScore = iScore.ToString();
@@ -74,7 +73,7 @@ public class Score : MonoBehaviour
      */
     public void Start()
     {
-        // None
+
     }
 
     /**

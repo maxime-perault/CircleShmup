@@ -10,7 +10,9 @@ public class SelectContinue : ASelect
 
     private GameObject life1, life2;
     private GameObject vcontinue;
+
     private Text continueTime;
+    private Text minusText;
 
     private int nb_life = 2;
     private int nb_sec = 5;
@@ -27,6 +29,7 @@ public class SelectContinue : ASelect
         life2 = GameObject.Find("Life2");
 
         continueTime = GameObject.Find("ContinueTime").GetComponent<Text>();
+        minusText = GameObject.Find("MinusContinue").GetComponent<Text>();
 
         vcontinue.SetActive(false);
     }
@@ -36,6 +39,8 @@ public class SelectContinue : ASelect
         if (nb_life > 0)
         {
             vcontinue.SetActive(true);
+            Debug.Log(manager.currentScore);
+            minusText.text = (manager.currentScore / 2 * -1).ToString();
             TimeToWait = Time.realtimeSinceStartup + 1f;
             manager.OnGamePaused();
         }
@@ -61,6 +66,7 @@ public class SelectContinue : ASelect
                 vcontinue.SetActive(false);
                 nb_sec = 5;
                 continueTime.text = nb_sec.ToString();
+                ScoreManager.AddScore(manager.currentScore /= 2 * -1, this.transform.position);
                 manager.OnGameResumed();
             }
             else if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1"))
