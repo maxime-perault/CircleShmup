@@ -10,6 +10,8 @@ public class SelectIGMenu : ASelect
     private GameObject      igmenu;
     private GameObject      messageStage;
 
+    private SelectContinue scontinue;
+
     public  GameObject[]    buttons;
     private bool isMoving = false;
 
@@ -22,6 +24,7 @@ public class SelectIGMenu : ASelect
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         igmenu = GameObject.Find("IGMenu");
         igmenu.SetActive(false);
+        scontinue = GameObject.Find("Continue_script").GetComponent<SelectContinue>();
     }
 
     void ChangeButton(int y)
@@ -41,6 +44,9 @@ public class SelectIGMenu : ASelect
 
     private void Update()
     {
+        if (scontinue.isActive() == true)
+            return;
+
         if ((manager.GetKeyDown(GameManager.e_input.PAUSE) || Input.GetKeyDown("joystick button 7")) && (manager.gameManagerState == GameManager.EGameState.GameRunning))
         {
             AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);

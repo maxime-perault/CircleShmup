@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 /**
  * Manages the game over transition
@@ -8,12 +10,15 @@ using UnityEngine;
  */
 public class GameOverController : ASelect
 {
+
     /**
      * Constructs base class
      */
     private new void Start()
     {
         base.Start();
+
+        
     }
 
     /**

@@ -232,6 +232,7 @@ public class GameManager : MonoBehaviour
         AkSoundEngine.PostEvent("Friture_Stop", musicPlayer);
         AkSoundEngine.PostEvent("End_Fail",     musicPlayer);
         gameOverController.GameOver();
+        Time.timeScale = 1.0f;
     }
 
     /**

@@ -1,6 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 /**
  * Controls the behaviour of the player
@@ -32,6 +34,9 @@ public class PlayerController : Entity
 
     private ScreenShake screenshake;
 
+    private SelectContinue scontinue;
+    private bool isContinue = false;
+
     /**
      * Initializes the player controller by buffering 
      * all needed components
@@ -52,6 +57,8 @@ public class PlayerController : Entity
         playerJustStoppedToMove = true;
 
         musicPlayer = GameObject.Find("MusicPlayer");
+
+        scontinue = GameObject.Find("Continue_script").GetComponent<SelectContinue>();
     }
 
     /**
@@ -59,6 +66,12 @@ public class PlayerController : Entity
      */
     void FixedUpdate()
     {
+        if ((isContinue == true) && (scontinue.isActive() == false))
+        {
+            OnGameResumed();
+            isDead = false;
+            isContinue = false;
+        }
         if(paused)
         {
             return;
@@ -170,9 +183,10 @@ public class PlayerController : Entity
     public override void OnEntityDeath()
     {
         AkSoundEngine.PostEvent("Beurre_Death", musicPlayer);
-
-        GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        gameManager.OnGameOver();
+        
+        scontinue.GameOver();
+        isContinue = true;
+        OnGamePaused();
     }
 
     public override void OnHit(int hitPoint)

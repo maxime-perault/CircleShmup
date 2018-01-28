@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ScreenShake : MonoBehaviour
 {
-
     private Camera camera;
+    private GameManager manager;
 
     private float shake = 0;
     public float shakeAmount = 0.7f;
@@ -17,10 +17,11 @@ public class ScreenShake : MonoBehaviour
     {
         camera = Camera.main;
         previousCam = camera.transform.localPosition;
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     void Update()
     {
-        if (shake > 0)
+        if ((shake > 0) && (manager.gameManagerState != GameManager.EGameState.GamePaused))
         {
             Vector3 random = Random.insideUnitSphere * shakeAmount;
             camera.transform.localPosition = new Vector3(random.x, random.y, previousCam.z);
