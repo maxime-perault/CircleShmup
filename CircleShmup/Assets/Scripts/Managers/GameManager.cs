@@ -203,11 +203,6 @@ public class GameManager : MonoBehaviour
     public void OnGamePaused()
     {
         Time.timeScale = 0.0f;
-        //stageManager.OnGamePaused();
-        //playerController.OnGamePaused();
-
-        // TODO Trigger interface
-
         gameManagerState = EGameState.GamePaused;
     }
 
@@ -217,10 +212,6 @@ public class GameManager : MonoBehaviour
     public void OnGameResumed()
     {
         Time.timeScale = 1.0f;
-        //stageManager.OnGameResumed();
-        //playerController.OnGameResumed();
-
-        // TODO Remove interface
         gameManagerState = EGameState.GameRunning;
     }
 
@@ -229,8 +220,17 @@ public class GameManager : MonoBehaviour
      */
     public void OnGameOver()
     {
-        AkSoundEngine.PostEvent("Friture_Stop", musicPlayer);
-        AkSoundEngine.PostEvent("End_Fail",     musicPlayer);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Friture_Stop");
+            MusicManager.PostEvent("End_Fail");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Friture_Stop", musicPlayer);
+            AkSoundEngine.PostEvent("End_Fail", musicPlayer);
+        }
+
         gameOverController.GameOver();
         Time.timeScale = 1.0f;
     }
@@ -240,9 +240,19 @@ public class GameManager : MonoBehaviour
      */
     public void OnGameWin()
     {
-        AkSoundEngine.PostEvent("Friture_Stop", musicPlayer);
-        AkSoundEngine.PostEvent("End_Victory",  musicPlayer);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Friture_Stop");
+            MusicManager.PostEvent("End_Victory");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Friture_Stop", musicPlayer);
+            AkSoundEngine.PostEvent("End_Victory", musicPlayer);
+        }
+
         gameWinController.GameWin();
+        Time.timeScale = 1.0f;
     }
 
     /**

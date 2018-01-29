@@ -183,14 +183,29 @@ public class StageManager : MonoBehaviour
 
         Debug.Log("Stage Manger : New Stage loaded");
 
-        // "A table" management
-        switch (currentStageIndex)
+        if (MusicManager.WebGLBuildSupport)
         {
-            case 0: AkSoundEngine.PostEvent("A_Table_1", musicPlayer); break;
-            case 1: AkSoundEngine.PostEvent("A_Table_2", musicPlayer); break;
-            case 3: AkSoundEngine.PostEvent("A_Table_3", musicPlayer); break;
-            default: break;
+            // "A table" management
+            switch (currentStageIndex)
+            {
+                case 0: MusicManager.PostEvent("A_Table_1"); break;
+                case 1: MusicManager.PostEvent("A_Table_2"); break;
+                case 3: MusicManager.PostEvent("A_Table_3"); break;
+                default: break;
+            }
         }
+        else
+        {
+            // "A table" management
+            switch (currentStageIndex)
+            {
+                case 0: AkSoundEngine.PostEvent("A_Table_1", musicPlayer); break;
+                case 1: AkSoundEngine.PostEvent("A_Table_2", musicPlayer); break;
+                case 3: AkSoundEngine.PostEvent("A_Table_3", musicPlayer); break;
+                default: break;
+            }
+        }
+
     }
 
     /**
@@ -216,7 +231,15 @@ public class StageManager : MonoBehaviour
         StartCoroutine(StageTimeOut(currentStage.StageTimeout));
 
         MessageManager.Message("Stage clear", 3);
-        AkSoundEngine.PostEvent("Stage_Cleared", musicPlayer);
+
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Stage_Cleared");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Stage_Cleared", musicPlayer);
+        }
 
         // Refill player hp
         GameObject.FindWithTag("Player").GetComponent<PlayerController>().hitPoint = hpGetBack;
