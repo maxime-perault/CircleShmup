@@ -249,6 +249,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114431874138209658, guid: 5497fd8b879bc3f4c88396d3c6156c50,
+        type: 2}
+      propertyPath: WebGLBuild
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5497fd8b879bc3f4c88396d3c6156c50, type: 2}
   m_IsPrefabParent: 0

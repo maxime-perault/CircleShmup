@@ -3,6 +3,7 @@ using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 
+
 /**
  * @class MusicManager
  */
@@ -34,6 +35,11 @@ public class MusicManager : MonoBehaviour
         {
             DestroyImmediate(gameObject);
             return;
+        }
+        else
+        {
+            // Required for unity
+            this.gameObject.AddComponent<AudioSource>();
         }
 
         if (instance == null)
