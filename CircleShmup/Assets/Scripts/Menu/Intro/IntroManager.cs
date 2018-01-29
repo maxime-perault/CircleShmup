@@ -149,7 +149,15 @@ public class IntroManager : ASelect
         {
             if ((step == 0) || (step == 1))
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                if (MusicManager.WebGLBuildSupport)
+                {
+                    MusicManager.PostEvent("Main_Menu_UI_Validate");
+                }
+                else
+                {
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                }
+ 
                 inter.GetComponent<Image>().color = new Color32(0, 0, 0, 0);
                 ResetAlpha(first.GetComponent<Image>());
                 ResetAlpha(first.transform.GetChild(0).GetComponent<Image>());
@@ -158,7 +166,15 @@ public class IntroManager : ASelect
             }
             else if ((step == 3) || (step == 4))
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                if (MusicManager.WebGLBuildSupport)
+                {
+                    MusicManager.PostEvent("Main_Menu_UI_Validate");
+                }
+                else
+                {
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                }
+                
                 StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
             }
         }

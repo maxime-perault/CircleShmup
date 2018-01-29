@@ -32,7 +32,15 @@ public class SelectIGMenu : ASelect
         if (isMoving == true)
             return;
 
-        AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Main_Menu_UI_Play");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+        }
+
         buttons[actual_button].GetComponent<Image>().color = new Color32(80, 80, 80, 255);
 
         actual_button += y;
@@ -49,7 +57,15 @@ public class SelectIGMenu : ASelect
 
         if ((manager.GetKeyDown(GameManager.e_input.PAUSE) || Input.GetKeyDown("joystick button 7")) && (manager.gameManagerState == GameManager.EGameState.GameRunning))
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Main_Menu_UI_Validate");
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            }
+
             manager.OnGamePaused();
             igmenu.SetActive(true);
             messageStage = GameObject.Find("StageMessageText(Clone)");
@@ -68,7 +84,15 @@ public class SelectIGMenu : ASelect
 
         if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 7"))
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Main_Menu_UI_Back");
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+            }
+
             igmenu.SetActive(false);
             if (messageStage != null)
                 messageStage.SetActive(true);
@@ -88,7 +112,15 @@ public class SelectIGMenu : ASelect
         {
             if (actual_button == 0)
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                if (MusicManager.WebGLBuildSupport)
+                {
+                    MusicManager.PostEvent("Main_Menu_UI_Validate");
+                }
+                else
+                {
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                }
+
                 igmenu.SetActive(false);
                 if (messageStage != null)
                     messageStage.SetActive(true);
@@ -96,12 +128,30 @@ public class SelectIGMenu : ASelect
             }
             else if (actual_button == 1)
             {
-                AkSoundEngine.PostEvent("Friture_Stop", music);
+                if (MusicManager.WebGLBuildSupport)
+                {
+                    MusicManager.PostEvent("Friture_Stop");
+                }
+                else
+                {
+                    AkSoundEngine.PostEvent("Friture_Stop", music);
+                }
+
                 StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
                 manager.OnGameResumed();
-                AkSoundEngine.PostEvent("Music_Menu_Stop", music);
-                AkSoundEngine.PostEvent("Music_Stop", music);
-                AkSoundEngine.PostEvent("Music_Menu_Play", music);
+
+                if (MusicManager.WebGLBuildSupport)
+                {
+                    MusicManager.PostEvent("Music_Menu_Stop");
+                    MusicManager.PostEvent("Music_Stop");
+                    MusicManager.PostEvent("Music_Menu_Play");
+                }
+                else
+                {
+                    AkSoundEngine.PostEvent("Music_Menu_Stop", music);
+                    AkSoundEngine.PostEvent("Music_Stop", music);
+                    AkSoundEngine.PostEvent("Music_Menu_Play", music);
+                } 
             }
         }
     }

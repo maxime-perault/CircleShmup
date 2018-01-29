@@ -32,7 +32,15 @@ public class SelectOptions : ASelect
     {
         if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1"))
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Main_Menu_UI_Back");
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+            }
+ 
             StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
         }
     }
@@ -43,7 +51,15 @@ public class SelectOptions : ASelect
 
         if (button == e_button.INVERT)
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Main_Menu_UI_Validate");
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            }
+
             if (manager.invertYaxis == 1)
             {
                 ButtonsClass.EnableButton((int)e_button.INVERT);
@@ -57,7 +73,15 @@ public class SelectOptions : ASelect
         }
         if (button == e_button.CONTROLS)
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Main_Menu_UI_Validate");
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            }
+
             StartCoroutine(LoadYourAsyncScene("Menu/Controls"));
         }
     }

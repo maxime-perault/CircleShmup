@@ -53,7 +53,15 @@ public class SelectVictory : ASelect
         {
             if (isFinal == false)
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                if (MusicManager.WebGLBuildSupport)
+                {
+                    MusicManager.PostEvent("Main_Menu_UI_Validate");
+                }
+                else
+                {
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                }
+
                 if (manager.currentScore <= manager.scoreboard[98].score)
                     StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
                 else
@@ -67,12 +75,29 @@ public class SelectVictory : ASelect
             {
                 if (nameScore != "")
                 {
-                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                    if (MusicManager.WebGLBuildSupport)
+                    {
+                        MusicManager.PostEvent("Main_Menu_UI_Validate");
+                    }
+                    else
+                    {
+                        AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                    }
+
                     manager.addScore(manager.currentScore, nameScore);
                     StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
                 }
                 else
-                    AkSoundEngine.PostEvent("Main_Menu_UI_Error", music);
+                {
+                    if (MusicManager.WebGLBuildSupport)
+                    {
+                        MusicManager.PostEvent("Main_Menu_UI_Error");
+                    }
+                    else
+                    {
+                        AkSoundEngine.PostEvent("Main_Menu_UI_Error", music);
+                    }
+                }
 
             }
         }

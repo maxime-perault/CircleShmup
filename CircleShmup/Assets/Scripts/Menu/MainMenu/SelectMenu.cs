@@ -19,7 +19,17 @@ public class SelectMenu : ASelect
     {
         base.Start();
         if (id == 0)
-            AkSoundEngine.PostEvent("Music_Menu_Play", music);
+        {
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Music_Menu_Play");
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("Music_Menu_Play", music);
+            }
+        }
+
         ++id;
     }
 
@@ -27,14 +37,30 @@ public class SelectMenu : ASelect
     {
         e_button button = (e_button)tmp_button;
 
-        AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Main_Menu_UI_Validate");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+        }
 
         if (button == e_button.NEWGAME)
         {
             StartCoroutine(LoadYourAsyncScene("MainGame"));
-            AkSoundEngine.PostEvent("Music_Menu_Stop", music);
-            AkSoundEngine.PostEvent("Music_Stop", music);
-            AkSoundEngine.PostEvent("Music_Play", music);
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Music_Menu_Stop");
+                MusicManager.PostEvent("Music_Stop");
+                MusicManager.PostEvent("Music_Play");
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("Music_Menu_Stop", music);
+                AkSoundEngine.PostEvent("Music_Stop", music);
+                AkSoundEngine.PostEvent("Music_Play", music);
+            }
         }
         if (button == e_button.HIGHSCORE)
         {

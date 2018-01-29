@@ -67,7 +67,15 @@ public class SwitchButtonOptions : MonoBehaviour
                 ChangeButton(-(nb_buttons - 1));
             else
                 return;
-            AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Main_Menu_UI_Play");
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+            }
         }
     }
 

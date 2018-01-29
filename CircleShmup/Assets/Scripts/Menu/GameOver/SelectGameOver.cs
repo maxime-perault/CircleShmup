@@ -36,7 +36,15 @@ public class SelectGameOver : ASelect
 
         if (manager.GetKeyUp(GameManager.e_input.ACCEPT) || Input.GetKeyDown("joystick button 0"))
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Main_Menu_UI_Validate");
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            }
+
             StartCoroutine(LoadYourAsyncScene("MainGame"));
         }
     }

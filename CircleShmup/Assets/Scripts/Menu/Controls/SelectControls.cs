@@ -50,7 +50,15 @@ public class SelectControls : ASelect
 
     void ChangeButton(int y)
     {
-        AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Main_Menu_UI_Play");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+        }
+
         InputText[actual_button].transform.parent.gameObject.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
         InputText[actual_button].GetComponent<Text>().color = new Color32(173, 173, 173, 255);
 
@@ -90,7 +98,15 @@ public class SelectControls : ASelect
 
         if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1"))
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Main_Menu_UI_Back");
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+            }
+
             StartCoroutine(LoadYourAsyncScene("Menu/Options"));
         }
 
@@ -105,7 +121,15 @@ public class SelectControls : ASelect
 
         if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Main_Menu_UI_Validate");
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            }
+
             WaitInput();
         }
     }
