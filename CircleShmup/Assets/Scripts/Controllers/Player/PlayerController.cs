@@ -180,7 +180,14 @@ public class PlayerController : Entity
      */
     private void OnPlayerJustStoppedToMove()
     {
-        AkSoundEngine.PostEvent("Beurre_Stop", musicPlayer);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Beurre_Stop");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Beurre_Stop", musicPlayer);
+        }  
     }
 
     /**
@@ -188,7 +195,14 @@ public class PlayerController : Entity
      */
     public override void OnEntityDeath()
     {
-        AkSoundEngine.PostEvent("Beurre_Death", musicPlayer);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Beurre_Death");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Beurre_Death", musicPlayer);
+        }
         
         scontinue.GameOver();
         isContinue = true;
@@ -198,7 +212,16 @@ public class PlayerController : Entity
     public override void OnHit(int hitPoint)
     {
         screenshake.Shake(0.3f);
-        AkSoundEngine.PostEvent("Beurre_Hit", musicPlayer);
+
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Beurre_Hit");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Beurre_Hit", musicPlayer);
+        }
+
         particleSystem.Play();
     }
 
