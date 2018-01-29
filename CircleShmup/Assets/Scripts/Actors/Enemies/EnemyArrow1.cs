@@ -53,7 +53,17 @@ public class EnemyArrow1 : Enemy
         StartCoroutine("SafePop");
 
         music = GameObject.Find("MusicPlayer");
-        AkSoundEngine.PostEvent("Ennemy_Pop", music);
+
+        if(MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Ennemy_Pop");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Ennemy_Pop", music);
+        }
+
+        
         animator = this.GetComponent<Animator>();
         trail = GetComponent<TrailRenderer>();
 
@@ -228,26 +238,62 @@ public class EnemyArrow1 : Enemy
 
     public void Piment_Cogne()
     {
-        AkSoundEngine.PostEvent("Piment_Cogne", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Piment_Cogne");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Piment_Cogne", music);
+        } 
     }
 
     public void Piment_Prep_Play()
     {
-        AkSoundEngine.PostEvent("Piment_Prep_Play", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Piment_Prep_Play");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Piment_Prep_Play", music);
+        } 
     }
 
     public void Piment_Prep_Stop()
     {
-        AkSoundEngine.PostEvent("Piment_Prep_Stop", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Piment_Prep_Stop");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Piment_Prep_Stop", music);
+        }
+        
     }
 
     public void Piment_Charge()
     {
-        AkSoundEngine.PostEvent("Piment_Charge", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Piment_Charge");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Piment_Charge", music);
+        }
     }
 
     public void Piment_Cogne_Player()
     {
-        AkSoundEngine.PostEvent("Piment_Cogne_Player", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Piment_Cogne_Player");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Piment_Cogne_Player", music);
+        }  
     }  
 }

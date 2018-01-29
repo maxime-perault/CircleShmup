@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba05aa220c3b8746bd5d2c63e76c243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WebGLBuild: 0
   SFX_Volume: 50
   Main_Volume: 50
   SFXMixer: {fileID: 24300002, guid: 638bf6259897107459c739e3c2380155, type: 2}

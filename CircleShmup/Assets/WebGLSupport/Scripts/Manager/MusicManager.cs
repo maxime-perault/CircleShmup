@@ -8,6 +8,9 @@ using System.Collections.Generic;
  */
 public class MusicManager : MonoBehaviour
 {
+    public bool WebGLBuild               = false;
+    public static bool WebGLBuildSupport = false;
+
     public float SFX_Volume  = 50;
     public float Main_Volume = 50;
 
@@ -25,6 +28,14 @@ public class MusicManager : MonoBehaviour
      */
     void Awake()
     {
+        MusicManager.WebGLBuildSupport = WebGLBuild;
+
+        if(!WebGLBuild)
+        {
+            DestroyImmediate(gameObject);
+            return;
+        }
+
         if (instance == null)
         {
             instance = this;
@@ -59,6 +70,11 @@ public class MusicManager : MonoBehaviour
      */
     public static void PostEvent(string name)
     {
+        if (MusicManager.instance == null)
+        {
+            return;
+        }
+
         SoundEvent soundEvent = MusicManager.instance.GetClipFromName(name);
 
         if(soundEvent == null)
@@ -75,10 +91,6 @@ public class MusicManager : MonoBehaviour
         {
             MusicManager.instance.StopEvent(soundEvent);
         }
-        else
-        {
-            Debug.Log("Event has no mode");
-        }
     }
 
     /**
@@ -86,6 +98,11 @@ public class MusicManager : MonoBehaviour
      */
     public static void SetPitchDistance(string name, float distance)
     {
+        if (MusicManager.instance == null)
+        {
+            return;
+        }
+
         for (int nObject = MusicManager.instance.targets.Count - 1; nObject >= 0; --nObject)
         {
             AudioSource source = MusicManager.instance.targets[nObject].GetComponent<AudioSource>();
@@ -142,12 +159,6 @@ public class MusicManager : MonoBehaviour
 
         source.Play();
         targets.Add(go);
-
-        if(go.name == "Main_Menu_UI_Validate")
-        {
-            Debug.Log("Break");
-            Debug.Break();
-        }
     }
 
     /**

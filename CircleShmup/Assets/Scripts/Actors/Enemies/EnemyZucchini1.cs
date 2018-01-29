@@ -246,7 +246,14 @@ public class EnemyZucchini1 : Enemy
     {
         // Reverse player rotation direction
         sphereController.Reverse();
-        AkSoundEngine.PostEvent("Brochette_Hit_Invincible", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Brochette_Hit_Invincible");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Brochette_Hit_Invincible", music);
+        }    
     }
 
     /**
@@ -275,16 +282,37 @@ public class EnemyZucchini1 : Enemy
 
     public void Brochette_Tomato_Destroy()
     {
-        AkSoundEngine.PostEvent("Brochette_Tomato_Destroy", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Brochette_Tomato_Destroy");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Brochette_Tomato_Destroy", music);
+        }
     }
 
     public void Brochette_Death()
     {
-        AkSoundEngine.PostEvent("Brochette_Death", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Brochette_Death");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Brochette_Death", music);
+        }
     }
 
     public void Brochette_Hit_Invincible()
     {
-        AkSoundEngine.PostEvent("Brochette_Hit_Invincible", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Brochette_Hit_Invincible");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Brochette_Hit_Invincible", music);
+        }
     }
 }

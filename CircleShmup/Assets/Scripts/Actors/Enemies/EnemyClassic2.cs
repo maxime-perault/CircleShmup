@@ -40,7 +40,17 @@ public class EnemyClassic2 : EnemyClassic
 
         music = GameObject.Find("MusicPlayer");
         BaseStart();
-        AkSoundEngine.PostEvent("Ennemy_Pop", music);
+
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Ennemy_Pop");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Ennemy_Pop", music);
+        }
+
+        
         animator = this.GetComponent<Animator>();
         animator.SetBool("LowLife", false);
         trail = GetComponent<TrailRenderer>();
@@ -145,31 +155,73 @@ public class EnemyClassic2 : EnemyClassic
 
     public void Mais_Move_Up()
     {
-        AkSoundEngine.PostEvent("Mais_Move_Up", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Mais_Move_Up");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Mais_Move_Up", music);
+        }
     }
 
     public void Mais_Move_Down()
     {
-        AkSoundEngine.PostEvent("Mais_Move_Down", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Mais_Move_Down");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Mais_Move_Down", music);
+        }
     }
 
     public void Mais_Hit()
     {
-        AkSoundEngine.PostEvent("Mais_Hit", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Mais_Hit");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Mais_Hit", music);
+        }
     }
 
     public void Mais_Death()
     {
-        AkSoundEngine.PostEvent("Mais_Death", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Mais_Death");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Mais_Death", music);
+        }
     }
 
     public void Mais_Shot_Prep()
     {
-        AkSoundEngine.PostEvent("Mais_Shot_Prep", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Mais_Shot_Prep");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Mais_Shot_Prep", music);
+        }
     }
 
     public void Mais_Shot_Fire()
     {
-        AkSoundEngine.PostEvent("Mais_Shot_Fire", music);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Mais_Shot_Fire");
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Mais_Shot_Fire", music);
+        }
     }
 }
