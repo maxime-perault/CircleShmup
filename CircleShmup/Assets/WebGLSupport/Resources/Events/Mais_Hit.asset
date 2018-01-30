@@ -17,7 +17,7 @@ MonoBehaviour:
   SoundEventName: Mais_Hit
   SoundEventType: 0
   SoundEventLoop: 0
-  SoundEventMaxInstance: 3
+  SoundEventMaxInstance: 10
   SoundEventVolume: 0.7
   SoundEventPitch: 1
   SoundEventReverb: 1

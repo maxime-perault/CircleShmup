@@ -17,7 +17,7 @@ MonoBehaviour:
   SoundEventName: Brochette_Hit_Invulnerable
   SoundEventType: 0
   SoundEventLoop: 0
-  SoundEventMaxInstance: 3
+  SoundEventMaxInstance: 10
   SoundEventVolume: 0.6
   SoundEventPitch: 1
   SoundEventReverb: 1

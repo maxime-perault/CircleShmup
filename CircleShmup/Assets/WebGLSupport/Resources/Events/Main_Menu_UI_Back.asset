@@ -17,7 +17,7 @@ MonoBehaviour:
   SoundEventName: Main_Menu_UI_Back
   SoundEventType: 0
   SoundEventLoop: 0
-  SoundEventMaxInstance: 1
+  SoundEventMaxInstance: 3
   SoundEventVolume: 0.6
   SoundEventPitch: 1
   SoundEventReverb: 1
