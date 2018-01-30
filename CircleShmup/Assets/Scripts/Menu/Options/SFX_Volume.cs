@@ -7,7 +7,6 @@ public class SFX_Volume : MonoBehaviour
 {
     private GameObject              music;
     private SwitchButtonOptions     ButtonsClass;
-    private bool                    isMoving = false;
     private int                     value = 50;
     private RectTransform           FXButton;
     private float[]                 rotates;
@@ -27,22 +26,19 @@ public class SFX_Volume : MonoBehaviour
 
         if ((ButtonsClass.getActualButton() == 0) && (Time.time > nextTime))
         {
-            if (manager.GetKeyDown(GameManager.e_input.RIGHT, 0.8f) && ((value + 10) <= 100))
+            if (manager.GetKey(GameManager.e_input.RIGHT, 0.8f) && ((value + 10) <= 100))
             {
                 value += 10;
                 setUpSound(value);
             }
-            else if (manager.GetKeyDown(GameManager.e_input.LEFT, -0.8f) && ((value - 10) >= 0))
+            else if (manager.GetKey(GameManager.e_input.LEFT, -0.8f) && ((value - 10) >= 0))
             {
                 value -= 10;
                 setUpSound(value);
             }
             else
                 return;
-
-            isMoving = true;
             
-
             if (MusicManager.WebGLBuildSupport)
             {
                 MusicManager.SetSFXVolume(value);
@@ -55,7 +51,6 @@ public class SFX_Volume : MonoBehaviour
                     AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
                 #endif
             }
-
             music.GetComponent<MusicPlayer>().SFX_Volume = value;
             nextTime = Time.time + 0.1f;
         }
