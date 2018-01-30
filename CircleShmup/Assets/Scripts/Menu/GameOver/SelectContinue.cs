@@ -57,7 +57,7 @@ public class SelectContinue : ASelect
     {
         if (vcontinue.activeSelf == true)
         {
-            if (manager.GetKeyUp(GameManager.e_input.ACCEPT) || Input.GetKeyDown("joystick button 0"))
+            if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
             {
                 if (MusicManager.WebGLBuildSupport)
                 {
@@ -79,7 +79,7 @@ public class SelectContinue : ASelect
                 ScoreManager.AddScore(manager.currentScore /= 2 * -1, this.transform.position);
                 manager.OnGameResumed();
             }
-            else if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1"))
+            else if (manager.GetKeyDown(GameManager.e_input.CANCEL))
             {
                 manager.OnGameOver();
             }

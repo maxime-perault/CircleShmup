@@ -30,7 +30,7 @@ public class SelectOptions : ASelect
 
     private void Update()
     {
-        if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1"))
+        if (manager.GetKeyDown(GameManager.e_input.CANCEL))
         {
             if (MusicManager.WebGLBuildSupport)
             {

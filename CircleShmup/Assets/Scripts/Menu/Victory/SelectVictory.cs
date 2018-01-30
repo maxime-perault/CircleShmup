@@ -49,7 +49,7 @@ public class SelectVictory : ASelect
 
     private void Update()
     {
-        if (manager.GetKeyUp(GameManager.e_input.ACCEPT) || Input.GetKeyDown("joystick button 0"))
+        if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
         {
             if (isFinal == false)
             {

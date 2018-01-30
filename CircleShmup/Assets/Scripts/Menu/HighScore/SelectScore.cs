@@ -88,7 +88,7 @@ public class SelectScore : ASelect
     {
         float translation = Input.GetAxisRaw("Vertical");
 
-        if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1"))
+        if (manager.GetKeyDown(GameManager.e_input.CANCEL))
         {
             if (MusicManager.WebGLBuildSupport)
             {
@@ -104,11 +104,11 @@ public class SelectScore : ASelect
             StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
         }
 
-        if (manager.GetKeyDown(GameManager.e_input.DOWN) || (translation < -0.8))
+        if (manager.GetKey(GameManager.e_input.DOWN, -0.8f))
         {
             scrollbar.value -= 0.01f;
         }
-        else if (manager.GetKeyDown(GameManager.e_input.UP) || (translation > 0.8))
+        else if (manager.GetKey(GameManager.e_input.UP, 0.8f))
         {
             scrollbar.value += 0.01f;
         }

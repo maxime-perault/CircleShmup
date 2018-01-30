@@ -61,7 +61,8 @@ public class GameManager : MonoBehaviour
     private        GameOverController gameOverController;
     private        GameWinController  gameWinController;
 
-    public string[]     inputs;
+    public KeyCode[]    inputs;
+    public KeyCode[]    controllerInputs;
     public ScoreBoard[] scoreboard;
     public int          invertYaxis = 1;
 
@@ -98,7 +99,6 @@ public class GameManager : MonoBehaviour
         isMainSceneLoaded = false;
         gameManagerState  = EGameState.GameNone;
 
-        inputs = new string[System.Enum.GetNames(typeof(e_input)).Length];
         scoreboard = new ScoreBoard[99];
 
         for (int i = 0; i < 99; i++)
@@ -118,17 +118,40 @@ public class GameManager : MonoBehaviour
                 }
             }
         }, 0, 99);
-        inputs[(int)e_input.TURNLEFT] = "Q";
-        inputs[(int)e_input.TURNRIGHT] = "D";
+        /*
+        ** Keyboard default inputs
+        */
+        inputs = new KeyCode[System.Enum.GetNames(typeof(e_input)).Length];
 
-        inputs[(int)e_input.ACCEPT] = "Space";
-        inputs[(int)e_input.CANCEL] = "Escape";
-        inputs[(int)e_input.PAUSE] = "Escape";
+        inputs[(int)e_input.TURNLEFT] = KeyCode.Q;
+        inputs[(int)e_input.TURNRIGHT] = KeyCode.D;
 
-        inputs[(int)e_input.UP] = "UpArrow";
-        inputs[(int)e_input.DOWN] = "DownArrow";
-        inputs[(int)e_input.LEFT] = "LeftArrow";
-        inputs[(int)e_input.RIGHT] = "RightArrow";
+        inputs[(int)e_input.ACCEPT] = KeyCode.Space;
+        inputs[(int)e_input.CANCEL] = KeyCode.Escape;
+        inputs[(int)e_input.PAUSE] = KeyCode.Escape;
+
+        inputs[(int)e_input.UP] = KeyCode.UpArrow;
+        inputs[(int)e_input.DOWN] = KeyCode.DownArrow;
+        inputs[(int)e_input.LEFT] = KeyCode.LeftArrow;
+        inputs[(int)e_input.RIGHT] = KeyCode.RightArrow;
+
+        /*
+        ** Controller default inputs
+        */
+        controllerInputs = new KeyCode[System.Enum.GetNames(typeof(e_input)).Length];
+
+        controllerInputs[(int)e_input.TURNLEFT] = KeyCode.JoystickButton4;
+        controllerInputs[(int)e_input.TURNRIGHT] = KeyCode.JoystickButton5;
+
+        controllerInputs[(int)e_input.ACCEPT] = KeyCode.JoystickButton0;
+        controllerInputs[(int)e_input.CANCEL] = KeyCode.JoystickButton1;
+        controllerInputs[(int)e_input.PAUSE] = KeyCode.JoystickButton7;
+        
+        //those inputs have to be the same as keyboard for the OR bitwise operator in GetKeyDown
+        controllerInputs[(int)e_input.UP] = KeyCode.UpArrow;
+        controllerInputs[(int)e_input.DOWN] = KeyCode.DownArrow;
+        controllerInputs[(int)e_input.LEFT] = KeyCode.LeftArrow;
+        controllerInputs[(int)e_input.RIGHT] = KeyCode.RightArrow;
 
         gameOverController = GetComponent<GameOverController>();
         gameWinController  = GetComponent<GameWinController>();
@@ -294,20 +317,77 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
-    /**
-     * TODO
-     */
-    public bool GetKeyDown(GameManager.e_input input)
+    
+    public bool GetKeyDown(GameManager.e_input input, float max = 0)
     {
-        return Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), inputs[(int)input]));
+        switch (input)
+        {
+            case e_input.UP:
+            {
+                if (Input.GetAxisRaw("Vertical") > max)
+                    return true;
+                break;
+            }
+            case e_input.DOWN:
+            {
+                if (Input.GetAxisRaw("Vertical") < max)
+                    return true;
+                break;
+            }
+            case e_input.LEFT:
+            {
+                if (Input.GetAxisRaw("Horizontal") < max)
+                    return true;
+                break;
+            }
+            case e_input.RIGHT:
+            {
+                if (Input.GetAxisRaw("Horizontal") > max)
+                    return true;
+                break;
+            }
+            default:
+                break;
+        }
+        return (Input.GetKeyDown(inputs[(int)input]) | Input.GetKeyDown(controllerInputs[(int)input]));
     }
 
-    /**
-     * TODO
-     */
-    public bool GetKeyUp(GameManager.e_input input)
+    public bool GetKey(GameManager.e_input input, float max = 0)
     {
-        return Input.GetKeyUp((KeyCode)System.Enum.Parse(typeof(KeyCode), inputs[(int)input]));
+        switch (input)
+        {
+            case e_input.UP:
+                {
+                    if (Input.GetAxisRaw("Vertical") > max)
+                        return true;
+                    break;
+                }
+            case e_input.DOWN:
+                {
+                    if (Input.GetAxisRaw("Vertical") < max)
+                        return true;
+                    break;
+                }
+            case e_input.LEFT:
+                {
+                    if (Input.GetAxisRaw("Horizontal") < max)
+                        return true;
+                    break;
+                }
+            case e_input.RIGHT:
+                {
+                    if (Input.GetAxisRaw("Horizontal") > max)
+                        return true;
+                    break;
+                }
+            default:
+                break;
+        }
+        return (Input.GetKey(inputs[(int)input]) | Input.GetKey(controllerInputs[(int)input]));
+    }
+
+    public bool GetKeyUp(GameManager.e_input input, float max = 0)
+    {
+        return (Input.GetKeyUp(inputs[(int)input]) | Input.GetKeyUp(controllerInputs[(int)input]));
     }
 }

@@ -17,17 +17,17 @@ public class DynamicA : MonoBehaviour
             first = true;
             return;
         }
-        if (manager.inputs[(int)GameManager.e_input.ACCEPT].Length > 3)
-            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.ACCEPT].Substring(0, 3);
+        if (manager.inputs[(int)GameManager.e_input.ACCEPT].ToString().Length > 3)
+            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.ACCEPT].ToString().Substring(0, 3);
         else
-            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.ACCEPT];
+            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.ACCEPT].ToString();
     }
 
     public void UpdateButton()
     {
-        if (manager.inputs[(int)GameManager.e_input.ACCEPT].Length > 3)
-            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.ACCEPT].Substring(0, 3);
+        if (manager.inputs[(int)GameManager.e_input.ACCEPT].ToString().Length > 3)
+            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.ACCEPT].ToString().Substring(0, 3);
         else
-            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.ACCEPT];
+            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.ACCEPT].ToString();
     }
 }

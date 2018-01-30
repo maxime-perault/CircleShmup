@@ -34,7 +34,7 @@ public class SelectGameOver : ASelect
             TimeToWait = Time.time + 0.5f;
         }
 
-        if (manager.GetKeyUp(GameManager.e_input.ACCEPT) || Input.GetKeyDown("joystick button 0"))
+        if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
         {
             if (MusicManager.WebGLBuildSupport)
             {

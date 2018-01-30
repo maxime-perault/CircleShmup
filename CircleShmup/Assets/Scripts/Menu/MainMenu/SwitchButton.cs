@@ -18,7 +18,7 @@ public class SwitchButton : MonoBehaviour
     private GameObject      music;
     private RectTransform   masterButton;
     private float[]         rotates;
-
+    
     private bool        isMoving = false;
 
     void Start ()
@@ -50,11 +50,11 @@ public class SwitchButton : MonoBehaviour
 	void Update ()
     {
         float translation = Input.GetAxisRaw("Vertical");
-
+        
         /*
         ** Select
         */
-        if (manager.GetKeyUp(GameManager.e_input.ACCEPT) || Input.GetKeyDown("joystick button 0"))
+        if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
         {
             MenuClass.Select(actual_button);
         }
@@ -62,21 +62,23 @@ public class SwitchButton : MonoBehaviour
         /*
         ** Wait until the stick return before moving again
         */
-        if ((isMoving == true) && (translation == 0))
+        if ((isMoving == true) && (Mathf.Round(translation) == 0))
+        {
             isMoving = false;
+        }
 
         /*
         ** Move
         */
         if (isMoving == false)
         {
-            if ((manager.GetKeyDown(GameManager.e_input.DOWN) || (translation < -0.8)) && (actual_button < (nb_buttons - 1)))
+            if (manager.GetKeyDown(GameManager.e_input.DOWN, -0.8f) && (actual_button < (nb_buttons - 1)))
                 ChangeButton(-1);
-            else if ((manager.GetKeyDown(GameManager.e_input.DOWN) || (translation < -0.8)) && (actual_button == (nb_buttons - 1)))
+            else if (manager.GetKeyDown(GameManager.e_input.DOWN, -0.8f) && (actual_button == (nb_buttons - 1)))
                 ChangeButton(nb_buttons - 1);
-            else if ((manager.GetKeyDown(GameManager.e_input.UP) || (translation > 0.8)) && (actual_button > 0))
+            else if (manager.GetKeyDown(GameManager.e_input.UP, 0.8f) && (actual_button > 0))
                 ChangeButton(1);
-            else if ((manager.GetKeyDown(GameManager.e_input.UP) || (translation > 0.8)) && (actual_button == 0))
+            else if (manager.GetKeyDown(GameManager.e_input.UP, 0.8f) && (actual_button == 0))
                 ChangeButton(-(nb_buttons - 1));
             else
                 return;

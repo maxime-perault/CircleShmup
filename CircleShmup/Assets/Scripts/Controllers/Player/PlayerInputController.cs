@@ -14,8 +14,8 @@ public class PlayerInputController : MonoBehaviour
     public bool canClockwiseRotation        = true;
     public bool canCounterClockwiseRotation = true;
 
-    [SerializeField] public string verticalInput                 = "Vertical";
-    [SerializeField] public string horizontalInput               = "Horizontal";
+    [SerializeField] public string verticalInput                 = "VerticalIG";
+    [SerializeField] public string horizontalInput               = "HorizontalIG";
                                                                  
     [SerializeField] public string addSphereInput                = "AddSphere";
     [SerializeField] public string removeSphereInput             = "RemoveSphere";
@@ -50,21 +50,23 @@ public class PlayerInputController : MonoBehaviour
     public Vector2 GetAxis()
     {
         Vector2 axis = new Vector2(
-            Input.GetAxis(horizontalInput), 
-            Input.GetAxis(verticalInput));
+            Input.GetAxisRaw(horizontalInput), 
+            Input.GetAxisRaw(verticalInput));
 
-        if(axis == Vector2.zero)
+        if (axis == Vector2.zero)
         {
             axis.x =
-                (gameManagerInstance.GetKeyDown(GameManager.e_input.RIGHT) ?  1.0f : 0.0f) +
-                (gameManagerInstance.GetKeyDown(GameManager.e_input.LEFT)  ? -1.0f : 0.0f);
+                (gameManagerInstance.GetKey(GameManager.e_input.RIGHT) ?  1.0f : 0.0f) +
+                (gameManagerInstance.GetKey(GameManager.e_input.LEFT)  ? -1.0f : 0.0f);
 
             axis.y =
-                (gameManagerInstance.GetKeyDown(GameManager.e_input.UP)   ?  1.0f : 0.0f) +
-                (gameManagerInstance.GetKeyDown(GameManager.e_input.DOWN) ? -1.0f : 0.0f);
+                (gameManagerInstance.GetKey(GameManager.e_input.UP)   ?  1.0f : 0.0f) +
+                (gameManagerInstance.GetKey(GameManager.e_input.DOWN) ? -1.0f : 0.0f);
         }
-       
-        return axis * gameManagerInstance.invertYaxis;
+
+        axis.y *= gameManagerInstance.invertYaxis;
+
+        return axis;
     }
     
     /**

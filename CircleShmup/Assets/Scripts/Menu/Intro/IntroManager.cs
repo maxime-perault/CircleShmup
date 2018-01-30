@@ -145,7 +145,7 @@ public class IntroManager : ASelect
         else if (step == 5)
             StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
 
-        if (manager.GetKeyUp(GameManager.e_input.ACCEPT) || Input.GetKeyDown("joystick button 0"))
+        if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
         {
             if ((step == 0) || (step == 1))
             {

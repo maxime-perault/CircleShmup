@@ -57,7 +57,7 @@ public class SelectIGMenu : ASelect
         if (scontinue.isActive() == true)
             return;
 
-        if ((manager.GetKeyDown(GameManager.e_input.PAUSE) || Input.GetKeyDown("joystick button 7")) && (manager.gameManagerState == GameManager.EGameState.GameRunning))
+        if (manager.GetKeyDown(GameManager.e_input.PAUSE) && (manager.gameManagerState == GameManager.EGameState.GameRunning))
         {
             if (MusicManager.WebGLBuildSupport)
             {
@@ -83,10 +83,10 @@ public class SelectIGMenu : ASelect
 
         float translation = Input.GetAxisRaw("Vertical");
 
-        if ((isMoving == true) && (translation == 0))
+        if ((isMoving == true) && (Mathf.Round(translation) == 0))
             isMoving = false;
 
-        if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1") || Input.GetKeyDown("joystick button 7"))
+        if (manager.GetKeyDown(GameManager.e_input.CANCEL) || manager.GetKeyDown(GameManager.e_input.PAUSE))
         {
             if (MusicManager.WebGLBuildSupport)
             {
@@ -105,16 +105,16 @@ public class SelectIGMenu : ASelect
             manager.OnGameResumed();
         }
 
-        if ((manager.GetKeyDown(GameManager.e_input.DOWN) || (translation < -0.7)) && ((actual_button + 1) < buttons.Length))
+        if (manager.GetKeyDown(GameManager.e_input.DOWN, -0.7f) && ((actual_button + 1) < buttons.Length))
             ChangeButton(1);
-        else if ((manager.GetKeyDown(GameManager.e_input.DOWN) || (translation < -0.7)) && (actual_button == (buttons.Length - 1)))
+        else if (manager.GetKeyDown(GameManager.e_input.DOWN, -0.7f) && (actual_button == (buttons.Length - 1)))
             ChangeButton(-(buttons.Length - 1));
-        else if ((manager.GetKeyDown(GameManager.e_input.UP) || (translation > 0.7)) && ((actual_button - 1) >= 0))
+        else if (manager.GetKeyDown(GameManager.e_input.UP, 0.7f) && ((actual_button - 1) >= 0))
             ChangeButton(-1);
-        else if ((manager.GetKeyDown(GameManager.e_input.UP) || (translation > 0.7)) && (actual_button == 0))
+        else if (manager.GetKeyDown(GameManager.e_input.UP, 0.7f) && (actual_button == 0))
             ChangeButton(buttons.Length - 1);
 
-        if (manager.GetKeyDown(GameManager.e_input.ACCEPT) || Input.GetKeyDown("joystick button 0"))
+        if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
         {
             if (actual_button == 0)
             {

@@ -10,17 +10,17 @@ public class DynamicB : MonoBehaviour
     void Start()
     {
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        if (manager.inputs[(int)GameManager.e_input.CANCEL].Length > 3)
-            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.CANCEL].Substring(0, 3);
+        if (manager.inputs[(int)GameManager.e_input.CANCEL].ToString().Length > 3)
+            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.CANCEL].ToString().Substring(0, 3);
         else
-            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.CANCEL];
+            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.CANCEL].ToString();
     }
 
     public void UpdateButton()
     {
-        if (manager.inputs[(int)GameManager.e_input.CANCEL].Length > 3)
-            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.CANCEL].Substring(0, 3);
+        if (manager.inputs[(int)GameManager.e_input.CANCEL].ToString().Length > 3)
+            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.CANCEL].ToString().Substring(0, 3);
         else
-            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.CANCEL];
+            GetComponent<Text>().text = manager.inputs[(int)GameManager.e_input.CANCEL].ToString();
     }
 }

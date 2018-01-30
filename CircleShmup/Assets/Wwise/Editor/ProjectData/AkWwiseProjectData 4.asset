@@ -8,16 +8,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc619ca6f44f3834d86480e36ed382ee, type: 3}
-  m_Name: AkWwiseProjectData
-  m_EditorClassIdentifier: 
+  m_Script: {fileID: 0}
+  m_Name: AkWwiseProjectData 4
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::AkWwiseProjectData
   CurrentPluginConfig: 
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B29443EC-A86D-4F2A-B551-D913A31F46C3}'
-    m_lastTimePsrt1: -663253321
-    m_lastTimePart2: -1999280358
+    m_lastTimePsrt1: -542579341
+    m_lastTimePart2: -1999280529
     List:
     - Name: A_Table_1
       Path: Default Work Unit\Other\A_Table_1
@@ -489,22 +489,22 @@ MonoBehaviour:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{7B3FC9FD-F90D-4FDD-8426-B62100F920D8}'
-    m_lastTimePsrt1: -657167130
-    m_lastTimePart2: -1999280358
+    m_lastTimePsrt1: -1456420185
+    m_lastTimePart2: -1999282585
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{E2DB1062-DF9A-4435-8362-164E7FFE7405}'
-    m_lastTimePsrt1: -657167130
-    m_lastTimePart2: -1999280358
+    m_lastTimePsrt1: -1456410145
+    m_lastTimePart2: -1999282585
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{924CB3FF-351A-4BF4-870E-AB084808EFAB}'
-    m_lastTimePsrt1: -657177158
-    m_lastTimePart2: -1999280358
+    m_lastTimePsrt1: -1480247781
+    m_lastTimePart2: -1999282327
     List:
     - Name: Shmup_SoundBank
       Path: Default Work Unit\Shmup_SoundBank
@@ -519,8 +519,8 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{BD1B3C21-0013-423E-B3D9-94D432D5F7F0}'
-    m_lastTimePsrt1: -663248311
-    m_lastTimePart2: -1999280358
+    m_lastTimePsrt1: -704993508
+    m_lastTimePart2: -1999281381
     List:
     - Name: Ball_Distance
       Path: Default Work Unit\Ball_Distance
@@ -552,8 +552,8 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Factory SoundSeed Air Game Syncs.wwu
     ParentPhysicalPath: 
     Guid: '{3B167755-FB42-458B-98BF-96F557AFB3B9}'
-    m_lastTimePsrt1: -663248311
-    m_lastTimePart2: -1999280358
+    m_lastTimePsrt1: -1462556090
+    m_lastTimePart2: -1999282585
     List:
     - Name: SS_Air_Fear
       Path: Factory SoundSeed Air Game Syncs\SS_Air_Fear
@@ -649,23 +649,10 @@ MonoBehaviour:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{63DD1F06-ECB0-4854-A5EA-649E17C3C773}'
-    m_lastTimePsrt1: -657162118
-    m_lastTimePart2: -1999280358
+    m_lastTimePsrt1: -1456405065
+    m_lastTimePart2: -1999282585
     List: []
-  ExpandedItems:
-  - /Shmup_Wwise
-  - /Shmup_Wwise/Auxiliary Busses
-  - /Shmup_Wwise/Auxiliary Busses/Default Work Unit
-  - /Shmup_Wwise/Auxiliary Busses/Default Work Unit/Master Audio Bus
-  - /Shmup_Wwise/Events
-  - /Shmup_Wwise/Events/Default Work Unit
-  - /Shmup_Wwise/Events/Default Work Unit/Ennemies
-  - /Shmup_Wwise/Events/Default Work Unit/Ennemies/Piment
-  - /Shmup_Wwise/Events/Default Work Unit/Music
-  - /Shmup_Wwise/Events/Default Work Unit/Petit_Beurre
-  - /Shmup_Wwise/Events/Default Work Unit/UI
-  - /Shmup_Wwise/SoundBanks
-  - /Shmup_Wwise/SoundBanks/Default Work Unit
+  ExpandedItems: []
   m_lastPopulateTimePsrt1: 0
   m_lastPopulateTimePart2: 0
   autoPopulateEnabled: 1

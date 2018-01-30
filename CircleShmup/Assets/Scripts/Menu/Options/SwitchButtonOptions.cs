@@ -41,7 +41,7 @@ public class SwitchButtonOptions : MonoBehaviour
         /*
         ** Select Button
         */
-        if (manager.GetKeyDown(GameManager.e_input.ACCEPT) || Input.GetKeyDown("joystick button 0"))
+        if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
         {
             MenuClass.Select(actual_button);
         }
@@ -49,7 +49,7 @@ public class SwitchButtonOptions : MonoBehaviour
         /*
         ** Wait until the stick return before moving again
         */
-        if ((isMoving == true) && (translation == 0))
+        if ((isMoving == true) && (Mathf.Round(translation) == 0))
             isMoving = false;
 
         /*
@@ -57,13 +57,13 @@ public class SwitchButtonOptions : MonoBehaviour
         */
         if (isMoving == false)
         {
-            if (((translation < -0.8) || manager.GetKeyDown(GameManager.e_input.DOWN)) && (actual_button < (nb_buttons - 1)))
+            if (manager.GetKeyDown(GameManager.e_input.DOWN, -0.9f) && (actual_button < (nb_buttons - 1)))
                 ChangeButton(-1);
-            else if (((translation < -0.8) || manager.GetKeyDown(GameManager.e_input.DOWN)) && (actual_button == (nb_buttons - 1)))
+            else if (manager.GetKeyDown(GameManager.e_input.DOWN, -0.9f) && (actual_button == (nb_buttons - 1)))
                 ChangeButton(nb_buttons - 1);
-            else if (((translation > 0.8) || manager.GetKeyDown(GameManager.e_input.UP)) && (actual_button > 0))
+            else if (manager.GetKeyDown(GameManager.e_input.UP, 0.9f) && (actual_button > 0))
                 ChangeButton(1);
-            else if (((translation > 0.8 || manager.GetKeyDown(GameManager.e_input.UP)) && (actual_button == 0)))
+            else if (manager.GetKeyDown(GameManager.e_input.UP, 0.9f) && (actual_button == 0))
                 ChangeButton(-(nb_buttons - 1));
             else
                 return;
