@@ -7,11 +7,11 @@ public class Main_Volume : MonoBehaviour
 {
     private GameObject              music;
     private SwitchButtonOptions     ButtonsClass;
-    private bool                    isMoving = false;
     private int                     value = 50;
     private RectTransform           MainButton;
     private float[]                 rotates;
     private GameManager             manager;
+    private float                   nextTime = 0;
 
     void setUpSound(int volume)
     {
@@ -20,26 +20,24 @@ public class Main_Volume : MonoBehaviour
         MainButton.rotation = rotation;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float translation = Input.GetAxisRaw("Horizontal");
 
-        if ((ButtonsClass.getActualButton() == 1) && (isMoving == false))
+        if ((ButtonsClass.getActualButton() == 1) && (Time.time > nextTime))
         {
-            if (((translation > 0.8) || manager.GetKeyDown(GameManager.e_input.RIGHT)) && ((value + 10) <= 100))
+            if (manager.GetKey(GameManager.e_input.RIGHT, 0.8f) && ((value + 10) <= 100))
             {
                 value += 10;
                 setUpSound(value);
             }
-            else if (((translation < -0.8) || manager.GetKeyDown(GameManager.e_input.LEFT)) && ((value - 10) >= 0))
+            else if (manager.GetKey(GameManager.e_input.LEFT, -0.8f) && ((value - 10) >= 0))
             {
                 value -= 10;
                 setUpSound(value);
             }
             else
                 return;
-
-            isMoving = true;
 
             if(MusicManager.WebGLBuildSupport)
             {
@@ -53,10 +51,8 @@ public class Main_Volume : MonoBehaviour
             }
 
             music.GetComponent<MusicPlayer>().Main_Volume = value;
-
+            nextTime = Time.time + 0.1f;
         }
-        if ((isMoving == true) && (translation == 0))
-            isMoving = false;
     }
 
     private void Start()

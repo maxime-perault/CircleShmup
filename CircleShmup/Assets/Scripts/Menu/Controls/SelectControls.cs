@@ -23,7 +23,7 @@ public class SelectControls : ASelect
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         for (int i = 0; i < manager.inputs.Length; i++)
         {
-            InputText[i].GetComponent<Text>().text = manager.inputs[i];
+            InputText[i].GetComponent<Text>().text = manager.inputs[i].ToString();
         }
         infoA = GameObject.Find("TextInfoA").GetComponent<DynamicA>();
         infoB = GameObject.Find("TextInfoB").GetComponent<DynamicB>();
@@ -32,7 +32,7 @@ public class SelectControls : ASelect
     public void UpdateValue(string text)
     {
         for (int i = 0; i < manager.inputs.Length; i++)
-            if (manager.inputs[i] == text)
+            if (manager.inputs[i].ToString() == text)
             {
                 if(MusicManager.WebGLBuildSupport)
                 {
@@ -48,7 +48,10 @@ public class SelectControls : ASelect
                 return;
             }
         InputText[actual_button].GetComponent<Text>().text = text;
-        manager.inputs[actual_button] = text;
+        if (actual_button > 4)
+            manager.controllerInputs[actual_button] = (KeyCode)System.Enum.Parse(typeof(KeyCode), text);
+        manager.inputs[actual_button] = (KeyCode)System.Enum.Parse(typeof(KeyCode), text);
+
         isLocked = false;
         InputText[actual_button].GetComponent<Text>().color = new Color32(0, 0, 0, 255);
 
@@ -108,7 +111,7 @@ public class SelectControls : ASelect
             return;
         }
 
-        if (manager.GetKeyDown(GameManager.e_input.CANCEL) || Input.GetKeyDown("joystick button 1"))
+        if (manager.GetKeyDown(GameManager.e_input.CANCEL))
         {
             if (MusicManager.WebGLBuildSupport)
             {
@@ -116,21 +119,19 @@ public class SelectControls : ASelect
             }
             else
             {
-#if !UNITY_WEBGL
+                #if !UNITY_WEBGL
                     AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
-#endif
+                #endif
             }
-
             StartCoroutine(LoadYourAsyncScene("Menu/Options"));
         }
-
-        if (manager.GetKeyDown(GameManager.e_input.DOWN) && ((actual_button + 1) < InputText.Length))
+        if (manager.GetKeyDown(GameManager.e_input.DOWN, -1f) && ((actual_button + 1) < InputText.Length))
             ChangeButton(1);
-        else if (manager.GetKeyDown(GameManager.e_input.DOWN) && (actual_button == (InputText.Length - 1)))
+        else if (manager.GetKeyDown(GameManager.e_input.DOWN, -1f) && (actual_button == (InputText.Length - 1)))
             ChangeButton(-(InputText.Length - 1));
-        else if (manager.GetKeyDown(GameManager.e_input.UP) && ((actual_button - 1) >= 0))
+        else if (manager.GetKeyDown(GameManager.e_input.UP, 1f) && ((actual_button - 1) >= 0))
             ChangeButton(-1);
-        else if (manager.GetKeyDown(GameManager.e_input.UP) && (actual_button == 0))
+        else if (manager.GetKeyDown(GameManager.e_input.UP, 1f) && (actual_button == 0))
             ChangeButton(InputText.Length - 1);
 
         if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
