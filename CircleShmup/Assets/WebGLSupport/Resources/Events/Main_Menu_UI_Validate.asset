@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Play: 1
   Stop: 0
-  SoundEventTarget: {fileID: 8300000, guid: 628c242a2e1121e47bdf99829dab4271, type: 3}
+  SoundEventTarget: {fileID: 8300000, guid: d4450b23e996f9c4ca68c596a4b9e943, type: 3}
   SoundEventName: Main_Menu_UI_Validate
   SoundEventType: 0
   SoundEventLoop: 0

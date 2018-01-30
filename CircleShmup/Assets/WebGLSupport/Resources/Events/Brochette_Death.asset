@@ -17,7 +17,7 @@ MonoBehaviour:
   SoundEventName: Brochette_Death
   SoundEventType: 0
   SoundEventLoop: 0
-  SoundEventMaxInstance: 1
+  SoundEventMaxInstance: 3
   SoundEventVolume: 0.56
   SoundEventPitch: 1
   SoundEventReverb: 1

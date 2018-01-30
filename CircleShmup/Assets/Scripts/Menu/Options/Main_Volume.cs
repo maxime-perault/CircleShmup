@@ -40,7 +40,18 @@ public class Main_Volume : MonoBehaviour
                 return;
 
             isMoving = true;
-            AkSoundEngine.SetRTPCValue("Music_Volume", value, music);
+
+            if(MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.SetMainVolume(value);
+            }
+            else
+            {
+                #if !UNITY_WEBGL
+                    AkSoundEngine.SetRTPCValue("Music_Volume", value, music);
+                #endif
+            }
+
             music.GetComponent<MusicPlayer>().Main_Volume = value;
 
         }

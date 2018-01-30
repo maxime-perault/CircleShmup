@@ -47,7 +47,9 @@ public class EnemyClassic2 : EnemyClassic
         }
         else
         {
-            AkSoundEngine.PostEvent("Ennemy_Pop", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Ennemy_Pop", music);
+            #endif
         }
 
         
@@ -161,7 +163,9 @@ public class EnemyClassic2 : EnemyClassic
         }
         else
         {
-            AkSoundEngine.PostEvent("Mais_Move_Up", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Mais_Move_Up", music);
+            #endif 
         }
     }
 
@@ -169,11 +173,14 @@ public class EnemyClassic2 : EnemyClassic
     {
         if (MusicManager.WebGLBuildSupport)
         {
-            MusicManager.PostEvent("Mais_Move_Down");
+            MusicManager.PostEvent("Mais_Move_1");
+            MusicManager.PostEvent("Mais_Move_2");
         }
         else
         {
-            AkSoundEngine.PostEvent("Mais_Move_Down", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Mais_Move_Down", music);
+            #endif
         }
     }
 
@@ -185,7 +192,9 @@ public class EnemyClassic2 : EnemyClassic
         }
         else
         {
-            AkSoundEngine.PostEvent("Mais_Hit", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Mais_Hit", music);
+            #endif
         }
     }
 
@@ -197,7 +206,9 @@ public class EnemyClassic2 : EnemyClassic
         }
         else
         {
-            AkSoundEngine.PostEvent("Mais_Death", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Mais_Death", music);
+            #endif
         }
     }
 
@@ -209,7 +220,9 @@ public class EnemyClassic2 : EnemyClassic
         }
         else
         {
-            AkSoundEngine.PostEvent("Mais_Shot_Prep", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Mais_Shot_Prep", music);
+            #endif
         }
     }
 
@@ -221,7 +234,9 @@ public class EnemyClassic2 : EnemyClassic
         }
         else
         {
-            AkSoundEngine.PostEvent("Mais_Shot_Fire", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Mais_Shot_Fire", music);
+            #endif
         }
     }
 }

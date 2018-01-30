@@ -26,7 +26,9 @@ public class SelectMenu : ASelect
             }
             else
             {
-                AkSoundEngine.PostEvent("Music_Menu_Play", music);
+                #if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Music_Menu_Play", music);
+                #endif
             }
         }
 
@@ -43,7 +45,9 @@ public class SelectMenu : ASelect
         }
         else
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+            #endif
         }
 
         if (button == e_button.NEWGAME)
@@ -57,9 +61,11 @@ public class SelectMenu : ASelect
             }
             else
             {
-                AkSoundEngine.PostEvent("Music_Menu_Stop", music);
-                AkSoundEngine.PostEvent("Music_Stop", music);
-                AkSoundEngine.PostEvent("Music_Play", music);
+                #if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Music_Menu_Stop", music);
+                    AkSoundEngine.PostEvent("Music_Stop", music);
+                    AkSoundEngine.PostEvent("Music_Play", music);
+                #endif
             }
         }
         if (button == e_button.HIGHSCORE)

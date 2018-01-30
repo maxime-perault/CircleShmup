@@ -23,5 +23,5 @@ MonoBehaviour:
   SoundEventReverb: 1
   RandomizeVolume: 0
   RandomizePitch: 1
-  PitchRandomRange: {x: 0, y: 0}
-  VolumeRandomRange: {x: -0.1, y: 0.1}
+  PitchRandomRange: {x: -0.1, y: 0.1}
+  VolumeRandomRange: {x: 0, y: 0}

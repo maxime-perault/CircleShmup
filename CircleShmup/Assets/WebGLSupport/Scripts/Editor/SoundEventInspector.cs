@@ -40,12 +40,12 @@ public class SoundEventInspector : Editor
 
             if(soundEvent.RandomizePitch)
             {
-                soundEvent.VolumeRandomRange = EditorGUILayout.Vector2Field("Volume random range", soundEvent.VolumeRandomRange);
+                soundEvent.PitchRandomRange = EditorGUILayout.Vector2Field("Pitch random range  ", soundEvent.PitchRandomRange);
             }
 
             if(soundEvent.RandomizeVolume)
             {
-                soundEvent.PitchRandomRange = EditorGUILayout.Vector2Field("Pitch random range  ", soundEvent.PitchRandomRange);
+                soundEvent.VolumeRandomRange = EditorGUILayout.Vector2Field("Volume random range", soundEvent.VolumeRandomRange);
             }
         }
 

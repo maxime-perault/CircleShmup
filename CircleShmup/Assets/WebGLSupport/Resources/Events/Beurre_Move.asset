@@ -17,11 +17,11 @@ MonoBehaviour:
   SoundEventName: Beurre_Move
   SoundEventType: 0
   SoundEventLoop: 0
-  SoundEventMaxInstance: 1
-  SoundEventVolume: 0.3
+  SoundEventMaxInstance: 3
+  SoundEventVolume: 0.1
   SoundEventPitch: 1
   SoundEventReverb: 1
   RandomizeVolume: 0
   RandomizePitch: 1
-  PitchRandomRange: {x: 0, y: 0}
+  PitchRandomRange: {x: -0.6, y: 0.6}
   VolumeRandomRange: {x: -0.6, y: 0.6}

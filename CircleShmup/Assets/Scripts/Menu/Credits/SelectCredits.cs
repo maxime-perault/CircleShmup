@@ -22,7 +22,9 @@ public class SelectCredits : ASelect
             }
             else
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+                #if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+                #endif
             }
 
             StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));

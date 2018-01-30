@@ -72,8 +72,17 @@ public class EnemyZucchini1 : Enemy
         animator = GetComponent<Animator>();
         trail = GetComponent<TrailRenderer>();
 
-        AkSoundEngine.PostEvent("Ennemy_Pop", music);
-
+        if(MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Ennemy_Pop");
+        }
+        else
+        {
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Ennemy_Pop", music);
+            #endif
+        }
+       
         tomateCounter = 0;
         moveComponent = GetComponent<MoveElliptic>();
 
@@ -252,7 +261,9 @@ public class EnemyZucchini1 : Enemy
         }
         else
         {
-            AkSoundEngine.PostEvent("Brochette_Hit_Invincible", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Brochette_Hit_Invincible", music);
+            #endif
         }    
     }
 
@@ -288,7 +299,9 @@ public class EnemyZucchini1 : Enemy
         }
         else
         {
-            AkSoundEngine.PostEvent("Brochette_Tomato_Destroy", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Brochette_Tomato_Destroy", music);
+            #endif
         }
     }
 
@@ -300,7 +313,9 @@ public class EnemyZucchini1 : Enemy
         }
         else
         {
-            AkSoundEngine.PostEvent("Brochette_Death", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Brochette_Death", music);
+            #endif
         }
     }
 
@@ -312,7 +327,9 @@ public class EnemyZucchini1 : Enemy
         }
         else
         {
-            AkSoundEngine.PostEvent("Brochette_Hit_Invincible", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Brochette_Hit_Invincible", music);
+            #endif
         }
     }
 }

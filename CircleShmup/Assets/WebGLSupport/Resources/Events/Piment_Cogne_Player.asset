@@ -17,7 +17,7 @@ MonoBehaviour:
   SoundEventName: Piment_Cogne_Player
   SoundEventType: 0
   SoundEventLoop: 0
-  SoundEventMaxInstance: 1
+  SoundEventMaxInstance: 3
   SoundEventVolume: 0.48
   SoundEventPitch: 1
   SoundEventReverb: 1

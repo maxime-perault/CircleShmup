@@ -87,7 +87,9 @@ public class SwitchButton : MonoBehaviour
             }
             else
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+                #if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+                #endif
             }
         }
     }

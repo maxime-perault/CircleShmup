@@ -34,7 +34,17 @@ public class SelectControls : ASelect
         for (int i = 0; i < manager.inputs.Length; i++)
             if (manager.inputs[i] == text)
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Error", music);
+                if(MusicManager.WebGLBuildSupport)
+                {
+                    MusicManager.PostEvent("Main_Menu_UI_Error");
+                }
+                else
+                {
+                    #if !UNITY_WEBGL
+                        AkSoundEngine.PostEvent("Main_Menu_UI_Error", music);
+                    #endif
+                }
+                    
                 return;
             }
         InputText[actual_button].GetComponent<Text>().text = text;
@@ -56,7 +66,9 @@ public class SelectControls : ASelect
         }
         else
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+            #endif
         }
 
         InputText[actual_button].transform.parent.gameObject.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
@@ -104,7 +116,9 @@ public class SelectControls : ASelect
             }
             else
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+#if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+#endif
             }
 
             StartCoroutine(LoadYourAsyncScene("Menu/Options"));
@@ -127,7 +141,9 @@ public class SelectControls : ASelect
             }
             else
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+#if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+#endif
             }
 
             WaitInput();

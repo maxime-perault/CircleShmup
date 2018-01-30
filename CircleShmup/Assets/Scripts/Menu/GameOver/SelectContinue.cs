@@ -65,7 +65,9 @@ public class SelectContinue : ASelect
                 }
                 else
                 {
-                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                    #if !UNITY_WEBGL
+                        AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                    #endif
                 }
 
                 --nb_life;

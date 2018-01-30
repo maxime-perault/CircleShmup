@@ -20,7 +20,7 @@ MonoBehaviour:
   SoundEventMaxInstance: 1
   SoundEventVolume: 0.4
   SoundEventPitch: 1
-  SoundEventReverb: 1
+  SoundEventReverb: 1.1
   RandomizeVolume: 0
   RandomizePitch: 0
   PitchRandomRange: {x: 0, y: 0}

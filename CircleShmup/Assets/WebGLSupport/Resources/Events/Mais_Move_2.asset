@@ -9,19 +9,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d18b29bb7fa7a944eb14ad8ca0a96468, type: 3}
-  m_Name: Mais_Move_Down
+  m_Name: Mais_Move_2
   m_EditorClassIdentifier: 
   Play: 1
   Stop: 0
-  SoundEventTarget: {fileID: 8300000, guid: 7c4a98238667c0042bdda6f8a23aed33, type: 3}
-  SoundEventName: Mais_Move_Down
+  SoundEventTarget: {fileID: 8300000, guid: 8a3b2956882c1ee42a97eab036413b85, type: 3}
+  SoundEventName: Mais_Move_2
   SoundEventType: 0
   SoundEventLoop: 0
-  SoundEventMaxInstance: 1
-  SoundEventVolume: 0.7
+  SoundEventMaxInstance: 3
+  SoundEventVolume: 0.2
   SoundEventPitch: 1
   SoundEventReverb: 1
-  RandomizeVolume: 0
-  RandomizePitch: 0
-  PitchRandomRange: {x: 0, y: 0}
-  VolumeRandomRange: {x: 0, y: 0}
+  RandomizeVolume: 1
+  RandomizePitch: 1
+  PitchRandomRange: {x: -0.1, y: 0.1}
+  VolumeRandomRange: {x: -0.05, y: -0.1}

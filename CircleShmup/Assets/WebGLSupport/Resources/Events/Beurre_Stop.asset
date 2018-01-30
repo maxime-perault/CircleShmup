@@ -11,14 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18b29bb7fa7a944eb14ad8ca0a96468, type: 3}
   m_Name: Beurre_Stop
   m_EditorClassIdentifier: 
-  Play: 0
-  Stop: 1
+  Play: 1
+  Stop: 0
   SoundEventTarget: {fileID: 8300000, guid: 8056fdd9a781afb4ba8773764b0837f1, type: 3}
   SoundEventName: Beurre_Stop
   SoundEventType: 0
   SoundEventLoop: 0
-  SoundEventMaxInstance: 1
-  SoundEventVolume: 0.8
+  SoundEventMaxInstance: 3
+  SoundEventVolume: 0.1
   SoundEventPitch: 1
   SoundEventReverb: 1
   RandomizeVolume: 0

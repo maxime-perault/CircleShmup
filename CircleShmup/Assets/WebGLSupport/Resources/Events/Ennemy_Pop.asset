@@ -17,11 +17,11 @@ MonoBehaviour:
   SoundEventName: Ennemy_Pop
   SoundEventType: 0
   SoundEventLoop: 0
-  SoundEventMaxInstance: 1
+  SoundEventMaxInstance: 3
   SoundEventVolume: 0.6
   SoundEventPitch: 1
   SoundEventReverb: 1
   RandomizeVolume: 0
   RandomizePitch: 1
-  PitchRandomRange: {x: 0, y: 0}
+  PitchRandomRange: {x: -0.2, y: 0.2}
   VolumeRandomRange: {x: -0.2, y: 0.2}

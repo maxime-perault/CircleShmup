@@ -59,7 +59,9 @@ public class SelectVictory : ASelect
                 }
                 else
                 {
-                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                    #if !UNITY_WEBGL
+                        AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                    #endif
                 }
 
                 if (manager.currentScore <= manager.scoreboard[98].score)
@@ -81,7 +83,9 @@ public class SelectVictory : ASelect
                     }
                     else
                     {
-                        AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                        #if !UNITY_WEBGL
+                            AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                        #endif
                     }
 
                     manager.addScore(manager.currentScore, nameScore);
@@ -95,7 +99,9 @@ public class SelectVictory : ASelect
                     }
                     else
                     {
-                        AkSoundEngine.PostEvent("Main_Menu_UI_Error", music);
+                        #if !UNITY_WEBGL
+                            AkSoundEngine.PostEvent("Main_Menu_UI_Error", music);
+                        #endif
                     }
                 }
 

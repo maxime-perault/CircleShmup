@@ -60,7 +60,9 @@ public class EnemyArrow1 : Enemy
         }
         else
         {
-            AkSoundEngine.PostEvent("Ennemy_Pop", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Ennemy_Pop", music);
+            #endif
         }
 
         
@@ -244,7 +246,9 @@ public class EnemyArrow1 : Enemy
         }
         else
         {
-            AkSoundEngine.PostEvent("Piment_Cogne", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Piment_Cogne", music);
+            #endif
         } 
     }
 
@@ -256,7 +260,9 @@ public class EnemyArrow1 : Enemy
         }
         else
         {
-            AkSoundEngine.PostEvent("Piment_Prep_Play", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Piment_Prep_Play", music);
+            #endif
         } 
     }
 
@@ -268,7 +274,9 @@ public class EnemyArrow1 : Enemy
         }
         else
         {
-            AkSoundEngine.PostEvent("Piment_Prep_Stop", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Piment_Prep_Stop", music);
+            #endif
         }
         
     }
@@ -281,7 +289,9 @@ public class EnemyArrow1 : Enemy
         }
         else
         {
-            AkSoundEngine.PostEvent("Piment_Charge", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Piment_Charge", music);
+            #endif
         }
     }
 
@@ -293,7 +303,9 @@ public class EnemyArrow1 : Enemy
         }
         else
         {
-            AkSoundEngine.PostEvent("Piment_Cogne_Player", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Piment_Cogne_Player", music);
+            #endif 
         }  
     }  
 }

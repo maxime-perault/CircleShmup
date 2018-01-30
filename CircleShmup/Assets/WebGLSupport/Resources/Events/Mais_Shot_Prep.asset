@@ -17,11 +17,11 @@ MonoBehaviour:
   SoundEventName: Mais_Shot_Prep
   SoundEventType: 0
   SoundEventLoop: 0
-  SoundEventMaxInstance: 1
+  SoundEventMaxInstance: 3
   SoundEventVolume: 0.5
   SoundEventPitch: 1
   SoundEventReverb: 1
   RandomizeVolume: 0
   RandomizePitch: 1
-  PitchRandomRange: {x: 0, y: 0}
-  VolumeRandomRange: {x: -0.3, y: 0.1}
+  PitchRandomRange: {x: -0.3, y: 0.1}
+  VolumeRandomRange: {x: 0, y: 0}

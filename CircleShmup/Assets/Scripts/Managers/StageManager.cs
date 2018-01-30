@@ -196,14 +196,16 @@ public class StageManager : MonoBehaviour
         }
         else
         {
-            // "A table" management
-            switch (currentStageIndex)
-            {
-                case 0: AkSoundEngine.PostEvent("A_Table_1", musicPlayer); break;
-                case 1: AkSoundEngine.PostEvent("A_Table_2", musicPlayer); break;
-                case 3: AkSoundEngine.PostEvent("A_Table_3", musicPlayer); break;
-                default: break;
-            }
+            #if !UNITY_WEBGL
+                // "A table" management
+                switch (currentStageIndex)
+                {
+                    case 0: AkSoundEngine.PostEvent("A_Table_1", musicPlayer); break;
+                    case 1: AkSoundEngine.PostEvent("A_Table_2", musicPlayer); break;
+                    case 3: AkSoundEngine.PostEvent("A_Table_3", musicPlayer); break;
+                    default: break;
+                }
+            #endif
         }
 
     }
@@ -234,11 +236,13 @@ public class StageManager : MonoBehaviour
 
         if (MusicManager.WebGLBuildSupport)
         {
-            MusicManager.PostEvent("Stage_Cleared");
+            MusicManager.PostEvent("StageCleared");
         }
         else
         {
-            AkSoundEngine.PostEvent("Stage_Cleared", musicPlayer);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Stage_Cleared", musicPlayer);
+            #endif
         }
 
         // Refill player hp

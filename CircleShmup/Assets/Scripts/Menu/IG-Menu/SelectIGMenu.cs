@@ -38,7 +38,9 @@ public class SelectIGMenu : ASelect
         }
         else
         {
-            AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+            #endif
         }
 
         buttons[actual_button].GetComponent<Image>().color = new Color32(80, 80, 80, 255);
@@ -63,7 +65,9 @@ public class SelectIGMenu : ASelect
             }
             else
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                #if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                #endif
             }
 
             manager.OnGamePaused();
@@ -90,7 +94,9 @@ public class SelectIGMenu : ASelect
             }
             else
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+                #if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+                #endif
             }
 
             igmenu.SetActive(false);
@@ -118,7 +124,9 @@ public class SelectIGMenu : ASelect
                 }
                 else
                 {
-                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                    #if !UNITY_WEBGL
+                        AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                    #endif
                 }
 
                 igmenu.SetActive(false);
@@ -134,7 +142,9 @@ public class SelectIGMenu : ASelect
                 }
                 else
                 {
-                    AkSoundEngine.PostEvent("Friture_Stop", music);
+                    #if !UNITY_WEBGL
+                        AkSoundEngine.PostEvent("Friture_Stop", music);
+                    #endif
                 }
 
                 StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
@@ -148,9 +158,11 @@ public class SelectIGMenu : ASelect
                 }
                 else
                 {
-                    AkSoundEngine.PostEvent("Music_Menu_Stop", music);
-                    AkSoundEngine.PostEvent("Music_Stop", music);
-                    AkSoundEngine.PostEvent("Music_Menu_Play", music);
+                    #if !UNITY_WEBGL
+                        AkSoundEngine.PostEvent("Music_Menu_Stop", music);
+                        AkSoundEngine.PostEvent("Music_Stop", music);
+                        AkSoundEngine.PostEvent("Music_Menu_Play", music);
+                    #endif
                 } 
             }
         }

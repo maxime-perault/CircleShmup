@@ -18,7 +18,7 @@ MonoBehaviour:
   SoundEventType: 0
   SoundEventLoop: 1
   SoundEventMaxInstance: 1
-  SoundEventVolume: 0.25
+  SoundEventVolume: 0.15
   SoundEventPitch: 1
   SoundEventReverb: 1
   RandomizeVolume: 0

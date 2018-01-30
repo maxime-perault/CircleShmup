@@ -17,11 +17,11 @@ MonoBehaviour:
   SoundEventName: Brochette_Tomato_Destroy
   SoundEventType: 0
   SoundEventLoop: 0
-  SoundEventMaxInstance: 1
+  SoundEventMaxInstance: 3
   SoundEventVolume: 0.45
   SoundEventPitch: 0.87
   SoundEventReverb: 1
   RandomizeVolume: 0
   RandomizePitch: 1
-  PitchRandomRange: {x: 0, y: 0}
+  PitchRandomRange: {x: -0.15, y: 0}
   VolumeRandomRange: {x: -0.15, y: 0}

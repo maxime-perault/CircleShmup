@@ -155,7 +155,9 @@ public class IntroManager : ASelect
                 }
                 else
                 {
-                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                    #if !UNITY_WEBGL
+                        AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                    #endif
                 }
  
                 inter.GetComponent<Image>().color = new Color32(0, 0, 0, 0);
@@ -172,7 +174,9 @@ public class IntroManager : ASelect
                 }
                 else
                 {
-                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                    #if !UNITY_WEBGL
+                        AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                    #endif
                 }
                 
                 StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));

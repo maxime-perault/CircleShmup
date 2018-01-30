@@ -9,7 +9,7 @@ using System.Collections.Generic;
  */
 public class MusicManager : MonoBehaviour
 {
-    public bool WebGLBuild               = false;
+    public bool        WebGLBuild        = false;
     public static bool WebGLBuildSupport = false;
 
     public float SFX_Volume  = 50;
@@ -38,8 +38,7 @@ public class MusicManager : MonoBehaviour
         }
         else
         {
-            // Required for unity
-            this.gameObject.AddComponent<AudioSource>();
+            this.gameObject.AddComponent<AudioListener>();
         }
 
         if (instance == null)
@@ -85,6 +84,7 @@ public class MusicManager : MonoBehaviour
 
         if(soundEvent == null)
         {
+            Debug.Log("Event not found : " + name);
             return;
         }
 
@@ -122,6 +122,88 @@ public class MusicManager : MonoBehaviour
     }
 
     /**
+     * RTPC main volume 
+     */
+    public static void SetMainVolume(float volume)
+    {
+        AudioMixerGroup mixer = MusicManager.instance.MainMixer;
+
+        float mixerVolume     = 0.0f;
+        float mixerHighVolume = 0.0f;
+        float mixerLowVolume  = 0.0f;
+        
+        if(volume > 50.0f)
+        {
+            mixerHighVolume = volume - 50.0f;
+            mixerHighVolume = 3.0f + volume * (3.0f / 50.0f);
+            mixerVolume     = mixerHighVolume;
+        }
+        else if(volume == 50.0f)
+        {
+            mixerVolume = 3.0f;
+        }
+        else if(volume == 0.0f)
+        {
+            mixerVolume = -80.0f;
+        }
+        else if (volume < 20.0f)
+        {
+            mixerLowVolume = 50.0f - volume;
+            mixerLowVolume = 3.0f - mixerLowVolume * 0.9f;
+            mixerVolume    = mixerLowVolume;
+        }
+        else
+        {
+            mixerLowVolume = 50.0f - volume;
+            mixerLowVolume = 3.0f - mixerLowVolume * 0.25f;
+            mixerVolume    = mixerLowVolume;
+        }
+
+        mixer.audioMixer.SetFloat("MainVol", mixerVolume);
+    }
+
+    /**
+     * RTPC SFX volume 
+     */
+    public static void SetSFXVolume(float volume)
+    {
+        AudioMixerGroup mixer = MusicManager.instance.SFXMixer;
+
+        float mixerVolume = 0.0f;
+        float mixerHighVolume = 0.0f;
+        float mixerLowVolume = 0.0f;
+
+        if (volume > 50.0f)
+        {
+            mixerHighVolume = volume - 50.0f;
+            mixerHighVolume = 10.5f + volume * (3.0f / 50.0f);
+            mixerVolume     = mixerHighVolume;
+        }
+        else if (volume == 50.0f)
+        {
+            mixerVolume = 10.5f;
+        }
+        else if (volume == 0.0f)
+        {
+            mixerVolume = -80.0f;
+        }
+        else if (volume < 20.0f)
+        {
+            mixerLowVolume = 50.0f - volume;
+            mixerLowVolume = 10.5f - mixerLowVolume * 0.6f;
+            mixerVolume    = mixerLowVolume;
+        }
+        else
+        {
+            mixerLowVolume = 50.0f - volume;
+            mixerLowVolume = 10.5f - mixerLowVolume * 0.25f;
+            mixerVolume    = mixerLowVolume;
+        }
+
+        mixer.audioMixer.SetFloat("SFXVol", mixerVolume);
+    }
+
+    /**
      * Start an event
      */
     private void PlayEvent(SoundEvent soundEvent)
@@ -147,15 +229,21 @@ public class MusicManager : MonoBehaviour
             source.outputAudioMixerGroup = MainMixer;
         }
             
-        source.loop                  = soundEvent.SoundEventLoop;
-        source.clip                  = soundEvent.SoundEventTarget;
-        source.volume                = soundEvent.SoundEventVolume;
-        source.pitch                 = soundEvent.SoundEventPitch;
-        source.reverbZoneMix         = soundEvent.SoundEventReverb;
+        source.loop           = soundEvent.SoundEventLoop;
+        source.clip           = soundEvent.SoundEventTarget;
+        source.volume         = soundEvent.SoundEventVolume;
+        source.pitch          = soundEvent.SoundEventPitch;
+        // source.reverbZoneMix  = soundEvent.SoundEventReverb;
+
+        if(soundEvent.SoundEventReverb != 1.0f)
+        {
+            AudioReverbFilter filter = go.AddComponent<AudioReverbFilter>();
+            filter.reverbPreset = AudioReverbPreset.Room;
+        }
 
         if(soundEvent.RandomizePitch)
         {
-            source.pitch += Random.Range(soundEvent.PitchRandomRange.x, soundEvent.PitchRandomRange.x);
+            source.pitch += Random.Range(soundEvent.PitchRandomRange.x, soundEvent.PitchRandomRange.y);
         }
         
         if(soundEvent.RandomizeVolume)

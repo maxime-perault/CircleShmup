@@ -172,7 +172,17 @@ public class PlayerController : Entity
      */
     private void OnPlayerJustStartedToMove()
     {
-        AkSoundEngine.PostEvent("Beurre_Move", musicPlayer);
+        if(MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Beurre_Move");
+        }
+        else
+        {
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Beurre_Move", musicPlayer);
+            #endif
+        }
+
     }
 
     /**
@@ -186,7 +196,9 @@ public class PlayerController : Entity
         }
         else
         {
-            AkSoundEngine.PostEvent("Beurre_Stop", musicPlayer);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Beurre_Stop", musicPlayer);
+            #endif 
         }  
     }
 
@@ -201,7 +213,9 @@ public class PlayerController : Entity
         }
         else
         {
-            AkSoundEngine.PostEvent("Beurre_Death", musicPlayer);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Beurre_Death", musicPlayer);
+            #endif
         }
         
         scontinue.GameOver();
@@ -219,7 +233,9 @@ public class PlayerController : Entity
         }
         else
         {
-            AkSoundEngine.PostEvent("Beurre_Hit", musicPlayer);
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("Beurre_Hit", musicPlayer);
+            #endif
         }
 
         particleSystem.Play();

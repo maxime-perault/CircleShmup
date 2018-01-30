@@ -38,7 +38,9 @@ public class SelectOptions : ASelect
             }
             else
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+                #if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+                #endif
             }
  
             StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
@@ -57,7 +59,9 @@ public class SelectOptions : ASelect
             }
             else
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                #if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                #endif
             }
 
             if (manager.invertYaxis == 1)
@@ -79,7 +83,9 @@ public class SelectOptions : ASelect
             }
             else
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                #if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
+                #endif
             }
 
             StartCoroutine(LoadYourAsyncScene("Menu/Controls"));

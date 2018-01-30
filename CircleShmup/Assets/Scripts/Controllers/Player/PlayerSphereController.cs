@@ -116,7 +116,16 @@ public class PlayerSphereController : MonoBehaviour
         sRadius = radius;
         sMaxRadius = maxRadius;
 
-        AkSoundEngine.SetRTPCValue("Ball_Distance", 100.0f * currentRadiusRatio, musicObject);
+        if(MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.SetPitchDistance("Friture", currentRadiusRatio);
+        }
+        else
+        {
+            #if !UNITY_WEBGL
+                AkSoundEngine.SetRTPCValue("Ball_Distance", 100.0f * currentRadiusRatio, musicObject);
+            #endif
+        }
     }
 
     /**

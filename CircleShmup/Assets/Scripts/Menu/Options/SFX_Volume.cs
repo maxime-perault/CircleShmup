@@ -40,15 +40,19 @@ public class SFX_Volume : MonoBehaviour
                 return;
 
             isMoving = true;
-            AkSoundEngine.SetRTPCValue("SFX_Volume", value, music);
+            
 
             if (MusicManager.WebGLBuildSupport)
             {
+                MusicManager.SetSFXVolume(value);
                 MusicManager.PostEvent("Main_Menu_UI_Play");
             }
             else
             {
-                AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+                #if !UNITY_WEBGL
+                    AkSoundEngine.SetRTPCValue("SFX_Volume", value, music);
+                    AkSoundEngine.PostEvent("Main_Menu_UI_Play", music);
+                #endif
             }
 
             music.GetComponent<MusicPlayer>().SFX_Volume = value;
