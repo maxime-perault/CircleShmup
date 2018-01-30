@@ -19,8 +19,9 @@ public class SelectContinue : ASelect
 
     private float TimeToWait = 0;
 
-    void Start ()
+    private new void Start ()
     {
+        base.Start();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         vcontinue = GameObject.Find("Continue");
@@ -57,7 +58,7 @@ public class SelectContinue : ASelect
     {
         if (vcontinue.activeSelf == true)
         {
-            if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
+            if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
             {
                 if (MusicManager.WebGLBuildSupport)
                 {
@@ -69,7 +70,6 @@ public class SelectContinue : ASelect
                         AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
                     #endif
                 }
-
                 --nb_life;
                 life2.SetActive(false);
                 GameObject.Find("Player").GetComponent<PlayerController>().hitPoint = 6;
@@ -81,6 +81,16 @@ public class SelectContinue : ASelect
             }
             else if (manager.GetKeyDown(GameManager.e_input.CANCEL))
             {
+                if (MusicManager.WebGLBuildSupport)
+                {
+                    MusicManager.PostEvent("Main_Menu_UI_Back");
+                }
+                else
+                {
+                    #if !UNITY_WEBGL
+                        AkSoundEngine.PostEvent("Main_Menu_UI_Back", music);
+                    #endif
+                }
                 manager.OnGameOver();
             }
             if (Time.realtimeSinceStartup > TimeToWait)
