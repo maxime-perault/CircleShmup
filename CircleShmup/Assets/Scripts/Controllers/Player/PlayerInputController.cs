@@ -14,8 +14,8 @@ public class PlayerInputController : MonoBehaviour
     public bool canClockwiseRotation        = true;
     public bool canCounterClockwiseRotation = true;
 
-    [SerializeField] public string verticalInput                 = "VerticalIG";
-    [SerializeField] public string horizontalInput               = "HorizontalIG";
+    [SerializeField] public string verticalInput                 = "Vertical";
+    [SerializeField] public string horizontalInput               = "Horizontal";
                                                                  
     [SerializeField] public string addSphereInput                = "AddSphere";
     [SerializeField] public string removeSphereInput             = "RemoveSphere";
