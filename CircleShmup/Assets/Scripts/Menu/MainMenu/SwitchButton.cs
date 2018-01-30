@@ -54,7 +54,7 @@ public class SwitchButton : MonoBehaviour
         /*
         ** Select
         */
-        if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
+        if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
         {
             MenuClass.Select(actual_button);
         }
