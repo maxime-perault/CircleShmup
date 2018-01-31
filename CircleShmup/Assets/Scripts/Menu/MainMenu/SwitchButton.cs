@@ -50,7 +50,9 @@ public class SwitchButton : MonoBehaviour
 	void Update ()
     {
         float translation = Input.GetAxisRaw("Vertical");
-        
+
+        if (MenuClass.loading == true)
+            return;
         /*
         ** Select
         */

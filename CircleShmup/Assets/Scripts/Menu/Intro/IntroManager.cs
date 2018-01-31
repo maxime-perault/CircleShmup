@@ -119,6 +119,8 @@ public class IntroManager : ASelect
 
     private void Update()
     {
+        if (loading == true)
+            return;
         if (step == 0)
         {
             FadeInFirst();
@@ -145,7 +147,7 @@ public class IntroManager : ASelect
         else if (step == 5)
             StartCoroutine(LoadYourAsyncScene("Menu/MainMenu"));
 
-        if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
+        if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
         {
             if ((step == 0) || (step == 1))
             {

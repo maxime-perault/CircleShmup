@@ -13,7 +13,7 @@ public class SelectVictory : ASelect
 
     private bool isFinal = false;
     private string nameScore;
-    
+
     private new void Start()
     {
         base.Start();
@@ -49,7 +49,9 @@ public class SelectVictory : ASelect
 
     private void Update()
     {
-        if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
+        if (loading == true)
+            return;
+        if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
         {
             if (isFinal == false)
             {

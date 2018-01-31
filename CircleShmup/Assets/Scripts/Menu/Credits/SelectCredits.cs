@@ -5,6 +5,7 @@ using UnityEngine;
 public class SelectCredits : ASelect
 {
     private GameManager manager;
+    private bool initialized = false;
 
     private new void Start()
     {
@@ -14,6 +15,8 @@ public class SelectCredits : ASelect
 
     private void Update()
     {
+        if (loading == true)
+            return;
         if (manager.GetKeyDown(GameManager.e_input.CANCEL))
         {
             if (MusicManager.WebGLBuildSupport)

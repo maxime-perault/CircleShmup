@@ -30,6 +30,8 @@ public class SelectOptions : ASelect
 
     private void Update()
     {
+        if (loading == true)
+            return;
         if (manager.GetKeyDown(GameManager.e_input.CANCEL))
         {
             if (MusicManager.WebGLBuildSupport)

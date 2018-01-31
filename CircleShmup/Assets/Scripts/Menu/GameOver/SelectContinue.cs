@@ -56,6 +56,8 @@ public class SelectContinue : ASelect
 
     void Update ()
     {
+        if (loading == true)
+            return;
         if (vcontinue.activeSelf == true)
         {
             if (manager.GetKeyDown(GameManager.e_input.ACCEPT))

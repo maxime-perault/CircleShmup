@@ -13,7 +13,7 @@ public class SelectIGMenu : ASelect
     private SelectContinue scontinue;
 
     public  GameObject[]    buttons;
-    private bool isMoving = false;
+    private bool            isMoving = false;
 
     int actual_button = 0;
 

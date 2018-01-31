@@ -34,10 +34,12 @@ public class SwitchButtonOptions : MonoBehaviour
         buttons[actual_button].GetComponent<Image>().color = new Color32(220, 220, 220, 255);
     }
 
-    void Update()
+    private void Update()
     {
         float translation = Input.GetAxisRaw("Vertical");
 
+        if (MenuClass.loading == true)
+            return;
         /*
         ** Select Button
         */

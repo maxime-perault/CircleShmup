@@ -24,6 +24,8 @@ public class SelectGameOver : ASelect
 	
 	private void Update ()
     {
+        if (loading == true)
+            return;
         if (Time.time > TimeToWait)
         {
             if (transVec.y == 0)
@@ -34,7 +36,7 @@ public class SelectGameOver : ASelect
             TimeToWait = Time.time + 0.5f;
         }
 
-        if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
+        if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
         {
             if (MusicManager.WebGLBuildSupport)
             {

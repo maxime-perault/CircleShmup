@@ -88,6 +88,8 @@ public class SelectScore : ASelect
     {
         float translation = Input.GetAxisRaw("Vertical");
 
+        if (loading == true)
+            return;
         if (manager.GetKeyDown(GameManager.e_input.CANCEL))
         {
             if (MusicManager.WebGLBuildSupport)

@@ -15,6 +15,7 @@ public class SelectControls : ASelect
     private bool            isLocked = false;
     private bool            isWaiting = false;
     private int             actual_button = 0;
+    private bool            initialized = false;
 
     private new void Start()
     {
@@ -91,9 +92,11 @@ public class SelectControls : ASelect
 
     private void Update()
     {
+        if (loading == true)
+            return;
         if (isWaiting == true)
         {
-            if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
+            if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
             {
                 isLocked = true;
                 isWaiting = false;
@@ -142,11 +145,10 @@ public class SelectControls : ASelect
             }
             else
             {
-#if !UNITY_WEBGL
+                #if !UNITY_WEBGL
                     AkSoundEngine.PostEvent("Main_Menu_UI_Validate", music);
-#endif
+                #endif
             }
-
             WaitInput();
         }
     }
