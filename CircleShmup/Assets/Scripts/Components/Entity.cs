@@ -47,8 +47,12 @@ public class Entity : MonoBehaviour
         {
             if (collision.gameObject.tag == "Player")
             {
-                isEntity = true;
-                OnEntityCollisionEnterWithPlayer();
+                Entity entity = collision.gameObject.GetComponent<Entity>();
+                if(!entity.isInvincible)
+                {
+                    isEntity = true;
+                    OnEntityCollisionEnterWithPlayer();
+                }
             }
             if (collision.gameObject.tag == "Arena")
             {
@@ -84,12 +88,16 @@ public class Entity : MonoBehaviour
      */
     public void OnDamage(int damages)
     {
+        if (damages == 0)
+        {
+            return;
+        }
         if (isInvincible)
         {
             OnInvincibleHit(hitPoint);
             return;
         }
-
+        
         OnHit(hitPoint);
         hitPoint -= damages;
 

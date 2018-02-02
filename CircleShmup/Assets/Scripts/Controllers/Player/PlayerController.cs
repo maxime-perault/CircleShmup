@@ -18,8 +18,9 @@ public class PlayerController : Entity
     public  bool                   slide;
     public  Vector2                speed;
     public  PlayerSphereController sphereController;
-    public SpriteRenderer          playerStateRenderer;
-    public List<Sprite>            playerStateSprites = new List<Sprite>();
+    public  SpriteRenderer         playerStateRenderer;
+    public  SpriteRenderer         playerSpriteRenderer;
+    public  List<Sprite>           playerStateSprites = new List<Sprite>();
 
     private Rigidbody2D            body2D;
     private PolygonCollider2D      polygonCollider2D;
@@ -57,6 +58,7 @@ public class PlayerController : Entity
         playerJustStoppedToMove = true;
 
         musicPlayer = GameObject.Find("MusicPlayer");
+        StartCoroutine("InvincibleBlinking");
 
         scontinue = GameObject.Find("Continue_script").GetComponent<SelectContinue>();
     }
@@ -225,6 +227,11 @@ public class PlayerController : Entity
 
     public override void OnHit(int hitPoint)
     {
+        if(isInvincible)
+        {
+            return;
+        }
+
         screenshake.Shake(0.3f);
 
         if (MusicManager.WebGLBuildSupport)
@@ -239,6 +246,9 @@ public class PlayerController : Entity
         }
 
         particleSystem.Play();
+
+        // Puts the player invulnerable for a short time
+        StartCoroutine("InvincibleCoroutine");
     }
 
     /**
@@ -257,5 +267,47 @@ public class PlayerController : Entity
     {
         paused = false;
         sphereController.OnGameResumed();
+    }
+
+    /**
+     * The player will be invincible after getting hit
+     * by a monster to avoid massive hits at the same time
+     */
+    private IEnumerator InvincibleCoroutine()
+    {
+        int damageBuffer  = damageOnCollision;
+        isInvincible      = true;
+        damageOnCollision = 0;
+        sphereController.SetSphereDamage(0);
+
+        yield return new WaitForSeconds(0.8f);
+
+        isInvincible      = false;
+        damageOnCollision = damageBuffer;
+        sphereController.SetSphereDamage(1);
+    }
+
+    /**
+     * Couroutine that make the player sprite blinking
+     * when he is invincible
+     */
+    private IEnumerator InvincibleBlinking()
+    {
+        while(true)
+        {
+            while(isInvincible)
+            {
+                playerSpriteRenderer.enabled = false;
+                sphereController.SetSphereVisible(false);
+
+                yield return new WaitForSeconds(0.1f);
+                playerSpriteRenderer.enabled = true;
+                sphereController.SetSphereVisible(true);
+
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
     }
 }

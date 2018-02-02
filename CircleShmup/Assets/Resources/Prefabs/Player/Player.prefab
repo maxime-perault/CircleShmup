@@ -451,6 +451,7 @@ MonoBehaviour:
   speed: {x: 75, y: 75}
   sphereController: {fileID: 114560485000152674}
   playerStateRenderer: {fileID: 0}
+  playerSpriteRenderer: {fileID: 212845434835859922}
   playerStateSprites:
   - {fileID: 21300000, guid: 1d0eb4da7cb97b149a5a87845305ecd3, type: 3}
   - {fileID: 21300000, guid: d69800bb39d80694aaaacbf6200fd75a, type: 3}

@@ -8,31 +8,31 @@ using System.Collections.Generic;
  */
 public class PlayerSphereController : MonoBehaviour
 {
-    public bool             paused;
+    public bool paused;
     public List<GameObject> spheres;
-    public GameObject       spherePrefab;
-    public GameObject       musicObject;
+    public GameObject spherePrefab;
+    public GameObject musicObject;
 
-    public int startSphereCount    = 3;
-    public float speedPenalty      = 20;
-    public float reverseDelay      = 0.5f;
-    public float sphereDelay       = 0.5f;
-    public float radius            = 5.0f;
-    public float minRadius         = 5.0f;
-    public float maxRadius         = 25.0f;
-    public float radiusGrowSpeed   = 5.0f;
+    public int startSphereCount = 3;
+    public float speedPenalty = 20;
+    public float reverseDelay = 0.5f;
+    public float sphereDelay = 0.5f;
+    public float radius = 5.0f;
+    public float minRadius = 5.0f;
+    public float maxRadius = 25.0f;
+    public float radiusGrowSpeed = 5.0f;
     public float radiusCrunchSpeed = 10.0f;
-    public float rotationSpeed     = 10.0f;
+    public float rotationSpeed = 10.0f;
 
     // Debug
     public float currentRotationSpeed = 0.0f;
-    public float currentSpeedPenalty  = 0.0f;
-    public float currentRadiusRatio   = 0.0f;
+    public float currentSpeedPenalty = 0.0f;
+    public float currentRadiusRatio = 0.0f;
 
-    public bool canReverse   = true;
+    public bool canReverse = true;
     public bool canAddSphere = true;
 
-    public static float sRadius    = 5.0f;
+    public static float sRadius = 5.0f;
     public static float sMaxRadius = 25.0f;
 
     private IEnumerator addSphereCooldownCoroutine;
@@ -116,16 +116,18 @@ public class PlayerSphereController : MonoBehaviour
         sRadius = radius;
         sMaxRadius = maxRadius;
 
-        if(MusicManager.WebGLBuildSupport)
+        if (MusicManager.WebGLBuildSupport)
         {
             MusicManager.SetPitchDistance("Friture", currentRadiusRatio);
         }
         else
         {
-            #if !UNITY_WEBGL
-                AkSoundEngine.SetRTPCValue("Ball_Distance", 100.0f * currentRadiusRatio, musicObject);
-            #endif
+#if !UNITY_WEBGL
+            AkSoundEngine.SetRTPCValue("Ball_Distance", 100.0f * currentRadiusRatio, musicObject);
+#endif
         }
+
+        ComputeSpherePosition();
     }
 
     /**
@@ -245,7 +247,7 @@ public class PlayerSphereController : MonoBehaviour
      * computing their position on the trigonometric circle
      * multiplied by the radius of the sphere controller.
      */
-    private void ComputeSpherePosition()
+    public void ComputeSpherePosition()
     {
         int sphereCount = spheres.Count;
         float alpha = (360.0f * (Mathf.PI / 180.0f)) / sphereCount;
@@ -256,7 +258,14 @@ public class PlayerSphereController : MonoBehaviour
             float y = Mathf.Sin(alpha * nSphere) * radius;
 
             spheres[nSphere].transform.localPosition = new Vector3(x, y, 0.0f);
-			spheres[nSphere].transform.localRotation = Quaternion.Euler(new Vector3 (0, 0, 135 + (-270 * Mathf.Sin (nSphere * alpha))));
+
+            Vector3 worldSpacePosition = spheres[nSphere].transform.position;
+            if (Vector3.Distance(worldSpacePosition, Vector3.zero) >= 5.1f)
+            {
+                spheres[nSphere].transform.position = Vector3.Normalize(new Vector3(worldSpacePosition.x, worldSpacePosition.y, 0.0f)) * 5.0f;
+            }
+
+            spheres[nSphere].transform.localRotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, 135.0f + (-270.0f * Mathf.Sin(nSphere * alpha))));
         }
     }
 
@@ -278,5 +287,29 @@ public class PlayerSphereController : MonoBehaviour
 
         StartCoroutine(addSphereCooldownCoroutine);
         StartCoroutine(reverseRotationCooldownCoroutine);
+    }
+
+    /**
+     * Sets the damage for all spheres
+     */
+    public void SetSphereDamage(int damages)
+    {
+        int sphereCount = spheres.Count;
+        for (int nSphere = 0; nSphere < sphereCount; ++nSphere)
+        {
+            spheres[nSphere].GetComponent<Sphere>().damages = damages;
+        }
+    }
+
+    /**
+     * Hide or show spheres
+     */
+    public void SetSphereVisible(bool visible)
+    {
+        int sphereCount = spheres.Count;
+        for (int nSphere = 0; nSphere < sphereCount; ++nSphere)
+        {
+            spheres[nSphere].GetComponent<SpriteRenderer>().enabled = visible;
+        }
     }
 }
