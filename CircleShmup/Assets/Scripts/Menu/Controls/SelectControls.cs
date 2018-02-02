@@ -96,7 +96,7 @@ public class SelectControls : ASelect
             return;
         if (isWaiting == true)
         {
-            if (manager.GetKeyDown(GameManager.e_input.ACCEPT))
+            if (manager.GetKeyUp(GameManager.e_input.ACCEPT))
             {
                 isLocked = true;
                 isWaiting = false;
