@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4289434188287338}
   - component: {fileID: 212369173487961630}
   - component: {fileID: 50965064238765760}
-  - component: {fileID: 58221660318292366}
   - component: {fileID: 114866741595542402}
   - component: {fileID: 96505602995856392}
+  - component: {fileID: 60344995622320968}
   m_Layer: 0
   m_Name: GD_bullet_destruct
   m_TagString: Bullet
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1425542066534570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.54, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,8 +64,8 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!58 &58221660318292366
-CircleCollider2D:
+--- !u!60 &60344995622320968
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -73,12 +73,36 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.75, y: 0.87}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.29109663, y: 0.3212281}
+      - {x: 0.19785099, y: 0.3944737}
+      - {x: -0.0016227365, y: 0.3910966}
+      - {x: -0.30460522, y: 0.28434223}
+      - {x: -0.33785105, y: 0.22421071}
+      - {x: -0.33109665, y: 0.13241228}
+      - {x: -0.29619038, y: 0.09862758}
+      - {x: -0.25057018, y: -0.005263097}
+      - {x: -0.07758781, y: -0.3277194}
+      - {x: -0.034605265, y: -0.3978509}
+      - {x: 0.067982376, y: -0.36070186}
+      - {x: 0.18460512, y: -0.35758775}
+      - {x: 0.22109665, y: -0.27070183}
+      - {x: 0.2973245, y: 0.038114045}
+      - {x: 0.3344738, y: 0.20057024}
 --- !u!96 &96505602995856392
 TrailRenderer:
   serializedVersion: 2
